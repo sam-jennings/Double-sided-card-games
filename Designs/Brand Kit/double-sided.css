@@ -256,41 +256,49 @@
 
 /* ============================================================
    10 · PLAYING CARD  ·  the deck's defining object (one live face)
-   Anatomy: heavy sign-coloured frame · top orientation bar with
-   notch · circled pip top-centre · big glyph · NAME in small caps.
-   There is no card back — both faces share this exact structure.
-   Add `.ds-playing-card--dim` to rotate 90° as visible game state.
+   ------------------------------------------------------------
+   Only the strictly-defined elements (CARD_LAYOUT.md):
+     · orientation marker — small top-edge chevron, defines "up"
+     · identity cluster, CENTRED — value (pip) · symbol · name,
+       gathered in the middle so a player's hand can cover the
+       whole identity at once.
+   The card itself is neutral paper with a plain border. No
+   sign-coloured frame (that is open question #4), no notch, no
+   inner keyline. Both faces share this exact structure.
+   `--dim` (90° rotation) and `--selected` are DIGITAL states only.
    ============================================================ */
 .ds-playing-card {
-  position: relative; display: flex; flex-direction: column;
+  position: relative; display: flex; align-items: center; justify-content: center;
   width: 180px; aspect-ratio: 756 / 1051; flex: none;
   background: var(--paper); color: var(--sign);
-  border: var(--border-thick) solid var(--sign); border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card); overflow: hidden;
+  border: var(--border-thin) solid var(--line); border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
   transition: transform var(--dur-slow) var(--ease-flip), box-shadow var(--dur-base) var(--ease-out);
 }
 .ds-playing-card--dim { transform: rotate(90deg); }
 .ds-playing-card--selected { box-shadow: 0 0 0 3px var(--gold), var(--shadow-card); }
-/* top orientation bar with a centred notch — defines "up" */
-.ds-playing-card .bar {
-  position: relative; height: 14px; background: var(--sign); flex: none;
+
+/* orientation marker — minimal chevron at the top edge ("this end up").
+   A rotated open corner: no bar, no fill that could read as a symbol. */
+.ds-playing-card .orient {
+  position: absolute; top: 11px; left: 50%; width: 12px; height: 12px;
+  border-top: 2.5px solid var(--sign); border-right: 2.5px solid var(--sign);
+  transform: translateX(-50%) rotate(-45deg);
 }
-.ds-playing-card .bar::after {
-  content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%);
-  width: 18px; height: 7px; background: var(--paper);
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+
+/* identity cluster — value, symbol, name, all centred & coverable */
+.ds-playing-card .identity {
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  padding: var(--space-4) var(--space-5); border-radius: var(--radius-lg);
+  background: var(--sign-tint);
 }
-.ds-playing-card .pip {
-  position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
-  width: 28px; height: 28px; display: grid; place-items: center;
-  font-family: var(--font-mono); font-weight: var(--weight-semibold); font-size: var(--text-sm);
-  border: var(--border-base) solid var(--sign); border-radius: var(--radius-pill);
-  background: var(--paper); color: var(--sign);
+.ds-playing-card .identity .value {
+  font-family: var(--font-mono); font-weight: var(--weight-semibold);
+  font-size: var(--text-base); line-height: 1; color: var(--sign);
 }
-.ds-playing-card .glyph { flex: 1; display: grid; place-items: center; padding: var(--space-5); }
-.ds-playing-card .glyph svg { width: 64%; height: auto; display: block; }
-.ds-playing-card .name {
-  text-align: center; padding: var(--space-2) 0 var(--space-3);
+.ds-playing-card .identity .glyph { width: 76px; height: 76px; }
+.ds-playing-card .identity .glyph svg { width: 100%; height: 100%; display: block; }
+.ds-playing-card .identity .name {
   font-family: var(--font-serif); font-size: var(--text-sm); font-weight: var(--weight-semibold);
   text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--sign);
 }

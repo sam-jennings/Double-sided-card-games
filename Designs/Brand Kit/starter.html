@@ -63,27 +63,41 @@
       <h2>The card</h2>
       <div class="row" style="align-items:flex-end">
         <div class="ds-playing-card sign-crown">
-          <div class="bar"></div><div class="pip">9</div>
-          <div class="glyph"><svg><use href="#sign-crown"/></svg></div>
-          <div class="name">Crown</div>
+          <span class="orient"></span>
+          <div class="identity">
+            <span class="value">9</span>
+            <span class="glyph"><svg><use href="#sign-crown"/></svg></span>
+            <span class="name">Crown</span>
+          </div>
         </div>
         <div class="ds-playing-card sign-flame">
-          <div class="bar"></div><div class="pip">4</div>
-          <div class="glyph"><svg><use href="#sign-flame"/></svg></div>
-          <div class="name">Flame</div>
+          <span class="orient"></span>
+          <div class="identity">
+            <span class="value">4</span>
+            <span class="glyph"><svg><use href="#sign-flame"/></svg></span>
+            <span class="name">Flame</span>
+          </div>
         </div>
         <div class="ds-playing-card sign-wave ds-playing-card--selected">
-          <div class="bar"></div><div class="pip">3</div>
-          <div class="glyph"><svg><use href="#sign-wave"/></svg></div>
-          <div class="name">Wave</div>
+          <span class="orient"></span>
+          <div class="identity">
+            <span class="value">3</span>
+            <span class="glyph"><svg><use href="#sign-wave"/></svg></span>
+            <span class="name">Wave</span>
+          </div>
         </div>
         <div class="ds-playing-card sign-eye ds-playing-card--dim">
-          <div class="bar"></div><div class="pip">5</div>
-          <div class="glyph"><svg><use href="#sign-eye"/></svg></div>
-          <div class="name">Eye</div>
+          <span class="orient"></span>
+          <div class="identity">
+            <span class="value">5</span>
+            <span class="glyph"><svg><use href="#sign-eye"/></svg></span>
+            <span class="name">Eye</span>
+          </div>
         </div>
       </div>
-      <p style="margin-top:var(--space-5)"><em>Selected (gold ring) and dimmed (rotated 90° as game state) shown.</em></p>
+      <p style="margin-top:var(--space-5)"><em>Identity (value · symbol · name · colour) is clustered in the centre so a
+        hand can cover it. The only edge element is the orientation chevron. Selected (gold ring) and
+        dimmed (rotated 90°) are digital states.</em></p>
     </section>
 
     <!-- ============ COLOUR ============ -->

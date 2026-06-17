@@ -31,8 +31,14 @@ Copy the markup you want straight out of it.
 
 1. **Permanent deck identity** — pip 1–9, sign icon + name, colour, a both-faces-
    identical orientation marker. The kit encodes this: nine hues, nine glyphs,
-   the `.ds-playing-card` anatomy (frame · orientation bar + notch · pip · glyph · name).
+   the `.ds-playing-card` anatomy (centred identity cluster — value · symbol ·
+   name · colour — plus a top-edge orientation chevron, nothing else).
 2. **Per-game interpretation** lives in each rulebook, never in the kit.
+
+The card is deliberately minimal: only the elements defined in `CARD_LAYOUT.md`.
+Identity is clustered in the **centre** so a hand can cover it whole; the
+orientation marker is a small top-edge chevron (not a bar). No sign-coloured
+frame (that is an open question in `CARD_LAYOUT.md`), no notch, no inner keyline.
 
 ## Signs
 
