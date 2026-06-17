@@ -1,0 +1,296 @@
+/* ============================================================
+   DOUBLE-SIDED · Brand Kit
+   ------------------------------------------------------------
+   One file. Link it and you get the whole visual language:
+   webfonts, design tokens, and plain CSS component classes.
+   No build step, no framework, no JavaScript required.
+
+       <link rel="stylesheet" href="double-sided.css">
+
+   See README.md for the quick-start and starter.html for a
+   live, copy-paste gallery of everything below.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* ============================================================
+   1 · TOKENS
+   ============================================================ */
+:root {
+  /* ---- Paper & ink (warm neutral spine) ---- */
+  --paper:       #FCFAF4;  --paper-2: #F4F1E8;  --paper-3: #ECE8DC;
+  --ink:         #1E1E3C;  --ink-2:   #45456A;  --ink-3:   #8A8AA3;
+  --line:        #DDD8CA;  --line-strong: #C7C1AE;  --white: #FFFFFF;
+  --overlay:     rgba(30, 30, 60, 0.55);
+
+  /* ---- The Nine Signs · identity hues (pip order 1–9) ---- */
+  --void:  #2E2C5F;  --root:  #3E7A3E;  --wave:  #1577B5;
+  --flame: #D83A22;  --eye:   #169488;  --mask:  #A6328C;
+  --key:   #B98A2A;  --star:  #E0A91F;  --crown: #5E3A9E;
+
+  /* ---- The Nine Signs · soft tints (fields / chips) ---- */
+  --void-tint:  #E7E6F1;  --root-tint:  #E6F0E5;  --wave-tint:  #E0EEF8;
+  --flame-tint: #FBE7E1;  --eye-tint:   #E0F1EE;  --mask-tint:  #F6E5F1;
+  --key-tint:   #F6EFDD;  --star-tint:  #FBF0D7;  --crown-tint: #ECE6F6;
+
+  /* ---- Interactive accents ---- */
+  --accent: var(--crown);  --accent-press: #4C2E80;  --accent-tint: var(--crown-tint);
+  --gold: var(--star);     --gold-soft: #F2D896;
+
+  /* ---- Semantic status ---- */
+  --success: #2F7D4F;  --success-tint: #E2F0E6;
+  --warning: #C9821C;  --warning-tint: #FAEFD7;
+  --danger:  var(--flame);  --danger-tint: var(--flame-tint);
+  --info:    var(--wave);   --info-tint:   var(--wave-tint);
+
+  /* ---- Surface & text aliases ---- */
+  --surface-page: var(--paper-2);  --surface-card: var(--paper);  --surface-sunken: var(--paper-3);
+  --text-strong: var(--ink);  --text-body: var(--ink-2);  --text-muted: var(--ink-3);
+  --text-on-accent: #FBF7EF;  --border-card: var(--line);  --focus-ring: var(--gold);
+
+  /* ---- Type ---- */
+  --font-serif: 'Spectral', Georgia, 'Times New Roman', serif;
+  --font-sans:  'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono:  'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+  --text-2xs: 0.6875rem; --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem;
+  --text-md: 1.125rem; --text-lg: 1.375rem; --text-xl: 1.75rem; --text-2xl: 2.25rem;
+  --text-3xl: 3rem; --text-4xl: 4rem;
+  --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600; --weight-bold: 700; --weight-black: 800;
+  --leading-tight: 1.1; --leading-snug: 1.28; --leading-normal: 1.5; --leading-relaxed: 1.7;
+  --tracking-tight: -0.02em; --tracking-wide: 0.04em; --tracking-overline: 0.18em;
+
+  /* ---- Spacing (8px scale, 4px half-step) ---- */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 4rem; --space-9: 6rem;
+
+  /* ---- Radii (deck-card geometry) ---- */
+  --radius-xs: 4px; --radius-sm: 8px; --radius-md: 12px;
+  --radius-lg: 18px; --radius-card: 24px; --radius-pill: 999px;
+
+  /* ---- Borders ---- */
+  --border-thin: 1px; --border-base: 1.5px; --border-thick: 2.5px;
+
+  /* ---- Elevation (warm, soft, indigo-tinted) ---- */
+  --shadow-xs: 0 1px 2px rgba(30,30,60,0.06);
+  --shadow-sm: 0 2px 6px rgba(30,30,60,0.08);
+  --shadow-md: 0 6px 18px rgba(30,30,60,0.10);
+  --shadow-lg: 0 16px 40px rgba(30,30,60,0.16);
+  --shadow-card: 0 10px 28px rgba(30,30,60,0.14);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.6);
+
+  /* ---- Focus & motion ---- */
+  --focus-width: 3px; --focus-offset: 2px;
+  --ease-flip: cubic-bezier(0.34,1.20,0.64,1);
+  --ease-out:  cubic-bezier(0.22,0.61,0.36,1);
+  --dur-fast: 120ms; --dur-base: 220ms; --dur-slow: 420ms;
+
+  /* ---- Per-sign helper: set --sign / --sign-tint on any element ---- */
+  --sign: var(--ink);
+  --sign-tint: var(--paper-3);
+}
+
+/* Sign scoping: add class `sign-<name>` to set --sign + --sign-tint. */
+.sign-void  { --sign: var(--void);  --sign-tint: var(--void-tint);  }
+.sign-root  { --sign: var(--root);  --sign-tint: var(--root-tint);  }
+.sign-wave  { --sign: var(--wave);  --sign-tint: var(--wave-tint);  }
+.sign-flame { --sign: var(--flame); --sign-tint: var(--flame-tint); }
+.sign-eye   { --sign: var(--eye);   --sign-tint: var(--eye-tint);   }
+.sign-mask  { --sign: var(--mask);  --sign-tint: var(--mask-tint);  }
+.sign-key   { --sign: var(--key);   --sign-tint: var(--key-tint);   }
+.sign-star  { --sign: var(--star);  --sign-tint: var(--star-tint);  }
+.sign-crown { --sign: var(--crown); --sign-tint: var(--crown-tint); }
+
+/* ============================================================
+   2 · BASE
+   ============================================================ */
+.ds {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-body);
+  background: var(--surface-page);
+}
+.ds *, .ds *::before, .ds *::after { box-sizing: border-box; }
+
+.ds h1, .ds h2, .ds h3, .ds .ds-display {
+  font-family: var(--font-serif);
+  color: var(--text-strong);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+  margin: 0 0 var(--space-4);
+}
+.ds h1, .ds .ds-display { font-size: var(--text-3xl); letter-spacing: var(--tracking-tight); }
+.ds h2 { font-size: var(--text-2xl); }
+.ds h3 { font-size: var(--text-xl); }
+.ds p { margin: 0 0 var(--space-4); max-width: 66ch; }
+.ds a { color: var(--accent); }
+
+/* Editorial helpers */
+.ds-overline {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--text-muted);
+}
+.ds-mono { font-family: var(--font-mono); }
+.ds-game { text-transform: uppercase; letter-spacing: var(--tracking-wide); } /* game titles */
+
+/* ============================================================
+   3 · BUTTON  ·  .ds-btn  [--gold|--secondary|--ghost|--danger] [--sm|--lg]
+   ============================================================ */
+.ds-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  font-family: var(--font-sans); font-weight: var(--weight-semibold); font-size: var(--text-base);
+  line-height: 1; letter-spacing: 0.01em; padding: 11px 20px;
+  color: var(--text-on-accent); background: var(--accent);
+  border: var(--border-base) solid transparent; border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm); cursor: pointer; user-select: none;
+  transition: transform var(--dur-fast) var(--ease-out),
+              filter var(--dur-fast) var(--ease-out);
+}
+.ds-btn:hover  { filter: brightness(0.94); }
+.ds-btn:active { transform: scale(0.97); }
+.ds-btn:focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: var(--focus-offset); }
+.ds-btn:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; filter: none; transform: none; }
+.ds-btn--sm { padding: 7px 14px; font-size: var(--text-sm); border-radius: var(--radius-sm); }
+.ds-btn--lg { padding: 15px 28px; font-size: var(--text-md); }
+.ds-btn--gold      { background: var(--gold); color: var(--ink); }
+.ds-btn--secondary { background: var(--paper); color: var(--text-strong); border-color: var(--line-strong); box-shadow: var(--shadow-xs); }
+.ds-btn--ghost     { background: transparent; color: var(--text-strong); box-shadow: none; }
+.ds-btn--ghost:hover { background: var(--paper-3); filter: none; }
+.ds-btn--danger    { background: var(--danger); }
+
+/* ============================================================
+   4 · BADGE & TAG
+   ============================================================ */
+.ds-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-sans); font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  padding: 3px 10px; border-radius: var(--radius-pill);
+  background: var(--sign-tint); color: var(--sign);
+}
+.ds-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-sans); font-size: var(--text-sm); font-weight: var(--weight-medium);
+  padding: 4px 12px; border-radius: var(--radius-sm);
+  background: var(--paper); color: var(--text-body);
+  border: var(--border-thin) solid var(--line);
+}
+
+/* ============================================================
+   5 · PIP  ·  the circled index numeral (rank 1–9)
+   ============================================================ */
+.ds-pip {
+  display: inline-grid; place-items: center;
+  width: 2em; height: 2em; flex: none;
+  font-family: var(--font-mono); font-weight: var(--weight-semibold);
+  font-size: var(--text-base); border-radius: var(--radius-pill);
+  border: var(--border-base) solid var(--sign); color: var(--sign); background: var(--paper);
+}
+.ds-pip--filled { background: var(--sign); color: var(--text-on-accent); }
+
+/* ============================================================
+   6 · CARD  ·  generic paper surface  [--frame for the heavy keyline]
+   ============================================================ */
+.ds-card {
+  background: var(--surface-card); border: var(--border-thin) solid var(--border-card);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: var(--space-5);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.ds-card--frame { border: var(--border-thick) solid var(--sign); }
+.ds-card--interactive { cursor: pointer; }
+.ds-card--interactive:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+/* ============================================================
+   7 · FORM  ·  input & switch
+   ============================================================ */
+.ds-input {
+  font-family: var(--font-sans); font-size: var(--text-base); color: var(--text-strong);
+  padding: 10px 14px; background: var(--paper); border: var(--border-base) solid var(--line-strong);
+  border-radius: var(--radius-md); width: 100%;
+}
+.ds-input:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-tint); }
+.ds-input::placeholder { color: var(--text-muted); }
+
+.ds-switch { position: relative; display: inline-block; width: 46px; height: 26px; }
+.ds-switch input { position: absolute; opacity: 0; }
+.ds-switch .track {
+  position: absolute; inset: 0; background: var(--paper-3); border: var(--border-thin) solid var(--line-strong);
+  border-radius: var(--radius-pill); transition: background var(--dur-base) var(--ease-out);
+}
+.ds-switch .thumb {
+  position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
+  background: var(--white); border-radius: var(--radius-pill); box-shadow: var(--shadow-xs);
+  transition: transform var(--dur-base) var(--ease-flip);
+}
+.ds-switch input:checked ~ .track { background: var(--accent); border-color: var(--accent); }
+.ds-switch input:checked ~ .thumb { transform: translateX(20px); }
+
+/* ============================================================
+   8 · DIALOG  ·  .ds-overlay wraps a .ds-dialog
+   ============================================================ */
+.ds-overlay {
+  position: fixed; inset: 0; background: var(--overlay);
+  display: grid; place-items: center; padding: var(--space-5); z-index: 1100;
+}
+.ds-dialog {
+  background: var(--surface-card); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+  padding: var(--space-6); max-width: 30rem; width: 100%;
+}
+
+/* ============================================================
+   9 · SIGN CHIP  ·  one of the nine deck signs as a glyph mark
+   Pair with class `sign-<name>` to colour it.
+   ============================================================ */
+.ds-sign {
+  display: inline-grid; place-items: center; flex: none;
+  width: 3em; height: 3em; padding: 0.45em;
+  color: var(--sign); background: var(--sign-tint);
+  border-radius: var(--radius-md);
+}
+.ds-sign--ring   { border-radius: var(--radius-pill); border: 2px solid var(--sign); }
+.ds-sign--framed { border: var(--border-base) solid var(--sign); box-shadow: var(--shadow-xs); }
+.ds-sign svg { width: 100%; height: 100%; display: block; }
+
+/* ============================================================
+   10 · PLAYING CARD  ·  the deck's defining object (one live face)
+   Anatomy: heavy sign-coloured frame · top orientation bar with
+   notch · circled pip top-centre · big glyph · NAME in small caps.
+   There is no card back — both faces share this exact structure.
+   Add `.ds-playing-card--dim` to rotate 90° as visible game state.
+   ============================================================ */
+.ds-playing-card {
+  position: relative; display: flex; flex-direction: column;
+  width: 180px; aspect-ratio: 756 / 1051; flex: none;
+  background: var(--paper); color: var(--sign);
+  border: var(--border-thick) solid var(--sign); border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card); overflow: hidden;
+  transition: transform var(--dur-slow) var(--ease-flip), box-shadow var(--dur-base) var(--ease-out);
+}
+.ds-playing-card--dim { transform: rotate(90deg); }
+.ds-playing-card--selected { box-shadow: 0 0 0 3px var(--gold), var(--shadow-card); }
+/* top orientation bar with a centred notch — defines "up" */
+.ds-playing-card .bar {
+  position: relative; height: 14px; background: var(--sign); flex: none;
+}
+.ds-playing-card .bar::after {
+  content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+  width: 18px; height: 7px; background: var(--paper);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+.ds-playing-card .pip {
+  position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+  width: 28px; height: 28px; display: grid; place-items: center;
+  font-family: var(--font-mono); font-weight: var(--weight-semibold); font-size: var(--text-sm);
+  border: var(--border-base) solid var(--sign); border-radius: var(--radius-pill);
+  background: var(--paper); color: var(--sign);
+}
+.ds-playing-card .glyph { flex: 1; display: grid; place-items: center; padding: var(--space-5); }
+.ds-playing-card .glyph svg { width: 64%; height: auto; display: block; }
+.ds-playing-card .name {
+  text-align: center; padding: var(--space-2) 0 var(--space-3);
+  font-family: var(--font-serif); font-size: var(--text-sm); font-weight: var(--weight-semibold);
+  text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--sign);
+}

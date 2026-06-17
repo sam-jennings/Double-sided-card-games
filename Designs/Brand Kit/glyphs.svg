@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- ============================================================
+       DOUBLE-SIDED · Sign glyphs (geometric prototyping set)
+       ------------------------------------------------------------
+       Nine simple, bold, single-colour shapes — one per sign, in
+       pip order. They fill/stroke with `currentColor`, so set the
+       colour on the parent (e.g. via a `sign-<name>` class).
+
+       These are PLACEHOLDER glyphs in the spirit of the project's
+       "Set D Glyphs" accessibility benchmark (see deck-structure.md).
+       Swap in the final illustrated card art when it exists.
+
+       Use:  <svg><use href="glyphs.svg#sign-crown"></use></svg>
+       (For file:// previews, inline this sprite — see starter.html.)
+       ============================================================ -->
+
+  <symbol id="sign-void" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="12"/>
+  </symbol>
+
+  <symbol id="sign-root" viewBox="0 0 100 100">
+    <path d="M22 30 H78 L50 78 Z" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="sign-wave" viewBox="0 0 100 100">
+    <path d="M14 56 Q32 32 50 56 T86 56" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="sign-flame" viewBox="0 0 100 100">
+    <path d="M50 22 L78 70 H22 Z" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="sign-eye" viewBox="0 0 100 100">
+    <path d="M12 50 Q50 18 88 50 Q50 82 12 50 Z" fill="none" stroke="currentColor" stroke-width="9"/>
+    <circle cx="50" cy="50" r="12" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="sign-mask" viewBox="0 0 100 100">
+    <path d="M50 14 L86 50 L50 86 L14 50 Z" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="sign-key" viewBox="0 0 100 100">
+    <circle cx="50" cy="30" r="16" fill="none" stroke="currentColor" stroke-width="10"/>
+    <rect x="45" y="44" width="10" height="42" fill="currentColor"/>
+    <rect x="55" y="66" width="15" height="9" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="sign-star" viewBox="0 0 100 100">
+    <path d="M50 14 L61 39 L88 42 L67 60 L74 87 L50 72 L26 87 L33 60 L12 42 L39 39 Z" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="sign-crown" viewBox="0 0 100 100">
+    <path d="M18 74 L18 38 L35 53 L50 30 L65 53 L82 38 L82 74 Z" fill="currentColor"/>
+  </symbol>
+</svg>

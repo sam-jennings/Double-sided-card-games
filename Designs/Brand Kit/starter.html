@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double-Sided · Brand Kit</title>
+  <link rel="stylesheet" href="double-sided.css">
+  <style>
+    /* page-only layout helpers (not part of the kit) */
+    body { margin: 0; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: var(--space-7) var(--space-5) var(--space-9); }
+    section { margin-top: var(--space-8); }
+    .row { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+    .grid { display: grid; gap: var(--space-4); }
+    .swatch { height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--line); }
+    .swatch-label { font-size: var(--text-2xs); color: var(--text-muted); margin-top: 4px; font-family: var(--font-mono); }
+    hr { border: none; border-top: 1px solid var(--line); margin: 0; }
+  </style>
+</head>
+<body class="ds">
+  <!-- Inline glyph sprite so this page renders from file:// without a server.
+       For real pages served over http(s), delete this block and reference
+       the standalone glyphs.svg via <use href="glyphs.svg#sign-x">. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="sign-void" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="12"/></symbol>
+    <symbol id="sign-root" viewBox="0 0 100 100"><path d="M22 30 H78 L50 78 Z" fill="currentColor"/></symbol>
+    <symbol id="sign-wave" viewBox="0 0 100 100"><path d="M14 56 Q32 32 50 56 T86 56" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/></symbol>
+    <symbol id="sign-flame" viewBox="0 0 100 100"><path d="M50 22 L78 70 H22 Z" fill="currentColor"/></symbol>
+    <symbol id="sign-eye" viewBox="0 0 100 100"><path d="M12 50 Q50 18 88 50 Q50 82 12 50 Z" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="50" cy="50" r="12" fill="currentColor"/></symbol>
+    <symbol id="sign-mask" viewBox="0 0 100 100"><path d="M50 14 L86 50 L50 86 L14 50 Z" fill="currentColor"/></symbol>
+    <symbol id="sign-key" viewBox="0 0 100 100"><circle cx="50" cy="30" r="16" fill="none" stroke="currentColor" stroke-width="10"/><rect x="45" y="44" width="10" height="42" fill="currentColor"/><rect x="55" y="66" width="15" height="9" fill="currentColor"/></symbol>
+    <symbol id="sign-star" viewBox="0 0 100 100"><path d="M50 14 L61 39 L88 42 L67 60 L74 87 L50 72 L26 87 L33 60 L12 42 L39 39 Z" fill="currentColor"/></symbol>
+    <symbol id="sign-crown" viewBox="0 0 100 100"><path d="M18 74 L18 38 L35 53 L50 30 L65 53 L82 38 L82 74 Z" fill="currentColor"/></symbol>
+  </svg>
+
+  <div class="wrap">
+
+    <p class="ds-overline">Double-Sided Card Games</p>
+    <h1 class="ds-display">One deck. Nine signs. Thirty-six cards.</h1>
+    <p>Every pair, once — eleven games that could only exist because each card shows
+       two faces. This page is the brand kit: link <span class="ds-mono">double-sided.css</span>,
+       copy the markup you need, swap in your content.</p>
+
+    <!-- ============ THE NINE SIGNS ============ -->
+    <section>
+      <h2>The Nine Signs</h2>
+      <div class="row">
+        <div class="ds-sign sign-void"><svg><use href="#sign-void"/></svg></div>
+        <div class="ds-sign sign-root"><svg><use href="#sign-root"/></svg></div>
+        <div class="ds-sign sign-wave"><svg><use href="#sign-wave"/></svg></div>
+        <div class="ds-sign sign-flame"><svg><use href="#sign-flame"/></svg></div>
+        <div class="ds-sign sign-eye"><svg><use href="#sign-eye"/></svg></div>
+        <div class="ds-sign sign-mask"><svg><use href="#sign-mask"/></svg></div>
+        <div class="ds-sign sign-key"><svg><use href="#sign-key"/></svg></div>
+        <div class="ds-sign sign-star"><svg><use href="#sign-star"/></svg></div>
+        <div class="ds-sign sign-crown"><svg><use href="#sign-crown"/></svg></div>
+      </div>
+      <p style="margin-top:var(--space-3)"><em>Geometric placeholder glyphs — swap in illustrated card art when it exists.</em></p>
+    </section>
+
+    <!-- ============ PLAYING CARDS ============ -->
+    <section>
+      <h2>The card</h2>
+      <div class="row" style="align-items:flex-end">
+        <div class="ds-playing-card sign-crown">
+          <div class="bar"></div><div class="pip">9</div>
+          <div class="glyph"><svg><use href="#sign-crown"/></svg></div>
+          <div class="name">Crown</div>
+        </div>
+        <div class="ds-playing-card sign-flame">
+          <div class="bar"></div><div class="pip">4</div>
+          <div class="glyph"><svg><use href="#sign-flame"/></svg></div>
+          <div class="name">Flame</div>
+        </div>
+        <div class="ds-playing-card sign-wave ds-playing-card--selected">
+          <div class="bar"></div><div class="pip">3</div>
+          <div class="glyph"><svg><use href="#sign-wave"/></svg></div>
+          <div class="name">Wave</div>
+        </div>
+        <div class="ds-playing-card sign-eye ds-playing-card--dim">
+          <div class="bar"></div><div class="pip">5</div>
+          <div class="glyph"><svg><use href="#sign-eye"/></svg></div>
+          <div class="name">Eye</div>
+        </div>
+      </div>
+      <p style="margin-top:var(--space-5)"><em>Selected (gold ring) and dimmed (rotated 90° as game state) shown.</em></p>
+    </section>
+
+    <!-- ============ COLOUR ============ -->
+    <section>
+      <h2>Colour</h2>
+      <div class="grid" style="grid-template-columns:repeat(9,1fr)">
+        <div><div class="swatch" style="background:var(--void)"></div><div class="swatch-label">void</div></div>
+        <div><div class="swatch" style="background:var(--root)"></div><div class="swatch-label">root</div></div>
+        <div><div class="swatch" style="background:var(--wave)"></div><div class="swatch-label">wave</div></div>
+        <div><div class="swatch" style="background:var(--flame)"></div><div class="swatch-label">flame</div></div>
+        <div><div class="swatch" style="background:var(--eye)"></div><div class="swatch-label">eye</div></div>
+        <div><div class="swatch" style="background:var(--mask)"></div><div class="swatch-label">mask</div></div>
+        <div><div class="swatch" style="background:var(--key)"></div><div class="swatch-label">key</div></div>
+        <div><div class="swatch" style="background:var(--star)"></div><div class="swatch-label">star</div></div>
+        <div><div class="swatch" style="background:var(--crown)"></div><div class="swatch-label">crown</div></div>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(5,1fr);margin-top:var(--space-4)">
+        <div><div class="swatch" style="background:var(--paper)"></div><div class="swatch-label">paper</div></div>
+        <div><div class="swatch" style="background:var(--paper-2)"></div><div class="swatch-label">paper-2</div></div>
+        <div><div class="swatch" style="background:var(--ink)"></div><div class="swatch-label">ink</div></div>
+        <div><div class="swatch" style="background:var(--accent)"></div><div class="swatch-label">accent (crown)</div></div>
+        <div><div class="swatch" style="background:var(--gold)"></div><div class="swatch-label">gold (star)</div></div>
+      </div>
+    </section>
+
+    <!-- ============ TYPE ============ -->
+    <section>
+      <h2>Type</h2>
+      <p class="ds-display" style="font-size:var(--text-2xl)">Spectral — the printed voice</p>
+      <p>Hanken Grotesk handles interface and body copy: clean, approachable, calm.</p>
+      <p class="ds-mono">IBM Plex Mono · 36 cards · 9 signs · C(9,2)</p>
+    </section>
+
+    <!-- ============ COMPONENTS ============ -->
+    <section>
+      <h2>Components</h2>
+
+      <h3>Buttons</h3>
+      <div class="row">
+        <button class="ds-btn">Primary</button>
+        <button class="ds-btn ds-btn--gold">Gold</button>
+        <button class="ds-btn ds-btn--secondary">Secondary</button>
+        <button class="ds-btn ds-btn--ghost">Ghost</button>
+        <button class="ds-btn ds-btn--danger">Danger</button>
+        <button class="ds-btn" disabled>Disabled</button>
+      </div>
+
+      <h3 style="margin-top:var(--space-5)">Badges, tags & pips</h3>
+      <div class="row">
+        <span class="ds-badge sign-crown">Crown</span>
+        <span class="ds-badge sign-star">Star · wild</span>
+        <span class="ds-badge sign-void">Void · outsider</span>
+        <span class="ds-tag">2–4 players</span>
+        <span class="ds-tag">~20 min</span>
+        <span class="ds-pip sign-crown">9</span>
+        <span class="ds-pip sign-flame ds-pip--filled">4</span>
+      </div>
+
+      <h3 style="margin-top:var(--space-5)">Surfaces</h3>
+      <div class="row" style="align-items:stretch">
+        <div class="ds-card" style="flex:1;min-width:220px">
+          <p class="ds-overline">Generic</p>
+          <p style="margin:0">A plain paper surface for any content block.</p>
+        </div>
+        <div class="ds-card ds-card--frame sign-mask ds-card--interactive" style="flex:1;min-width:220px">
+          <p class="ds-overline">Framed · interactive</p>
+          <p style="margin:0">Heavy sign-coloured keyline. Hover me.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--space-5)">Form</h3>
+      <div class="row">
+        <input class="ds-input" placeholder="Name this game…" style="max-width:280px">
+        <label class="ds-switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label>
+      </div>
+    </section>
+
+    <hr style="margin-top:var(--space-8)">
+    <p class="ds-overline" style="margin-top:var(--space-5)">Double-Sided Brand Kit · see README.md</p>
+
+  </div>
+</body>
+</html>
