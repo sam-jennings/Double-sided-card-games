@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Rulebook Physical-Handling Check",
+  "description": "On saving a rulebook, reviews it only for double-faced-card physical-handling problems and reports issues without editing the file.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*_rulebook.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review ONLY the rulebook that was just saved, and ONLY for physical double-faced-card handling problems. This deck has no card back: a card on the table always shows one of its two real faces, and a held card can usually be inspected on both faces.\n\nFlag any rule that:\n- assumes a normal card back or a neutral \"face-down\" state that hides both faces;\n- relies on secret commitment via face-down placement;\n- depends on a holder NOT seeing their own card's other face, without an explicit policed no-inspection rule;\n- puts constantly-needed game state on the hidden/down face of a card;\n- requires players to remember hidden faces that the physical state makes annoying to recheck;\n- makes required game state invisible or unverifiable by the table.\n\nDo NOT rewrite or edit the file. Produce a short, severity-ranked list of issues, each with the offending rule, why it fails physically, and a suggested fix direction. If the rulebook is physically clean, say so in one line."
+  }
+}
