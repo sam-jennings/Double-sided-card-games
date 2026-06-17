@@ -1,4 +1,6 @@
-# SYZYGY — Design Analysis
+# TRIGON — Design Analysis
+
+> **Note:** This game was developed and simulated under the working title "SYZYGY." All analysis, sim results, and symbol-ability references apply unchanged to the rethemed TRIGON. The simulator has been renamed `trigon_sim.py`; internal references to "Syzygy" are historical.
 
 *How the rules were tested and tuned, v1.0 → v1.2. Companion to the rulebook.*
 
