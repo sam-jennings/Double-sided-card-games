@@ -69,7 +69,7 @@ The current likely range is **6 to 9 symbols**, giving deck sizes from **15 to 3
 
 The final symbol count should not be chosen abstractly. It should be chosen based on which size creates the best overall design space and supports the strongest collection of games.
 
-> **✅ RESOLVED (June 2026): 9 symbols / 36 cards**, used as a **master deck**. Any 6/7/8-symbol subset of the 36-card deck is an exact smaller all-pairs deck, so games declare their symbol range instead of the project fixing a smaller size. Full analysis in `DECK_SIZE_DECISION.md`.
+> **✅ RESOLVED (June 2026): 9 symbols / 36 cards**, used as a **master deck**. Any 6/7/8-symbol subset of the 36-card deck is an exact smaller all-pairs deck, so games declare their symbol range instead of the project fixing a smaller size. Full analysis in [DECK_SIZE_DECISION.md](DECK_SIZE_DECISION.md).
 
 ## Game Collection Goal
 
@@ -112,9 +112,9 @@ Game ideas should be judged by how well they answer the following questions:
 
 ## Current Working Assumption
 
-The symbol count is **fixed at 9** (36 cards) as of June 2026 — see `DECK_SIZE_DECISION.md`. Games that play best smaller use a declared symbol subset (e.g. "symbols 1–7").
+The symbol count is **fixed at 9** (36 cards) as of June 2026 — see [DECK_SIZE_DECISION.md](DECK_SIZE_DECISION.md). Games that play best smaller use a declared symbol subset (e.g. "symbols 1–7").
 
-The project is now in the collection-building phase: developing, simulating, and playtesting games against the fixed deck. Current collection: TRIGON and TURNCOAT (complete, sim-tuned), eight further concepts in `NEW_GAME_CONCEPTS.md`, of which JANUS, FALSE FACE, and OUROBOROS are being developed to full rulebooks.
+The project is now in the collection-building phase: developing, simulating, and playtesting games against the fixed deck. Current collection: TRIGON and TURNCOAT (complete, sim-tuned), eight further concepts in [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md), of which JANUS, FALSE FACE, and OUROBOROS are being developed to full rulebooks.
 
 ## Final Project Endpoint
 

@@ -1,5 +1,7 @@
 # Implementation Plan: TRIGON & TURNCOAT Retheme to Nine Signs
 
+> **Note (June 2026):** pips 1–2 were later renamed Void → Moon, Root → Leaf (skin-only; see `design.md` superseding note). This plan records the retheme as originally executed.
+
 ## Overview
 
 Create the TRIGON rulebook from scratch in a new `Trigon/` folder, rewrite the TURNCOAT rulebook in place, archive the old Syzygy/ file with a notice, and update all cross-references across the repository. The sign-to-ability mapping from design.md §2 is the single source of truth for all name substitutions. The game formerly known as SYZYGY is now TRIGON — the celestial framing is retired entirely. All work is document writing — no code tasks.

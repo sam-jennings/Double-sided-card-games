@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Markdown cross-reference check",
+  "description": "Validate all internal cross-references (relative links and #[[file:...]] refs) across the repo and report broken ones. Run manually when you want to check link integrity.",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "python .kiro/scripts/check_md_links.py",
+    "timeout": 60
+  }
+}

@@ -24,12 +24,12 @@
   --overlay:     rgba(30, 30, 60, 0.55);
 
   /* ---- The Nine Signs · identity hues (pip order 1–9) ---- */
-  --void:  #2E2C5F;  --root:  #3E7A3E;  --wave:  #1577B5;
+  --moon:  #2E2C5F;  --leaf:  #3E7A3E;  --wave:  #1577B5;
   --flame: #D83A22;  --eye:   #169488;  --mask:  #A6328C;
   --key:   #B98A2A;  --star:  #E0A91F;  --crown: #5E3A9E;
 
   /* ---- The Nine Signs · soft tints (fields / chips) ---- */
-  --void-tint:  #E7E6F1;  --root-tint:  #E6F0E5;  --wave-tint:  #E0EEF8;
+  --moon-tint:  #E7E6F1;  --leaf-tint:  #E6F0E5;  --wave-tint:  #E0EEF8;
   --flame-tint: #FBE7E1;  --eye-tint:   #E0F1EE;  --mask-tint:  #F6E5F1;
   --key-tint:   #F6EFDD;  --star-tint:  #FBF0D7;  --crown-tint: #ECE6F6;
 
@@ -90,8 +90,8 @@
 }
 
 /* Sign scoping: add class `sign-<name>` to set --sign + --sign-tint. */
-.sign-void  { --sign: var(--void);  --sign-tint: var(--void-tint);  }
-.sign-root  { --sign: var(--root);  --sign-tint: var(--root-tint);  }
+.sign-moon  { --sign: var(--moon);  --sign-tint: var(--moon-tint);  }
+.sign-leaf  { --sign: var(--leaf);  --sign-tint: var(--leaf-tint);  }
 .sign-wave  { --sign: var(--wave);  --sign-tint: var(--wave-tint);  }
 .sign-flame { --sign: var(--flame); --sign-tint: var(--flame-tint); }
 .sign-eye   { --sign: var(--eye);   --sign-tint: var(--eye-tint);   }

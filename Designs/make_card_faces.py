@@ -2,7 +2,7 @@
 
 Follows CARD_LAYOUT.md:
   - Orientation marker (top-edge bar)
-  - Index pip (top-centre)
+  - Index pip (top-left corner)
   - Large centred symbol icon
   - Sign name (bottom-centre)
   - Coloured border frame
@@ -309,7 +309,7 @@ def draw_card_face(sym):
         fill=color,
     )
 
-    # Index pip — top-centre
+    # Index pip — top-left corner (single, non-mirrored; F2)
     pip_font = get_font(mm(6), bold=True)
     pip_text = str(sym)
     pip_y = frame_inset + mm(5)
@@ -317,7 +317,7 @@ def draw_card_face(sym):
     pip_tw = bbox[2] - bbox[0]
     pip_th = bbox[3] - bbox[1]
     draw.text(
-        ((CARD_W - pip_tw) // 2, pip_y),
+        (frame_inset + mm(3), pip_y),
         pip_text,
         fill=color,
         font=pip_font,

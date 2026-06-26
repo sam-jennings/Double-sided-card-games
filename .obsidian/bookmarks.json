@@ -1,0 +1,57 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "title": "Index & Status",
+      "items": [
+        {
+          "type": "file",
+          "title": "Collection Overview",
+          "path": "COLLECTION_OVERVIEW.md"
+        },
+        {
+          "type": "file",
+          "title": "New Game Concepts",
+          "path": "NEW_GAME_CONCEPTS.md"
+        },
+        {
+          "type": "file",
+          "title": "Collection Audit",
+          "path": "COLLECTION_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Foundations",
+      "items": [
+        {
+          "type": "file",
+          "title": "Project Goals",
+          "path": "flip_card_project_goals.md"
+        },
+        {
+          "type": "file",
+          "title": "Deck Size Decision",
+          "path": "DECK_SIZE_DECISION.md"
+        },
+        {
+          "type": "file",
+          "title": "Symbol Sets",
+          "path": "SYMBOL_SETS.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Design Reference",
+      "items": [
+        {
+          "type": "file",
+          "title": "Card Layout",
+          "path": "Designs/CARD_LAYOUT.md"
+        }
+      ]
+    }
+  ]
+}

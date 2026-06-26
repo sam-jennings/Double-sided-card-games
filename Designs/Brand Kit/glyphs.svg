@@ -14,12 +14,13 @@
        (For file:// previews, inline this sprite — see starter.html.)
        ============================================================ -->
 
-  <symbol id="sign-void" viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="12"/>
+  <symbol id="sign-moon" viewBox="0 0 100 100">
+    <path fill-rule="evenodd" d="M50 50 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0 Z M58 50 m-28 0 a28 28 0 1 0 56 0 a28 28 0 1 0 -56 0 Z" fill="currentColor"/>
   </symbol>
 
-  <symbol id="sign-root" viewBox="0 0 100 100">
-    <path d="M22 30 H78 L50 78 Z" fill="currentColor"/>
+  <symbol id="sign-leaf" viewBox="0 0 100 100">
+    <path d="M50 12 C70 30 70 56 50 80 C30 56 30 30 50 12 Z" fill="currentColor"/>
+    <rect x="48" y="76" width="4" height="12" rx="2" fill="currentColor"/>
   </symbol>
 
   <symbol id="sign-wave" viewBox="0 0 100 100">
@@ -27,7 +28,7 @@
   </symbol>
 
   <symbol id="sign-flame" viewBox="0 0 100 100">
-    <path d="M50 22 L78 70 H22 Z" fill="currentColor"/>
+    <path fill-rule="evenodd" d="M54 6 C48 30 30 36 30 60 C30 78 42 94 54 94 C69 94 77 78 71 60 C67 48 56 50 59 35 C61 26 58 16 54 6 Z M53 52 C51 61 45 65 45 73 C45 81 49 85 54 85 C60 85 63 79 61 72 C59 64 55 63 53 52 Z" fill="currentColor"/>
   </symbol>
 
   <symbol id="sign-eye" viewBox="0 0 100 100">
@@ -36,7 +37,7 @@
   </symbol>
 
   <symbol id="sign-mask" viewBox="0 0 100 100">
-    <path d="M50 14 L86 50 L50 86 L14 50 Z" fill="currentColor"/>
+    <path fill-rule="evenodd" d="M14 40 C24 30 40 30 50 37 C60 30 76 30 86 40 C88 53 79 63 65 64 C57 65 52 59 50 53 C48 59 43 65 35 64 C21 63 12 53 14 40 Z M33 47 m-9 0 a9 6 0 1 0 18 0 a9 6 0 1 0 -18 0 Z M67 47 m-9 0 a9 6 0 1 0 18 0 a9 6 0 1 0 -18 0 Z" fill="currentColor"/>
   </symbol>
 
   <symbol id="sign-key" viewBox="0 0 100 100">

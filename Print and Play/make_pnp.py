@@ -1,129 +1,176 @@
 """Print-and-play generator for the 36-card flip-deck master prototype.
 
-Set D 'Glyphs' skin (SYMBOL_SETS.md): shape IS rank — Dot, Bar, Triangle,
-Square, Pentagon, Hexagon, Heptagram, Octagon, Nonagram. Pips 1-9 in two
-corners of BOTH faces, identical placement, no asymmetric marks
-(standing project rule: nothing on a card may reveal which face you see).
+THE NINE SIGNS (SYMBOL_SET.md): 1 Moon, 2 Leaf, 3 Wave, 4 Flame, 5 Eye,
+6 Mask, 7 Key, 8 Star, 9 Crown. Glyphs from Designs/Brand Kit/glyphs.svg,
+hues from SYMBOL_SET.md.
+
+Card layout per Designs/CARD_LAYOUT.md (June 2026):
+  - large centred sign glyph (primary identity)
+  - single top-left corner pip (authoritative rank 1-9)
+  - sign name, small, bottom-centre
+  - top-edge orientation marker (neutral chevron), IDENTICAL on every face
+
+H3 (physical-handling.md): the only structural elements (frame, orientation
+marker) are neutral and identical on every face, so nothing differs between a
+card's two faces or correlates with the hidden face. The pip/glyph/name describe
+only the face they sit on.
 
 Output: A4, page 1 = legend/instructions (print single-sided),
-pages 2-9 = four duplex sheets (long-edge flip), 3x3 poker cards each.
+pages 2-9 = four duplex sheet pairs (long-edge flip), 3x3 poker cards each.
 """
 
 import itertools
-import math
+import os
+import tempfile
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
 from reportlab.lib.colors import HexColor, Color
 from reportlab.pdfgen import canvas as rl_canvas
+from reportlab.graphics import renderPDF, renderPM
+from svglib.svglib import svg2rlg
 
 PAGE_W, PAGE_H = A4
-CARD_W, CARD_H = 63 * mm, 88 * mm
+CARD_W, CARD_H = 63.5 * mm, 88 * mm
 COLS = ROWS = 3
 MARGIN_X = (PAGE_W - COLS * CARD_W) / 2
 MARGIN_Y = (PAGE_H - ROWS * CARD_H) / 2
 
-SYMBOLS = list(range(1, 10))
-PAIRS = [tuple(p) for p in itertools.combinations(SYMBOLS, 2)]  # 36
+SIGNS = list(range(1, 10))
+PAIRS = [tuple(p) for p in itertools.combinations(SIGNS, 2)]  # 36
 
-NAMES = {1: "Dot", 2: "Bar", 3: "Triangle", 4: "Square", 5: "Pentagon",
-         6: "Hexagon", 7: "Heptagram", 8: "Octagon", 9: "Nonagram"}
+NAMES = {1: "Moon", 2: "Leaf", 3: "Wave", 4: "Flame", 5: "Eye",
+         6: "Mask", 7: "Key", 8: "Star", 9: "Crown"}
 
 COLORS = {
-    1: HexColor("#D62828"),  # red
-    2: HexColor("#F77F00"),  # orange
-    3: HexColor("#C9A227"),  # gold
-    4: HexColor("#2E933C"),  # green
-    5: HexColor("#2A9D8F"),  # teal
-    6: HexColor("#1D6FB8"),  # blue
-    7: HexColor("#5E548E"),  # violet
-    8: HexColor("#B5179E"),  # magenta
-    9: HexColor("#2B2D42"),  # near-black
+    1: "#2E2C5F",  # Moon  - indigo
+    2: "#3E7A3E",  # Leaf  - green
+    3: "#1577B5",  # Wave  - blue
+    4: "#D83A22",  # Flame - red
+    5: "#169488",  # Eye   - teal
+    6: "#A6328C",  # Mask  - magenta
+    7: "#B98A2A",  # Key   - gold
+    8: "#E0A91F",  # Star  - amber
+    9: "#5E3A9E",  # Crown - violet
+}
+
+# Glyph path bodies (viewBox 0 0 100 100), ported from Brand Kit/glyphs.svg.
+GLYPHS = {
+    1: '<path fill-rule="evenodd" d="M50 50 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0 Z M58 50 m-28 0 a28 28 0 1 0 56 0 a28 28 0 1 0 -56 0 Z" fill="{c}"/>',
+    2: '<path d="M50 12 C70 30 70 56 50 80 C30 56 30 30 50 12 Z" fill="{c}"/><rect x="48" y="76" width="4" height="12" rx="2" fill="{c}"/>',
+    3: '<path d="M14 56 Q32 32 50 56 T86 56" fill="none" stroke="{c}" stroke-width="11" stroke-linecap="round"/>',
+    4: '<path fill-rule="evenodd" d="M54 6 C48 30 30 36 30 60 C30 78 42 94 54 94 C69 94 77 78 71 60 C67 48 56 50 59 35 C61 26 58 16 54 6 Z M53 52 C51 61 45 65 45 73 C45 81 49 85 54 85 C60 85 63 79 61 72 C59 64 55 63 53 52 Z" fill="{c}"/>',
+    5: '<path d="M12 50 Q50 18 88 50 Q50 82 12 50 Z" fill="none" stroke="{c}" stroke-width="9"/><circle cx="50" cy="50" r="12" fill="{c}"/>',
+    6: '<path fill-rule="evenodd" d="M14 40 C24 30 40 30 50 37 C60 30 76 30 86 40 C88 53 79 63 65 64 C57 65 52 59 50 53 C48 59 43 65 35 64 C21 63 12 53 14 40 Z M33 47 m-9 0 a9 6 0 1 0 18 0 a9 6 0 1 0 -18 0 Z M67 47 m-9 0 a9 6 0 1 0 18 0 a9 6 0 1 0 -18 0 Z" fill="{c}"/>',
+    7: '<circle cx="50" cy="30" r="16" fill="none" stroke="{c}" stroke-width="10"/><rect x="45" y="44" width="10" height="42" fill="{c}"/><rect x="55" y="66" width="15" height="9" fill="{c}"/>',
+    8: '<path d="M50 14 L61 39 L88 42 L67 60 L74 87 L50 72 L26 87 L33 60 L12 42 L39 39 Z" fill="{c}"/>',
+    9: '<path d="M18 74 L18 38 L35 53 L50 30 L65 53 L82 38 L82 74 Z" fill="{c}"/>',
 }
 
 PAPER = HexColor("#FCFAF4")
 INK = HexColor("#222222")
+FRAME = HexColor("#D8D2C4")     # neutral hairline frame (cut/drift guide)
+MARKER = HexColor("#9A9486")    # neutral orientation marker
+
+_GLYPH_CACHE = {}
+_TMPDIR = tempfile.mkdtemp(prefix="glyphs_")
 
 
-def polygon_pts(cx, cy, r, n, rot=-90):
-    return [(cx + r * math.cos(math.radians(rot + 360 * i / n)),
-             cy + r * math.sin(math.radians(rot + 360 * i / n)))
-            for i in range(n)]
+def glyph_drawing(sign):
+    """Return a cached reportlab Drawing for a sign glyph, coloured by hue."""
+    if sign in _GLYPH_CACHE:
+        return _GLYPH_CACHE[sign]
+    body = GLYPHS[sign].format(c=COLORS[sign])
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" '
+           f'viewBox="0 0 100 100" width="100" height="100">{body}</svg>')
+    path = os.path.join(_TMPDIR, f"sign{sign}.svg")
+    with open(path, "w") as f:
+        f.write(svg)
+    d = svg2rlg(path)
+    _GLYPH_CACHE[sign] = d
+    return d
 
 
-def star_pts(cx, cy, r_out, r_in, n, rot=-90):
-    pts = []
-    for i in range(2 * n):
-        r = r_out if i % 2 == 0 else r_in
-        a = math.radians(rot + 180 * i / n)
-        pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
-    return pts
+_MASSX_CACHE = {}
 
 
-def draw_path(c, pts, fill_color):
-    p = c.beginPath()
-    p.moveTo(*pts[0])
-    for pt in pts[1:]:
-        p.lineTo(*pt)
-    p.close()
-    c.setFillColor(fill_color)
-    c.setStrokeColor(fill_color)
-    c.drawPath(p, fill=1, stroke=0)
+def mass_centroid_x(sign):
+    """Horizontal centre of the glyph's actual ink (drawing units).
+
+    Differs from the bounding-box centre for mass-asymmetric glyphs (e.g. the
+    Moon crescent leans left of its box). Centring on this makes such signs
+    look optically centred. Symmetric glyphs are unaffected (mass == box).
+    """
+    if sign in _MASSX_CACHE:
+        return _MASSX_CACHE[sign]
+    import numpy as np
+    d = glyph_drawing(sign)
+    dpi = 288
+    img = renderPM.drawToPIL(d, dpi=dpi, bg=0xffffff).convert("L")
+    a = np.asarray(img).astype(int)
+    xs = np.where(a < 200)[1]
+    mcx = (xs.mean() * 72.0 / dpi) if len(xs) else 37.5
+    _MASSX_CACHE[sign] = mcx
+    return mcx
 
 
-def draw_glyph(c, sym, cx, cy, R):
-    col = COLORS[sym]
-    if sym == 1:
-        c.setFillColor(col)
-        c.circle(cx, cy, R * 0.62, stroke=0, fill=1)
-    elif sym == 2:
-        c.setFillColor(col)
-        w, h = R * 1.8, R * 0.7
-        c.roundRect(cx - w / 2, cy - h / 2, w, h, h / 2, stroke=0, fill=1)
-    elif sym in (3, 4, 5, 6, 8):
-        rot = -90 if sym != 4 else -45  # square sits flat
-        if sym == 3:
-            rot = 90  # triangle points up
-        draw_path(c, polygon_pts(cx, cy, R, sym, rot), col)
-    elif sym == 7:
-        draw_path(c, star_pts(cx, cy, R * 1.06, R * 0.52, 7, 90), col)
-    else:  # 9
-        draw_path(c, star_pts(cx, cy, R * 1.06, R * 0.52, 9, 90), col)
-    # white pip numeral in the glyph's heart
-    c.setFillColor(Color(1, 1, 1))
-    size = R * (0.85 if sym in (1, 3, 7, 9) else 1.0)
-    if sym == 2:
-        size = R * 0.55
-    if sym == 3:
-        cy -= R * 0.18  # optical centre of a triangle is lower
-    c.setFont("Helvetica-Bold", size)
-    c.drawCentredString(cx, cy - size * 0.36, str(sym))
+def draw_glyph(c, sign, cx, cy, target):
+    """Draw the sign glyph centred at (cx, cy) fitted to a target box (pts).
 
-
-def draw_corner_index(c, sym, x, y, rotated):
+    Horizontal: centred on the glyph's visual mass (optical centring), so a
+    crescent Moon or off-balance sign reads centred. Vertical: centred on the
+    content bounding box. Sized to fit the target box by its larger dimension.
+    """
+    d = glyph_drawing(sign)
+    x0, y0, x1, y1 = d.getBounds()
+    cw, ch = x1 - x0, y1 - y0
+    s = target / max(cw, ch)
+    # Horizontal and vertical: centre on the content bounding box (the implied
+    # full shape), so e.g. the Moon's disc sits dead-centre on the card.
+    hcx = (x0 + x1) / 2.0
+    ccy = (y0 + y1) / 2.0
     c.saveState()
-    c.translate(x, y)
-    if rotated:
-        c.rotate(180)
-    c.setFillColor(COLORS[sym])
-    c.setFont("Helvetica-Bold", 13)
-    c.drawCentredString(0, 0, str(sym))
+    c.translate(cx - s * hcx, cy - s * ccy)
+    c.scale(s, s)
+    renderPDF.draw(d, c, 0, 0)
     c.restoreState()
 
 
-def draw_face(c, sym, ox, oy):
+def draw_orientation_marker(c, ox, oy):
+    """Neutral up-chevron, top-edge centre. Identical on every face (H3)."""
+    cx = ox + CARD_W / 2
+    top = oy + CARD_H - 6.5 * mm
+    w = 5 * mm
+    c.setStrokeColor(MARKER)
+    c.setLineWidth(1.4)
+    c.setLineCap(1)
+    p = c.beginPath()
+    p.moveTo(cx - w / 2, top - 1.6 * mm)
+    p.lineTo(cx, top + 1.0 * mm)
+    p.lineTo(cx + w / 2, top - 1.6 * mm)
+    c.drawPath(p, stroke=1, fill=0)
+
+
+def draw_face(c, sign, ox, oy):
     """One card face at lower-left (ox, oy). Identical template both faces."""
+    col = HexColor(COLORS[sign])
     c.setFillColor(PAPER)
     c.rect(ox, oy, CARD_W, CARD_H, stroke=0, fill=1)
-    # inner frame, inset enough to forgive duplex drift
-    c.setStrokeColor(COLORS[sym])
-    c.setLineWidth(1.1)
+    # neutral inner frame, inset to forgive duplex drift
+    c.setStrokeColor(FRAME)
+    c.setLineWidth(1.0)
     c.roundRect(ox + 4 * mm, oy + 4 * mm, CARD_W - 8 * mm, CARD_H - 8 * mm,
                 3 * mm, stroke=1, fill=0)
-    cx, cy = ox + CARD_W / 2, oy + CARD_H / 2
-    draw_glyph(c, sym, cx, cy, 18.5 * mm)
-    # corner indices: top-left upright, bottom-right rotated (reads both ways)
-    draw_corner_index(c, sym, ox + 9.5 * mm, oy + CARD_H - 12.5 * mm, False)
-    draw_corner_index(c, sym, ox + CARD_W - 9.5 * mm, oy + 12.5 * mm, True)
+    draw_orientation_marker(c, ox, oy)
+    # large centred glyph
+    draw_glyph(c, sign, ox + CARD_W / 2, oy + CARD_H / 2 + 3 * mm, 34 * mm)
+    # single top-left corner pip
+    c.setFillColor(col)
+    c.setFont("Helvetica-Bold", 22)
+    c.drawString(ox + 8.5 * mm, oy + CARD_H - 16 * mm, str(sign))
+    # sign name, bottom-centre
+    c.setFillColor(col)
+    c.setFont("Helvetica-Bold", 11)
+    c.drawCentredString(ox + CARD_W / 2, oy + 9 * mm, NAMES[sign].upper())
 
 
 def cell_origin(row, col):
@@ -141,12 +188,10 @@ def draw_cut_guides(c):
         x = MARGIN_X + col * CARD_W
         c.line(x, PAGE_H - MARGIN_Y + 4 * mm, x, PAGE_H - MARGIN_Y)
         c.line(x, MARGIN_Y, x, MARGIN_Y - 4 * mm)
-        c.line(x, PAGE_H - MARGIN_Y, x, MARGIN_Y)
     for row in range(ROWS + 1):
         y = PAGE_H - MARGIN_Y - row * CARD_H
         c.line(MARGIN_X - 4 * mm, y, MARGIN_X, y)
         c.line(PAGE_W - MARGIN_X, y, PAGE_W - MARGIN_X + 4 * mm, y)
-        c.line(MARGIN_X, y, PAGE_W - MARGIN_X, y)
     c.setDash()
 
 
@@ -164,75 +209,75 @@ def draw_sheet(c, cards, face_idx, mirrored):
 
 def draw_legend(c):
     c.setFillColor(INK)
-    c.setFont("Helvetica-Bold", 22)
-    c.drawCentredString(PAGE_W / 2, PAGE_H - 28 * mm, "THE FLIP DECK")
+    c.setFont("Helvetica-Bold", 24)
+    c.drawCentredString(PAGE_W / 2, PAGE_H - 26 * mm, "THE FLIP DECK")
     c.setFont("Helvetica", 11)
-    c.drawCentredString(PAGE_W / 2, PAGE_H - 35 * mm,
-                        "36-card master prototype · 9 symbols · every pair "
-                        "exactly once · Set D “Glyphs” skin")
-    # glyph legend
-    top = PAGE_H - 52 * mm
-    for i, sym in enumerate(SYMBOLS):
-        gx = PAGE_W / 2 + (i - 4) * 20 * mm
-        draw_glyph(c, sym, gx, top, 6.5 * mm)
-        c.setFillColor(INK)
-        c.setFont("Helvetica", 8)
-        c.drawCentredString(gx, top - 12.5 * mm, NAMES[sym])
-    # instructions
+    c.drawCentredString(PAGE_W / 2, PAGE_H - 33 * mm,
+                        "36-card master prototype  ·  the Nine Signs  ·  "
+                        "every pair exactly once")
+    # glyph legend row
+    top = PAGE_H - 56 * mm
+    for i, sign in enumerate(SIGNS):
+        gx = PAGE_W / 2 + (i - 4) * 19 * mm
+        draw_glyph(c, sign, gx, top, 13 * mm)
+        c.setFillColor(HexColor(COLORS[sign]))
+        c.setFont("Helvetica-Bold", 8)
+        c.drawCentredString(gx, top - 11 * mm, f"{sign} {NAMES[sign]}")
     lines = [
         ("PRINTING", [
             "Print at 100% scale (no “fit to page”) on A4 cardstock.",
             "Page 1 (this page): print single-sided, or skip it.",
-            "Pages 2–9: print DOUBLE-SIDED, flip on LONG edge.",
-            "Check duplex alignment by holding a sheet up to the light;",
-            "the 4 mm frame inset forgives a couple of millimetres of drift.",
+            "Pages 2–9: print DOUBLE-SIDED, flip on the LONG edge.",
+            "Check duplex alignment against the light; the 4 mm frame",
+            "inset forgives a couple of millimetres of drift.",
             "Cut along the dashed guides: 9 cards per sheet, 36 total.",
-            "Standard 63.5 × 88 mm sleeves fit. Opaque sleeves are wasted",
-            "here — there is no card back. Both sides are faces.",
+            "Standard 63.5 × 88 mm sleeves fit. There is no card back —",
+            "both sides are faces, so opaque sleeves are wasted here.",
         ]),
         ("THE DECK", [
-            "Each card carries one glyph on each side; every possible pair",
-            "of the nine glyphs appears on exactly one card (36 = 9×8÷2).",
-            "Shape is rank: count the sides. Pips 1–9 sit in two corners of",
-            "every face, identically placed — no mark on any card reveals",
-            "which of its two faces you are looking at.",
-            "Games for fewer symbols use a subset: glyphs 1–6 (15 cards),",
-            "1–7 (21) or 1–8 (28) form exact smaller all-pairs decks.",
+            "Each card shows one sign on each side; every possible pair of",
+            "the nine signs appears on exactly one card (36 = 9×8÷2).",
+            "The pip (1–9) is the authoritative rank: Moon 1 (lowest) …",
+            "Crown 9 (highest). The sign’s name and picture never override",
+            "the number. The top-edge chevron marks “up” and is identical",
+            "on every face — nothing reveals a card’s hidden side.",
+            "Sub-decks remove from the top: signs 1–6 (15 cards), 1–7",
+            "(21) or 1–8 (28) each form an exact smaller all-pairs deck.",
         ]),
         ("SORTING AFTER PLAY", [
-            "To verify the deck: lay cards in rows by their lower glyph —",
-            "row 1 holds 1+2 … 1+9 (eight cards), row 2 holds 2+3 … 2+9",
+            "To verify the deck: lay cards in rows by their lower sign -",
+            "row 1 holds 1+2 ... 1+9 (eight cards), row 2 holds 2+3 ... 2+9",
             "(seven), and so on. A missing card names itself.",
         ]),
     ]
-    y = top - 28 * mm
+    y = top - 26 * mm
     for head, body in lines:
         c.setFont("Helvetica-Bold", 11)
         c.setFillColor(INK)
-        c.drawString(30 * mm, y, head)
+        c.drawString(28 * mm, y, head)
         y -= 6.5 * mm
         c.setFont("Helvetica", 9.5)
         for ln in body:
-            c.drawString(30 * mm, y, ln)
+            c.drawString(28 * mm, y, ln)
             y -= 5 * mm
         y -= 4 * mm
     c.setFont("Helvetica-Oblique", 8)
-    c.drawCentredString(PAGE_W / 2, 18 * mm,
-                        "Flip-deck project · prototype skin · June 2026 "
-                        "· collection: 9 games, one deck")
+    c.drawCentredString(PAGE_W / 2, 15 * mm,
+                        "Flip-deck project  -  the Nine Signs  -  June 2026  "
+                        "-  one deck, eleven games")
     c.showPage()
 
 
 def main(path):
     c = rl_canvas.Canvas(path, pagesize=A4)
-    c.setTitle("Flip Deck - 36-card print-and-play prototype")
+    c.setTitle("Flip Deck - 36-card print-and-play (the Nine Signs)")
     draw_legend(c)
     for s in range(4):
         chunk = PAIRS[s * 9:(s + 1) * 9]
-        draw_sheet(c, chunk, 0, mirrored=False)  # fronts: lower glyph
-        draw_sheet(c, chunk, 1, mirrored=True)   # backs: higher glyph
+        draw_sheet(c, chunk, 0, mirrored=False)
+        draw_sheet(c, chunk, 1, mirrored=True)
     c.save()
-    print("wrote", path)
+    print("wrote", path, "-", len(PAIRS), "cards")
 
 
 if __name__ == "__main__":

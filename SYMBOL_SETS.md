@@ -2,7 +2,7 @@
 
 *What nine symbols should the master deck carry? This study works from the eleven games' actual mechanical demands to a shipping recommendation. It treats symbol identity as two separable layers — a **Spec** (the abstract contract every game is built against) and a **Skin** (the art and names that realise it) — and concludes that the Spec is nearly settled while the Skin is a deliberate, reversible art decision.*
 
-> Binding context: this note defers to the steering set in `.kiro/steering/`. The decisive lens throughout is **legibility and physical handling** — `physical-handling.md` makes that the centre of the project, and `design-principles.md` rule 5 forbids accepting an elegant idea that handles badly. Rank facts and the special role of symbol 9 come from `deck-structure.md`. The instruction not to casually re-skin the two finished games comes from `product-vision.md` (tier 1).
+> Binding context: this note defers to the steering set in `.kiro/steering/`. The decisive lens throughout is **legibility and physical handling** — [physical-handling.md](.kiro/steering/physical-handling.md) makes that the centre of the project, and [design-principles.md](.kiro/steering/design-principles.md) rule 5 forbids accepting an elegant idea that handles badly. Rank facts and the special role of symbol 9 come from [deck-structure.md](.kiro/steering/deck-structure.md). The instruction not to casually re-skin the two finished games comes from [product-vision.md](.kiro/steering/product-vision.md) (tier 1).
 
 ---
 
@@ -10,7 +10,7 @@
 
 **The deck can carry only one set of nine symbols, so TRIGON's "celestial bodies" (from its former SYZYGY identity) and TURNCOAT's "guild marks" cannot both be literal on the shipping deck.** At least one of the two finished games is *already* destined to re-skin, regardless of what we choose. The owner's openness to re-theming both isn't a sacrifice — it removes a constraint that was never really satisfiable.
 
-That reframes the whole question. We are not "forcing the deck to fit TRIGON." We are choosing the best nine symbols on their own merits — legibility, a usable rank, a clear apex, and two games' worth of ability mnemonics — and then dressing both flagships in it. A re-skin is **flavour and art only; it touches no rule, no ability, no balance number**, so it does not disturb the ~45k simulated games behind TRIGON and TURNCOAT (`product-vision.md` tier-1 caution is about *re-tuning*, not renaming — but the final call is still the owner's).
+That reframes the whole question. We are not "forcing the deck to fit TRIGON." We are choosing the best nine symbols on their own merits — legibility, a usable rank, a clear apex, and two games' worth of ability mnemonics — and then dressing both flagships in it. A re-skin is **flavour and art only; it touches no rule, no ability, no balance number**, so it does not disturb the ~45k simulated games behind TRIGON and TURNCOAT ([product-vision.md](.kiro/steering/product-vision.md) tier-1 caution is about *re-tuning*, not renaming — but the final call is still the owner's).
 
 Everything below builds the case for that finding and lands on a concrete recommendation.
 
@@ -33,11 +33,11 @@ The rest of the study nails down the Spec (§2–§4), ranks how sensitive each 
 
 | # | Requirement | Why / which games | Steering |
 |---|---|---|---|
-| **H1** | **Nine identities distinct at arm's length, when rotated 90°/180°, and for colour-blind players** — shape carries identity, colour is only a secondary cue. | TURNOVER reads at party speed; TWELVE TRIALS turns cards sideways; JANUS fans are read across the table; all games are handled, not stared at. | `physical-handling.md` (legibility), `design-principles.md` (handling decides) |
-| **H2** | **A printed index pip 1–9 on both faces, identical placement** — the single authoritative rank. | The three rank games resolve on the pip (see §4). Subset selection ("remove all 8s and 9s") needs it. | `deck-structure.md` (settled) |
-| **H3** | **No mark that differs between the two faces or correlates with the hidden face.** Each face shows only its symbol + pip; nothing leaks which symbol is on the back. | The deck's whole hidden-information layer (JANUS, FALSE FACE, FACE VALUE, UNPLAYED PAIR) collapses if the back is deducible from the front's art. | `physical-handling.md` (hard rule), `deck-structure.md` |
-| **H4** | **The set must support fast subset selection by pip** — "remove every card showing an 8 or a 9" must be a quick sort. (This is a property of the printed pip H2, not of any symbol's picture.) | JANUS plays at 1–7; other games declare 1–6/1–8 subsets. | `deck-structure.md` (subset property) |
-| **H5** | **The set must support two independent ability-mnemonic skins** — TRIGON's nine powers and TURNCOAT's nine powers — including one identity that reads as **"wild / greatest"** (TRIGON) and one that can read as **"neutral / unaligned"** (TURNCOAT). | This is the deepest and most-overlooked demand; see §3. | `design-principles.md` (clean teaching) |
+| **H1** | **Nine identities distinct at arm's length, when rotated 90°/180°, and for colour-blind players** — shape carries identity, colour is only a secondary cue. | TURNOVER reads at party speed; TWELVE TRIALS turns cards sideways; JANUS fans are read across the table; all games are handled, not stared at. | [physical-handling.md](.kiro/steering/physical-handling.md) (legibility), [design-principles.md](.kiro/steering/design-principles.md) (handling decides) |
+| **H2** | **A printed index pip 1–9 on both faces, identical placement** — the single authoritative rank. | The three rank games resolve on the pip (see §4). Subset selection ("remove all 8s and 9s") needs it. | [deck-structure.md](.kiro/steering/deck-structure.md) (settled) |
+| **H3** | **No mark that differs between the two faces or correlates with the hidden face.** Each face shows only its symbol + pip; nothing leaks which symbol is on the back. | The deck's whole hidden-information layer (JANUS, FALSE FACE, FACE VALUE, UNPLAYED PAIR) collapses if the back is deducible from the front's art. | [physical-handling.md](.kiro/steering/physical-handling.md) (hard rule), [deck-structure.md](.kiro/steering/deck-structure.md) |
+| **H4** | **The set must support fast subset selection by pip** — "remove every card showing an 8 or a 9" must be a quick sort. (This is a property of the printed pip H2, not of any symbol's picture.) | JANUS plays at 1–7; other games declare 1–6/1–8 subsets. | [deck-structure.md](.kiro/steering/deck-structure.md) (subset property) |
+| **H5** | **The set must support two independent ability-mnemonic skins** — TRIGON's nine powers and TURNCOAT's nine powers — including one identity that reads as **"wild / greatest"** (TRIGON) and one that can read as **"neutral / unaligned"** (TURNCOAT). | This is the deepest and most-overlooked demand; see §3. | [design-principles.md](.kiro/steering/design-principles.md) (clean teaching) |
 
 > **Correction (re: symbol 9 and CROSSROADS).** An earlier draft listed "symbol 9 must read as an apex/capital" as a *hard* requirement because its eight cards become CROSSROADS' board. That was wrong: in CROSSROADS those cards are laid **9-face-down**, so symbol 9 is **never seen during play** — the cities show symbols 1–8. Symbol 9's only hard role is *structural* (it is the symbol removed first for subsets, H4) — a property of the pip and the canonical order, not of the picture. Wanting 9 to *feel* like an apex is therefore a **soft** flavour preference (S6 below), earned mainly by the subset-removal story and by the fact that 9 is the top of the pip rank. It is seen and used like any other symbol in the nine other games.
 
@@ -77,7 +77,7 @@ TRIGON and TURNCOAT are the same engine with opposite souls, and **each assigns 
 
 Two consequences the previous study did not register:
 
-1. **A skin earns its keep here or nowhere.** Abstract glyphs (a hexagon, an octagon) give *no* mnemonic for "flip the rest of a full line" or "burn the leader's top card." A player must rote-learn 18 symbol→power bindings. A rich, evocative set lets the *picture* carry the rule ("the Owl sees — it peeks"; "the Blade kills — it removes"), which is exactly the clean-teaching the rubric rewards (`design-principles.md`). **This is the single strongest argument against a purely abstract shipping skin** — and the strongest argument *for* one (Glyphs) is accessibility, so the two pull in opposite directions and we resolve it in §7.
+1. **A skin earns its keep here or nowhere.** Abstract glyphs (a hexagon, an octagon) give *no* mnemonic for "flip the rest of a full line" or "burn the leader's top card." A player must rote-learn 18 symbol→power bindings. A rich, evocative set lets the *picture* carry the rule ("the Owl sees — it peeks"; "the Blade kills — it removes"), which is exactly the clean-teaching the rubric rewards ([design-principles.md](.kiro/steering/design-principles.md)). **This is the single strongest argument against a purely abstract shipping skin** — and the strongest argument *for* one (Glyphs) is accessibility, so the two pull in opposite directions and we resolve it in §7.
 2. **The set needs role-flavoured outliers, not just nine distinct shapes.** TRIGON needs one identity that reads as *wild / supreme*. TURNCOAT needs one that reads as *neutral / unaligned* and one that plausibly *sacrifices itself* (Crown). A flat set of equals (most abstract glyphs, most "nine animals of equal billing") makes these roles arbitrary. A set with a natural apex and a natural "lowest/outsider" makes them write themselves.
 
 This lens did not exist in the prior matrix. It is decisive, and it favours **evocative sets with a built-in hierarchy** (Bestiary's food chain, Sky's brightness, Court's precedence) over flat or abstract ones.
@@ -195,7 +195,7 @@ Set C (Bestiary) was already the strongest of the four. Rather than invent a fif
 Three deliberate changes over plain Set C:
 
 1. **Species chosen for *cross-body-plan* distinctness (fixes C's only H1 risk).** A naive bestiary clusters silhouettes — Fox/Wolf are both canids, Boar/Bear/Stag are all bulky quadrupeds. This list spreads the nine across maximally different gross shapes: rodent (Mouse), long-eared leaper (Hare), low canid (Fox), round front-facing bird (Owl), **legless coil (Serpent)**, antlered grazer (Stag), running canid (Wolf), great mass (Bear), winged serpent (Dragon). The Serpent replaces the second bulky quadruped (Boar) precisely to add a body plan nothing else shares. **One at-risk pair remains — Fox (3) vs Wolf (7), both canids** — resolved in art by size and pose (Fox small, tail-curled, sitting; Wolf large, head-low, running), or by substituting a **Lynx** for the Fox if the silhouettes still collide in legibility testing.
-2. **A zodiac / almanac *framing* layer (recovers A's S5 resonance, without A's legibility cost).** The nine are presented as the **Ninefold Menagerie — a nine-sign zodiac**. TWELVE TRIALS' twelve trios become the twelve *conjunctions* of an almanac of beasts; THE ORRERY's four orbits are the beasts wheeling through the sky; TRIGON aligns *signs*. Crucially this is a **naming and background-texture layer only** — the symbols stay bold filled silhouettes, with at most a faint star-field *behind* them. This is the explicit lesson from rejecting the "Zodiac of Nine": keep the constellation idea as *story*, never as the *rendered mark* (`physical-handling.md`; `design-principles.md` rule 5).
+2. **A zodiac / almanac *framing* layer (recovers A's S5 resonance, without A's legibility cost).** The nine are presented as the **Ninefold Menagerie — a nine-sign zodiac**. TWELVE TRIALS' twelve trios become the twelve *conjunctions* of an almanac of beasts; THE ORRERY's four orbits are the beasts wheeling through the sky; TRIGON aligns *signs*. Crucially this is a **naming and background-texture layer only** — the symbols stay bold filled silhouettes, with at most a faint star-field *behind* them. This is the explicit lesson from rejecting the "Zodiac of Nine": keep the constellation idea as *story*, never as the *rendered mark* ([physical-handling.md](.kiro/steering/physical-handling.md); [design-principles.md](.kiro/steering/design-principles.md) rule 5).
 3. **Dual-register mnemonics, designed in (H5).** Each beast was picked so its behaviour reads in *both* TRIGON's placement register and TURNCOAT's conflict register — see the §7 mappings. The apex (Dragon=9, wild/greatest) and outsider (Mouse=1, catch-up/unaligned) roles (S6) are built in.
 
 What E does *not* try to fix is **accessibility/cost**: it still needs commissioned art and is no more colour-blind-dependent than C (shape carries identity, which is good) — but it cannot match Glyphs for zero-cost prototyping. That trade is inherent to any themed set.
@@ -204,9 +204,11 @@ What E does *not* try to fix is **accessibility/cost**: it still needs commissio
 
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 |---|---|---|---|---|---|---|---|---|
-| Void | Root | Wave | Flame | Eye | Mask | Key | Star | Crown |
+| Moon | Leaf | Wave | Flame | Eye | Mask | Key | Star | Crown |
 
-A different philosophy entirely, and the direct answer to "must every game be animal-themed?" **No** — the Nine Signs deliberately belong to *no single family* (not bodies, not guilds, not beasts). Each is a broad archetype chosen so that any game can give it a *local* meaning without strain. This is the proposal in `Nine Seals Symbols.docx`, and it is strong.
+> **Revision (June 2026): pips 1–2 changed Void → Moon, Root → Leaf.** Playtesting the glyphs against the "suit test" (instant single-colour recognition, no name needed) found Void (an empty ring) and Root (a branching mark) the two weakest signs — neither reads as itself at a glance, and Void's *absence-of-a-mark* fights the brief. **Moon** (crescent) and **Leaf** keep the same roles (Moon = outsider/catch-up at pip 1; Leaf = connection/growth at pip 2), are instantly legible, and have natural orientation. Flame and Mask were also redrawn (a hollow-tongue flame; a domino mask with eye-holes) without changing names. This is a skin change only — no requirement, ability, geometry, score, or balance number moves. The role-symbol mnemonics update accordingly: Moon = "the new moon waxes from dark — it gains when it has least" (catch-up); Leaf = "a leaf turns toward what it touches" (adjacency/flip). The Set F analysis below has been updated to Moon/Leaf throughout.
+
+A different philosophy entirely, and the direct answer to "must every game be animal-themed?" **No** — the Nine Signs deliberately belong to *no single family* (not bodies, not guilds, not beasts). Each is a broad archetype chosen so that any game can give it a *local* meaning without strain. This is the proposal in [Nine Seals Symbols.docx](Designs/Nine%20Seals%20Symbols.docx), and it is strong.
 
 Its governing idea is a **two-layer split** that the rest of this study has been circling:
 
@@ -216,12 +218,12 @@ Its governing idea is a **two-layer split** that the rest of this study has been
 Scored against the Spec:
 
 - **S7 family-neutrality — best in class (★★★).** This is the lens your concern names, and Signs win it outright. "The road between the Eye and the Flame" reads as two *places*; "the road between the Mouse and the Owl" fights you, because animals insist on being animals. An abstract sign is a vessel; an animal is a character.
-- **H5 ability mnemonics — ★★★, and structurally the best.** The archetypes carry verbs cleanly (Eye→peek, Flame→burn/discard, Wave→move, Mask→swap/flip, Key→extract, Root→connect, Void→empty/catch-up) **and** they ship the two role-symbols *as distinct Signs*: **Star = wild** and **Crown = apex** are separate, which matches TRIGON's real design (its wild, Star, is *not* its top symbol) better than Menagerie, which had to collapse the wild into the apex Dragon. Void is a ready-made outsider. TRIGON even keeps the words "Star" and "Void"; TURNCOAT keeps "Mask," "Key," and "Crown."
-- **S6 apex + outsider — ★★★** (Crown / Void), with Star as a bonus third role-symbol.
-- **S3 tonal stretch — ★★★.** Archetypal Signs sit comfortably across a meditative solo puzzle, a party race, and a game of betrayal. Nothing about "Void, Root, Wave" feels wrong in a quiet puzzle the way "Whisper, Ash, Blade" (Court) does.
-- **H1 distinctness — ★★★ achievable.** Nine distinct concept-icons (Star, Crown, Flame, Eye, Mask, Key are universally legible; Void, Root, Wave need deliberate icon design). Far better separated than abstract polygons; roughly on par with animal silhouettes, and easier than animals to keep colour-blind-safe and rotation-readable because icons can be designed for it.
-- **S2 orientation — ★★.** Several Signs have a natural "up" (Crown, Flame, Key, Root), a few are near-symmetric (Star, Void, Wave) — which is why the proposal *correctly* builds in an explicit top-edge orientation marker. (Design note: that marker must be **identical on both faces**, or it would breach H3 by hinting at the hidden side.)
-- **S1 rank intuition — ★★, the one real weakness.** Void=1 (nothing) and Crown=9 (highest), Star=8 (high) are intuitive, but the middle order (Root<Wave<Flame<Eye<Mask<Key) is essentially arbitrary. This is *survivable* because the pip is authoritative (§4) and no order actively misleads — but it is genuinely weaker than the food chain for the rank games (FACE VALUE, UNPLAYED PAIR), where a player's gut won't pre-sort the symbols.
+- **H5 ability mnemonics — ★★★, and structurally the best.** The archetypes carry verbs cleanly (Eye→peek, Flame→burn/discard, Wave→move, Mask→swap/flip, Key→extract, Leaf→connect/turn, Moon→wane/catch-up) **and** they ship the two role-symbols *as distinct Signs*: **Star = wild** and **Crown = apex** are separate, which matches TRIGON's real design (its wild, Star, is *not* its top symbol) better than Menagerie, which had to collapse the wild into the apex Dragon. Moon is a ready-made outsider. TRIGON even keeps the word "Star"; TURNCOAT keeps "Mask," "Key," and "Crown."
+- **S6 apex + outsider — ★★★** (Crown / Moon), with Star as a bonus third role-symbol.
+- **S3 tonal stretch — ★★★.** Archetypal Signs sit comfortably across a meditative solo puzzle, a party race, and a game of betrayal. Nothing about "Moon, Leaf, Wave" feels wrong in a quiet puzzle the way "Whisper, Ash, Blade" (Court) does.
+- **H1 distinctness — ★★★ achievable.** Nine distinct concept-icons (Star, Crown, Flame, Eye, Mask, Key, Moon are universally legible; Leaf and Wave need the most deliberate icon design — Moon and Leaf are now drafted, see the brand kit). Far better separated than abstract polygons; roughly on par with animal silhouettes, and easier than animals to keep colour-blind-safe and rotation-readable because icons can be designed for it.
+- **S2 orientation — ★★★.** Most Signs have a natural "up" (Crown, Flame, Key, Leaf, and the crescent Moon all read their rotation); only Star and Wave are near-symmetric — which is why the proposal still builds in an explicit top-edge orientation marker. (Design note: that marker must be **identical on both faces**, or it would breach H3 by hinting at the hidden side.)
+- **S1 rank intuition — ★★, the one real weakness.** Moon=1 (the new/least light) and Crown=9 (highest), Star=8 (high) are intuitive, but the middle order (Leaf<Wave<Flame<Eye<Mask<Key) is essentially arbitrary. This is *survivable* because the pip is authoritative (§4) and no order actively misleads — but it is genuinely weaker than the food chain for the rank games (FACE VALUE, UNPLAYED PAIR), where a player's gut won't pre-sort the symbols.
 - **S5 structure resonance — ★★.** "An ancient symbolic system" gives TWELVE TRIALS and THE ORRERY a mystical-puzzle frame, weaker than a literal sky but perfectly serviceable.
 - **Accessibility / prototyping — ★★** (needs art, like any themed set; Glyphs still owns the free-prototype slot).
 
@@ -231,7 +233,7 @@ This is the heart of your question. ✓ natural · ~ works with a line of flavou
 
 | Game | What the symbol must *be* in this game | E · Menagerie | F · Nine Signs |
 |---|---|:--:|:--:|
-| SYZYGY (now TRIGON) | things you align in threes | ✓ beast-signs | ✓ Signs (keeps Star/Void) |
+| SYZYGY (now TRIGON) | things you align in threes | ✓ beast-signs | ✓ Signs (keeps Star; Moon/Leaf at 1–2) |
 | TURNCOAT | factions/allegiances | ✓ beast-clans | ✓ factions (Mask/Crown native) |
 | **CROSSROADS** | **cities joined by roads** | **✗ "a road between two animals?"** | **✓ nine sign-cities** |
 | **THE COUNCIL** | **issues with a value** | **~ "a Wolf issue?"** | **✓ the Crown issue, the Flame issue** |
@@ -251,13 +253,13 @@ This is the heart of your question. ✓ natural · ~ works with a line of flavou
 
 | Demand | A · Sky | B · Court | C · Bestiary | D · Glyphs | **E · Menagerie** | **F · Signs** |
 |---|---|---|---|---|---|---|
-| H1 silhouette distinctness (rotation/CB-safe) | ★★ (radiant cluster) | ★★ (Mask/Veil, Coin/Key) | ★★ (canid/quadruped clusters) | ★★ (6–9 blur) | **★★★ (Fox/Wolf flagged)** | ★★★ (Void/Root/Wave need work) |
-| S6 apex + outsider feel (flavour) | ★★★ Sun / Void | ★★★ Crown / Whisper | ★★★ Dragon / Mouse | ★ flat | **★★★ Dragon / Mouse** | ★★★ Crown / Void (+Star wild) |
-| **H5† ability mnemonics — TRIGON** | ★★★ native | ★★ re-skin | ★★★ behaviour-rich | ★ rote | **★★★ designed-in** | ★★★ (keeps Star/Void) |
+| H1 silhouette distinctness (rotation/CB-safe) | ★★ (radiant cluster) | ★★ (Mask/Veil, Coin/Key) | ★★ (canid/quadruped clusters) | ★★ (6–9 blur) | **★★★ (Fox/Wolf flagged)** | ★★★ (Wave needs work) |
+| S6 apex + outsider feel (flavour) | ★★★ Sun / Void | ★★★ Crown / Whisper | ★★★ Dragon / Mouse | ★ flat | **★★★ Dragon / Mouse** | ★★★ Crown / Moon (+Star wild) |
+| **H5† ability mnemonics — TRIGON** | ★★★ native | ★★ re-skin | ★★★ behaviour-rich | ★ rote | **★★★ designed-in** | ★★★ (keeps Star) |
 | **H5† ability mnemonics — TURNCOAT** | ★★ re-skin | ★★★ native | ★★★ behaviour-rich | ★ rote | **★★★ designed-in** | ★★★ (Mask/Key/Crown) |
-| **H5† wild + neutral roles present** | ★★ (Sun wild; weak neutral) | ★★ (Crown; "unaligned" guild) | ★★★ (Dragon wild, Mouse outsider) | ★ flat | **★★★ (Dragon, Mouse)** | ★★★ (Star wild + Crown + Void) |
+| **H5† wild + neutral roles present** | ★★ (Sun wild; weak neutral) | ★★ (Crown; "unaligned" guild) | ★★★ (Dragon wild, Mouse outsider) | ★ flat | **★★★ (Dragon, Mouse)** | ★★★ (Star wild + Crown + Moon) |
 | S1 rank intuition (backs the pip) | ★ brightness | ★★ precedence | ★★★ food chain | ★★ side-count (lost if H1 fixed) | **★★★ food chain** | ★★ (ends clear, middle arbitrary) |
-| **S2† readable orientation for flips/dims** | ★★★ | ★★ | ★★★ | ★ (symmetric) | **★★★** | ★★ (marker needed) |
+| **S2† readable orientation for flips/dims** | ★★★ | ★★ | ★★★ | ★ (symmetric) | **★★★** | ★★★ (Moon/Leaf orient; marker for Star/Wave) |
 | S3 tonal stretch (solo→party→intrigue) | ★★★ | ★ | ★★★ | ★★ | **★★★** | ★★★ |
 | **S7† family-neutrality / per-game reinterpretability** | ★★ | ★ | ★ (animals insist on being animals) | ★★★ | ★ | ★★★ (the whole point) |
 | S5 structure-game resonance (almanac/orbits) | ★★★ | ★ | ★★ zodiac-bestiary | ★ | **★★★ zodiac framing** | ★★ "ancient system" |
@@ -271,13 +273,13 @@ Two sets now top the table, and they win *different* lenses. **Menagerie** maxim
 
 ### Primary: ship **Set F — the Nine Signs** (archetypal, family-neutral); re-interpret each game's symbols per rulebook.
 
-This study's earlier draft recommended the Menagerie. **Your objection — that a committed family forces every game into its frame and makes CROSSROADS and THE COUNCIL apologise — is correct, and it is decisive.** The sense-check (§6) confirms the Menagerie strains for two games and mildly for the structure pair; the Nine Signs strain for none. For a product whose entire identity is *one deck, many genuinely different games* (`product-vision.md`: each game must explore the deck "from a genuinely different angle"), **family-neutrality (S7) is worth more than single-family charm (S3).** The Signs also happen to win the deepest mechanical lens (H5) outright, by shipping the wild (Star), apex (Crown), and outsider (Void) as *distinct* Signs — matching the two flagships' real structure and even preserving their vocabulary.
+This study's earlier draft recommended the Menagerie. **Your objection — that a committed family forces every game into its frame and makes CROSSROADS and THE COUNCIL apologise — is correct, and it is decisive.** The sense-check (§6) confirms the Menagerie strains for two games and mildly for the structure pair; the Nine Signs strain for none. For a product whose entire identity is *one deck, many genuinely different games* ([product-vision.md](.kiro/steering/product-vision.md): each game must explore the deck "from a genuinely different angle"), **family-neutrality (S7) is worth more than single-family charm (S3).** The Signs also happen to win the deepest mechanical lens (H5) outright, by shipping the wild (Star), apex (Crown), and outsider (Moon) as *distinct* Signs — matching the two flagships' real structure and even preserving their vocabulary.
 
 Why it wins, in priority order of the steering set:
 
 1. **It fits what the collection actually is.** Eleven games, many moods; a vessel-like symbol that becomes a city, an issue, a faction, a strength, or a route-endpoint *as each rulebook declares* (S7). This is the property your question is really asking for.
-2. **H5 ability mnemonics — strongest available.** Archetypes carry verbs (Eye→peek, Flame→burn, Wave→move, Mask→swap, Key→extract) *and* provide three role-symbols (Star wild, Crown apex, Void outsider). TRIGON keeps "Star is wild"; TURNCOAT keeps Mask/Key/Crown — these are partial remaps, not full re-skins.
-3. **It survives on the primary axis (H1)** with deliberate icon design — Star/Crown/Flame/Eye/Mask/Key are universally legible; Void/Root/Wave are the three to design carefully and legibility-test.
+2. **H5 ability mnemonics — strongest available.** Archetypes carry verbs (Eye→peek, Flame→burn, Wave→move, Mask→swap, Key→extract) *and* provide three role-symbols (Star wild, Crown apex, Moon outsider). TRIGON keeps "Star is wild"; TURNCOAT keeps Mask/Key/Crown — these are partial remaps, not full re-skins.
+3. **It survives on the primary axis (H1)** with deliberate icon design — Star/Crown/Flame/Eye/Mask/Key are universally legible; Moon/Leaf/Wave are the three to design carefully and legibility-test.
 4. **Best tonal stretch and future-proofing (S3, S7):** new games inherit a meaning-flexible alphabet, never a fixed setting to fight.
 
 Adopt the proposal's **two-layer production rule** verbatim, because it is the mechanism that makes all of the above work:
@@ -292,7 +294,7 @@ The Signs' only real cost is **S1 rank intuition**: the middle order (Root<Wave<
 
 So keep **Set E — the Ninefold Menagerie** documented as the leading alternative, for one specific decision: *if the owner decides the product should read as a single coherent world rather than a toolkit of games*, the Menagerie is the better choice — more charming, better rank intuition, richer silhouettes — at the cost of CROSSROADS/COUNCIL needing a line of flavour each. **This is the fork:** Nine Signs for "many games, many meanings"; Menagerie for "one world." Given the collection's stated distinctness-driven identity, the recommendation is Nine Signs.
 
-Reject, as before, the **constellation-rendered "Zodiac of Nine"**: it loses on the primary axis (thin low-contrast line-art) regardless of which family wins (`design-principles.md` rule 5). Whatever ships, render it as **bold, filled, high-contrast icons.**
+Reject, as before, the **constellation-rendered "Zodiac of Nine"**: it loses on the primary axis (thin low-contrast line-art) regardless of which family wins ([design-principles.md](.kiro/steering/design-principles.md) rule 5). Whatever ships, render it as **bold, filled, high-contrast icons.**
 
 ### Fallbacks, in order
 
@@ -311,12 +313,12 @@ Illustrative — to show the powers fall out of the Signs — not a finished re-
 | Wild + draw (corner) | **Star** | unchanged — Star is still wild |
 | Flip any card (cross) | **Crown** | the highest authority overturns anything |
 | Flip an adjacent card (edge) | **Key** | a key *turns* |
-| Flip the rest of a full line | **Root** | roots run the length of the row |
+| Flip the rest of a full line | **Leaf** | leaves run the length of the row |
 | Move a card | **Wave** | the current carries it elsewhere |
 | Swap two cards | **Mask** | two identities trade places |
 | Peek + flip an adjacent card | **Eye** | it sees the hidden face, then turns it |
 | Discard an adjacent card | **Flame** | it burns the neighbour off the board |
-| Catch-up draw (isolated) | **Void** | unchanged — the empty sign scavenges |
+| Catch-up draw (isolated) | **Moon** | the new moon waxes from dark — it gains when it has least |
 
 **TURNCOAT → Nine Signs** (Mask, Key, Crown stay native):
 
@@ -326,11 +328,11 @@ Illustrative — to show the powers fall out of the Signs — not a finished re-
 | Extract your own from its line | **Key** | unchanged — the Key unlocks your agent |
 | Extract *itself* to its owner | **Crown** | unchanged — the Crown returns to its head |
 | Remove an adjacent rival | **Flame** | it destroys the neighbour |
-| Burn the leader's top banked card | **Void** | the front-runner's store is annulled |
+| Burn the leader's top banked card | **Moon** | the waning moon darkens the front-runner's store |
 | Peek + flip an adjacent | **Eye** | sees the hidden face, then turns it |
 | Draw and play | **Star** | a stroke of fate, an extra play |
 | Move + flip one adjacent | **Wave** | the current drags a neighbour and turns it |
-| Swap + flip the displaced | **Root** | intertwined roots exchange places |
+| Swap + flip the displaced | **Leaf** | leaves on one branch exchange places |
 
 Both mappings keep words the originals already use, and **change no requirement, ability, geometry, or score — only names and art.** (A Menagerie version of these tables, for the "one world" fork, is the §6 Set-E sketch with Serpent in place of the discard slot.)
 
@@ -348,8 +350,8 @@ The reason this collection can survive a skin change at all is that the games we
 ## 9. Open items / sign-offs needed
 
 - **The fork to decide (owner):** *many games, many meanings* → **Nine Signs (Set F, recommended)**; or *one coherent world* → **Menagerie (Set E)**. Everything else follows from this single call.
-- **Owner sign-off to re-interpret TRIGON and TURNCOAT.** Under Nine Signs these are *partial* remaps (TRIGON keeps Star/Void; TURNCOAT keeps Mask/Key/Crown) and are flavour/art only — they touch no simulated balance. `product-vision.md` tier-1 still reserves the call to the owner.
-- **This study overturns the "current lean" recorded in `deck-structure.md`** ("a hybrid *Zodiac of Nine* … Bestiary fallback, Sky conservative second"). The recommendation is now **Nine Signs primary; Menagerie the 'one-world' alternative; Sky conservative; Glyphs prototype/accessibility; constellation *rendering* rejected.** Updating that steering line needs owner sign-off — flagged here, not changed unilaterally.
-- **Adopt the two-layer production rule** (permanent deck identity vs per-game interpretation) from `Nine Signs Symbols.docx` as the collection's symbol policy, with the H3 fix to the orientation marker.
-- **Continue prototyping with Set D Glyphs** in `Print and Play/`: zero cost, stress-tests every rulebook's legibility claims, and is the accessibility benchmark the shipping set must not regress against.
-- **Nine Signs art brief** (if adopted): nine bold filled icons; the three to design and legibility-test hardest are **Void, Root, Wave**; pip 1–9 both faces; colour/pattern + a both-faces-identical orientation marker; no ability text, no pair-specific decoration.
+- **Owner sign-off to re-interpret TRIGON and TURNCOAT.** Under Nine Signs these are *partial* remaps (TRIGON keeps Star; TURNCOAT keeps Mask/Key/Crown) and are flavour/art only — they touch no simulated balance. [product-vision.md](.kiro/steering/product-vision.md) tier-1 still reserves the call to the owner.
+- **This study overturns the "current lean" recorded in [deck-structure.md](.kiro/steering/deck-structure.md)** ("a hybrid *Zodiac of Nine* … Bestiary fallback, Sky conservative second"). The recommendation is now **Nine Signs primary; Menagerie the 'one-world' alternative; Sky conservative; Glyphs prototype/accessibility; constellation *rendering* rejected.** Updating that steering line needs owner sign-off — flagged here, not changed unilaterally.
+- **Adopt the two-layer production rule** (permanent deck identity vs per-game interpretation) from [Nine Seals Symbols.docx](Designs/Nine%20Seals%20Symbols.docx) as the collection's symbol policy, with the H3 fix to the orientation marker.
+- **Continue prototyping with Set D Glyphs** in [Print and Play/](Print%20and%20Play/): zero cost, stress-tests every rulebook's legibility claims, and is the accessibility benchmark the shipping set must not regress against.
+- **Nine Signs art brief** (if adopted): nine bold filled icons; **Moon and Leaf (pips 1–2) replaced Void/Root for legibility, and Flame/Mask were redrawn — draft glyphs for all four now exist in [`Designs/symbol_recognisability_test.html`](Designs/symbol_recognisability_test.html) and the brand kit's `glyphs.svg`**; the remaining sign to design and legibility-test hardest is **Wave**; pip 1–9 both faces; colour/pattern + a both-faces-identical orientation marker; no ability text, no pair-specific decoration.

@@ -49,26 +49,29 @@ The constraint unique to this deck: there is no card back, so both faces must be
 
 ---
 
-## The corner-pip question — resolved
+## The pip-position question — resolved to a single top-left corner pip
 
-### Arguments for corner pips (standard playing-card position)
+> **Updated June 2026 after the TURNOVER + GLEAN session (finding F2).** Earlier this spec settled on a top-centre pip and declared corners closed. Table play reopened it: players wanted corner numbers for instant fan recognition, and the original anti-corner argument only ever defeated *mirrored* corners, not a single one. The resolution below adopts a **single, non-mirrored top-left corner pip**.
 
-- Readable in a fanned hand without spreading
-- FACE VALUE, UNPLAYED PAIR, and COUNCIL players inspect hand pips constantly
-- Subset selection ("remove 8s and 9s") is fast
+### Arguments for a corner pip (standard playing-card position)
 
-### Arguments against corner pips
+- Readable in a fanned hand without spreading — the decisive point from F2. Players recognise a fanned hand instantly when the number sits in the corner, the way every traditional card game trains them to.
+- Flipping a fanned hand while holding the fan shape reveals all reverse-side values at a glance — useful for assessing hand strength (FACE VALUE, THE COUNCIL, GLEAN).
+- FACE VALUE, UNPLAYED PAIR, and COUNCIL players inspect hand pips constantly.
+- Subset selection ("remove 8s and 9s") stays fast.
 
-- On a normal deck, mirrored corners (top-left + bottom-right) work because one entire face is always hidden. On this deck, both faces are live — introducing mirrored pips creates ambiguity about which end is "up" and wastes space.
-- A single defined orientation (needed by CROSSROADS) means only ONE pip position is meaningful.
+### Why a single corner pip beats both top-centre and mirrored corners
 
-### Why the concern about hidden-face leakage dissolves
+- **vs. mirrored corners (top-left + bottom-right):** mirroring works on a normal deck because one whole face is always hidden, so the bottom-right copy is never seen alongside a contradicting "up." On this double-faced deck both faces are live, so a second pip position implies "either end can be up" and contradicts the orientation marker. A **single** top-left pip carries none of that ambiguity — there is exactly one "up," marked by the top-edge marker, and the pip sits in its corner.
+- **vs. top-centre:** the original spec rejected mirrored corners and then over-generalised the conclusion to ban *all* corners, defaulting to top-centre. But top-centre is the worst position for fan readability — it's the first thing covered when cards overlap in a fan. F2 found players reaching for the corner. A single top-left pip keeps the unambiguous-orientation benefit of one pip while restoring fan readability.
+
+### Why hidden-face leakage is not a concern either way
 
 When a card lies flat on the table (FACE VALUE duel, FALSE FACE ledger, TRIGON grid), the bottom face is pressed against the surface — **nothing on it is physically visible**, regardless of pip placement. No corner pip, centre pip, or any other element on the underside can "peek out." The concealment is absolute by physics, not layout.
 
 When a card is held in a JANUS fan, the holder sees their entire inner face and the table sees the entire outer face. Secrecy is enforced by angle, not by element position within a face.
 
-**Conclusion:** pip placement is purely a readability decision, not a secrecy decision.
+**Conclusion:** pip placement is purely a readability decision, and the readability evidence (F2) points to a single top-left corner pip. The orientation marker stays top-edge-centre and remains the sole "which end is up" cue.
 
 ---
 
@@ -76,10 +79,10 @@ When a card is held in a JANUS fan, the holder sees their entire inner face and 
 
 ```
 ┌─────────────────────────────┐
-│  ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔  │  ← orientation marker (top-edge bar)
-│          ┌───┐              │
-│          │ 5 │              │  ← index pip, top-centre
-│          └───┘              │
+│  ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔  │  ← orientation marker (top-edge bar, centred)
+│   ┌───┐                     │
+│   │ 5 │                     │  ← index pip, single top-left corner
+│   └───┘                     │
 │                             │
 │                             │
 │         ██████████          │
@@ -104,23 +107,24 @@ Both faces of every card use this identical structure. Only the symbol icon, pip
 ### Orientation marker — top edge
 
 - **Position:** spanning or centred at the very top edge of each face.
-- **Rule:** MUST be identical on both faces of every card (per `physical-handling.md` H3 — no mark that differs between faces or correlates with the hidden face).
+- **Rule:** MUST be identical on both faces of every card (per [physical-handling.md](../.kiro/steering/physical-handling.md) H3 — no mark that differs between faces or correlates with the hidden face).
 - **Purpose:** defines "up" for CROSSROADS pointing, TWELVE TRIALS rotation tracking, and general glanceability.
 - **Form:** a thin coloured bar, small centred arrow/notch, or gradient. Subtle enough not to compete with the icon. The symbol icon's own directional art (if the shipping set has oriented symbols) provides a secondary cue.
 - **When rotated 90°:** the marker moves from top to side, making the rotation immediately legible.
 
-### Index pip — top-centre, single instance
+### Index pip — top-left corner, single instance
 
-- **Position:** centred horizontally, in the top margin below the orientation marker.
-- **Why top-centre over corners:**
-  - Readable in a hand fan regardless of left- or right-fanning (the top edge is always exposed).
-  - A single pip position is unambiguous because the card has a defined top — no mirroring needed.
-  - When the card rotates 90° (CROSSROADS dim, TWELVE TRIALS flip-mark), the pip visually "breaks" its expected position, reinforcing the rotation signal.
-  - Subset selection remains fast: thumb through the top edge, read the number.
+- **Position:** in the top-left corner, just inside the frame and below the orientation marker's left end. Single instance — **not** mirrored to the opposite corner.
+- **Why a single top-left corner (per finding F2):**
+  - Readable in a hand fan without spreading — players recognise a fanned hand instantly from the corner number, as every traditional card game trains them to. Top-centre is covered first when cards overlap; the corner stays exposed.
+  - Flipping a held fan reveals all reverse-side pips at a glance for hand-strength assessment.
+  - A single pip position is unambiguous because the card has a defined top (the orientation marker) — no mirroring needed, so no "either end is up" contradiction.
+  - When the card rotates 90° (CROSSROADS dim, TWELVE TRIALS flip-mark), the pip leaves its expected corner, reinforcing the rotation signal.
+  - Subset selection stays fast: thumb the top-left corners, read the number.
 - **Why NOT mirrored corners:**
-  - This deck has a defined orientation; a second pip position adds clutter without information.
-  - Mirror-pips imply "either end can be up," which contradicts the orientation marker.
+  - This deck has a defined orientation; a second pip position implies "either end can be up," which contradicts the orientation marker.
   - On a double-faced card, there is no back to hide a second pip from — every mark exists on a live, potentially-visible face.
+- **Why NOT top-centre (superseded):** top-centre was the worst position for fan readability and was chosen only by over-generalising the case against *mirrored* corners. F2 reopened and reversed this.
 - **Size:** large enough to read at arm's length; at least 8pt equivalent. Must not be mistaken for the sign name or icon detail.
 
 ### Symbol icon — centre, dominant
@@ -128,7 +132,7 @@ Both faces of every card use this identical structure. Only the symbol icon, pip
 - **Position:** centred, filling the main body of the card.
 - **Purpose:** the primary identity. Matched, counted, read across a table (JANUS fans, TRIGON 3×3 grid, TURNOVER pile).
 - **Requirements:**
-  - Bold, filled, high-contrast silhouette (per `deck-structure.md`).
+  - Bold, filled, high-contrast silhouette (per [deck-structure.md](../.kiro/steering/deck-structure.md)).
   - Distinct at arm's length, when rotated 90°/180°, and for colour-blind players — shape carries identity, colour is secondary.
   - Large enough that JANUS fans read across the table and TURNOVER matches verify at party speed.
 - **Oriented art is welcome:** a symbol with a natural "up" (Crown points up, Flame rises, an animal faces right) gives a free secondary orientation cue without breaching H3, because the icon is identical wherever that symbol appears — it leaks nothing about the other face.
@@ -160,9 +164,9 @@ Both faces of every card use this identical structure. Only the symbol icon, pip
 |---|---|---|
 | CROSSROADS | Point road at destination; dim city by rotating 90° | Orientation marker + pip both "break" visually when rotated; icon's directional art shows pointing |
 | TWELVE TRIALS | Sideways = flipped (score marker) | Rotation is immediately obvious from displaced marker and pip |
-| FACE VALUE | Read pip in hand; conceal underside flat | Top-centre pip reads in fan; underside is physically invisible |
-| THE UNPLAYED PAIR | Fan hand to choose follows; flip at trick-end to reveal rank | Pip at fan-top for selection; icon centred for post-flip readability on table |
-| THE COUNCIL | Assess pip values before secret commit | Pip at fan-top; clear at a glance |
+| FACE VALUE | Read pip in hand; conceal underside flat | Top-left corner pip reads in fan; underside is physically invisible |
+| THE UNPLAYED PAIR | Fan hand to choose follows; flip at trick-end to reveal rank | Pip at fan corner for selection; icon centred for post-flip readability on table |
+| THE COUNCIL | Assess pip values before secret commit | Pip at fan corner; clear at a glance |
 | JANUS | Table reads outward face across the table; holder reads inner face | Large centred icon dominates at distance; pip confirms identity up close |
 | FALSE FACE | Slap card to ledger showing previous claim; hidden face down | Icon verifies the match; pip irrelevant mid-play; name aids verbal claims |
 | TURNOVER | Match target at party speed | Large icon is primary; no fine-print needed for the match |
@@ -174,7 +178,7 @@ Both faces of every card use this identical structure. Only the symbol icon, pip
 
 | Possible future need | Survives this layout? |
 |---|---|
-| New game needing rank in hand | ✓ Pip always at fan-top |
+| New game needing rank in hand | ✓ Pip always at fan corner |
 | New game using flat concealment | ✓ Underside physically invisible regardless of layout |
 | New game using 90° rotation as state | ✓ Both marker and pip signal rotation |
 | New game reading cards across the table | ✓ Large centred icon |
@@ -188,11 +192,12 @@ Both faces of every card use this identical structure. Only the symbol icon, pip
 
 ## Open questions (for prototype testing)
 
-1. **Pip size vs. icon dominance.** The pip must be large enough to read in a fan but not so large it competes with the icon. Test at print-and-play scale.
-2. **Orientation marker form.** Bar vs. arrow vs. gradient — which reads fastest when rotated 90°? Test with CROSSROADS.
-3. **Sign name necessity.** If the icon set is sufficiently distinct and the pip carries rank, can the name be dropped for a cleaner card? Or does FALSE FACE's verbal-claim mechanic make it load-bearing?
-4. **Colour field extent.** Full-bleed colour per symbol, or a coloured border/band? Affects legibility when cards overlap in CROSSROADS road-building and FALSE FACE's ledger.
+1. **Pip position confirmation (F2).** The single top-left corner pip is now the spec. The remaining test is confirmatory: print a corner-pip run and verify it reads faster in a fan than the old top-centre pip without harming rotated-state legibility (CROSSROADS, TWELVE TRIALS). Watch that the corner pip doesn't collide with the orientation marker's left end.
+2. **Pip size vs. icon dominance.** The pip must be large enough to read in a fan but not so large it competes with the icon. Test at print-and-play scale.
+3. **Orientation marker form.** Bar vs. arrow vs. gradient — which reads fastest when rotated 90°? Test with CROSSROADS.
+4. **Sign name necessity.** If the icon set is sufficiently distinct and the pip carries rank, can the name be dropped for a cleaner card? Or does FALSE FACE's verbal-claim mechanic make it load-bearing?
+5. **Colour field extent.** Full-bleed colour per symbol, or a coloured border/band? Affects legibility when cards overlap in CROSSROADS road-building and FALSE FACE's ledger.
 
 ---
 
-*This layout is designed against the full eleven-game collection as of June 2026. It defers to `deck-structure.md` (the two-layer production rule), `physical-handling.md` (H3: no asymmetric marks), and `design-principles.md` (handling and legibility decide). Any proposed change should be checked against the handling table above and the future-proofing checklist.*
+*This layout is designed against the full eleven-game collection as of June 2026. It defers to [deck-structure.md](../.kiro/steering/deck-structure.md) (the two-layer production rule), [physical-handling.md](../.kiro/steering/physical-handling.md) (H3: no asymmetric marks), and [design-principles.md](../.kiro/steering/design-principles.md) (handling and legibility decide). Any proposed change should be checked against the handling table above and the future-proofing checklist.*

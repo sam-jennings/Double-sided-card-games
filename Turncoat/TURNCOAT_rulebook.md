@@ -70,8 +70,8 @@ Activations are **always optional**. *Adjacent* always means orthogonally adjace
 
 | Sign | Requirement | Ability | Mnemonic |
 |---|---|---|---|
-| ⚫ **Void** (1) | A rival has **2+ more** banked cards than you | Choose such a rival: their **top banked card** is removed from the game | The Void erases — when you're behind, it devours what the leader hoarded |
-| 🌱 **Root** (2) | Adjacent to one of **your** agents | **Swap** Root's card with any other agent; you may then **flip** the displaced agent at Root's old post | Deep roots among allies let you displace and overturn intruders |
+| 🌙 **Moon** (1) | A rival has **2+ more** banked cards than you | Choose such a rival: their **top banked card** is removed from the game | The waning moon darkens the fullest hoard — when you're behind, it devours what the leader stored |
+| 🍃 **Leaf** (2) | Adjacent to one of **your** agents | **Swap** Leaf's card with any other agent; you may then **flip** the displaced agent at Leaf's old post | Leaves on the same branch trade places and turn |
 | 🌊 **Wave** (3) | **Exactly one** adjacent agent | **Move** that agent to any empty post; you may then **flip** it | The Wave carries one thing away and tumbles it |
 | 🔥 **Flame** (4) | Adjacent to a rival agent | **Remove** one adjacent rival agent from the game (its post empties) | Flame consumes a rival beside it |
 | 👁 **Eye** (5) | At most **one** adjacent agent | **Peek** at the hidden face of an adjacent agent; you may then **flip** it | The Eye in solitude sees truth, and may reveal it |
@@ -104,11 +104,11 @@ When the deck is empty, finish the current turn, then score:
 
 **Who can activate Crown?** Anyone, but the card always banks to *Crown's owner* — so in practice you'll only ever crown your own.
 
-**Void with the scores level?** No — Void needs a rival at least 2 banked cards ahead of *you*, the active player.
+**Moon with the scores level?** No — Moon needs a rival at least 2 banked cards ahead of *you*, the active player.
 
 **Wave with two neighbours?** Requirement unmet — Wave needs exactly one adjacent agent.
 
-**Root's flip — which card?** The *other* one: after the swap, the displaced agent stands at Root's old post, and that's the card you may flip. Root itself keeps its face.
+**Leaf's flip — which card?** The *other* one: after the swap, the displaced agent stands at Leaf's old post, and that's the card you may flip. Leaf itself keeps its face.
 
 **Does covering charge anything?** The covered card is gone before anything can trigger. But the new card is charged by placement, and the change of face can flip neighbours' requirements from unmet to met — that charges them.
 
@@ -116,7 +116,7 @@ When the deck is empty, finish the current turn, then score:
 
 **Unaligned agents?** They're nobody's: covering one removes it from the game, and it never scores for the final grid. Unaligned faces make sturdy walls.
 
-**Can the grid empty out?** It can shrink (Flame, Key, Crown, Void all thin the field) — placements refill it. You can always place somewhere.
+**Can the grid empty out?** It can shrink (Flame, Key, Crown, Moon all thin the field) — placements refill it. You can always place somewhere.
 
 ---
 
@@ -126,7 +126,7 @@ When the deck is empty, finish the current turn, then score:
 - **Flipping is tempo theft.** Every defection you force costs a rival the turn they spent showing that face.
 - **The deck-top is public.** You always know one face of what your rival inherits. Plan your exposures around it.
 - **Mercenaries cut both ways.** That Flame you placed for yourself is a Flame your rival may swing next turn. The board you leave matters more than the board you made.
-- **Watch the Void gap.** Pull 2+ banked cards ahead and your pile becomes vulnerable. Sometimes the second-place seat is the safest place to sharpen knives.
+- **Watch the Moon gap.** Pull 2+ banked cards ahead and your pile becomes vulnerable. Sometimes the second-place seat is the safest place to sharpen knives.
 
 ---
 
@@ -134,9 +134,9 @@ When the deck is empty, finish the current turn, then score:
 
 | Players | Teams | Unaligned |
 |---|---|---|
-| 2 | 🔥⭐🌱🌊 vs 🎭👁👑⚫ | 🗝 Key |
-| 3 | 🎭🌊🌱 / 🔥👑👁 / ⭐🗝⚫ | — |
-| 4 | 🔥🌱 / ⭐👁 / 🌊👑 / 🗝⚫ | 🎭 Mask |
+| 2 | 🔥⭐🍃🌊 vs 🎭👁👑🌙 | 🗝 Key |
+| 3 | 🎭🌊🍃 / 🔥👑👁 / ⭐🗝🌙 | — |
+| 4 | 🔥🍃 / ⭐👁 / 🌊👑 / 🗝🌙 | 🎭 Mask |
 
 ---
 
@@ -150,14 +150,14 @@ When the deck is empty, finish the current turn, then score:
 
 ## Card manifest (36 cards)
 
-Each card lists its two faces. ⚫ Void · 🌱 Root · 🌊 Wave · 🔥 Flame · 👁 Eye · 🎭 Mask · 🗝 Key · ⭐ Star · 👑 Crown
+Each card lists its two faces. 🌙 Moon · 🍃 Leaf · 🌊 Wave · 🔥 Flame · 👁 Eye · 🎭 Mask · 🗝 Key · ⭐ Star · 👑 Crown
 
 | | | | |
 |---|---|---|---|
-| ⚫/🌱 | ⚫/🌊 | ⚫/🔥 | ⚫/👁 |
-| ⚫/🎭 | ⚫/🗝 | ⚫/⭐ | ⚫/👑 |
-| 🌱/🌊 | 🌱/🔥 | 🌱/👁 | 🌱/🎭 |
-| 🌱/🗝 | 🌱/⭐ | 🌱/👑 | 🌊/🔥 |
+| 🌙/🍃 | 🌙/🌊 | 🌙/🔥 | 🌙/👁 |
+| 🌙/🎭 | 🌙/🗝 | 🌙/⭐ | 🌙/👑 |
+| 🍃/🌊 | 🍃/🔥 | 🍃/👁 | 🍃/🎭 |
+| 🍃/🗝 | 🍃/⭐ | 🍃/👑 | 🌊/🔥 |
 | 🌊/👁 | 🌊/🎭 | 🌊/🗝 | 🌊/⭐ |
 | 🌊/👑 | 🔥/👁 | 🔥/🎭 | 🔥/🗝 |
 | 🔥/⭐ | 🔥/👑 | 👁/🎭 | 👁/🗝 |

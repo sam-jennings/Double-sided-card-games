@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Sim sanity check",
+  "description": "Compile-check every simulator so syntax errors surface immediately. Run manually after editing sims.",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "python -c \"import glob,py_compile,sys; fs=glob.glob('**/*_sim.py',recursive=True); [py_compile.compile(f,doraise=True) for f in fs]; print('OK: '+str(len(fs))+' sim files compiled')\"",
+    "timeout": 60
+  }
+}

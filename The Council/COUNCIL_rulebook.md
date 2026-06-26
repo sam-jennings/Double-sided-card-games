@@ -8,7 +8,7 @@ Issues come before the council; the council talks, promises, commits — and the
 
 ## Components
 
-- The **36-card** master deck. The corner **index pips (1–9)** give each symbol its value — a Sun issue (9) is worth more than a Void issue (1).
+- The **36-card** master deck. The corner **index pips (1–9)** give each symbol its value — a Crown issue (9) is worth more than a Moon issue (1).
 
 ## Setup
 
@@ -57,7 +57,7 @@ After round 4, unclaimed issue stacks rot unresolved. Each player sums the **pip
 
 ## Why it bites
 
-With three issues and more than three players, somebody must clash, abstain, or be talked into the cheap seats — and the 9-pip stack everyone refused to share keeps rolling over, getting heavier. You can promise the Sun and flip to the Moon, but only to the Moon: your treachery is printed on your card, and the council prices it accordingly.
+With three issues and more than three players, somebody must clash, abstain, or be talked into the cheap seats — and the 9-pip stack everyone refused to share keeps rolling over, getting heavier. You can promise the Crown and flip to the Moon, but only to the Moon: your treachery is printed on your card, and the council prices it accordingly.
 
 ## Edge cases & FAQ
 

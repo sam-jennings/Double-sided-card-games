@@ -1,6 +1,8 @@
 # TRIGON — Design Analysis
 
-> **Note:** This game was developed and simulated under the working title "SYZYGY." All analysis, sim results, and symbol-ability references apply unchanged to the rethemed TRIGON. The simulator has been renamed `trigon_sim.py`; internal references to "Syzygy" are historical.
+> **Note:** This game was developed and simulated under the working title "SYZYGY." All analysis, sim results, and symbol-ability references apply unchanged to the rethemed TRIGON. The simulator has been renamed [trigon_sim.py](trigon_sim.py); internal references to "Syzygy" are historical.
+>
+> **Naming note:** this document uses the **celestial-era ability names** under which the simulations were run (Sun, Moon, Comet, Eclipse, Aurora, Meteor, Nova, Void, Star). The shipping deck uses the Nine Signs; for the live mapping see `SYMBOL_SETS.md` §7. In particular the catch-up sign called **"Void"** here is now **Moon** (pip 1). Mechanics, balance numbers, and conclusions are unaffected.
 
 *How the rules were tested and tuned, v1.0 → v1.2. Companion to the rulebook.*
 

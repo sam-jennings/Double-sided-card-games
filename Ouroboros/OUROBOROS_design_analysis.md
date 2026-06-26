@@ -1,8 +1,16 @@
 # OUROBOROS — Design Analysis
 
-*How the solitaire was tuned, v0 → v1.0. Companion to the rulebook; sibling to the SYZYGY/TURNCOAT analyses.*
+*How the solitaire was tuned, v0 → v1.0, then revived as v1.1. Companion to the rulebook; sibling to the SYZYGY/TURNCOAT analyses.*
 
-> ## ⚠️ Playtest verdict (June 2026): demoted from the main collection
+> ## ↩️ Revival (June 2026): back in the pipeline as v1.1
+>
+> OUROBOROS has been **revived from the cut pile into the pipeline** (Stage 2, validated — awaiting a re-test of the fix). The June 2026 cut verdict below stands as a historical record, but two of its three pillars were re-examined and found weaker than they first looked. See **§6** for the full revival case. In short:
+>
+> - **The handling bug is fixed (v1.1).** The head's open symbol no longer lives on a buried face. Cards are now laid showing their *onward* symbol, so both open ends stay face-up (orientation-as-state, per CROSSROADS) — you never lift the serpent. One-line convention change; the maths is untouched.
+> - **The "luck-dominant / thin skill gap" verdict leaned on one-ply floor numbers.** A Monte-Carlo planning bot (the deeper bot the analysis itself said was missing) reaches **~1.74× over random at n=9 and ~1.84× at n=7** — above the collection's ~1.5× healthy bar. The real defect was always that the *obvious* (greedy) line is near-random (~1.13×); that is a **teaching** problem (surface hand-stewardship), which the strategy notes already address.
+> - **Remaining gate:** a first table test of v1.1 — does the fixed handling read cleanly, and is the hand-stewardship skill *learnable* at the table rather than only in the sim? Promotion to the collection still requires that test.
+
+> ## ⚠️ Playtest verdict (June 2026): demoted from the main collection *(superseded by §6 — retained as record)*
 >
 > Live testing of the short game (21 cards) found it **boring and too luck-based**, and the physical handling **awkward — the head's open symbol is the hidden face of the last card**, so the player must repeatedly check under the end of the serpent to know what's playable. The sim's warnings (§4) pointed the same way: the greedy/random gap was thin, meaning most of a session's variance is the shuffle, not the player.
 >
@@ -69,3 +77,51 @@ Robustness: alternate seed 1234 reproduced the n=9 smart line (4.75 avg, 3.7% pe
 | v1.0 | Ladder: 0/2/3–4/5–6 | Read off smart-policy distribution; "exactly 1" provably impossible |
 
 *All numbers: ~36,000 simulated games for the shipped ruleset (plus ~12,000 on the rejected v0), seeds 42/1234, `ouroboros_sim.py`.*
+
+## 6. Revival (June 2026): v1.1, and re-examining the cut
+
+OUROBOROS was cut on three recorded reasons (see the verdict box and `COLLECTION_AUDIT.md` §4): **(a)** luck-driven play, **(b)** the open symbol buried under the serpent's head, **(c)** a thin skill gap. A re-reading found the cut over-weighted (a) and (c) and rested (c) on numbers the analysis itself had flagged as a floor. Each is revisited below.
+
+### 6.1 (b) The buried open symbol — fixed in v1.1
+
+This was the one *handling* defect, and it has a clean fix. v1.0 laid each card showing its **matched** face, so the head's open symbol — the thing you must read to know what's playable — sat on the hidden bottom face, forcing you to lift the serpent's head. v1.1 inverts the convention: **lay each card showing its *onward* (open) symbol**, pressing the matched symbol into the seam. Both open ends are then permanently face-up; nothing you need is ever hidden. This is the orientation-as-state technique CROSSROADS and TWELVE TRIALS use. The maths, scoring, and theorems are untouched — it is purely a layout convention. Cut reason (b) is resolved.
+
+### 6.2 (c) The skill gap — a deeper bot clears the bar
+
+The cut cited the *greedy*-vs-random gap (~1.13× at n=9) as evidence of a dull game. But greedy is the beginner-obvious line, not skilled play, and §4 explicitly warned the one-ply bots "undersell humans… strong human par may be a scar or two lower." A **Monte-Carlo planning bot** was added to `ouroboros_sim.py` to test that warning: for each choice it reshuffles the *remaining* deck (the honest information set — the player knows which cards remain, not their order) and rolls the game out under `smart`, picking the lowest expected scars.
+
+Results (avg scars, lower is better; baselines 1,000 games, mc 60 games × 12 rollouts, seed 42):
+
+| n | H | random | greedy | smart | **mc (planner)** | mc × over random |
+|---|---|---|---|---|---|---|
+| 9 | 4 | 7.88 | 6.95 | 4.78 | **4.52** | **~1.74×** |
+| 7 | 3 | 4.29 | 3.60 | 2.63 | **2.33** | **~1.84×** |
+
+Two findings:
+
+1. **The ceiling clears the bar.** The planner beats random by ~1.74×/~1.84×, above the collection's ~1.5× healthy threshold (`design-principles.md` lesson 6). The skill is real; the one-ply numbers were a floor, exactly as the analysis suspected.
+2. **`smart` is already near that ceiling.** The planner only edges out the one-ply `smart` heuristic (4.52 vs 4.78; 2.33 vs 2.63), so most of the achievable skill is captured by the *hand-stewardship* idea the strategy notes already teach. The gap between *obvious* play (greedy) and *good* play (smart/mc) is the whole story: a learnable, counter-intuitive insight, not luck.
+
+*(mc counts are small and so noisier than the baselines; the direction is stable across the n=9 and n=7 rows and is enough to retire the "thin skill gap" claim. A larger mc run is cheap if a firmer number is wanted.)*
+
+### 6.3 (a) Luck — reframed, not dismissed
+
+A single-pass, limited-foresight puzzle does carry shuffle variance — that is honest and unchanged. But "most variance is the shuffle" is in tension with a skilled line that nearly halves random's scars. The accurate statement: **the *obvious* strategy is near-random, so a first-time player correctly feels luck-buffeted**, while the real skill (keeping hand cards connected to an open end) is invisible until taught. That is a teaching/onboarding problem layered on the (now-fixed) handling tedium — both addressable — not proof of an intrinsic luck ceiling. The skilled experience exists; the v1.1 job is to make players *find* it.
+
+### 6.4 Status and the remaining gate
+
+OUROBOROS returns to the **pipeline at Stage 2 (validated)**, not straight into the collection. Promotion still requires a **first table test of v1.1**, answering:
+
+- Does the open-symbol-shown layout read cleanly — genuinely no lifting, no buried state? (Confirms 6.1.)
+- Is hand-stewardship *learnable at the table*? Does a player who reads the strategy notes climb out of the greedy near-random band within a session or two? (Confirms 6.2.)
+- With handling and teaching fixed, does the shuffle variance now read as *tension* rather than *luck-blame*? (Confirms 6.3.)
+
+If the table refutes these, the honest call is to re-cut — but on evidence about v1.1, not the v1.0 floor numbers. The impossible-single-scar theorem (§1) and the Eulerian guarantee remain intact and are now attached to a game that is legible to handle.
+
+### 6.5 Change log (revival)
+
+| Version | Change | Reason |
+|---|---|---|
+| v1.1 | Lay each card showing its **onward** symbol; both open ends stay face-up | Fixes cut reason (b) — buried head symbol; orientation-as-state |
+| v1.1 | Added Monte-Carlo planner to the sim; ceiling ~1.74×/~1.84× over random | Tests cut reason (c) — one-ply bots were a floor; ceiling clears the bar |
+| v1.1 | Revived to pipeline Stage 2, pending a first v1.1 table test | Two of three cut reasons weakened; the third (handling) fixed |

@@ -35,7 +35,7 @@ The trick's winner leads the next.
 
 ## Calling the pair
 
-Once per round, at the start of any trick — before its lead — any player (in turn order from the leader) may **call the unplayed pair**, naming both symbols aloud: *"The missing card is Sun-and-Key."* The call is settled at the end of the round when the unplayed card is revealed:
+Once per round, at the start of any trick — before its lead — any player (in turn order from the leader) may **call the unplayed pair**, naming both symbols aloud: *"The missing card is Crown-and-Key."* The call is settled at the end of the round when the unplayed card is revealed:
 
 - **Right:** score **+1 per trick that had not yet been led** when you called (the current one counts). Calling before trick 5 of 8 with 4 tricks left pays 4.
 - **Wrong:** score **−3**. And everyone heard you be wrong, which is its own tax — a wrong call is also *information*, and the table will use it.
@@ -69,7 +69,7 @@ If the reveal shows the **led symbol on the hidden face of a slough**, that play
 ## Strategy notes (read after your first round)
 
 - **Your hand is the biggest clue.** You start knowing 8–11 pairs that *aren't* missing (plus the morgue). The race is between your tricks-won engine and your elimination engine — they spend the same cards.
-- **Every follow burns a partner.** The card that follows Sun with a hidden 9 just spent that 9 forever. Following cheap and leading your doubles is the trick-craft; the deduction-craft is noticing what *others* chose to burn.
+- **Every follow burns a partner.** The card that follows Flame with a hidden 9 just spent that 9 forever. Following cheap and leading your doubles is the trick-craft; the deduction-craft is noticing what *others* chose to burn.
 - **Leads are questions.** Lead a symbol and watch who sloughs: a slough says "no card of mine carries it" — eight cards of that symbol are now mapped against their hand. The reveal then confirms it in public.
 - **Call timing is the whole game.** Each trick's reveal removes 3–5 candidates. The expected value of waiting one more trick is usually less than the point you lose — *if* you're actually narrowing. Track the moment your candidate set hits one, and notice when an opponent's eyes say theirs has.
 

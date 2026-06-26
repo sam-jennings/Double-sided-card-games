@@ -2,6 +2,8 @@
 
 *How the second game was built and tuned, v1.0 → v1.2. Companion to the rulebook, and a sibling document to the SYZYGY design analysis.*
 
+> **Naming note:** this document records tuning under earlier names — the **guild-era ability names** (Blade, Whisper, Coin, Veil, Hound, Ash, etc.) and the Nine-Signs names as they then stood. The shipping deck uses the Nine Signs (see `SYMBOL_SETS.md` §7); the catch-up sign referred to as **"Void"** is now **Moon** (pip 1), and **Root** is now **Leaf** (pip 2). Mechanics and balance numbers are unaffected.
+
 ---
 
 ## 1. The brief, and the one mechanic

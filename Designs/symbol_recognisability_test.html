@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nine Signs · recognisability test</title>
+<style>
+  :root{
+    --bg:#0d111c; --panel:#161c2b; --line:#27304a;
+    --glyph:#f3f5fb; --gold:#d9a441; --muted:#7b86a3;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--glyph);
+       font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 24px 80px}
+  h1{font-size:24px;font-weight:600;margin:0 0 4px}
+  p.lede{color:var(--muted);margin:0 0 24px;max-width:60ch;line-height:1.5}
+  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+     margin:40px 0 14px;font-weight:600}
+
+  /* controls */
+  .controls{display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+            padding:12px 16px;background:var(--panel);border:1px solid var(--line);
+            border-radius:10px}
+  .controls label{display:flex;gap:8px;align-items:center;font-size:14px;cursor:pointer}
+  .controls input{width:16px;height:16px;accent-color:var(--gold)}
+
+  /* main gallery */
+  .grid{display:grid;grid-template-columns:repeat(9,1fr);gap:12px}
+  @media(max-width:880px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .cell{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+        padding:14px 8px 12px;text-align:center;position:relative}
+  .pip{position:absolute;top:8px;left:10px;font-size:13px;color:var(--gold);
+       font-variant-numeric:tabular-nums;font-weight:600}
+  .cell svg{width:64px;height:64px;color:var(--glyph)}
+  .name{margin-top:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+        color:var(--muted)}
+
+  /* size ladder */
+  .ladder{display:grid;grid-template-columns:repeat(9,1fr);gap:12px}
+  @media(max-width:880px){.ladder{grid-template-columns:repeat(3,1fr)}}
+  .ladder .cell{display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 8px}
+  .ladder svg{color:var(--glyph)}
+  .s40{width:40px;height:40px}.s24{width:24px;height:24px}.s16{width:16px;height:16px}
+
+  /* rotation */
+  .rot .cell{display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px 8px}
+  .rot svg{width:48px;height:48px;color:var(--glyph)}
+  .r90{transform:rotate(90deg)}.r180{transform:rotate(180deg)}
+
+  /* hide names when testing blind */
+  body.blind .name{visibility:hidden}
+  body.blind .pip{visibility:hidden}
+
+  .legend{color:var(--muted);font-size:12px;margin-top:6px}
+  .new{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- glyph sprite (inline so the page works from file://) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="g-moon" viewBox="0 0 100 100">
+    <path fill-rule="evenodd" d="M50 50 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0 Z M58 50 m-28 0 a28 28 0 1 0 56 0 a28 28 0 1 0 -56 0 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="g-leaf" viewBox="0 0 100 100">
+    <path d="M50 12 C70 30 70 56 50 80 C30 56 30 30 50 12 Z" fill="currentColor"/>
+    <rect x="48" y="76" width="4" height="12" rx="2" fill="currentColor"/>
+  </symbol>
+  <symbol id="g-wave" viewBox="0 0 100 100">
+    <path d="M14 56 Q32 32 50 56 T86 56" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-flame" viewBox="0 0 100 100">
+    <path fill-rule="evenodd" d="M54 6 C48 30 30 36 30 60 C30 78 42 94 54 94 C69 94 77 78 71 60 C67 48 56 50 59 35 C61 26 58 16 54 6 Z M53 52 C51 61 45 65 45 73 C45 81 49 85 54 85 C60 85 63 79 61 72 C59 64 55 63 53 52 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="g-eye" viewBox="0 0 100 100">
+    <path d="M12 50 Q50 18 88 50 Q50 82 12 50 Z" fill="none" stroke="currentColor" stroke-width="9"/>
+    <circle cx="50" cy="50" r="12" fill="currentColor"/>
+  </symbol>
+  <symbol id="g-mask" viewBox="0 0 100 100">
+    <path fill-rule="evenodd" d="M14 40 C24 30 40 30 50 37 C60 30 76 30 86 40 C88 53 79 63 65 64 C57 65 52 59 50 53 C48 59 43 65 35 64 C21 63 12 53 14 40 Z M33 47 m-9 0 a9 6 0 1 0 18 0 a9 6 0 1 0 -18 0 Z M67 47 m-9 0 a9 6 0 1 0 18 0 a9 6 0 1 0 -18 0 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="g-key" viewBox="0 0 100 100">
+    <circle cx="50" cy="30" r="16" fill="none" stroke="currentColor" stroke-width="10"/>
+    <rect x="45" y="44" width="10" height="42" fill="currentColor"/>
+    <rect x="55" y="66" width="15" height="9" fill="currentColor"/>
+  </symbol>
+  <symbol id="g-star" viewBox="0 0 100 100">
+    <path d="M50 14 L61 39 L88 42 L67 60 L74 87 L50 72 L26 87 L33 60 L12 42 L39 39 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="g-crown" viewBox="0 0 100 100">
+    <path d="M18 74 L18 38 L35 53 L50 30 L65 53 L82 38 L82 74 Z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="wrap">
+  <h1>Nine Signs &mdash; recognisability test</h1>
+  <p class="lede">The revised set: <span class="new">Moon</span> and <span class="new">Leaf</span> replace Void and Root;
+     Flame and Mask are redrawn; Wave, Eye, Key, Star, Crown kept. Crown sits at 9 (apex), Star at 8 (wild).
+     Tick &ldquo;blind mode&rdquo; and try to name each shape before revealing the labels.</p>
+
+  <div class="controls">
+    <label><input type="checkbox" id="blind"> Blind mode (hide names &amp; pips)</label>
+    <span class="legend">Tip: step back from the screen to simulate arm&rsquo;s length.</span>
+  </div>
+
+  <h2>The nine, at a glance</h2>
+  <div class="grid" id="gallery"></div>
+
+  <h2>Size ladder &mdash; do they survive shrinking?</h2>
+  <div class="ladder" id="ladder"></div>
+  <p class="legend">64 / 40 / 24 / 16 px. The 16px row is roughly a pip-sized corner mark.</p>
+
+  <h2>Rotation &mdash; cards get turned in CROSSROADS &amp; TWELVE TRIALS</h2>
+  <div class="rot grid" id="rotation"></div>
+  <p class="legend">Upright / 90&deg; / 180&deg;. Watch for shapes that lose identity when turned.</p>
+</div>
+
+<script>
+  const signs = [
+    {id:"g-moon",  pip:1, name:"Moon"},
+    {id:"g-leaf",  pip:2, name:"Leaf"},
+    {id:"g-wave",  pip:3, name:"Wave"},
+    {id:"g-flame", pip:4, name:"Flame"},
+    {id:"g-eye",   pip:5, name:"Eye"},
+    {id:"g-mask",  pip:6, name:"Mask"},
+    {id:"g-key",   pip:7, name:"Key"},
+    {id:"g-star",  pip:8, name:"Star"},
+    {id:"g-crown", pip:9, name:"Crown"},
+  ];
+  const use = id => `<svg><use href="#${id}"/></svg>`;
+
+  // main gallery
+  document.getElementById("gallery").innerHTML = signs.map(s => `
+    <div class="cell">
+      <span class="pip">${s.pip}</span>
+      ${use(s.id)}
+      <div class="name">${s.name}</div>
+    </div>`).join("");
+
+  // size ladder
+  document.getElementById("ladder").innerHTML = signs.map(s => `
+    <div class="cell">
+      <svg><use href="#${s.id}"/></svg>
+      <svg class="s40"><use href="#${s.id}"/></svg>
+      <svg class="s24"><use href="#${s.id}"/></svg>
+      <svg class="s16"><use href="#${s.id}"/></svg>
+      <div class="name">${s.name}</div>
+    </div>`).join("");
+
+  // rotation
+  document.getElementById("rotation").innerHTML = signs.map(s => `
+    <div class="cell">
+      <svg><use href="#${s.id}"/></svg>
+      <svg class="r90"><use href="#${s.id}"/></svg>
+      <svg class="r180"><use href="#${s.id}"/></svg>
+      <div class="name">${s.name}</div>
+    </div>`).join("");
+
+  document.getElementById("blind").addEventListener("change", e =>
+    document.body.classList.toggle("blind", e.target.checked));
+</script>
+</body>
+</html>

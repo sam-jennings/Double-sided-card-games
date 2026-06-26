@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Collection index sync check",
+  "description": "When a rulebook is saved, check whether COLLECTION_OVERVIEW.md needs updating (tier change, rename, new open question) and flag the specific edit.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*_rulebook.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A rulebook was just edited. Per repository-structure.md, COLLECTION_OVERVIEW.md is the canonical index and must stay in sync. Read the edited rulebook and COLLECTION_OVERVIEW.md, then check whether the overview needs updating (stage/tier change, rename, cut, or a changed open question). If it does, state the specific change needed and offer to apply it. If everything is already in sync, say so in one line and do nothing else. Do not make unrelated edits."
+  }
+}

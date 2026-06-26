@@ -73,7 +73,7 @@ The 6-player counts (FALSE FACE, THE COUNCIL, HOT POTATO PAIRS) only exist at 36
 1. **Rank the symbols.** Give the 9 symbols a canonical, printed order (1–9, or a visual sequence). Subset games then say "remove all cards showing symbol 8 or 9 on either face" — a 20-second sort. Consider a small index pip (1–9) in the card corner for both faces.
 2. **Keep both finished games untouched.** TRIGON and TURNCOAT are tuned at 36; the decision validates ~45k simulated games of investment rather than discarding it.
 3. **Print the almanac.** The 12-triangle / 4-season table above should become a reference card — it powers TWELVE TRIALS and is a beautiful proof-of-depth for the box copy.
-4. **Adopt the subset framing in the project goals.** The symbol-count question in `flip_card_project_goals.md` can be marked resolved: *n = 9, with games declaring their symbol range.*
+4. **Adopt the subset framing in the project goals.** The symbol-count question in [flip_card_project_goals.md](flip_card_project_goals.md) can be marked resolved: *n = 9, with games declaring their symbol range.*
 
 ## Appendix — verification
 

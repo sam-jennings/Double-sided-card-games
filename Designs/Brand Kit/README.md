@@ -42,7 +42,7 @@ frame (that is an open question in `CARD_LAYOUT.md`), no notch, no inner keyline
 
 ## Signs
 
-Pip order is fixed: **1 Void · 2 Root · 3 Wave · 4 Flame · 5 Eye · 6 Mask ·
+Pip order is fixed: **1 Moon · 2 Leaf · 3 Wave · 4 Flame · 5 Eye · 6 Mask ·
 7 Key · 8 Star · 9 Crown.** Each has a hue (`--crown`), a soft tint
 (`--crown-tint`), and a glyph (`#sign-crown`). Add a `sign-<name>` class to any
 element to set its `--sign` / `--sign-tint`:
@@ -53,7 +53,7 @@ element to set its `--sign` / `--sign-tint`:
 ```
 
 Role signs: **Star (8)** is the wild/exception, **Crown (9)** the apex,
-**Void (1)** the outsider.
+**Moon (1)** the outsider.
 
 ## Components (CSS classes)
 
@@ -68,7 +68,7 @@ Editorial helpers: `.ds-display`, `.ds-overline`, `.ds-mono`, `.ds-game`
 ## Voice (for any copy you write)
 
 Precise, structural, a touch mathematical — confident, never hype, no emoji.
-Game titles UPPERCASE (TRIGON, THE COUNCIL); sign names Title Case (Void, Crown).
+Game titles UPPERCASE (TRIGON, THE COUNCIL); sign names Title Case (Moon, Crown).
 Lean on meaningful numbers and tight tables. North star: a game that *could only
 exist because of this deck*.
 

@@ -3,7 +3,7 @@
 Takes the Bria-generated symbol icons and places them into proper card layouts
 following CARD_LAYOUT.md:
   - Orientation marker (top-edge bar)
-  - Index pip (top-centre)
+  - Index pip (top-left corner)
   - Large centred symbol icon (Bria-generated)
   - Sign name (bottom-centre)
   - Coloured border frame with background tint
@@ -144,13 +144,13 @@ def compose_card(sym, icon_path):
         fill=color,
     )
 
-    # Index pip — top-centre, large and bold
+    # Index pip — top-left corner, large and bold (single, non-mirrored; F2)
     pip_font = get_font(mm(7), bold=True)
     pip_text = str(sym)
     bbox = draw.textbbox((0, 0), pip_text, font=pip_font)
     pip_tw = bbox[2] - bbox[0]
     pip_th = bbox[3] - bbox[1]
-    pip_x = (CARD_W - pip_tw) // 2
+    pip_x = frame_inset + mm(3)
     pip_y = bar_y + bar_h + mm(2)
     draw.text((pip_x, pip_y), pip_text, fill=color, font=pip_font)
 

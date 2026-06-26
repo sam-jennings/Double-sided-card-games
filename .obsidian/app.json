@@ -1,0 +1,31 @@
+{
+  "interfaceFontSize": 14,
+  "showLineNumber": false,
+  "strictLineBreaks": true,
+  "readableLineLength": true,
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "useMarkdownLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "",
+  "attachmentFolderPath": "Designs",
+  "alwaysUpdateLinks": true,
+  "userIgnoreFilters": [
+    ".git/",
+    ".git",
+    ".kiro/",
+    ".kiro",
+    ".vscode/",
+    ".vscode",
+    "__pycache__/",
+    "__pycache__",
+    "Templates/",
+    "Templates"
+  ],
+  "trashOption": "local",
+  "showUnsupportedFiles": false,
+  "promptDelete": true
+}

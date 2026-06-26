@@ -15,3 +15,8 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# Obsidian — personal state (don't track)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json

@@ -2,7 +2,7 @@
 
 Layout per CARD_LAYOUT.md (identical on every card):
   - Orientation marker: fixed neutral top-edge bar (identical both faces, H3-safe)
-  - Index pip 1-9: top-centre, in the symbol's colour
+  - Index pip 1-9: top-left corner, in the symbol's colour
   - Symbol icon: centred in a FIXED icon box, scaled by its content bounding box
                  so every symbol appears the same visual size
   - Coloured border frame + light background (colour reflects the VISIBLE symbol)
@@ -125,18 +125,19 @@ def compose(sym, cutout_path):
          (ncx, bar_top - mm(0.6) - notch_h)],
         fill=ORIENT_COLOR)
 
-    # Index pip — top-centre, in symbol colour, inside a subtle circle
+    # Index pip — top-left corner, in symbol colour, inside a subtle circle
+    # (single, non-mirrored; F2). Disc sits just inside the inner border.
     pip_font = get_font(mm(8), bold=True)
     pip_text = str(sym)
-    pip_cy = bar_top + bar_h + mm(7)
-    # subtle disc behind the pip
     disc_r = mm(6)
-    draw.ellipse([CARD_W // 2 - disc_r, pip_cy - disc_r,
-                  CARD_W // 2 + disc_r, pip_cy + disc_r],
+    pip_cx = frame_inset + mm(2.2) + disc_r + mm(1)
+    pip_cy = bar_top + bar_h + mm(7)
+    draw.ellipse([pip_cx - disc_r, pip_cy - disc_r,
+                  pip_cx + disc_r, pip_cy + disc_r],
                  fill=PAPER, outline=color, width=max(mm(0.5), 1))
     bbox = draw.textbbox((0, 0), pip_text, font=pip_font)
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    draw.text((CARD_W // 2 - tw / 2 - bbox[0], pip_cy - th / 2 - bbox[1]),
+    draw.text((pip_cx - tw / 2 - bbox[0], pip_cy - th / 2 - bbox[1]),
               pip_text, fill=color, font=pip_font)
 
     # Symbol icon — fit cutout's content bbox into the fixed icon box, centred.

@@ -1,5 +1,7 @@
 # Design Document: TRIGON & TURNCOAT Retheme to Nine Signs
 
+> **⚠️ Superseded naming (June 2026).** After this retheme shipped, the Nine Signs' pips 1–2 were renamed for legibility: **Void → Moon, Root → Leaf** (the empty-ring Void and branching Root failed the "suit test"). The change is **skin-only** — every requirement, ability, mechanic, and balance number in the mapping tables below is unchanged; only the pip-1 and pip-2 names and their one-line mnemonics differ. The live `TRIGON_rulebook.md` and `TURNCOAT_rulebook.md` already use Moon/Leaf. Throughout this document, read **Void as Moon** (catch-up: "the new moon waxes from dark") and **Root as Leaf** (connection/flip: "a leaf turns toward what it touches"). See `SYMBOL_SETS.md` §6 (Set F revision note) for the rationale. This document is retained as the design record of the retheme as originally executed.
+
 ## Overview
 
 This design specifies the complete sign-to-ability mapping for rethreming TRIGON (formerly SYZYGY) and TURNCOAT onto the Nine Signs primary symbol set. It defines the verb families that give each sign a consistent thematic role across both games, the concrete ability assignments with mnemonic justifications, and a transformation checklist for updating each rulebook section. It also covers the game rename (SYZYGY → TRIGON), the file/folder operations required, and the cross-reference updates across the repository. No mechanics change; only names and flavour text are affected.

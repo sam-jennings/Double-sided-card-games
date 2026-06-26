@@ -18,18 +18,20 @@ Lay the serpent, scale by scale, until it bites its own tail. Every card is one 
 
 ## How the serpent grows
 
-The serpent is a single line of cards. The rule of the body, with no exceptions:
+The serpent is a single line of cards. Each card is laid **showing the symbol it carries onward**, so the two growing ends always display their **open symbol** face-up — you never lift a placed card to see what's playable. The shared symbol where two neighbours meet is pressed into the seam between them; you verified it the instant you placed the card, and it never needs checking again.
 
-> **Each card's hidden face must match the next card's visible face.**
+The rule of the body, with no exceptions:
 
-So the visible faces along the serpent read as a journey: Sun, Moon, Key, Crown… and each step is vouched for by the hidden face beneath the previous card.
+> **To add a card to an end, that card must contain the end's open symbol. Lay it showing its *other* symbol — that becomes the new open symbol.**
 
-Both ends are open, and each has an **open symbol**:
+Both ends are open, and each keeps its **open symbol** face-up:
 
-- **Head** (the growing end): its open symbol is the *hidden* face of the last card. To grow the head, play a hand card **showing the open symbol**; its other face becomes the new open symbol. Say it aloud as you place it — "…and Sun flows to Comet."
-- **Tail**: its open symbol is the *visible* face of the first card. To grow the tail, play a hand card whose *hidden* face is the open symbol — i.e. place it showing its **other** symbol, which becomes the new tail symbol.
+- **Head** (the growing end): play a hand card containing the head's open symbol; press the matching symbol into the seam and lay the card showing its other face, which becomes the new head open symbol. Say it aloud as you place it — "…and Flame flows to Wave."
+- **Tail**: works identically at the other end.
 
-The first card of the game may be placed either way up. After every play, **refill your hand to 4** from the deck. Cards in the serpent never flip and never move: placement is forever.
+The first card may be placed either way up; its two symbols become the starting head and tail open symbols. After every play, **refill your hand to 4** from the deck. Cards in the serpent never flip and never move: placement is forever.
+
+> **Handling note (v1.1).** Earlier versions laid each card showing its *matched* face, which left the head's open symbol on the buried bottom face — you had to keep lifting the serpent's head to read what was playable. Showing the *onward* face instead keeps both open symbols permanently in view (orientation-as-state, the CROSSROADS technique). The game and its maths are unchanged; nothing you need is ever hidden.
 
 ## Scars
 
@@ -77,4 +79,4 @@ When the deck and your hand are empty, every card is in the serpent. Curl the he
 
 ---
 
-*Design v1.0 — hand size, par, and the scoring ladder tuned over ~36,000 simulated games. See `OUROBOROS_design_analysis.md`.*
+*Design v1.1 — handling fix (open symbols shown face-up at both ends; orientation-as-state) applied June 2026 on revival from the cut pile. Hand size, par, and scoring ladder tuned over ~36,000 simulated games; skill-ceiling re-probed with a Monte-Carlo planner (~1.74× n=9 / ~1.84× n=7 over random, above the collection's healthy bar). See `OUROBOROS_design_analysis.md`.*

@@ -18,7 +18,7 @@ Shuffle, flipping random chunks. Deal all 36 cards face-up in a rough 6×6 sprea
 
 ## What you're building
 
-A **trio** is the three cards connecting three symbols — Sun/Moon, Moon/Key, Key/Sun — arranged to show all three symbols: Sun, Moon, Key. Three cards, three different faces, a closed ring. (Check any claimed trio by examining the cards: the three hidden faces must be the same three symbols again. If they are, it's real — there are no impostor trios.)
+A **trio** is the three cards connecting three symbols — Crown/Moon, Moon/Key, Key/Crown — arranged to show all three symbols: Crown, Moon, Key. Three cards, three different faces, a closed ring. (Check any claimed trio by examining the cards: the three hidden faces must be the same three symbols again. If they are, it's real — there are no impostor trios.)
 
 The deck's mathematics guarantee the full deck always sorts into **12 trios** — that's the almanac.
 
@@ -62,7 +62,7 @@ The collection's reference card prints **one** almanac — 12 trios in 4 "season
 
 ## Strategy notes (read after your first trial)
 
-- **Hunt rings, not pairs.** Two cards showing Sun and Moon tempt you to find "the Key cards" — but the question is whether Moon/Key and Key/Sun are *showing* Moon-Key-Sun's ring already. Read what's dealt before imagining what could be.
+- **Hunt rings, not pairs.** Two cards showing Crown and Moon tempt you to find "the Key cards" — but the question is whether Moon/Key and Key/Crown are *showing* Moon-Key-Crown's ring already. Read what's dealt before imagining what could be.
 - **Perfect trios first, but loosely.** Locking the dealt-perfect rings early feels great and is usually right — but the deck has 840 different almanacs, and the third perfect trio you lock can strand the rest. If your last few trios all need flips, unpick one early lock.
 - **One flip per trio is the law.** Count your planned flips as planned trios-needing-help. Five problem trios = five flips. The skill is choosing the almanac with the fewest problems, not fixing problems cheaply.
 - **Symbols appear on 8 cards each.** A symbol showing far more or less than 4 times in the deal is where your problem trios will cluster — start your search there.

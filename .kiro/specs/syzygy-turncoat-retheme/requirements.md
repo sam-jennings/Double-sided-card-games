@@ -1,5 +1,7 @@
 # Requirements Document
 
+> **Note (June 2026):** pips 1–2 were later renamed Void → Moon, Root → Leaf (skin-only; see `design.md` superseding note). This document records the retheme as originally executed.
+
 ## Introduction
 
 Retheme SYZYGY and TURNCOAT to use the Nine Signs primary symbol set (Void, Root, Wave, Flame, Eye, Mask, Key, Star, Crown). SYZYGY is renamed to TRIGON as part of this retheme — the old celestial name no longer fits the new sign-convergence theme. TURNCOAT keeps its name (defection/betrayal is theme-independent). This is a flavour-only rewrite: all mechanics, balance numbers, ability requirements, and game structures remain unchanged. Each of the Nine Signs is assigned to the ability whose flavour best matches the sign's core archetype, and each sign carries a consistent thematic role ("verb family") across both games. The old Syzygy/ folder is retired as an archive (not deleted). The deliverables are: a new Trigon/ folder with TRIGON_rulebook.md, an updated TURNCOAT_rulebook.md, and updated cross-references in all top-level documents.

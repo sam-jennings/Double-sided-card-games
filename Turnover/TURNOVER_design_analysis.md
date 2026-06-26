@@ -10,7 +10,7 @@ The v1.0 rulebook shipped with three open questions in its design footnote: is t
 
 ## 2. Method
 
-The full ruleset as a simulator (`turnover_sim.py`, included): exact deal sizes per player count, face-up well with the under-pile fallback, the announce rule treated as always observed. Two bots — RandomBot (uniform legal play, 50% chain rate) as the mechanics floor, and a SkilledBot that plays the public-information game the strategy notes describe: it counts every face in the pile history (both faces of a played card are public once turned), prefers exit symbols the table is poorest in, refuses to break its last guaranteed-chain pair while its hand is large, and chains only when that doesn't fragment its hand. **1,200 games per configuration** across all four player counts and a 3×2 grid of chain limits (1/2/3) × refusal costs (2/3), plus seat-randomised skill-gap arms — roughly **60,000 games** total, with a 600-turn cap to catch non-terminating rules.
+The full ruleset as a simulator ([turnover_sim.py](turnover_sim.py), included): exact deal sizes per player count, face-up well with the under-pile fallback, the announce rule treated as always observed. Two bots — RandomBot (uniform legal play, 50% chain rate) as the mechanics floor, and a SkilledBot that plays the public-information game the strategy notes describe: it counts every face in the pile history (both faces of a played card are public once turned), prefers exit symbols the table is poorest in, refuses to break its last guaranteed-chain pair while its hand is large, and chains only when that doesn't fragment its hand. **1,200 games per configuration** across all four player counts and a 3×2 grid of chain limits (1/2/3) × refusal costs (2/3), plus seat-randomised skill-gap arms — roughly **60,000 games** total, with a 600-turn cap to catch non-terminating rules.
 
 ## 3. Results
 
@@ -57,3 +57,20 @@ Zero stalls in 4,800+ games at the shipped configuration; seat spread within 5 p
 ## 5. Caveats for the first table test
 
 Bots don't laugh, and TURNOVER is a party game — pacing and table feel still need humans. The sim also treats the announce rule as automatic; the catch-the-forgetter mini-game is untested by construction. What simulation *can* certify is now certified: the race ends, the defaults are sound, the variants do what they claim.
+
+## 6. Post-playtest follow-up — the Salvage rule (June 2026)
+
+The first table test (3P, non-gamers; [TURNOVER_playtest_01.md](TURNOVER_playtest_01.md)) returned an "iterate" verdict with two design-relevant findings: chaining wasn't experienced as a decision (everyone chained when able), and a forced refusal felt **purely punishing** — there was nothing to *do* on a turn you couldn't match. The table improvised a house rule: after a forced draw, play one of your cards immediately (match and turn, no chain). It made refusals feel less dead.
+
+Because refusals are the pump that makes the game terminate at all (the chain-1 stalls in §3), softening them is balance-sensitive and had to be checked before adoption. `turnover_drawplay_sim.py` reruns the validated engine with the rule added to the forced-refusal branch only, 4,000 games per configuration, seed 42.
+
+| Config | turns/player (base → Salvage) | stalls | skill edge (base → Salvage) | length |
+|---|---|---|---|---|
+| 3P | 11.3 → 11.0 | 0 / 0 | **1.46× → 1.56×** | ~4.5 min, unchanged |
+| 4P | 9.5 → 9.7 | 0 / 0 | **1.60× → 1.68×** | ~5.0 min, unchanged |
+| 5P | 8.0 → 8.0 | 1 / 0 | 1.71× → 1.75× | ~5.4 min, unchanged |
+| 6P | 6.6 → 6.3 | 0 / 1 | 1.73× → 1.72× | ~5.1 min, unchanged |
+
+The rule is **safe and mildly beneficial**: length holds, seats stay flat, termination is unaffected (the stray single stalls per 4,000 occur in both arms — 600-turn-cap noise), and the skill edge *rises* at 3–5P. Recovering a matching card from a forced draw is itself a small attention-rewarding play, which explains the lift. Adopted as the **Salvage** variant (recommended 3–4P), not promoted to default on the strength of one table — that needs more plays confirming it improves feel as well as numbers.
+
+The chaining-isn't-a-decision finding was **not** actioned: the skill gap depends on the bot sometimes declining to chain, chaining is load-bearing for termination (chain-1 stalls 24%+), and new players always chaining is an expected onboarding artefact, not a rule fault.

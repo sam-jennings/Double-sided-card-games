@@ -43,7 +43,7 @@ Then the next player draws. When the deck runs out, the game ends at the end of 
 
 The instant **three cards in a row, column, or diagonal show the same sign face-up**, that's a *trigon*: **you** (the player whose turn it is) immediately capture all three cards into your score pile, leaving those cells empty.
 
-- **Star is wild.** A face-up Star counts as any sign for alignments. Two Roots and a Star? Captured. Two Stars and a Wave? Captured. Three Stars? Captured.
+- **Star is wild.** A face-up Star counts as any sign for alignments. Two Leaves and a Star? Captured. Two Stars and a Wave? Captured. Three Stars? Captured.
 - Alignments are checked **continuously** — after your placement and after *every* ability resolution. If an ability flips or moves a card into alignment, you capture it, even mid-chain.
 - If two lines complete at the same moment, capture all cards involved (overlapping cards are captured once).
 - Captured cards keep their face-up sign visible in your score pile (this matters for the tiebreaker). They never activate abilities.
@@ -67,8 +67,8 @@ Activations are **always optional**. Skipping one is often the smartest play.
 
 | Sign | Requirement (cell condition) | Ability | Mnemonic |
 |---|---|---|---|
-| ⚫ **Void** (1) | Has **no** orthogonally adjacent cards | *Only if you have fewer captured cards than someone else:* take the top card of the deck **face-down** into your score pile (worth 1 card) | The Void fills itself — emptiness draws substance when others have more |
-| 🌱 **Root** (2) | On an edge cell (non-corner border) | Flip one card **orthogonally adjacent** to it | Roots grow at the border and turn what they touch |
+| 🌙 **Moon** (1) | Has **no** orthogonally adjacent cards | *Only if you have fewer captured cards than someone else:* take the top card of the deck **face-down** into your score pile (worth 1 card) | The new moon is dark and waxes — it gains when it has least |
+| 🍃 **Leaf** (2) | On an edge cell (non-corner border) | Flip one card **orthogonally adjacent** to it | A leaf unfurls at the branch's edge and turns toward the light |
 | 🌊 **Wave** (3) | Shares its row **or** column with at least one empty cell | **Move** any one card on the grid to any empty cell | The Wave carries a card to an open shore |
 | 🔥 **Flame** (4) | Has exactly **1 or 2** orthogonally adjacent cards | **Discard** one of those adjacent cards to the removed pile (out of the game) | Flame consumes what's beside it |
 | 👁 **Eye** (5) | Has at least one empty orthogonally adjacent cell | **Peek** at the hidden side of any one adjacent card; you may then flip it | The Eye sees what's hidden nearby and may expose it |
@@ -83,7 +83,7 @@ Activations are **always optional**. Skipping one is often the smartest play.
 
 Abilities charge other cards, which can activate, which charge others… Long chains are legal, fun, and self-limiting (once-per-turn cap guarantees they end). A worked example:
 
-> The grid has a Crown in the middle-left whose row lacks one card. You place a **Root** on the bottom edge — its requirement (edge) is met. You activate Root: flip the card above it, which turns a Wave face into a **Mask**. The flipped card is now charged — it's in the central cross — so you activate **Mask**: flip the top-centre card from Eye to **Key**. That filled... nothing yet — but the Key now shows in the top row alongside another Key and a **Star**. *Three aligned (Star is wild): you capture all three.* The Crown's row will never fill now — its moment passed.
+> The grid has a Crown in the middle-left whose row lacks one card. You place a **Leaf** on the bottom edge — its requirement (edge) is met. You activate Leaf: flip the card above it, which turns a Wave face into a **Mask**. The flipped card is now charged — it's in the central cross — so you activate **Mask**: flip the top-centre card from Eye to **Key**. That filled... nothing yet — but the Key now shows in the top row alongside another Key and a **Star**. *Three aligned (Star is wild): you capture all three.* The Crown's row will never fill now — its moment passed.
 
 ---
 
@@ -91,7 +91,7 @@ Abilities charge other cards, which can activate, which charge others… Long ch
 
 When the deck is empty, finish the current turn, then score:
 
-- **Most captured cards wins.** (Face-down Void cards count as 1 each.)
+- **Most captured cards wins.** (Face-down Moon cards count as 1 each.)
 - **Tiebreaker 1:** most *distinct* face-up signs among your captures.
 - **Tiebreaker 2:** whoever made the **first alignment capture** of the game.
 - **Tiebreaker 3:** whoever is earliest in turn order.
@@ -100,7 +100,7 @@ When the deck is empty, finish the current turn, then score:
 
 ## Edge cases & FAQ
 
-**The deck is empty and a Star or Void activates.** Nothing happens — those abilities need a deck.
+**The deck is empty and a Star or Moon activates.** Nothing happens — those abilities need a deck.
 
 **Flame discards itself?** No — Flame discards an *adjacent* card, never itself.
 
@@ -108,7 +108,7 @@ When the deck is empty, finish the current turn, then score:
 
 **A card is captured before I activated it.** Its activation is lost. Capture removes cards instantly.
 
-**An ability empties a cell next to a Void that's been sitting there.** If the Void's requirement goes from unmet to met, it becomes charged and may activate. If it was already met, nothing — no re-charging.
+**An ability empties a cell next to a Moon that's been sitting there.** If the Moon's requirement goes from unmet to met, it becomes charged and may activate. If it was already met, nothing — no re-charging.
 
 **Does placing a card that completes a line trigger that card's ability first?** No — alignments resolve the *instant* they exist. The captured cards are gone before anything can activate.
 
@@ -136,14 +136,14 @@ When the deck is empty, finish the current turn, then score:
 
 ## Card manifest (36 cards)
 
-Each card lists its two faces. ⚫ Void · 🌱 Root · 🌊 Wave · 🔥 Flame · 👁 Eye · 🎭 Mask · 🗝 Key · ⭐ Star · 👑 Crown
+Each card lists its two faces. 🌙 Moon · 🍃 Leaf · 🌊 Wave · 🔥 Flame · 👁 Eye · 🎭 Mask · 🗝 Key · ⭐ Star · 👑 Crown
 
 | | | | |
 |---|---|---|---|
-| ⚫/🌱 | ⚫/🌊 | ⚫/🔥 | ⚫/👁 |
-| ⚫/🎭 | ⚫/🗝 | ⚫/⭐ | ⚫/👑 |
-| 🌱/🌊 | 🌱/🔥 | 🌱/👁 | 🌱/🎭 |
-| 🌱/🗝 | 🌱/⭐ | 🌱/👑 | 🌊/🔥 |
+| 🌙/🍃 | 🌙/🌊 | 🌙/🔥 | 🌙/👁 |
+| 🌙/🎭 | 🌙/🗝 | 🌙/⭐ | 🌙/👑 |
+| 🍃/🌊 | 🍃/🔥 | 🍃/👁 | 🍃/🎭 |
+| 🍃/🗝 | 🍃/⭐ | 🍃/👑 | 🌊/🔥 |
 | 🌊/👁 | 🌊/🎭 | 🌊/🗝 | 🌊/⭐ |
 | 🌊/👑 | 🔥/👁 | 🔥/🎭 | 🔥/🗝 |
 | 🔥/⭐ | 🔥/👑 | 👁/🎭 | 👁/🗝 |

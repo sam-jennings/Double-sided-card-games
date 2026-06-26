@@ -1,10 +1,5 @@
 # Deck Structure & Mathematical Constraints
 
-> **Primacy.** This note is part of the project's binding steering set in
-> `.kiro/steering/`. Treat these notes as the **primary reference** for all
-> design decisions and defer to them over any other document. When you apply
-> guidance from here, **cite the specific steering note** you are relying on.
-
 The deck is the fixed foundation of everything. Internalise these facts before proposing or editing any game.
 
 ## The master deck
@@ -36,7 +31,7 @@ Remove every card showing symbol 8 or 9 (on either face) and the remaining 21 ca
 | Every pair exactly once (deduction registry) | all sizes | JANUS, FALSE FACE, UNPLAYED PAIR, CROSSROADS, FACE VALUE |
 | Even divisibility (2,3,4,6 players) | 36 only | TRIGON, TURNCOAT, TURNOVER, COUNCIL |
 | 6×6 exact grid | 36 | TWELVE TRIALS |
-| Eulerian circuit (whole deck chains into one loop) | odd symbol counts (7, 9) | (OUROBOROS, cut) |
+| Eulerian circuit (whole deck chains into one loop) | odd symbol counts (7, 9) | OUROBOROS (revived) |
 | Steiner triple / triangle partition | 7 (Fano) and 9 only | TWELVE TRIALS |
 | 12 triangles → 4 "seasons" of 3, each covering all 9 symbols once | 9 | TWELVE TRIALS |
 
@@ -56,12 +51,12 @@ Symbol 9 is removed first for subsets, and its 8 cards physically become the boa
 
 ## Symbol identity — The Nine Signs (working title, primary)
 
-The shipping symbol set uses **nine archetypal signs** — broad, family-neutral symbols that each game reinterprets locally. This is a settled decision (see `SYMBOL_SETS.md` §7 for the full study and rationale).
+The shipping symbol set uses **nine archetypal signs** — broad, family-neutral symbols that each game reinterprets locally. This is a settled decision. The canonical quick reference is [`SYMBOL_SET.md`](../../SYMBOL_SET.md) (pip · name · glyph · colour · role · per-game meaning · sub-deck behaviour); see `SYMBOL_SETS.md` §7 for the full study and rationale.
 
 | Pip | Sign |
 |---:|---|
-| 1 | Void |
-| 2 | Root |
+| 1 | Moon |
+| 2 | Leaf |
 | 3 | Wave |
 | 4 | Flame |
 | 5 | Eye |
@@ -79,7 +74,7 @@ The shipping symbol set uses **nine archetypal signs** — broad, family-neutral
 
 - **Star (8):** the wild / special-exception sign (TRIGON's "Star is wild" is preserved verbatim).
 - **Crown (9):** the apex / highest rank / capital.
-- **Void (1):** the outsider / catch-up / lowest rank.
+- **Moon (1):** the outsider / catch-up / lowest rank.
 
 ### Hard rules
 

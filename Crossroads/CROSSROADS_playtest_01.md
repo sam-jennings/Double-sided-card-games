@@ -13,7 +13,7 @@
 
 ## Hypotheses tested
 
-The recorded first-table questions for CROSSROADS (`COLLECTION_OVERVIEW.md`) are:
+The recorded first-table questions for CROSSROADS ([COLLECTION_OVERVIEW.md](../COLLECTION_OVERVIEW.md)) are:
 1. Does eight flips ache properly?
 2. Does dimming read at a glance?
 

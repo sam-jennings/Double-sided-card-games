@@ -2,7 +2,7 @@
 
 *A game of forgery and finite lies for 3–6 players · ~20 minutes · ages 10+*
 
-Every card in the deck is a unique pair — there is exactly one Sun/Crown in the world. So when you slap down a card showing Sun and purr *"…and beneath it, Crown,"* you haven't told a vague fib. You've forged a specific, unique object — one that someone at this table may be holding. Shed your hand first to win. Lie whenever you like. But the deck is a public registry, and every game the space for lies grows smaller.
+Every card in the deck is a unique pair — there is exactly one Moon/Crown in the world. So when you slap down a card showing Moon and purr *"…and beneath it, Crown,"* you haven't told a vague fib. You've forged a specific, unique object — one that someone at this table may be holding. Shed your hand first to win. Lie whenever you like. But the deck is a public registry, and every game the space for lies grows smaller.
 
 ---
 
@@ -61,7 +61,7 @@ A final-card claim is the game's signature moment: with one card left, your clai
 
 ## Why lies run out (read once, then feel it)
 
-Every pair exists once. The registry kills 6–12 pairs at setup, in public. Every challenge flips a card and kills its pair. Every truthful claim, believed, parks a pair in everyone's reckoning. Early game, a lie is a coin in a fountain; by the endgame, claiming "Sun hiding Key" when the Sun/Key is dead in the registry is a gift to the table — and the *good* lies must thread the few pairs still unaccounted for. The game tightens like a noose, by arithmetic alone.
+Every pair exists once. The registry kills 6–12 pairs at setup, in public. Every challenge flips a card and kills its pair. Every truthful claim, believed, parks a pair in everyone's reckoning. Early game, a lie is a coin in a fountain; by the endgame, claiming "Moon hiding Key" when the Moon/Key is dead in the registry is a gift to the table — and the *good* lies must thread the few pairs still unaccounted for. The game tightens like a noose, by arithmetic alone.
 
 ## Edge cases & FAQ
 

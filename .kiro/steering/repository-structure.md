@@ -1,10 +1,5 @@
 # Repository & File Organisation
 
-> **Primacy.** This note is part of the project's binding steering set in
-> `.kiro/steering/`. Treat these notes as the **primary reference** for all
-> design decisions and defer to them over any other document. When you apply
-> guidance from here, **cite the specific steering note** you are relying on.
-
 This is a design repository, not a code repository. Most files are Markdown documents; Python exists only for simulation, solving, and print-and-play.
 
 ## Layout

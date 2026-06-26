@@ -18,7 +18,7 @@ Janus, god of doorways, has two faces — and so does every card in your hand. H
 ## Setup
 
 1. Shuffle the deck, flipping random chunks so faces are randomised.
-2. Reveal **4 gates** (3 for the apprentice game, 5 for masters): draw four cards one at a time, show **both sides** to everyone, announce the pair aloud ("this gate is Sun-and-Moon"), and place them in a row, either face up. These are **keystones**; their pairs are public knowledge for the whole game.
+2. Reveal **4 gates** (3 for the apprentice game, 5 for masters): draw four cards one at a time, show **both sides** to everyone, announce the pair aloud ("this gate is Flame-and-Moon"), and place them in a row, either face up. These are **keystones**; their pairs are public knowledge for the whole game.
 3. **Validate the gates.** Count how often each symbol appears across all the keystones. In the 7-symbol game, **no symbol may appear on 4 or more keystones** — if one does, the setup is mathematically unwinnable; reshuffle and reveal new gates. (General rule for an *n*-symbol deck: reject the setup if any symbol appears on more than **floor((n − 1) / 2)** keystones — so max 3 at 7 symbols, max 4 at 9 symbols.)
 4. Deal each player a fan — **2P: 6 cards · 3P: 4 · 4P: 3** — dealt sliding flat off the deck so nobody flips anything, **outward face down against the table** so the future owner never glimpses it. Pick your fan up seeing only your side. The rest (5 cards at standard) is the **deck**, kept in a face-down stack — **no card's face is public until it enters a fan or the archive**.
 5. Place **4 omen tokens** in the middle (2 in reserve). Whoever most recently walked through a doorway goes first.
@@ -57,13 +57,13 @@ Discard any card from your fan to the **archive**, where cards lie open to all �
 
 ## Why the lock works (30-second tour)
 
-A keystone Sun/Moon needs pillars Sun/X and Moon/X — *the same X* — to form the triangle Sun-Moon-X. The pillar you played "my face" up showing Sun has a buried X that *you* can't see but your teammates can remember; the Moon pillar's buried face is someone else's same problem in mirror. Every pair exists exactly once, so the archive, the locked gates, the keystones, and every omen reading all chip away at what each buried face *can possibly be*.
+A keystone Flame/Moon needs pillars Flame/X and Moon/X — *the same X* — to form the triangle Flame-Moon-X. The pillar you played "my face" up showing Flame has a buried X that *you* can't see but your teammates can remember; the Moon pillar's buried face is someone else's same problem in mirror. Every pair exists exactly once, so the archive, the locked gates, the keystones, and every omen reading all chip away at what each buried face *can possibly be*.
 
 ## What you may and may not say
 
 Talk is the heart of Janus — deduce out loud, argue, plan. But because half the table can see what a cardholder cannot, communication needs a hard wall, or the game collapses into one person reading another's cards aloud.
 
-**You may freely discuss:** your own visible faces, the public keystones, locked gates, archive cards, the omen count, whose turn it is, and any logical deduction drawn from that shared information ("Sun-Star can only be founded on Crown now — the other Crowns are gone").
+**You may freely discuss:** your own visible faces, the public keystones, locked gates, archive cards, the omen count, whose turn it is, and any logical deduction drawn from that shared information ("Flame-Star can only be founded on Crown now — the other Crowns are gone").
 
 **You may not** give advice, confirmation, denial, reaction, hint, or any card-specific recommendation that is based on a live face you can see but the cardholder cannot. The *only* channel for that information is a formal **omen reading**.
 
@@ -72,7 +72,7 @@ Illegal, even though none names a hidden symbol outright:
 - "Don't play that one." / "Not the left card."
 - "Your second card is useful for the Moon gate."
 - "I'd play your left card as *your face*." / "Trust me, flip that one."
-- "Would anyone object if I play this to Sun?" (fishing for a reaction)
+- "Would anyone object if I play this to Flame?" (fishing for a reaction)
 - Wincing, hesitating, or going quiet when a teammate reaches for a card.
 
 Legal:
@@ -87,7 +87,7 @@ When in doubt: if the sentence would change meaning depending on a face only *yo
 
 **Can one player raise both pillars of a gate?** Yes — usually as a deliberate gamble, since they can't see either buried face. The table watching both backs may be screaming inside. Let them scream silently.
 
-**Can X equal another keystone's symbol?** Yes. Any of the 7 symbols can be a foundation except the keystone's own two (a pillar showing Sun can't bury Sun — it's one card).
+**Can X equal another keystone's symbol?** Yes. Any of the 7 symbols can be a foundation except the keystone's own two (a pillar showing Flame can't bury Flame — it's one card).
 
 **Both pillars are placed and one was a fumble?** The fumble strike resolves first; the lock-check never happens — the surviving pillar stays, waiting for a new partner.
 

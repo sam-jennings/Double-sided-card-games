@@ -1,10 +1,5 @@
 # Physical Handling of Double-Faced Cards
 
-> **Primacy.** This note is part of the project's binding steering set in
-> `.kiro/steering/`. Treat these notes as the **primary reference** for all
-> design decisions and defer to them over any other document. When you apply
-> guidance from here, **cite the specific steering note** you are relying on.
-
 > **This is the centre of the project.** Every rule must survive the physical reality of a card with two faces and no back. Most design failures on this deck are handling failures, not maths failures.
 
 ## The hard physical facts
@@ -32,8 +27,8 @@ If a rule fails any of these, redesign it or flag it as a handling bug (see `des
 - **Face-down cards / hidden decks / card backs.** There is no back. A "face-down" card still shows a symbol. Don't borrow normal-card conventions.
 - **Secret commitments via face-down placement.** You cannot hide both faces by placing. Use a different concealment mechanism (held in hand, palmed, behind a screen) and prove it actually conceals.
 - **Hidden hands that the holder can't help seeing.** If concealment depends on a player *not* looking at their own card's other face, it is fragile. JANUS makes this work only with an explicit, policed "never inspect your own face" rule — treat that as the exception that proves the cost.
-- **Constantly needed state on the hidden/down face.** Any state players must track repeatedly must be **visible**. (This sank OUROBOROS: the "open symbol" lived under the serpent's head.)
-- **Hidden-face memory burden.** Don't require players to remember faces the physical state makes annoying to recheck. Prefer open information, public registries, and exact deduction.
+- **Constantly-needed, low-payoff state on the hidden/down face.** If a game makes players *repeatedly* consult a buried face just to function — with no real decision riding on it — put that state somewhere visible. (This was the *fixable* part of what sank OUROBOROS: the "open symbol" lived under the serpent's head as **involuntary overhead** — orienting the end card so the open symbol shows resolves it cleanly, the CROSSROADS technique. Note this defect is distinct from a deliberate memory game.) This is **not** a ban on hidden-face memory itself — see below.
+- **Involuntary hidden-face bookkeeping.** Don't force players to *constantly* re-track faces as pure overhead, especially when rechecking is awkward and nothing interesting rides on it. A game whose *point* is remembering or deducing the hidden face is a different thing — that's a feature, not this anti-pattern.
 
 ## Handling techniques that *do* work
 
@@ -45,7 +40,10 @@ These have been validated or designed-around in the collection:
 - **Palms-commit / simultaneous reveal** instead of face-down commitment (THE COUNCIL).
 - **Claim-and-challenge.** The hidden face becomes verifiable on demand by flipping; the bluff lives in the gap, and pair-uniqueness bounds the lie-space (FALSE FACE, FACE VALUE).
 - **Orientation as state.** Which way a card points (or whether it's dimmed/rotated) is a visible, glanceable state marker (CROSSROADS roads and Signal Fires).
+- **Hidden-face memory / deduction as the core challenge.** When remembering or deducing the pressed face *is* the game (not incidental bookkeeping), the deck is well-suited to it — the public pair-registry bounds what's knowable and rewards counting. Keep the memory load deliberate and roughly symmetric across players, and give the table a way to verify on demand (a flip, an end-of-round reveal).
 
 ## Default bias
 
-When in doubt, prefer **visible state, public history, and legally-deducible information** over hidden-card conventions imported from ordinary decks. This deck rewards deduction and counting; it punishes hidden-face memory.
+When in doubt, prefer **visible state, public history, and legally-deducible information** over hidden-card conventions imported from ordinary decks. This deck rewards deduction and counting; lean on those by default. Deliberate hidden-face memory is a valid choice when it *is* the point of the game — just make it a chosen challenge, not involuntary overhead.
+
+**Caveat on this bias — it has been over-applied.** Nearly every game in the collection now advertises "no hidden-face memory" as a virtue (TURNOVER killed its back-memory chain, THE UNPLAYED PAIR converted its hidden-rank rule to a public reveal, FALSE FACE / FACE VALUE / BLIGHT all engineer memory out). The default-to-visible bias is correct for *involuntary* state, but it has crowded out a legitimate, deck-native genre. A deliberate, verifiable, roughly-symmetric **memory game is currently a gap worth filling**, not a risk to avoid.

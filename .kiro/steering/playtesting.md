@@ -1,15 +1,10 @@
 # Playtesting Methodology
 
-> **Primacy.** This note is part of the project's binding steering set in
-> `.kiro/steering/`. Treat these notes as the **primary reference** for all
-> design decisions and defer to them over any other document. When you apply
-> guidance from here, **cite the specific steering note** you are relying on.
+Table testing is how a pipeline game earns promotion to the collection. It's also how collection games get better. This document covers the methodology for both.
 
-The collection's current centre of gravity. Most games are simulation- or rulebook-complete but **untested at the table** — the highest-value work right now is running first playtests and recording what they reveal.
+## Why table testing matters
 
-## Why this matters most now
-
-Simulation certifies the floor (the game ends, isn't broken, defaults are sound). It cannot tell us whether a game is fun, teachable, or physically pleasant. Only humans can. Every tier-2 and tier-3 game (see `product-vision.md`) is waiting on its first table test.
+Simulation certifies the floor (the game ends, isn't broken, defaults are sound). It cannot tell us whether a game is fun, teachable, or physically pleasant. Only humans can. Most pipeline games (Stage 1 and Stage 2) are waiting on their first table test — but there's no mandate to test them in any order. Test what you're excited to test.
 
 ## Every game carries test-focus questions
 

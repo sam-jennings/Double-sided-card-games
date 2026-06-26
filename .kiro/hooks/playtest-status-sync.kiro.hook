@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Playtest report status sync",
+  "description": "When a playtest report is created, sync game status: update COLLECTION_OVERVIEW.md (tier/verdict) and NEW_GAME_CONCEPTS.md as needed. No-ops on playtest plan files.",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "**/*_playtest_*.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A file matching the playtest pattern was just created. FIRST: if the filename contains \"_playtest_plan_\" it is a PLAN, not a report — say nothing and stop immediately, do nothing else. Otherwise it is a playtest REPORT. Per playtesting.md and product-vision.md, a first table test changes a game's stage and carries a verdict (iterate/park/cut). Read the new report, then check whether COLLECTION_OVERVIEW.md (the canonical index: stage/tier, open questions) and NEW_GAME_CONCEPTS.md need updating to reflect the report's verdict and any tier change. If updates are needed, state the specific changes and offer to apply them. If everything is already in sync, say so in one line. Do not edit the report itself and make no unrelated changes."
+  }
+}

@@ -1,10 +1,5 @@
 # Product Vision & Collection Goals
 
-> **Primacy.** This note is part of the project's binding steering set in
-> `.kiro/steering/`. Treat these notes as the **primary reference** for all
-> design decisions and defer to them over any other document. When you apply
-> guidance from here, **cite the specific steering note** you are relying on.
-
 > This is a **tabletop game design project**, not a software product. Code exists only in service of game design (simulation, solving, print-and-play). The primary deliverables are **games, rulebooks, playtest plans, playtest reports, design analyses, and collection-level decisions**.
 
 ## The one-line vision
@@ -30,7 +25,34 @@ The product shape is **not yet decided**. Candidate forms:
 
 Treat "what shape is this product?" as a live design question. Don't assume a form; when a decision touches packaging, scope, or which games ship, surface the trade-offs.
 
-## Criteria for belonging in the collection
+## The pipeline and the collection
+
+Games exist in two worlds: **the pipeline** (a workshop where anything goes) and **the collection** (the curated set of games that have earned their place through table play).
+
+### Pipeline stages
+
+Every game starts in the pipeline and moves through stages as work is done. There is no obligation to advance games in any order — work on whatever is useful or exciting right now.
+
+| Stage | Name | What it means | What exists |
+|---|---|---|---|
+| 0 | **Spark** | A one-liner or concept sketch. May never go further. | A line in `NEW_GAME_CONCEPTS.md` |
+| 1 | **Draft** | Rules written — possibly rough, possibly unread. You could sit down and *read* it. | A rulebook (possibly rough) |
+| 2 | **Validated** | Stress-tested via simulation, solver, mathematical analysis, or deep manual walkthrough. You believe it *works*. | Rulebook + design analysis and/or sim results |
+| 3 | **Table-tested** | Humans have played it at least once. You have data. | Rulebook + at least one playtest report |
+
+Stages are descriptive, not prescriptive. A game can jump from Spark to Validated if you sit down and sim it before writing full rules. A game can stay at Draft forever if you're not ready to push it.
+
+### The collection gate
+
+A game is **promoted to the collection** only after reaching Stage 3, and only if:
+
+1. The first playtest verdict was **"iterate"** (not "park" or "cut").
+2. It passes the evaluation rubric in `design-principles.md`.
+3. It satisfies the collection criteria below.
+
+Until promotion, a game is a **pipeline game** — a work in progress with no status anxiety attached.
+
+### Criteria for belonging in the collection
 
 A game earns its place only if it clears the evaluation rubric in `design-principles.md`. At the collection level, also ask:
 
@@ -41,20 +63,9 @@ A game earns its place only if it clears the evaluation rubric in `design-princi
 
 Be willing to cut. A clever game that overlaps an existing one, or that an ordinary deck could run, weakens the collection.
 
-## Game maturity tiers — and how to treat each
+### Cut / archived
 
-Every game sits in one of four tiers. Respect the tier when proposing work.
-
-1. **Table-tested (sim-tuned + at least one physical playtest)** — TWELVE TRIALS, CROSSROADS, THE ORRERY.
-   - These have been both simulation-validated and physically played at the table. Priority is iterating on findings, running further playtests, or finalising rules based on table experience.
-2. **Simulation/mathematically validated — needs first table test** — TRIGON, TURNCOAT, TURNOVER.
-   - Numbers are checked; humans haven't played. TRIGON and TURNCOAT represent ~45k simulated games of investment but remain untested at the table. **Priority is the first table test**, not more simulation. Each carries explicit first-table questions — preserve and answer them.
-3. **Rulebook complete — untested at the table** — JANUS, FALSE FACE, THE UNPLAYED PAIR, FACE VALUE, THE COUNCIL.
-   - Full rules exist, zero plays. Priority is a first playtest and the test-focus questions already recorded for each.
-4. **Cut / archived** — OUROBOROS.
-   - Retained as a **design record only**. Cut after live testing (too luck-driven, hidden-face tracking awkward, thin skill gap). Its lessons are binding on all live designs — see `design-principles.md`.
-
-When you propose work, state which tier the game is in and respect the priority that tier implies. The collection's current centre of gravity is **table testing**, not new design.
+Games that are explicitly cut are retained as **design records**. OUROBOROS, the only game cut so far, was **revived to the pipeline in June 2026** after its cut reasons were re-examined (a fixable handling bug plus a skill gap that proved to be a one-ply artefact) — a worked example of confronting *and revisiting* a cut. A cut is a strong signal, not necessarily permanent: revive only by confronting, with evidence, why it was cut. Lessons from cuts remain binding on live designs — see `design-principles.md`.
 
 ## Collaboration stance
 

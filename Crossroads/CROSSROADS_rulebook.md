@@ -45,7 +45,7 @@ The duel contains exactly **eight flips**, drawn from a shared pool and paid for
 
 Every card still in your hand at game end is a **contract**: a demand that its two cities be connected. A contract is **fulfilled** if a route exists between its two cities **in either direction** — using the built roads, as they finally point.
 
-Savour what keeping a card means: holding the Sun–Moon road *removes the only direct road between Sun and Moon from the world*, then demands those cities be connected anyway — by everyone else's roads, pointed the right way, at the final whistle.
+Savour what keeping a card means: holding the Crown–Moon road *removes the only direct road between Crown and Moon from the world*, then demands those cities be connected anyway — by everyone else's roads, pointed the right way, at the final whistle.
 
 ## Scoring
 
@@ -71,7 +71,7 @@ Most fulfilled contracts wins. Tiebreak: highest pip-sum across your fulfilled c
 
 - **Build even, point odd.** The direction of a road matters less than its existence — but the *parity* of flips available before game end decides final facings. Count tempo like a chess endgame: who will get the last flip?
 - **Hub cities are traps.** A city where many roads converge is easy to reach and easy to redirect around. The valuable contracts touch quiet cities served by exactly one in-road.
-- **Your discards are your tell.** Building the Sun–Key road says you don't need Sun–Key as a contract — says it to someone who knew you held it. Build your dead weight late, not early.
+- **Your discards are your tell.** Building the Crown–Key road says you don't need Crown–Key as a contract — says it to someone who knew you held it. Build your dead weight late, not early.
 - **The ko rule is a weapon.** Flipping a road your opponent must immediately flip back wastes *their* turn — and *their* city. The flip war is won by whoever has spare flips, and the ring shows exactly how many remain.
 - **The last flip is the largest.** With the pool empty, every facing is permanent. Forcing your opponent to spend the seventh flip so that you own the eighth is the endgame in miniature — count the dark cities the way a chess player counts tempo.
 

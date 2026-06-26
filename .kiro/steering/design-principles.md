@@ -1,10 +1,5 @@
 # Game Design Principles
 
-> **Primacy.** This note is part of the project's binding steering set in
-> `.kiro/steering/`. Treat these notes as the **primary reference** for all
-> design decisions and defer to them over any other document. When you apply
-> guidance from here, **cite the specific steering note** you are relying on.
-
 How to design, evaluate, and critique games on this deck. Pairs with `physical-handling.md` (the physical constraint) and `deck-structure.md` (the maths).
 
 ## Core principle
@@ -18,6 +13,7 @@ Properties worth building on:
 - **Smaller subsets are exact all-pairs decks** → tune player count / length per game via declared symbol range.
 - **Flipping swaps the active symbol** → reversible commitment, defection, denial, route reorientation, choosing which face to play.
 - **A card is an edge between two symbols** → connections, allegiances, routes, promises, lies, reversible commitments, triangle logic.
+- **The pressed (hidden) face + the public pair-registry** → *deliberate* memory/deduction: track or deduce the down-face over time, bounded and made verifiable by every-pair-once. **Currently under-served** — most games strip memory out, so a well-built memory game is a deliberate target, not a risk (see lesson 1, `physical-handling.md`).
 - **The deck can generate its own board/state** (CROSSROADS city ring, TRIGON grid, TWELVE TRIALS 6×6) — prefer this over external components.
 
 ## Evaluation rubric
@@ -26,7 +22,7 @@ Score every game idea or change against these. Be critical and concrete.
 
 1. Does it **exploit the all-pairs deck** (not just use generic symbols)?
 2. Does it **physically work** with double-faced cards? (Run the `physical-handling.md` checklist.)
-3. Is the required information **visible or legally deducible** — not dependent on hidden-face memory?
+3. Is the required information **visible or legally deducible** — not dependent on *involuntary* hidden-face memory? (Deliberate, verifiable, roughly symmetric hidden-face memory is a legitimate **core** mechanic — see lesson 1. The failure mode is memory as *involuntary overhead*, not memory as the game.)
 4. Does **flipping matter** — create real decisions, reversals, threats, or opportunities?
 5. Does **pair uniqueness matter**?
 6. Does it create a **distinct experience** from the existing games?
@@ -55,12 +51,14 @@ Treat these as defects to be found and fixed, the way code bugs are:
 
 From the OUROBOROS post-mortem and the TRIGON/TURNCOAT simulation work. **Do not repeat these mistakes:**
 
-1. Don't rely on players remembering hidden faces when the physical state makes rechecking annoying.
-2. Don't put constantly-needed state on the hidden/down face of a card.
+1. Hidden-face **memory and deduction are legitimate, deck-suited mechanics.** A game *built on* tracking or deducing the pressed face is welcome — the caution is narrower: don't impose hidden-face tracking as *involuntary bookkeeping* (mandatory, thin-payoff, and physically awkward to recheck). Make it a chosen challenge, not background overhead. This is currently **under-served**: most games in the collection deliberately strip memory out and advertise "no hidden-face memory" as a virtue. A deliberate, verifiable memory game is an **explicit design target**, not a merely-tolerated option — don't reflexively cite OUROBOROS to avoid it (OUROBOROS was not a memory game; it buried *involuntary* state, which is a different defect).
+2. Don't bury **constantly-needed, low-payoff** state on the hidden/down face. (If tracking the hidden face *is* the game, that's fine — see 1. OUROBOROS failed because the open symbol lived under the serpent's head *as overhead*, with a thin skill gap on top.)
 3. Don't assume "face-down" works like a normal card game — it doesn't (no back).
 4. Don't design hidden information that collapses because the holder can inspect both sides.
 5. Don't accept a rule just because it's mathematically elegant — table handling and fun decide.
-6. **A thin skill gap between random and skilled play is a warning sign of a dull game.** Simulation should show skilled play clearly beating random (the collection treats ~1.5× and up as healthy). If it doesn't, suspect the design, not the bot.
+6. **A thin skill gap between random and skilled play is a warning sign of a dull game** — but read the gap carefully before condemning the design. Simulation should show skilled play clearly beating random (the collection treats ~1.5× and up as healthy). Two cautions the OUROBOROS post-mortem actually teaches, and which were under-weighted in the original cut:
+   - **(a) Obvious-strategy gap ≠ ceiling.** OUROBOROS's *greedy* (beginner-obvious) line beat random only ~1.13×, but a counter-intuitive **hand-stewardship** line reached ~1.67×. A game can hide a real skill ceiling behind a near-random *obvious* strategy. That is a **teaching/onboarding problem** (surface the real skill in the rulebook) — possibly fixable, not automatically a dead game.
+   - **(b) A one-ply bot is a floor, not a ceiling.** If a shallow bot shows a thin gap, try a deeper/lookahead bot (or watch a thoughtful human) before concluding the design is dull. Suspect the bot's depth as well as the design — the OUROBOROS analysis itself flagged its one-ply bots as underselling humans, yet the cut leaned on those floor numbers.
 7. Open information, public registries, visible state, and exact deduction usually beat hidden-card conventions on this deck.
 
 ## Critique stance
@@ -70,6 +68,10 @@ When asked for ideas or changes:
 - Challenge rules that are elegant-but-fiddly, clever-but-unfun, or impossible to handle cleanly.
 - Prefer fewer rules, cleaner handling, and faster paths to "is this fun?"
 - Offer concrete next steps and testable hypotheses, not vague praise.
+
+## General board-game craft (external reference)
+
+The deck-specific rules here sit *on top of* general board-game design craft, not instead of it. `Reference/Game Development Notes/Board Game Design Knowledge Base.md` synthesises that craft — player experience, mechanics, interaction, theme, visual design/ergonomics, rules-writing, playtesting, production, business, and pitching. When working on anything it covers, consult it and apply the relevant principles. Where the deck's physical (`physical-handling.md`) or mathematical (`deck-structure.md`) constraints conflict with generic advice, the deck wins.
 
 ## Vocabulary mapping (software → tabletop)
 
