@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Deck — Fifteen Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #090d18;
+    --bg-veil: #0c1322;
+    --surface: #111a2d;
+    --surface-2: #16213a;
+    --border: #1d2b46;
+    --border-soft: #172238;
+    --text: #f2efe6;
+    --text-soft: #9fadc2;
+    --muted: #5f6e87;
+    --muted-dim: #3a4862;
+    --gold: #d2a437;
+    --gold-bright: #e6bd54;
+
+    --sign-moon: #6f6cc0;
+    --sign-leaf: #5aa45a;
+    --sign-wave: #3a9bdc;
+    --sign-flame: #e1573f;
+    --sign-eye: #2bb5a8;
+    --sign-mask: #c656ab;
+    --sign-key: #d6a43f;
+    --sign-star: #ecc04a;
+    --sign-crown: #8a63d4;
+
+    --r-card: 10px;
+    --r-chip: 999px;
+  }
+
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(45,60,100,0.45), transparent 60%),
+      radial-gradient(80% 50% at 100% 100%, rgba(138,99,212,0.10), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 0 18px 64px; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 40;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 13px 18px;
+    background: rgba(9,13,24,0.78);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .brand { display: flex; align-items: center; gap: 9px; }
+  .brand .glyphs { display: flex; }
+  .brand .glyphs svg { width: 17px; height: 17px; }
+  .brand .glyphs svg:nth-child(2) { margin-left: -5px; }
+  .brand-name {
+    font: 600 11px/1 'Inter', sans-serif;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-soft);
+  }
+  .dice {
+    display: inline-flex; align-items: center; gap: 7px;
+    font: 600 11px/1 'Inter', sans-serif; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--bg); background: var(--gold);
+    border-radius: var(--r-chip); padding: 8px 13px 8px 11px;
+    transition: background 200ms ease, transform 120ms ease;
+  }
+  .dice svg { width: 14px; height: 14px; }
+  .dice:hover { background: var(--gold-bright); }
+  .dice:active { transform: scale(0.95); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 54px 0 30px; text-align: center; position: relative; }
+  .hero-marks { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+  .hero-marks svg { position: absolute; opacity: 0.06; }
+  .hero-inner { position: relative; z-index: 1; }
+  .eyebrow {
+    font: 600 11px/1 'Inter', sans-serif; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 18px;
+  }
+  .hero h1 {
+    font: 800 clamp(38px, 12vw, 60px)/1.02 'Playfair Display', serif;
+    letter-spacing: -0.01em; margin-bottom: 16px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-bright); font-weight: 700; }
+  .hero p.lead {
+    font: 400 16px/1.65 'Inter', sans-serif; color: var(--text-soft);
+    max-width: 34ch; margin: 0 auto 30px;
+  }
+  .stats { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .stat {
+    min-width: 76px; padding: 13px 14px;
+    background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--r-card);
+  }
+  .stat .n { font: 700 22px/1 'Playfair Display', serif; color: var(--text); }
+  .stat .l {
+    display: block; margin-top: 5px;
+    font: 500 10px/1.2 'Inter', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+  }
+
+  /* ---------- Filters ---------- */
+  .filters { position: sticky; top: 53px; z-index: 30; padding: 14px 0 10px; background: linear-gradient(var(--bg) 72%, transparent); }
+  .filter-row { display: flex; align-items: center; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .filter-row::-webkit-scrollbar { display: none; }
+  .filter-row + .filter-row { margin-top: 8px; }
+  .flabel {
+    flex: 0 0 auto; font: 600 9.5px/1 'Inter', sans-serif; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--muted-dim); width: 50px;
+  }
+  .chip {
+    flex: 0 0 auto;
+    font: 500 12.5px/1 'Inter', sans-serif;
+    color: var(--text-soft); background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-chip); padding: 8px 13px; white-space: nowrap;
+    transition: all 160ms ease;
+  }
+  .chip:hover { border-color: var(--muted); color: var(--text); }
+  .chip[aria-pressed="true"] {
+    background: var(--gold); border-color: var(--gold); color: var(--bg); font-weight: 600;
+  }
+
+  .count {
+    font: 500 12px/1 'IBM Plex Mono', monospace; letter-spacing: 0.04em;
+    color: var(--muted); padding: 14px 2px 12px;
+  }
+
+  /* ---------- Game grid ---------- */
+  .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media (min-width: 600px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+  .game {
+    display: flex; gap: 15px; text-align: left; align-items: stretch;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-card);
+    padding: 15px; width: 100%;
+    transition: border-color 200ms ease, transform 140ms ease, background 200ms ease;
+  }
+  .game:hover { border-color: var(--muted); background: var(--surface-2); }
+  .game:active { transform: scale(0.99); }
+  .game:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* paired-card motif */
+  .pair { flex: 0 0 auto; position: relative; width: 62px; }
+  .mini {
+    position: absolute; top: 50%; width: 44px; height: 62px;
+    border-radius: 6px; background: #0c1424; border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+  }
+  .mini svg { width: 26px; height: 26px; }
+  .mini .pip {
+    position: absolute; top: 4px; left: 5px;
+    font: 700 8px/1 'IBM Plex Mono', monospace; color: var(--text-soft);
+  }
+  .mini-a { left: 0; transform: translateY(-50%) rotate(-7deg); z-index: 1; }
+  .mini-b { left: 16px; transform: translateY(-50%) rotate(7deg); z-index: 2; }
+
+  .game-body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+  .game-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
+  .game-tag {
+    font: 600 9.5px/1 'Inter', sans-serif; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .game-name { font: 700 21px/1.08 'Playfair Display', serif; color: var(--text); margin-bottom: 4px; }
+  .game-tagline { font: 400 13.5px/1.45 'Inter', sans-serif; color: var(--text-soft); }
+  .game-meta { display: flex; flex-wrap: wrap; gap: 6px 7px; margin-top: auto; padding-top: 11px; }
+  .meta {
+    display: inline-flex; align-items: center; gap: 5px;
+    font: 500 11px/1 'Inter', sans-serif; color: var(--muted);
+  }
+  .meta svg { width: 12px; height: 12px; opacity: 0.85; }
+  .meta + .meta::before { content: ""; width: 3px; height: 3px; border-radius: 50%; background: var(--muted-dim); margin-right: 2px; }
+
+  /* ---------- Status badges ---------- */
+  .badge {
+    flex: 0 0 auto;
+    font: 600 8.5px/1 'Inter', sans-serif; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 7px; border-radius: var(--r-chip); border: 1px solid transparent; white-space: nowrap;
+  }
+  .badge-collection { color: var(--gold-bright); border-color: rgba(230,189,84,0.4); background: rgba(230,189,84,0.09); }
+  .badge-pipeline { color: var(--text-soft); border-color: var(--border); background: var(--surface-2); }
+  .badge-parked { color: var(--muted); border-color: var(--muted-dim); background: transparent; }
+
+  .empty {
+    text-align: center; color: var(--muted); padding: 48px 16px;
+    font: 400 14px/1.6 'Inter', sans-serif; display: none;
+  }
+
+  /* ---------- Signs section ---------- */
+  .section-head { padding: 52px 0 18px; }
+  .section-head .eyebrow { margin-bottom: 10px; }
+  .section-head h2 { font: 700 28px/1.1 'Playfair Display', serif; margin-bottom: 8px; }
+  .section-head p { font: 400 14px/1.6 'Inter', sans-serif; color: var(--text-soft); max-width: 46ch; }
+  .signs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (min-width: 560px) { .signs { grid-template-columns: repeat(3, 1fr); } }
+  .sign {
+    background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--r-card);
+    padding: 16px 10px 13px; text-align: center;
+  }
+  .sign .sg { height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 9px; }
+  .sign .sg svg { width: 34px; height: 34px; }
+  .sign .rank { font: 700 10px/1 'IBM Plex Mono', monospace; color: var(--gold); }
+  .sign .nm { font: 600 13px/1.2 'Inter', sans-serif; color: var(--text); margin-top: 6px; }
+  .sign .mn { font: 400 10.5px/1.3 'Inter', sans-serif; color: var(--muted); margin-top: 3px; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 48px 0 8px; text-align: center; border-top: 1px solid var(--border-soft); margin-top: 52px; }
+  footer .fmark { display: flex; justify-content: center; gap: 4px; margin-bottom: 16px; opacity: 0.5; }
+  footer .fmark svg { width: 18px; height: 18px; }
+  footer p { font: 400 12px/1.6 'Inter', sans-serif; color: var(--muted); max-width: 44ch; margin: 0 auto 6px; }
+
+  /* ---------- Detail sheet ---------- */
+  .scrim {
+    position: fixed; inset: 0; z-index: 60; background: rgba(5,8,15,0.66);
+    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+    opacity: 0; pointer-events: none; transition: opacity 240ms ease;
+  }
+  .scrim.open { opacity: 1; pointer-events: auto; }
+  .sheet {
+    position: fixed; left: 50%; bottom: 0; z-index: 61;
+    width: min(560px, 100%); max-height: 92vh;
+    transform: translate(-50%, 100%);
+    background: var(--bg-veil); border: 1px solid var(--border);
+    border-bottom: none; border-radius: 18px 18px 0 0;
+    display: flex; flex-direction: column;
+    transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1);
+    box-shadow: 0 -16px 50px rgba(0,0,0,0.6);
+  }
+  .sheet.open { transform: translate(-50%, 0); }
+  @media (min-width: 600px) {
+    .sheet { bottom: auto; top: 50%; border-radius: 16px; border-bottom: 1px solid var(--border); transform: translate(-50%, -46%); opacity: 0; transition: opacity 240ms ease, transform 240ms ease; }
+    .sheet.open { transform: translate(-50%, -50%); opacity: 1; }
+  }
+  .handle { flex: 0 0 auto; padding: 10px 0 4px; display: flex; justify-content: center; }
+  .handle span { width: 38px; height: 4px; border-radius: 2px; background: var(--muted-dim); }
+  .sheet-close {
+    position: absolute; top: 14px; right: 14px; z-index: 2;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text-soft);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sheet-close:hover { color: var(--text); border-color: var(--muted); }
+  .sheet-scroll { overflow-y: auto; padding: 8px 22px 30px; -webkit-overflow-scrolling: touch; }
+
+  .d-head { display: flex; gap: 16px; align-items: center; padding: 8px 0 18px; }
+  .d-pair { flex: 0 0 auto; position: relative; width: 78px; height: 76px; }
+  .d-pair .mini { width: 52px; height: 73px; }
+  .d-pair .mini svg { width: 30px; height: 30px; }
+  .d-pair .mini-a { left: 0; }
+  .d-pair .mini-b { left: 20px; }
+  .d-htext { min-width: 0; }
+  .d-tag { display: flex; align-items: center; gap: 8px; font: 600 10px/1 'Inter', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+  .d-name { font: 800 30px/1.04 'Playfair Display', serif; margin-bottom: 5px; }
+  .d-tagline { font: 400 14px/1.5 'Inter', sans-serif; color: var(--text-soft); }
+
+  .d-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border-soft); border: 1px solid var(--border-soft); border-radius: var(--r-card); overflow: hidden; margin-bottom: 22px; }
+  .d-stat { background: var(--surface); padding: 12px 10px; text-align: center; }
+  .d-stat .v { font: 600 14px/1.1 'Inter', sans-serif; color: var(--text); }
+  .d-stat .k { display: block; margin-top: 4px; font: 500 9px/1.2 'Inter', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+  .d-block { margin-bottom: 24px; }
+  .d-block h3 {
+    font: 600 10.5px/1 'Inter', sans-serif; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 11px;
+  }
+  .d-block p { font: 400 15px/1.65 'Inter', sans-serif; color: var(--text); }
+  .d-steps { list-style: none; counter-reset: s; display: flex; flex-direction: column; gap: 11px; }
+  .d-steps li { position: relative; padding-left: 34px; font: 400 14.5px/1.55 'Inter', sans-serif; color: var(--text); }
+  .d-steps li::before {
+    counter-increment: s; content: counter(s);
+    position: absolute; left: 0; top: 1px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: transparent; border: 1px solid var(--gold); color: var(--gold);
+    font: 700 11px/22px 'IBM Plex Mono', monospace; text-align: center;
+  }
+
+  .d-foot { display: flex; align-items: center; gap: 8px; padding-top: 6px; border-top: 1px solid var(--border-soft); margin-top: 4px; }
+  .d-foot svg { width: 13px; height: 13px; color: var(--muted); flex: 0 0 auto; }
+  .d-foot span { font: 400 11.5px/1.4 'Inter', sans-serif; color: var(--muted); }
+
+  /* ---------- Full-rules loader ---------- */
+  .rules-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .rules-btn {
+    font: 600 12.5px/1 'Inter', sans-serif; color: var(--bg); background: var(--gold);
+    border: none; border-radius: var(--r-chip); padding: 11px 16px; cursor: pointer;
+    transition: background 160ms ease, opacity 160ms ease;
+  }
+  .rules-btn:hover { background: var(--gold-bright); }
+  .rules-btn:disabled { cursor: default; opacity: 0.7; }
+  .rules-btn.done { background: var(--surface-2); color: var(--text-soft); }
+  .rules-link {
+    font: 600 12.5px/1 'Inter', sans-serif; color: var(--text-soft); text-decoration: none;
+    border: 1px solid var(--border); border-radius: var(--r-chip); padding: 11px 15px;
+    transition: color 160ms ease, border-color 160ms ease;
+  }
+  .rules-link:hover { color: var(--text); border-color: var(--muted); }
+  .rules-error { color: var(--sign-flame); font: 400 13.5px/1.6 'Inter', sans-serif; }
+
+  /* rendered markdown */
+  .rules-panel {
+    margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-soft);
+    font: 400 14.5px/1.7 'Inter', sans-serif; color: var(--text-soft);
+  }
+  .rules-panel > :first-child { margin-top: 0; }
+  .rules-panel h1 { font: 800 24px/1.2 'Playfair Display', serif; color: var(--text); margin: 22px 0 11px; }
+  .rules-panel h2 { font: 700 19px/1.25 'Playfair Display', serif; color: var(--text); margin: 22px 0 10px; }
+  .rules-panel h3 { font: 700 14px/1.3 'Inter', sans-serif; color: var(--gold-bright); margin: 18px 0 8px; }
+  .rules-panel h4, .rules-panel h5, .rules-panel h6 { font: 700 13px/1.3 'Inter', sans-serif; color: var(--text); margin: 16px 0 7px; }
+  .rules-panel p { margin: 0 0 11px; }
+  .rules-panel ul, .rules-panel ol { margin: 0 0 12px; padding-left: 22px; }
+  .rules-panel li { margin-bottom: 5px; }
+  .rules-panel li > ul, .rules-panel li > ol { margin: 5px 0 0; }
+  .rules-panel strong { color: var(--text); font-weight: 600; }
+  .rules-panel em { color: var(--text); }
+  .rules-panel a { color: var(--gold-bright); text-decoration: underline; }
+  .rules-panel code { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; color: var(--text); }
+  .rules-panel pre { background: var(--surface-2); border: 1px solid var(--border-soft); border-radius: 8px; padding: 12px 14px; overflow-x: auto; margin: 0 0 13px; }
+  .rules-panel pre code { background: none; padding: 0; font-size: 12.5px; }
+  .rules-panel blockquote { border-left: 3px solid var(--gold); margin: 0 0 13px; padding: 2px 0 2px 14px; color: var(--muted); font-style: italic; }
+  .rules-panel hr { border: none; border-top: 1px solid var(--border-soft); margin: 20px 0; }
+  .rules-panel table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 13px; display: block; overflow-x: auto; }
+  .rules-panel th, .rules-panel td { border: 1px solid var(--border); padding: 6px 9px; text-align: left; }
+  .rules-panel th { background: var(--surface-2); color: var(--text); font-weight: 600; }
+  .rules-panel img { max-width: 100%; height: auto; border-radius: 8px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="glyphs" id="brand-glyphs"></span>
+    <span class="brand-name">The Deck</span>
+  </div>
+  <button class="dice" id="surprise" type="button" aria-label="Pick a game for us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg>
+    Surprise me
+  </button>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-marks" id="hero-marks"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">Fifteen games · One deck</p>
+      <h1>One deck.<br><em>Endless play.</em></h1>
+      <p class="lead">Thirty-six double-sided cards. Nine signs, every pair exactly once. Fifteen games — from solo puzzles to bluffing duels — all from the same deck, with the full rulebook a tap away.</p>
+      <div class="stats">
+        <div class="stat"><span class="n">36</span><span class="l">Cards</span></div>
+        <div class="stat"><span class="n">9</span><span class="l">Signs</span></div>
+        <div class="stat"><span class="n">15</span><span class="l">Games</span></div>
+        <div class="stat"><span class="n">1–6</span><span class="l">Players</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section aria-label="Browse games">
+    <div class="filters">
+      <div class="filter-row" id="f-players" data-group="players">
+        <span class="flabel">Players</span>
+        <button class="chip" data-val="any" aria-pressed="true" type="button">Any</button>
+        <button class="chip" data-val="solo" aria-pressed="false" type="button">Solo</button>
+        <button class="chip" data-val="duo" aria-pressed="false" type="button">2 players</button>
+        <button class="chip" data-val="group" aria-pressed="false" type="button">3+ players</button>
+      </div>
+      <div class="filter-row" id="f-time" data-group="time">
+        <span class="flabel">Time</span>
+        <button class="chip" data-val="any" aria-pressed="true" type="button">Any</button>
+        <button class="chip" data-val="quick" aria-pressed="false" type="button">Quick · ≤10m</button>
+        <button class="chip" data-val="short" aria-pressed="false" type="button">Short · ~15m</button>
+        <button class="chip" data-val="long" aria-pressed="false" type="button">Longer · 20m+</button>
+      </div>
+      <div class="filter-row" id="f-weight" data-group="weight">
+        <span class="flabel">Depth</span>
+        <button class="chip" data-val="any" aria-pressed="true" type="button">Any</button>
+        <button class="chip" data-val="Light" aria-pressed="false" type="button">Light</button>
+        <button class="chip" data-val="Medium" aria-pressed="false" type="button">Medium</button>
+      </div>
+      <div class="filter-row" id="f-status" data-group="status">
+        <span class="flabel">Status</span>
+        <button class="chip" data-val="any" aria-pressed="true" type="button">All</button>
+        <button class="chip" data-val="Collection" aria-pressed="false" type="button">Collection</button>
+        <button class="chip" data-val="Pipeline" aria-pressed="false" type="button">Pipeline</button>
+        <button class="chip" data-val="Parked" aria-pressed="false" type="button">Parked</button>
+      </div>
+    </div>
+
+    <p class="count" id="count">Fifteen games</p>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty">No games match those filters yet.<br>Try loosening one.</p>
+  </section>
+
+  <section class="section-head">
+    <p class="eyebrow">The vocabulary</p>
+    <h2>The Nine Signs</h2>
+    <p>Every game reads the same nine signs differently — a Crown rules one game and builds the board in another. The pip is the rank; the picture is the story.</p>
+  </section>
+  <div class="signs" id="signs"></div>
+
+  <footer>
+    <div class="fmark" id="footer-marks"></div>
+    <p>The same nine signs carry different truths in every game — that's the collection's premise, not a compromise.</p>
+    <p style="color:var(--muted-dim);">Rules load live from each game's rulebook. Player counts and play times are working estimates, finalised with each rulebook.</p>
+  </footer>
+
+</div>
+
+<!-- Detail sheet -->
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="d-name">
+  <div class="handle"><span></span></div>
+  <button class="sheet-close" id="sheet-close" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="sheet-scroll" id="sheet-scroll"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+/* ---------- Sign glyphs (reused from the deck's card artwork) ---------- */
+const SIGN_PATH = {
+  Moon:  '<path d="M60 18 A33 33 0 1 0 60 82 A26 26 0 1 1 60 18 Z" fill="currentColor"/>',
+  Leaf:  '<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M24 80 C22 50 40 26 78 22 C74 58 54 82 24 80 Z" stroke-width="7"/><path d="M32 72 L70 32" stroke-width="6"/><path d="M47 53 L36 58" stroke-width="4"/><path d="M58 40 L49 33" stroke-width="4"/></g>',
+  Wave:  '<path d="M10 54 C18 28 34 28 50 54 C66 80 82 80 90 54" stroke="currentColor" stroke-width="8" fill="none" stroke-linecap="round"/>',
+  Flame: '<path fill-rule="evenodd" d="M54 8 C54 24 66 30 66 44 C72 40 74 34 74 28 C82 42 80 60 68 72 C62 78 56 82 48 84 C34 86 24 76 24 62 C24 50 32 44 36 36 C40 44 44 46 48 44 C44 34 46 22 54 8 Z M49 54 C43 60 43 68 49 76 C55 68 55 60 49 54 Z" fill="currentColor"/>',
+  Eye:   '<path fill-rule="evenodd" d="M10,50 C28,26 72,26 90,50 C72,74 28,74 10,50 Z M38,50 a12,12 0 1,0 24,0 a12,12 0 1,0,-24,0 Z" fill="currentColor"/>',
+  Mask:  '<path fill-rule="evenodd" d="M14 38 C14 32 18 30 26 30 C38 30 44 36 50 36 C56 36 62 30 74 30 C82 30 86 32 86 38 C86 54 78 68 64 70 C58 71 54 66 50 66 C46 66 42 71 36 70 C22 68 14 54 14 38 Z M26 44 a8,7 0 1,0 16,0 a8,7 0 1,0 -16,0 Z M58 44 a8,7 0 1,0 16,0 a8,7 0 1,0 -16,0 Z" fill="currentColor"/>',
+  Key:   '<circle cx="50" cy="32" r="18" stroke="currentColor" stroke-width="6" fill="none"/><line x1="50" y1="50" x2="50" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><line x1="50" y1="67" x2="64" y2="67" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><line x1="50" y1="78" x2="60" y2="78" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>',
+  Star:  '<polygon points="50,11 59,38 87,38 64,55 73,83 50,65 27,83 36,55 13,38 41,38" fill="currentColor"/>',
+  Crown: '<path d="M15 76 L15 44 L34 62 L50 22 L66 62 L85 44 L85 76 Z" fill="currentColor"/>'
+};
+const SIGN = {
+  Moon:  { rank: 1, hue: 'var(--sign-moon)',  mean: 'Absence · Outsider' },
+  Leaf:  { rank: 2, hue: 'var(--sign-leaf)',  mean: 'Growth · Connect' },
+  Wave:  { rank: 3, hue: 'var(--sign-wave)',  mean: 'Flow · Movement' },
+  Flame: { rank: 4, hue: 'var(--sign-flame)', mean: 'Burn · Remove' },
+  Eye:   { rank: 5, hue: 'var(--sign-eye)',   mean: 'See · Reveal' },
+  Mask:  { rank: 6, hue: 'var(--sign-mask)',  mean: 'Swap · Disguise' },
+  Key:   { rank: 7, hue: 'var(--sign-key)',   mean: 'Unlock · Extract' },
+  Star:  { rank: 8, hue: 'var(--sign-star)',  mean: 'Anomaly · Wild' },
+  Crown: { rank: 9, hue: 'var(--sign-crown)', mean: 'Rule · Apex' }
+};
+function svgFor(name, color) {
+  return '<svg viewBox="0 0 100 100" style="color:' + (color || 'currentColor') + '">' + SIGN_PATH[name] + '</svg>';
+}
+function miniCard(name, cls) {
+  const s = SIGN[name];
+  return '<div class="mini ' + cls + '"><span class="pip">' + s.rank + '</span>' + svgFor(name, s.hue) + '</div>';
+}
+
+/* ---------- Tiny inline icons ---------- */
+const IC = {
+  players: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 6.2a3 3 0 0 1 0 5.6"/><path d="M18 14.5a5.4 5.4 0 0 1 2.7 4.5"/></svg>',
+  time: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
+  weight: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16"/><path d="M7 8 4 18h6L7 8Z"/><path d="M17 8l-3 10h6l-3-10Z"/><path d="M12 4v14"/></svg>',
+  deck: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="11" height="15" rx="2"/><path d="M8 21h9a2 2 0 0 0 2-2V8"/></svg>'
+};
+
+/* ---------- Game data ----------
+   Metadata (player count, time, genre, mechanic, status) is drawn from
+   COLLECTION_OVERVIEW.md, the canonical index. Summaries paraphrase each
+   game's entry there; the authoritative rules load live from the rulebook
+   .md via the "Read the rules" button. */
+const GAMES = [
+  {
+    id: 'twelve-trials', name: 'TWELVE TRIALS', tag: 'Solo · Puzzle', pair: ['Eye', 'Star'],
+    players: '1–3', pmin: 1, pmax: 3, time: 15, timeLabel: '15 min', weight: 'Medium',
+    status: 'Collection', stage: 'Collection · table-tested',
+    deck: 'Full 36', rulebook: 'Twelve Trials/TWELVE_TRIALS_rulebook.md',
+    tagline: 'Sort the whole deck into twelve perfect trios.',
+    idea: 'An open-information puzzle. The 36-card deck hides 840 “almanacs” — ways to sort every card into twelve perfect symbol-trios. Find a good one; your score is how few flips it takes to make the deal match it.',
+    plays: [
+      'Lay out the deck and look for an almanac — a full sort into twelve symbol-trios.',
+      'Flip and rearrange cards so the deal matches your chosen almanac.',
+      'Score by how few flips it cost; a skilled solve runs well below the unoptimised ~9.'
+    ]
+  },
+  {
+    id: 'crossroads', name: 'CROSSROADS', tag: 'Abstract duel', pair: ['Crown', 'Wave'],
+    players: '2', pmin: 2, pmax: 2, time: 20, timeLabel: '~20 min', weight: 'Medium',
+    status: 'Collection', stage: 'Collection · v1.1, table-tested',
+    deck: 'Full 36', rulebook: 'Crossroads/CROSSROADS_rulebook.md',
+    tagline: 'Build the map from the deck, then race across it.',
+    idea: 'A two-player route duel where the deck builds its own board. The eight Crown cards lie Crown-face-down as a ring of cities; everything else is the network you route through.',
+    plays: [
+      'Set the eight Crown cards face-down as cities — each city’s value is the pip it shows (1–8).',
+      'Play cards to chart routes between cities; a road you keep can be denied to your rival.',
+      'Spend Signal Fires — shared flips paid by dimming a city — to reorient the map.'
+    ]
+  },
+  {
+    id: 'orrery', name: 'THE ORRERY', tag: 'Solo · Puzzle', pair: ['Star', 'Eye'],
+    players: '1–3', pmin: 1, pmax: 3, time: 20, timeLabel: '15–25 min', weight: 'Medium',
+    status: 'Collection', stage: 'Collection · table-tested',
+    deck: 'Full 36', rulebook: 'The Orrery/THE_ORRERY_rulebook.md',
+    tagline: 'Sort the deck into four balanced orbits.',
+    idea: 'An open-information sorting puzzle. Sort the full 36-card deck into four orbits of nine, each orbit showing all nine signs once on its visible faces and all nine once on its hidden faces.',
+    plays: [
+      'Deal the 36 cards and group them into four orbits of nine.',
+      'Move and flip cards freely; every flip costs one point.',
+      'The “sky debt” of over-shown signs sets an exact lower bound for the deal.'
+    ]
+  },
+  {
+    id: 'trigon', name: 'TRIGON', tag: 'Tactics', pair: ['Star', 'Crown'],
+    players: '2–4', pmin: 2, pmax: 4, time: 20, timeLabel: '15–25 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · table-tested (iterate)',
+    deck: 'Full 36', rulebook: 'Trigon/TRIGON_rulebook.md',
+    tagline: 'Grid capture, sign abilities, chain reactions.',
+    idea: 'Grid capture, and the collection’s flagship candidate. Place cards, trigger their sign abilities, and set off chain reactions; three matching signs in a line is a capture.',
+    plays: [
+      'Place cards into a shared grid (the first card sets the centre cell).',
+      'Each sign triggers an ability, and abilities can chain into one another.',
+      'Line up three matching signs in a row, column or diagonal to capture. Star is wild.'
+    ]
+  },
+  {
+    id: 'turncoat', name: 'TURNCOAT', tag: 'Tactics', pair: ['Mask', 'Moon'],
+    players: '2–4', pmin: 2, pmax: 4, time: 20, timeLabel: '15–25 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · validated (sim-tuned)',
+    deck: 'Full 36', rulebook: 'Turncoat/TURNCOAT_rulebook.md',
+    tagline: 'Every card serves two sides. So might you.',
+    idea: 'An allegiance grid built on the TRIGON engine, played for betrayal. Every card serves two signs; the visible face declares today’s loyalty.',
+    plays: [
+      'Place agents into the grid; the showing face is their current allegiance.',
+      'Flip an opponent’s agent to make it defect to your side.',
+      'Bury your own agents before rivals can turn them against you.'
+    ]
+  },
+  {
+    id: 'turnover', name: 'TURNOVER', tag: 'Party', pair: ['Flame', 'Wave'],
+    players: '3–6', pmin: 3, pmax: 6, time: 10, timeLabel: '~10 min', weight: 'Light',
+    status: 'Pipeline', stage: 'Pipeline · validated (v1.1, ~60k games)',
+    deck: 'Full 36', rulebook: 'Turnover/TURNOVER_rulebook.md',
+    tagline: 'Match, flip, shed — first hand empty wins.',
+    idea: 'A fast match-and-turn shedding race with no abilities to track — about five minutes end to end.',
+    plays: [
+      'Shed a card by matching the active sign, then flip to set the next.',
+      'Chain matches to burn through cards fast; refuse and you pay a cost.',
+      'First to empty their hand wins the race.'
+    ]
+  },
+  {
+    id: 'glean', name: 'GLEAN', tag: 'Trick-taking', pair: ['Leaf', 'Eye'],
+    players: '3–6', pmin: 3, pmax: 6, time: 20, timeLabel: '~20 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · validated (sim)',
+    deck: 'Full 36', rulebook: 'Glean/GLEAN_rulebook.md',
+    tagline: 'Gather signs; the hidden face wins the trick.',
+    idea: 'A gathering trick-taker. Follow by either face, and the hidden face wins the trick. Every captured card counts toward two sign-majorities at once.',
+    plays: [
+      'Lead and follow by either face; the higher hidden pip takes the trick.',
+      'Each card you capture advances two different sign-majorities.',
+      'Win the most of a sign to claim its pip value — Crown (9) is the richest.'
+    ]
+  },
+  {
+    id: 'blight', name: 'BLIGHT', tag: 'Trick-taking', pair: ['Flame', 'Moon'],
+    players: '3–6', pmin: 3, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · table-tested (iterate)',
+    deck: 'Full 36', rulebook: 'Blight/BLIGHT_rulebook.md',
+    tagline: 'Avoidance trick-taking. The back is the poison.',
+    idea: 'The dark sibling of GLEAN: avoidance trick-taking where a captured card’s penalty is its hidden pip. Lowest total wins, and the rot pile sits penalty-face-up so nothing is memorised.',
+    plays: [
+      'Follow by either face; taking the trick means taking its hidden pips as penalty.',
+      'Keep your total low — the back of the card is the poison.',
+      'Or shoot the rot: take every trick to score zero.'
+    ]
+  },
+  {
+    id: 'janus', name: 'JANUS', tag: 'Co-op', pair: ['Mask', 'Eye'],
+    players: '2–4', pmin: 2, pmax: 4, time: 20, timeLabel: '~20 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · draft (table-tested, concealment unproven)',
+    deck: 'Full 36 · 6 omen tokens', rulebook: 'Janus/JANUS_rulebook.md',
+    tagline: 'You see one face. The table sees the other.',
+    idea: 'A co-operative deduction game. You see one face of your own cards; the table sees the other. Work together to raise symbol-triangle gates from half-seen hands.',
+    plays: [
+      'Hold your hand so you see one face and the table sees the other — never peek at your own.',
+      'Spend omen tokens to give Hanabi-style hints; pair-uniqueness makes the deduction exact.',
+      'Combine cards to raise the gates before the hints run out.'
+    ]
+  },
+  {
+    id: 'false-face', name: 'FALSE FACE', tag: 'Bluffing', pair: ['Mask', 'Key'],
+    players: '3–6', pmin: 3, pmax: 6, time: 20, timeLabel: '~20 min', weight: 'Light',
+    status: 'Pipeline', stage: 'Pipeline · draft',
+    deck: 'Full 36', rulebook: 'False Face/FALSE_FACE_rulebook.md',
+    tagline: 'Claim the face you hide — truthfully or not.',
+    idea: 'A bluffing game on the pair registry. Play a card and claim its hidden face aloud — truth or lie — and let challenges sort the honest from the bold.',
+    plays: [
+      'Play a card and announce what its hidden face is.',
+      'Anyone may challenge, forcing a reveal: the liar — or a wrong challenger — pays.',
+      'Because every pair exists once, the space of possible lies shrinks each turn.'
+    ]
+  },
+  {
+    id: 'face-value', name: 'FACE VALUE', tag: 'Bluffing duel', pair: ['Star', 'Moon'],
+    players: '2', pmin: 2, pmax: 2, time: 18, timeLabel: '15–20 min', weight: 'Light',
+    status: 'Pipeline', stage: 'Pipeline · draft',
+    deck: 'Full 36', rulebook: 'Face Value/FACE_VALUE_rulebook.md',
+    tagline: 'The face you show is your only claim.',
+    idea: 'A heads-up betting bluff. The face you show is your only claim about the strength you hide; raise, call, or fold on that single bluff.',
+    plays: [
+      'Both players commit a duel card — the shown face hints at the hidden pip.',
+      'Raise from hand, call for a showdown (higher hidden pip wins; ties are impossible), or fold.',
+      'Cold Read: name the exact hidden symbol for double-or-nothing.'
+    ]
+  },
+  {
+    id: 'council', name: 'THE COUNCIL', tag: 'Negotiation', pair: ['Crown', 'Eye'],
+    players: '3–6', pmin: 3, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Light',
+    status: 'Pipeline', stage: 'Pipeline · draft',
+    deck: 'Full 36 · 1 Speaker token', rulebook: 'The Council/COUNCIL_rulebook.md',
+    tagline: 'Commit in secret, then watch who defects.',
+    idea: 'A negotiation game of votes and defections. Three issues are tabled each round; you commit in secret, then defections in seat order decide who takes each pot.',
+    plays: [
+      'Three issues hit the floor; everyone secretly commits one card showing their chosen issue.',
+      'In seat order, anyone may flip their card to defect to its one alternative.',
+      'A lone backer takes an issue’s entire pot; unresolved issues grow.'
+    ]
+  },
+  {
+    id: 'ouroboros', name: 'OUROBOROS', tag: 'Solo', pair: ['Wave', 'Leaf'],
+    players: '1', pmin: 1, pmax: 1, time: 12, timeLabel: '10–15 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · validated (v1.1, revived)',
+    deck: 'Full 36 · 7-sign variant', rulebook: 'Ouroboros/OUROBOROS_rulebook.md',
+    tagline: 'Chain the deck into a serpent that bites its tail.',
+    idea: 'A solo serpent-building puzzle. Lay the all-pairs deck into one continuous serpent until it bites its own tail. Forced mismatches are “scars” — your score — and exactly one scar is provably unavoidable.',
+    plays: [
+      'Chain cards so each links to the next by a shared sign, laying the onward sign face-up.',
+      'Where no match exists, take a scar; aim for as few as possible.',
+      'Close the loop so the serpent bites its tail.'
+    ]
+  },
+  {
+    id: 'cairn', name: 'CAIRN', tag: 'Solo', pair: ['Leaf', 'Crown'],
+    players: '1', pmin: 1, pmax: 1, time: 10, timeLabel: '~10 min', weight: 'Light',
+    status: 'Pipeline', stage: 'Pipeline · validated (v0.1, sim)',
+    deck: '7-sign sub-deck (21) · 9 on the Long Trail', rulebook: 'Cairn/CAIRN_rulebook.md',
+    tagline: 'A compact solitaire built for a tray.',
+    idea: 'A compact solitaire built for a tray, not a tabletop. All state lives in three short cairns plus a small hand; each card links two signs, and you build by matching the sign on top.',
+    plays: [
+      'Extend a cairn by playing a card carrying its top sign, exposing its partner sign.',
+      'Work from a hand of four, using the stock’s visible top card to plan ahead.',
+      'Lay all 21 cards of the 7-sign sub-deck without boxing yourself in.'
+    ]
+  },
+  {
+    id: 'unplayed-pair', name: 'THE UNPLAYED PAIR', tag: 'Trick-taking', pair: ['Key', 'Moon'],
+    players: '3–5', pmin: 3, pmax: 5, time: 25, timeLabel: '~25 min', weight: 'Medium',
+    status: 'Parked', stage: 'Parked — kept as a design record',
+    deck: 'Full 36 (one card removed unseen)', rulebook: 'The Unplayed Pair/UNPLAYED_PAIR_rulebook.md',
+    tagline: 'Name the one card nobody was dealt.',
+    idea: 'A trick-taking experiment, now parked. One card is removed unseen before the deal, and a final bet names the missing card — but in play the two layers fought each other.',
+    plays: [
+      'Remove one card unseen, then play classic tricks, following by either face.',
+      'Track what’s played to deduce the card nobody holds.',
+      'End by betting on the missing card. (Parked: certainty arrives only on the last trick.)'
+    ]
+  }
+];
+
+const BADGE = { Collection: 'badge-collection', Pipeline: 'badge-pipeline', Parked: 'badge-parked' };
+</script>
+<script>
+/* ---------- Render game cards ---------- */
+const grid = document.getElementById('grid');
+GAMES.forEach(g => {
+  const btn = document.createElement('button');
+  btn.className = 'game';
+  btn.type = 'button';
+  btn.dataset.id = g.id;
+  btn.dataset.pmin = g.pmin;
+  btn.dataset.pmax = g.pmax;
+  btn.dataset.time = g.time;
+  btn.dataset.weight = g.weight;
+  btn.dataset.status = g.status;
+  btn.setAttribute('aria-label', g.name + ' — ' + g.tagline);
+  btn.innerHTML =
+    '<div class="pair">' + miniCard(g.pair[0], 'mini-a') + miniCard(g.pair[1], 'mini-b') + '</div>' +
+    '<div class="game-body">' +
+      '<div class="game-top">' +
+        '<span class="game-tag">' + g.tag + '</span>' +
+        '<span class="badge ' + BADGE[g.status] + '">' + g.status + '</span>' +
+      '</div>' +
+      '<div class="game-name">' + g.name + '</div>' +
+      '<div class="game-tagline">' + g.tagline + '</div>' +
+      '<div class="game-meta">' +
+        '<span class="meta">' + IC.players + g.players + '</span>' +
+        '<span class="meta">' + IC.time + g.timeLabel + '</span>' +
+        '<span class="meta">' + IC.weight + g.weight + '</span>' +
+      '</div>' +
+    '</div>';
+  btn.addEventListener('click', () => openSheet(g.id));
+  grid.appendChild(btn);
+});
+
+/* ---------- Filters ---------- */
+const state = { players: 'any', time: 'any', weight: 'any', status: 'any' };
+document.querySelectorAll('.filter-row').forEach(row => {
+  const group = row.dataset.group;
+  row.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      state[group] = chip.dataset.val;
+      row.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'));
+      applyFilters();
+    });
+  });
+});
+
+function matchPlayers(card) {
+  const v = state.players, min = +card.dataset.pmin, max = +card.dataset.pmax;
+  if (v === 'any') return true;
+  if (v === 'solo') return min === 1;
+  if (v === 'duo') return min <= 2 && max >= 2;
+  if (v === 'group') return max >= 3;
+  return true;
+}
+function matchTime(card) {
+  const v = state.time, t = +card.dataset.time;
+  if (v === 'any') return true;
+  if (v === 'quick') return t <= 10;
+  if (v === 'short') return t > 10 && t <= 16;
+  if (v === 'long') return t >= 18;
+  return true;
+}
+function matchWeight(card) {
+  return state.weight === 'any' || card.dataset.weight === state.weight;
+}
+function matchStatus(card) {
+  return state.status === 'any' || card.dataset.status === state.status;
+}
+const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen'];
+const TOTAL = GAMES.length;
+function applyFilters() {
+  let n = 0;
+  grid.querySelectorAll('.game').forEach(card => {
+    const show = matchPlayers(card) && matchTime(card) && matchWeight(card) && matchStatus(card);
+    card.style.display = show ? '' : 'none';
+    if (show) n++;
+  });
+  const allAny = state.players === 'any' && state.time === 'any' && state.weight === 'any' && state.status === 'any';
+  const word = WORDS[n] || n;
+  document.getElementById('count').textContent =
+    allAny ? (WORDS[TOTAL] || TOTAL) + ' games' : (n === 0 ? 'No matches' : word + (n === 1 ? ' game' : ' games') + ' of ' + (WORDS[TOTAL] || TOTAL).toLowerCase());
+  document.getElementById('empty').style.display = n === 0 ? 'block' : 'none';
+}
+
+/* ---------- Detail sheet ---------- */
+const scrim = document.getElementById('scrim');
+const sheet = document.getElementById('sheet');
+const sheetScroll = document.getElementById('sheet-scroll');
+let lastFocus = null;
+
+if (window.marked && marked.setOptions) {
+  marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
+}
+
+function openSheet(id) {
+  const g = GAMES.find(x => x.id === id);
+  if (!g) return;
+  lastFocus = document.activeElement;
+  const rb = encodeURI(g.rulebook);
+  sheetScroll.innerHTML =
+    '<div class="d-head">' +
+      '<div class="d-pair">' + miniCard(g.pair[0], 'mini-a') + miniCard(g.pair[1], 'mini-b') + '</div>' +
+      '<div class="d-htext">' +
+        '<div class="d-tag">' + g.tag + '<span class="badge ' + BADGE[g.status] + '">' + g.status + '</span></div>' +
+        '<div class="d-name" id="d-name">' + g.name + '</div>' +
+        '<div class="d-tagline">' + g.tagline + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="d-stats">' +
+      '<div class="d-stat"><span class="v">' + g.players + '</span><span class="k">Players</span></div>' +
+      '<div class="d-stat"><span class="v">' + g.timeLabel + '</span><span class="k">Time</span></div>' +
+      '<div class="d-stat"><span class="v">' + g.weight + '</span><span class="k">Depth</span></div>' +
+      '<div class="d-stat"><span class="v">' + g.pair.length + '×</span><span class="k">Signs</span></div>' +
+    '</div>' +
+    '<div class="d-block"><h3>The idea</h3><p>' + g.idea + '</p></div>' +
+    '<div class="d-block"><h3>How it plays</h3><ol class="d-steps">' + g.plays.map(p => '<li>' + p + '</li>').join('') + '</ol></div>' +
+    '<div class="d-block" style="margin-bottom:14px"><h3>Deck used</h3><p style="font-size:14px">' + g.deck + '</p></div>' +
+    '<div class="d-block d-rules">' +
+      '<h3>Full rules</h3>' +
+      '<div class="rules-actions">' +
+        '<button class="rules-btn" id="rules-load" type="button">Read the rules here</button>' +
+        '<a class="rules-link" href="' + rb + '" target="_blank" rel="noopener">Open the .md file ↗</a>' +
+      '</div>' +
+      '<div class="rules-panel" id="rules-panel" hidden></div>' +
+    '</div>' +
+    '<div class="d-foot">' + IC.deck + '<span>' + g.stage + ' · player counts and times are working estimates</span></div>';
+  const loadBtn = document.getElementById('rules-load');
+  const panel = document.getElementById('rules-panel');
+  loadBtn.addEventListener('click', () => loadRules(g.rulebook, panel, loadBtn));
+  sheetScroll.scrollTop = 0;
+  scrim.classList.add('open');
+  sheet.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('sheet-close').focus();
+}
+
+async function loadRules(path, panel, btn) {
+  if (!window.marked) {
+    panel.innerHTML = '<p class="rules-error">The markdown renderer didn’t load. Use the “Open the .md file” link instead.</p>';
+    panel.hidden = false;
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Loading…';
+  try {
+    const res = await fetch(encodeURI(path), { cache: 'no-store' });
+    if (!res.ok) throw new Error(res.status);
+    const md = await res.text();
+    panel.innerHTML = marked.parse(md);
+    panel.hidden = false;
+    btn.textContent = 'Rules loaded below';
+    btn.classList.add('done');
+  } catch (e) {
+    panel.innerHTML = '<p class="rules-error">Couldn’t load the rules inline. This needs to be served over http — e.g. via GitHub Pages or a local server (<code>python -m http.server</code>). Opening the page as a local file blocks the fetch. Use the “Open the .md file” link to read it directly.</p>';
+    panel.hidden = false;
+    btn.disabled = false;
+    btn.textContent = 'Retry';
+  }
+}
+
+function closeSheet() {
+  scrim.classList.remove('open');
+  sheet.classList.remove('open');
+  document.body.style.overflow = '';
+  if (lastFocus) lastFocus.focus();
+}
+scrim.addEventListener('click', closeSheet);
+document.getElementById('sheet-close').addEventListener('click', closeSheet);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && sheet.classList.contains('open')) closeSheet(); });
+
+/* ---------- Surprise me ---------- */
+document.getElementById('surprise').addEventListener('click', () => {
+  const visible = [...grid.querySelectorAll('.game')].filter(c => c.style.display !== 'none');
+  const pool = visible.length ? visible : [...grid.querySelectorAll('.game')];
+  const pick = pool[Math.floor(Math.random() * pool.length)];
+  openSheet(pick.dataset.id);
+});
+
+/* ---------- Signs section ---------- */
+const signsEl = document.getElementById('signs');
+Object.keys(SIGN).sort((a, b) => SIGN[a].rank - SIGN[b].rank).forEach(name => {
+  const s = SIGN[name];
+  const cell = document.createElement('div');
+  cell.className = 'sign';
+  cell.innerHTML =
+    '<div class="sg">' + svgFor(name, s.hue) + '</div>' +
+    '<div class="rank">' + s.rank + '</div>' +
+    '<div class="nm">' + name + '</div>' +
+    '<div class="mn">' + s.mean + '</div>';
+  signsEl.appendChild(cell);
+});
+
+/* ---------- Decorative marks ---------- */
+const brandG = document.getElementById('brand-glyphs');
+brandG.innerHTML = svgFor('Star', 'var(--gold)') + svgFor('Crown', 'var(--text-soft)');
+
+const footerG = document.getElementById('footer-marks');
+['Moon','Wave','Eye','Key','Star'].forEach(n => { footerG.innerHTML += svgFor(n, 'var(--text-soft)'); });
+
+const heroMarks = document.getElementById('hero-marks');
+const heroSet = [
+  ['Crown', '6%', '12%', 64], ['Wave', '84%', '8%', 52],
+  ['Eye', '90%', '64%', 70], ['Mask', '4%', '70%', 58], ['Star', '50%', '88%', 46]
+];
+heroSet.forEach(([n, left, top, size]) => {
+  const d = document.createElement('div');
+  d.style.left = left; d.style.top = top; d.style.width = size + 'px'; d.style.height = size + 'px';
+  d.innerHTML = svgFor(n, 'var(--text)');
+  heroMarks.appendChild(d);
+});
+
+applyFilters();
+</script>
+
+</body>
+</html>
