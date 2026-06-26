@@ -1,4 +1,4 @@
-"""TURNOVER — sim check for the proposed 'Draw Two, Play One' rule.
+"""WILDFIRE — sim check for the proposed 'Draw Two, Play One' rule.
 
 Playtest 01 (June 2026) house rule: when a player is FORCED to refuse
 (no playable card), after drawing the refusal cost they may immediately
@@ -11,14 +11,14 @@ at once), so the open question is whether it:
   - keeps seats roughly flat,
   - and what it does to game length.
 
-Reuses the validated engine from turnover_sim.py; only the turn loop changes.
+Reuses the validated engine from wildfire_sim.py; only the turn loop changes.
 Baseline = standard v1.1 (chain 2, refuse 2). Variant = baseline + draw-play.
 """
 
 import random
 from collections import Counter
 
-from turnover_sim import (
+from wildfire_sim import (
     GameState, HAND_SIZE, TURN_CAP,
     random_choose, skilled_choose,
 )
@@ -37,7 +37,7 @@ def _play_one(state, pid, rng, skilled):
 
 def run_game_drawplay(n, chain_limit, refusal_cost, bots, skilled_flags,
                       rng, draw_play):
-    """Like turnover_sim.run_game, but with the optional draw-play rule.
+    """Like wildfire_sim.run_game, but with the optional draw-play rule.
 
     skilled_flags[pid] tells us which single-card selector to use when the
     draw-play follow-up fires."""
@@ -69,7 +69,7 @@ def pct(x):
 def experiment(n_games=4000, seed=42):
     rng = random.Random(seed)
     print("=" * 80)
-    print("TURNOVER — 'DRAW TWO, PLAY ONE' RULE CHECK")
+    print("WILDFIRE — 'DRAW TWO, PLAY ONE' RULE CHECK")
     print(f"{n_games} games per configuration · seed {seed}")
     print("baseline = chain 2 / refuse 2 (v1.1) · variant adds draw-play")
     print("=" * 80)

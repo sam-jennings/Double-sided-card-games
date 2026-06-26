@@ -36,9 +36,9 @@ These have been validated or designed-around in the collection:
 
 - **Open / perfect information.** Everything visible; skill is in reading it (CROSSROADS, TWELVE TRIALS).
 - **Symmetric information split via a held fan.** A fan shows you one face and the table the *other* — genuine, free, symmetric hidden information, but only with a strict no-self-inspection rule (JANUS).
-- **Public oriented registries.** Played cards laid in an oriented row form a self-recording history that the table can re-read instead of memorising (FALSE FACE, UNPLAYED PAIR's morgue, trick-end reveals).
+- **Public oriented registries.** Played cards laid in an oriented row form a self-recording history that the table can re-read instead of memorising (FORKED TONGUE, UNPLAYED PAIR's morgue, trick-end reveals).
 - **Palms-commit / simultaneous reveal** instead of face-down commitment (THE COUNCIL).
-- **Claim-and-challenge.** The hidden face becomes verifiable on demand by flipping; the bluff lives in the gap, and pair-uniqueness bounds the lie-space (FALSE FACE, FACE VALUE).
+- **Claim-and-challenge.** The hidden face becomes verifiable on demand by flipping; the bluff lives in the gap, and pair-uniqueness bounds the lie-space (FORKED TONGUE, FACE VALUE).
 - **Orientation as state.** Which way a card points (or whether it's dimmed/rotated) is a visible, glanceable state marker (CROSSROADS roads and Signal Fires).
 - **Hidden-face memory / deduction as the core challenge.** When remembering or deducing the pressed face *is* the game (not incidental bookkeeping), the deck is well-suited to it — the public pair-registry bounds what's knowable and rewards counting. Keep the memory load deliberate and roughly symmetric across players, and give the table a way to verify on demand (a flip, an end-of-round reveal).
 
@@ -46,4 +46,4 @@ These have been validated or designed-around in the collection:
 
 When in doubt, prefer **visible state, public history, and legally-deducible information** over hidden-card conventions imported from ordinary decks. This deck rewards deduction and counting; lean on those by default. Deliberate hidden-face memory is a valid choice when it *is* the point of the game — just make it a chosen challenge, not involuntary overhead.
 
-**Caveat on this bias — it has been over-applied.** Nearly every game in the collection now advertises "no hidden-face memory" as a virtue (TURNOVER killed its back-memory chain, THE UNPLAYED PAIR converted its hidden-rank rule to a public reveal, FALSE FACE / FACE VALUE / BLIGHT all engineer memory out). The default-to-visible bias is correct for *involuntary* state, but it has crowded out a legitimate, deck-native genre. A deliberate, verifiable, roughly-symmetric **memory game is currently a gap worth filling**, not a risk to avoid.
+**Caveat on this bias — it has been over-applied.** Nearly every game in the collection now advertises "no hidden-face memory" as a virtue (WILDFIRE killed its back-memory chain, THE UNPLAYED PAIR converted its hidden-rank rule to a public reveal, FORKED TONGUE / FACE VALUE / BLIGHT all engineer memory out). The default-to-visible bias is correct for *involuntary* state, but it has crowded out a legitimate, deck-native genre. A deliberate, verifiable, roughly-symmetric **memory game is currently a gap worth filling**, not a risk to avoid.

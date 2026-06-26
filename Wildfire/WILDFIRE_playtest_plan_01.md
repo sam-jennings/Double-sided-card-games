@@ -1,6 +1,6 @@
-# TURNOVER — Playtest Plan 01
+# WILDFIRE — Playtest Plan 01
 
-**Game:** TURNOVER v1.1  
+**Game:** WILDFIRE v1.1  
 **Player count:** 3  
 **Players:** Designer + 2 non-gamer parents  
 **Symbol subset:** Full 9-symbol / 36-card deck  
@@ -11,7 +11,7 @@
 
 ## Purpose
 
-First ever table test of TURNOVER. The game exists to teach the deck — flipping, public information, card-counting — in under 10 minutes. This session tests whether it delivers that promise to players with zero prior exposure to the deck.
+First ever table test of WILDFIRE. The game exists to teach the deck — flipping, public information, card-counting — in under 10 minutes. This session tests whether it delivers that promise to players with zero prior exposure to the deck.
 
 ---
 
@@ -22,7 +22,7 @@ First ever table test of TURNOVER. The game exists to teach the deck — flippin
    Failure signal: repeated questions about *what* to do on a turn after the first demo round.
 
 2. **"Announce-rule policing is fun, not annoying."**  
-   Prediction: the "Turnover!" call creates a moment of tension/comedy. Players enjoy catching (or nearly catching) each other.  
+   Prediction: the "Wildfire!" call creates a moment of tension/comedy. Players enjoy catching (or nearly catching) each other.  
    Failure signal: players forget the call repeatedly and the penalty feels like a gotcha, or nobody notices/cares about the call and it adds nothing.
 
 3. **"Chaining feels like a real decision."**  
@@ -47,7 +47,7 @@ First ever table test of TURNOVER. The game exists to teach the deck — flippin
 - **Card-counting behaviour.** Does anyone notice that symbols get scarce? Does the strategy layer surface at all, or is it pure reaction?
 - **Pace and energy.** Does the game feel like a race? Or does it feel like waiting for your turn?
 - **Chaining clarity.** Do players understand they can play a second card? Do they discover it themselves from the rules teach, or does it need prompting?
-- **End-game.** Does "Turnover!" feel climactic? Does the last-card play feel satisfying?
+- **End-game.** Does "Wildfire!" feel climactic? Does the last-card play feel satisfying?
 
 ---
 
@@ -57,7 +57,7 @@ First ever table test of TURNOVER. The game exists to teach the deck — flippin
 2. **Demo the core action** (~1 min). Place a card on the table. "This symbol is the target. I need to play a card showing this symbol." Play one from hand, showing the match. "Now I flip it — the new symbol showing is the new target for the next player."
 3. **Explain can't-match** (~30 sec). "If you can't match, take 2 cards from the well. It's public — you can always see the top card."
 4. **Explain chains** (~30 sec). "You can play up to 2 cards in one turn — match, flip, match the new target, flip again. Powerful but burns your options."
-5. **Explain going out** (~30 sec). "When you're down to one card, say 'Turnover!' at the end of that turn. Forget and someone catches you? Take 2 from the well."
+5. **Explain going out** (~30 sec). "When you're down to one card, say 'Wildfire!' at the end of that turn. Forget and someone catches you? Take 2 from the well."
 6. **Play an open first round** (~2 min). Play 3–4 turns with hands partially revealed, talking through decisions. Then shuffle and start the real game.
 
 Watch for: which part of the teach causes confusion. Is "flip after playing" natural? Is "either face can match" clear?
@@ -68,7 +68,7 @@ Watch for: which part of the teach causes confusion. Is "flip after playing" nat
 
 - **Game 1:** Standard rules, open teaching. Record time, note all rules questions.
 - **Game 2:** Standard rules, no coaching. Observe whether chain/well/announce decisions emerge naturally.
-- **Game 3 (if time and energy):** Standard or Wildfire (chain 3) if the table feels ready and wants more bite.
+- **Game 3 (if time and energy):** Standard or Inferno (chain 3) if the table feels ready and wants more bite.
 
 After all games: ask each player what confused them, what they enjoyed, whether they'd play again.
 

@@ -28,8 +28,8 @@ Remove every card showing symbol 8 or 9 (on either face) and the remaining 21 ca
 
 | Property | Exists at | Used by |
 |---|---|---|
-| Every pair exactly once (deduction registry) | all sizes | JANUS, FALSE FACE, UNPLAYED PAIR, CROSSROADS, FACE VALUE |
-| Even divisibility (2,3,4,6 players) | 36 only | TRIGON, TURNCOAT, TURNOVER, COUNCIL |
+| Every pair exactly once (deduction registry) | all sizes | JANUS, FORKED TONGUE, UNPLAYED PAIR, CROSSROADS, FACE VALUE |
+| Even divisibility (2,3,4,6 players) | 36 only | TRIGON, TURNCOAT, WILDFIRE, COUNCIL |
 | 6×6 exact grid | 36 | TWELVE TRIALS |
 | Eulerian circuit (whole deck chains into one loop) | odd symbol counts (7, 9) | OUROBOROS (revived) |
 | Steiner triple / triangle partition | 7 (Fano) and 9 only | TWELVE TRIALS |

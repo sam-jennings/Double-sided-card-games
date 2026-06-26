@@ -204,4 +204,4 @@ Co-op with restricted communication. Players may freely discuss visible counts a
 
 ---
 
-*Design v0.2 — terminology clarified after playtest 01: standard orbits explicitly allow split cycles; Clockmaker reframed as a separate prestige challenge. See `THE_ORRERY_playtest_01.md` for the findings that motivated these changes.*
+*Design v0.2 — terminology clarified after playtest 01: standard orbits explicitly allow split cycles; Clockmaker reframed as a separate prestige challenge. See `ORRERY_playtest_01.md` for the findings that motivated these changes.*

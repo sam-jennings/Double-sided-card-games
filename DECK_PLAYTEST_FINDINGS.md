@@ -4,13 +4,13 @@
 
 ---
 
-## F1: Hand ordering — no natural sort order (June 2026, TURNOVER + GLEAN session)
+## F1: Hand ordering — no natural sort order (June 2026, WILDFIRE + GLEAN session)
 
 **Observation:** With 12 cards in hand, players instinctively wanted to sort their hand (the first thing any card player does after a deal). They couldn't find a natural ordering because each card belongs to two "suits" simultaneously. There is no single axis to sort by.
 
 **Impact:** Affects every game with a hand of cards. Especially felt at higher hand sizes (9+ cards). Less of an issue in games with small hands or open tableaux.
 
-**Games affected:** TURNOVER (9 cards), GLEAN/BLIGHT (6–12 cards), JANUS (variable), FALSE FACE, FACE VALUE, THE COUNCIL, THE UNPLAYED PAIR.
+**Games affected:** WILDFIRE (9 cards), GLEAN/BLIGHT (6–12 cards), JANUS (variable), FORKED TONGUE, FACE VALUE, THE COUNCIL, THE UNPLAYED PAIR.
 
 **Possible mitigations:**
 - Players may develop their own conventions with experience (e.g. group by "the sign I'm trying to collect" or "my strongest hidden pips").
@@ -26,7 +26,7 @@
 
 ---
 
-## F2: Corner pips preferred over top-centre for fan readability (June 2026, TURNOVER + GLEAN session)
+## F2: Corner pips preferred over top-centre for fan readability (June 2026, WILDFIRE + GLEAN session)
 
 **Observation:** Players commented that corner numbers (like traditional playing cards) would allow instant recognition in a fanned hand. They also noted that flipping a fanned hand while keeping the fan shape would show all reverse-side values quickly — useful for assessing hand strength.
 
@@ -40,19 +40,19 @@
 
 ---
 
-## F3: Dealing exposes one face of every card to all players (June 2026, TURNOVER + GLEAN session)
+## F3: Dealing exposes one face of every card to all players (June 2026, WILDFIRE + GLEAN session)
 
 **Observation:** When dealing cards, everyone at the table can see one face of every card as it's dealt — there is no card back to conceal during the deal. This is inherent to the deck's physical nature.
 
 **Impact by game type:**
 - **Open-information games (CROSSROADS, TWELVE TRIALS, THE ORRERY):** No issue — all info is public anyway.
-- **Games where both faces of your hand are private (GLEAN, BLIGHT, TURNOVER, THE COUNCIL, FALSE FACE, FACE VALUE):** Dealing leaks one face of every player's hand to the table. Whether this matters depends on whether that information is strategically useful.
+- **Games where both faces of your hand are private (GLEAN, BLIGHT, WILDFIRE, THE COUNCIL, FORKED TONGUE, FACE VALUE):** Dealing leaks one face of every player's hand to the table. Whether this matters depends on whether that information is strategically useful.
 - **JANUS (asymmetric information):** Dealing may be most problematic here, since the game's entire conceit is that each side of the table sees a different face. A deal that exposes faces to the wrong player could undermine the information asymmetry.
 
 **Severity assessment:**
 - For GLEAN/BLIGHT: both faces of your own hand are known to you (you inspect freely), so the leak is "the table glimpsed one face of your cards during the deal." In a fast deal this is likely forgotten, but attentive players could note that Player A received the Crown/Star card. Whether this matters depends on how much early information changes play.
-- For TURNOVER: probably irrelevant — the game is reactive and fast, and the well is public anyway.
-- For hidden-commitment games (FALSE FACE, FACE VALUE, THE COUNCIL): could matter if a player remembers what was dealt to a rival.
+- For WILDFIRE: probably irrelevant — the game is reactive and fast, and the well is public anyway.
+- For hidden-commitment games (FORKED TONGUE, FACE VALUE, THE COUNCIL): could matter if a player remembers what was dealt to a rival.
 
 **Possible mitigations:**
 - **Deal face-down (one face touching table, scoop up).** Each player scoops their stack. The table saw the dealt face but not the reverse. Players then inspect both faces privately. This is probably the natural convention and limits exposure.
@@ -70,7 +70,7 @@
 
 **Root cause:** In standard decks, suits and ranks are independent axes (4 suits × 13 ranks). On this deck, sign *is* rank — they're the same axis. A card doesn't have "a suit and a rank"; it has "two signs, each with an inherent rank." This is a fundamental departure from what experienced card players expect.
 
-**Impact:** Any game where rank determines outcomes (GLEAN, BLIGHT, FACE VALUE, THE UNPLAYED PAIR) is affected if a player doesn't understand the rank structure. Games that don't use rank at all (TURNOVER, CROSSROADS, TWELVE TRIALS, THE ORRERY) are unaffected.
+**Impact:** Any game where rank determines outcomes (GLEAN, BLIGHT, FACE VALUE, THE UNPLAYED PAIR) is affected if a player doesn't understand the rank structure. Games that don't use rank at all (WILDFIRE, CROSSROADS, TWELVE TRIALS, THE ORRERY) are unaffected.
 
 **Mitigations:**
 - **Teach explicitly before rank-sensitive games:** "There are 9 signs. Each sign has a fixed strength: Crown is always the strongest (9), Moon is always the weakest (1). A card pairs two different signs — so it always has two different ranks, one per face."
@@ -90,7 +90,7 @@
 
 **Observation:** Games that lay out all or most of the 36-card deck on the table (TWELVE TRIALS, THE ORRERY, CROSSROADS's 8 city cards + road network, TRIGON/TURNCOAT's grid + hands) create a large physical footprint. In TWELVE TRIALS, cards are in near-constant motion between staging groups, compounding the space issue. In THE ORRERY, the 21-card (7-symbol) version was already a significant spread.
 
-**Impact:** Any game that uses open/public card layouts at scale. Less relevant for hand-based games (GLEAN, BLIGHT, TURNOVER, FALSE FACE) where the table holds only a small active area.
+**Impact:** Any game that uses open/public card layouts at scale. Less relevant for hand-based games (GLEAN, BLIGHT, WILDFIRE, FORKED TONGUE) where the table holds only a small active area.
 
 **Games affected:** TWELVE TRIALS (36 cards sorted openly), THE ORRERY (21–36 cards in orbit groups), CROSSROADS (8 cities + up to 28 roads), TRIGON/TURNCOAT (3×3 grid + hands + score piles).
 
@@ -150,7 +150,7 @@
 
 **Observation:** In games where one face of your hand must stay hidden from the table (or, in JANUS, from yourself), the act of **flipping/rotating/realigning cards within the hand** to read both faces risks **flashing the concealed face** to other players. Keeping a consistent "this face to me, that face to them" grip while also sorting, choosing, and playing is genuinely fiddly — and gets worse the more cards are held.
 
-**Impact:** Any hidden-hand game (JANUS most acutely, where concealment is the whole game; also FALSE FACE, FACE VALUE, THE COUNCIL to the extent a hidden face matters). Compounds F1 (the per-turn re-scan forces lots of in-hand manipulation, each instance a leak risk).
+**Impact:** Any hidden-hand game (JANUS most acutely, where concealment is the whole game; also FORKED TONGUE, FACE VALUE, THE COUNCIL to the extent a hidden face matters). Compounds F1 (the per-turn re-scan forces lots of in-hand manipulation, each instance a leak risk).
 
 **Possible mitigations:**
 - A **hand screen / holder** for games that truly need concealment (extra component — weigh against the no-game-specific-components preference).

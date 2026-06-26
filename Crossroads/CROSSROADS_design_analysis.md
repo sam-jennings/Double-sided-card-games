@@ -1,6 +1,6 @@
 # CROSSROADS — Design Analysis
 
-*How the 2P abstract was stress-tested by simulation, v1.0 → v1.1. Companion to the rulebook; sibling to the SYZYGY, TURNCOAT and TURNOVER analyses.*
+*How the 2P abstract was stress-tested by simulation, v1.0 → v1.1. Companion to the rulebook; sibling to the SYZYGY, TURNCOAT and WILDFIRE analyses.*
 
 ---
 

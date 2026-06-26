@@ -8,7 +8,7 @@ Simulation certifies the floor (the game ends, isn't broken, defaults are sound)
 
 ## Every game carries test-focus questions
 
-Each game already has recorded first-table / test-focus questions (in `COLLECTION_OVERVIEW.md` and `NEW_GAME_CONCEPTS.md`) — e.g. TURNOVER's "is announce-rule policing fun?", CROSSROADS' "does eight flips ache properly?", THE COUNCIL's "kingmaking at 5–6P?". **A playtest plan must start from that game's specific questions.** Preserve and answer them; don't invent generic ones.
+Each game already has recorded first-table / test-focus questions (in `COLLECTION_OVERVIEW.md` and `NEW_GAME_CONCEPTS.md`) — e.g. WILDFIRE's "is announce-rule policing fun?", CROSSROADS' "does eight flips ache properly?", THE COUNCIL's "kingmaking at 5–6P?". **A playtest plan must start from that game's specific questions.** Preserve and answer them; don't invent generic ones.
 
 ## Playtest plan (before a session)
 

@@ -22,12 +22,12 @@ Sources read throughout: `COLLECTION_OVERVIEW.md` (canonical index, coverage tab
     - Record tier in the header, reproduce first-table questions faithfully from Overview/concepts (or "none recorded"), and write the recommendation as "leave alone — benchmark"; if any re-tune/re-skin is proposed, attach explicit evidence and a "requires owner sign-off" note.
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 3.4, 4.1, 4.3_
 
-  - [x] 2.2 Score the Tier 2 games — TWELVE TRIALS, TURNOVER, CROSSROADS
+  - [x] 2.2 Score the Tier 2 games — TWELVE TRIALS, WILDFIRE, CROSSROADS
     - Produce a full seven-dimension scorecard for each, scored from the rulebook and `_design_analysis.md`, with cited justifications and specific weaknesses for any score ≤5.
     - Record tier and faithfully reproduced first-table questions; frame each recommendation as a first table test (prioritised over further simulation/new design) built around the game's own recorded questions, with tier stated.
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 3.4, 4.2, 4.3_
 
-  - [x] 2.3 Score the Tier 3 games (group A) — JANUS, FALSE FACE, THE UNPLAYED PAIR
+  - [x] 2.3 Score the Tier 3 games (group A) — JANUS, FORKED TONGUE, THE UNPLAYED PAIR
     - Produce a full seven-dimension scorecard for each, scored from the rulebook (and `_design_analysis.md` where one exists); for games with only a rulebook, mark D2 explicitly "un-simmed; handling unverified at the table" rather than guessing.
     - Record tier and faithfully reproduced first-table questions; frame each recommendation as a first table test around the game's recorded questions, with tier stated.
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 3.4, 4.2, 4.3_
@@ -51,7 +51,7 @@ Sources read throughout: `COLLECTION_OVERVIEW.md` (canonical index, coverage tab
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
   - [x] 4.2 Write the overlap analysis
-    - Run a shared-niche scan across the coverage axes plus the "deck-property used" axis; cluster candidate overlaps (e.g. SYZYGY ↔ TURNCOAT, FALSE FACE ↔ FACE VALUE, FALSE FACE ↔ THE COUNCIL).
+    - Run a shared-niche scan across the coverage axes plus the "deck-property used" axis; cluster candidate overlaps (e.g. SYZYGY ↔ TURNCOAT, FORKED TONGUE ↔ FACE VALUE, FORKED TONGUE ↔ THE COUNCIL).
     - For each detected overlap, name the games and the shared niche dimension, reference the relevant Overview coverage table, and adjudicate — coexist, or one is a candidate to differentiate/park/cut — applying the distinctness criterion. Report near-overlaps that resolve, with their coexist verdict.
     - _Requirements: 6.1, 6.2, 6.3, 6.4_
 

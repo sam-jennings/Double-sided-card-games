@@ -80,7 +80,7 @@ steering/deck-structure.md ────► deck-property citations for D1/D3/D4 
 Sourcing rules:
 
 - **First-table questions** are lifted from `COLLECTION_OVERVIEW.md` and `NEW_GAME_CONCEPTS.md` and reproduced faithfully; the audit must not invent substitutes (Requirements 3.2–3.4). Games without recorded questions are marked "none recorded" rather than back-filled.
-- **Balance/handling claims** in justifications cite the game's `_design_analysis.md` where one exists (SYZYGY, TURNCOAT, TWELVE TRIALS, TURNOVER, CROSSROADS, FACE VALUE, FALSE FACE… per the folder inventory); Tier-3 games with only a rulebook are scored from the rulebook and flagged as un-simmed where D2 evidence is thin.
+- **Balance/handling claims** in justifications cite the game's `_design_analysis.md` where one exists (SYZYGY, TURNCOAT, TWELVE TRIALS, WILDFIRE, CROSSROADS, FACE VALUE, FORKED TONGUE… per the folder inventory); Tier-3 games with only a rulebook are scored from the rulebook and flagged as un-simmed where D2 evidence is thin.
 
 ## Data Models
 
@@ -157,7 +157,7 @@ Reading **down a column** ranks all games on one dimension (e.g. which games lea
 The recommendation line in each scorecard obeys the tier discipline from `product-vision.md` and `playtesting.md`:
 
 - **Tier 1 (SYZYGY, TURNCOAT):** default recommendation is "leave alone — benchmark". If the audit proposes any re-tune or re-skin, it must attach explicit evidence and the note *"requires owner sign-off"* (Requirement 4.1).
-- **Tier 2 (TWELVE TRIALS, TURNOVER, CROSSROADS) & Tier 3 (JANUS, FALSE FACE, THE UNPLAYED PAIR, FACE VALUE, THE COUNCIL):** the recommendation **prioritises a first table test** over more simulation or new design (Requirement 4.2), framed around the game's own recorded first-table questions.
+- **Tier 2 (TWELVE TRIALS, WILDFIRE, CROSSROADS) & Tier 3 (JANUS, FORKED TONGUE, THE UNPLAYED PAIR, FACE VALUE, THE COUNCIL):** the recommendation **prioritises a first table test** over more simulation or new design (Requirement 4.2), framed around the game's own recorded first-table questions.
 
 ## Methodology: gap analysis (Requirement 5)
 
@@ -166,7 +166,7 @@ The gap analysis treats the four Overview coverage tables as the empirical basel
 | Dimension | Source table | Method | Example signal |
 |---|---|---|---|
 | **Player count** | "By player count" matrix | Tally games per count 1–6; flag thin/empty counts. | 1P has only TWELVE TRIALS; is solo under-served? |
-| **Play time** | "By play time" table | Bucket into bands (≤10, ~15, ~20, ~25+ min); flag empty bands. | Is there a sub-10-min filler besides TURNOVER? |
+| **Play time** | "By play time" table | Bucket into bands (≤10, ~15, ~20, ~25+ min); flag empty bands. | Is there a sub-10-min filler besides WILDFIRE? |
 | **Complexity** | "By complexity" table | Count Light / Light–Medium / Medium / Heavy; flag missing weights. | No genuinely Heavy game — is that a gap or a choice? |
 | **Mood / genre** | "By genre / mood" table | List occupied moods; flag absent genres. | Any cooperative game beyond JANUS? Any pure-luck family game? |
 
@@ -180,7 +180,7 @@ Rules:
 
 Overlap = two or more live games occupying substantially the same niche. Detection is a **shared-niche scan** across the same coverage axes used for gaps, plus the "deck-property used" axis from the coverage-at-a-glance table:
 
-1. **Cluster** games that share a cell or adjacent cells on an axis (e.g. same player-count band *and* same mood). Candidate clusters from the current index: SYZYGY ↔ TURNCOAT (same engine, same count/length/weight); FALSE FACE ↔ FACE VALUE (bluffing family, differing player count); FALSE FACE ↔ THE COUNCIL (social/negotiation at 3–6P).
+1. **Cluster** games that share a cell or adjacent cells on an axis (e.g. same player-count band *and* same mood). Candidate clusters from the current index: SYZYGY ↔ TURNCOAT (same engine, same count/length/weight); FORKED TONGUE ↔ FACE VALUE (bluffing family, differing player count); FORKED TONGUE ↔ THE COUNCIL (social/negotiation at 3–6P).
 2. For each cluster, **name the games and the shared dimension** (Requirement 6.3) and **cite the Overview table(s)** that reveal the overlap (Requirement 6.2).
 3. **Adjudicate** (Requirement 6.4): decide whether the games are distinct enough to coexist (e.g. SYZYGY vs TURNCOAT share an engine but differ in feel — coexist) or whether one is a candidate to differentiate, park, or cut. The verdict applies the distinctness criterion from `product-vision.md`.
 

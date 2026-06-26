@@ -1,4 +1,4 @@
-# TURNOVER — Design Analysis
+# WILDFIRE — Design Analysis
 
 *How the party game was tuned by simulation, v1.0 → v1.1. Companion to the rulebook; sibling to the SYZYGY and TURNCOAT analyses.*
 
@@ -10,7 +10,7 @@ The v1.0 rulebook shipped with three open questions in its design footnote: is t
 
 ## 2. Method
 
-The full ruleset as a simulator ([turnover_sim.py](turnover_sim.py), included): exact deal sizes per player count, face-up well with the under-pile fallback, the announce rule treated as always observed. Two bots — RandomBot (uniform legal play, 50% chain rate) as the mechanics floor, and a SkilledBot that plays the public-information game the strategy notes describe: it counts every face in the pile history (both faces of a played card are public once turned), prefers exit symbols the table is poorest in, refuses to break its last guaranteed-chain pair while its hand is large, and chains only when that doesn't fragment its hand. **1,200 games per configuration** across all four player counts and a 3×2 grid of chain limits (1/2/3) × refusal costs (2/3), plus seat-randomised skill-gap arms — roughly **60,000 games** total, with a 600-turn cap to catch non-terminating rules.
+The full ruleset as a simulator ([wildfire_sim.py](wildfire_sim.py), included): exact deal sizes per player count, face-up well with the under-pile fallback, the announce rule treated as always observed. Two bots — RandomBot (uniform legal play, 50% chain rate) as the mechanics floor, and a SkilledBot that plays the public-information game the strategy notes describe: it counts every face in the pile history (both faces of a played card are public once turned), prefers exit symbols the table is poorest in, refuses to break its last guaranteed-chain pair while its hand is large, and chains only when that doesn't fragment its hand. **1,200 games per configuration** across all four player counts and a 3×2 grid of chain limits (1/2/3) × refusal costs (2/3), plus seat-randomised skill-gap arms — roughly **60,000 games** total, with a 600-turn cap to catch non-terminating rules.
 
 ## 3. Results
 
@@ -23,7 +23,7 @@ The full ruleset as a simulator ([turnover_sim.py](turnover_sim.py), included): 
 | Skill edge (skilled vs random, ×baseline) | — | 1.50× | 1.64× |
 | Seat 1 vs last seat win | — | 36/31 | 34/34 |
 
-The pattern holds at every player count. **Chains are not a luxury — they are the game's exhaust valve.** Refusals pump cards into hands two at a time; only multi-card turns shed fast enough to outrun the pump. At chain 1 the race literally never finishes in a quarter of games. Chain 2 (the v1.0 default) is confirmed: ~4.5–5.5 minutes of real play at every count, seats near-flat, healthy 1.5–1.8× skill edge. Chain 3 is *also* sound — faster (~3 min), slightly more skilled (up to 2.1× at 5–6P), seats still flat. It is too brutal a pace for a first game but too good to discard: v1.1 keeps 2 as the default and adds chain 3 as the **Wildfire** variant.
+The pattern holds at every player count. **Chains are not a luxury — they are the game's exhaust valve.** Refusals pump cards into hands two at a time; only multi-card turns shed fast enough to outrun the pump. At chain 1 the race literally never finishes in a quarter of games. Chain 2 (the v1.0 default) is confirmed: ~4.5–5.5 minutes of real play at every count, seats near-flat, healthy 1.5–1.8× skill edge. Chain 3 is *also* sound — faster (~3 min), slightly more skilled (up to 2.1× at 5–6P), seats still flat. It is too brutal a pace for a first game but too good to discard: v1.1 keeps 2 as the default and adds chain 3 as the **Inferno** variant.
 
 ### Refusal cost (the Hot Well question)
 
@@ -36,7 +36,7 @@ The v1.0 text sold Hot Well as "sharper, shorter, crueller." The simulation says
 | 5P | 7.9 | 11.2 (+42%) |
 | 6P | 6.8 | 8.2 (+21%) |
 
-Taking three cards instead of two doesn't make refusal scarier — it makes hands fatter, and fat hands take longer to empty than the extra threat saves. Crueller, yes; shorter, no. The skill edge barely moves. And the question "does 6P need Hot Well by default?" answers itself: 6P at the standard cost is already the fastest, flattest configuration in the matrix. **v1.1 cuts Hot Well entirely.** A table that wants more bite should reach for Wildfire, which actually delivers shorter-and-sharper instead of promising it.
+Taking three cards instead of two doesn't make refusal scarier — it makes hands fatter, and fat hands take longer to empty than the extra threat saves. Crueller, yes; shorter, no. The skill edge barely moves. And the question "does 6P need Hot Well by default?" answers itself: 6P at the standard cost is already the fastest, flattest configuration in the matrix. **v1.1 cuts Hot Well entirely.** A table that wants more bite should reach for Inferno, which actually delivers shorter-and-sharper instead of promising it.
 
 ### Slow Match (the variant nobody checked)
 
@@ -49,20 +49,20 @@ Zero stalls in 4,800+ games at the shipped configuration; seat spread within 5 p
 ## 4. Changes adopted in v1.1
 
 1. Chain limit **stays 2**; refusal cost **stays 2**. The defaults were right.
-2. **Hot Well deleted** (its one claim was false; its job is done better by Wildfire).
-3. **Wildfire** added: chains of up to 3 — measurably faster and more skill-rewarding, recommended once the table knows the deck.
+2. **Hot Well deleted** (its one claim was false; its job is done better by Inferno).
+3. **Inferno** added: chains of up to 3 — measurably faster and more skill-rewarding, recommended once the table knows the deck.
 4. **Slow Match** errata: refusals take 1 card. Without it the variant frequently cannot end.
 5. Design footnote updated: the three open questions are closed, with numbers.
 
 ## 5. Caveats for the first table test
 
-Bots don't laugh, and TURNOVER is a party game — pacing and table feel still need humans. The sim also treats the announce rule as automatic; the catch-the-forgetter mini-game is untested by construction. What simulation *can* certify is now certified: the race ends, the defaults are sound, the variants do what they claim.
+Bots don't laugh, and WILDFIRE is a party game — pacing and table feel still need humans. The sim also treats the announce rule as automatic; the catch-the-forgetter mini-game is untested by construction. What simulation *can* certify is now certified: the race ends, the defaults are sound, the variants do what they claim.
 
 ## 6. Post-playtest follow-up — the Salvage rule (June 2026)
 
-The first table test (3P, non-gamers; [TURNOVER_playtest_01.md](TURNOVER_playtest_01.md)) returned an "iterate" verdict with two design-relevant findings: chaining wasn't experienced as a decision (everyone chained when able), and a forced refusal felt **purely punishing** — there was nothing to *do* on a turn you couldn't match. The table improvised a house rule: after a forced draw, play one of your cards immediately (match and turn, no chain). It made refusals feel less dead.
+The first table test (3P, non-gamers; [WILDFIRE_playtest_01.md](WILDFIRE_playtest_01.md)) returned an "iterate" verdict with two design-relevant findings: chaining wasn't experienced as a decision (everyone chained when able), and a forced refusal felt **purely punishing** — there was nothing to *do* on a turn you couldn't match. The table improvised a house rule: after a forced draw, play one of your cards immediately (match and turn, no chain). It made refusals feel less dead.
 
-Because refusals are the pump that makes the game terminate at all (the chain-1 stalls in §3), softening them is balance-sensitive and had to be checked before adoption. `turnover_drawplay_sim.py` reruns the validated engine with the rule added to the forced-refusal branch only, 4,000 games per configuration, seed 42.
+Because refusals are the pump that makes the game terminate at all (the chain-1 stalls in §3), softening them is balance-sensitive and had to be checked before adoption. `wildfire_drawplay_sim.py` reruns the validated engine with the rule added to the forced-refusal branch only, 4,000 games per configuration, seed 42.
 
 | Config | turns/player (base → Salvage) | stalls | skill edge (base → Salvage) | length |
 |---|---|---|---|---|

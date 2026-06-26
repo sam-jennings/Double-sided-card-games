@@ -5,7 +5,7 @@
 **Symbol subset:** Full 9-symbol / 36-card deck (12 cards each)  
 **Variant:** Plunder (sum of pips, no majorities)  
 **Date:** June 2026  
-**Preceded by:** TURNOVER (same session)
+**Preceded by:** WILDFIRE (same session)
 
 ---
 

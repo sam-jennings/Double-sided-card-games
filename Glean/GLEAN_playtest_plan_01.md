@@ -11,7 +11,7 @@
 
 ## Purpose
 
-First table test of GLEAN. Played in the same session as TURNOVER — the players will already understand double-faced cards and the flip action. This tests whether the trick engine (follow by either face, hidden face wins) is teachable to people who already know trick-taking, and whether the accumulation goal ("win tricks to score") lands naturally.
+First table test of GLEAN. Played in the same session as WILDFIRE — the players will already understand double-faced cards and the flip action. This tests whether the trick engine (follow by either face, hidden face wins) is teachable to people who already know trick-taking, and whether the accumulation goal ("win tricks to score") lands naturally.
 
 Starting with Plunder (sum pips of captured cards) isolates the trick engine from the majority-scoring layer. If Plunder works, the majority game is introduced in game 2.
 
@@ -20,7 +20,7 @@ Starting with Plunder (sum pips of captured cards) isolates the trick engine fro
 ## Hypotheses to test
 
 1. **"Follow-by-either-face is learnable within 2–3 tricks."**  
-   Prediction: players who already know "must follow suit" will map "follow the led sign" quickly. The flip-to-follow move clicks because they've been flipping cards in TURNOVER.  
+   Prediction: players who already know "must follow suit" will map "follow the led sign" quickly. The flip-to-follow move clicks because they've been flipping cards in WILDFIRE.  
    Failure signal: repeated illegal sloughs, or players not realising a card in their hand *can* follow because the led sign is on its other face.
 
 2. **"The simultaneous reveal creates a dramatic beat."**  
@@ -55,7 +55,7 @@ Starting with Plunder (sum pips of captured cards) isolates the trick engine fro
 - **Card counting.** Does anyone notice "there are 8 cards with Crown on them — I've already seen 5"?
 - **Sloughing.** When void, do players choose deliberately what to throw in (high-value gift to the winner) or slough randomly?
 - **Plunder → majority transition.** If you play both, what's the learning curve on round 2? Does the majority concept land from a verbal explanation, or need a worked example?
-- **Energy.** Are players still engaged after TURNOVER + a round of GLEAN? Note when to stop.
+- **Energy.** Are players still engaged after WILDFIRE + a round of GLEAN? Note when to stop.
 
 ---
 
@@ -91,7 +91,7 @@ Starting with Plunder (sum pips of captured cards) isolates the trick engine fro
 - **Game 2 (full majority scoring, 1 round):** Introduce "whoever has the most cards carrying a sign claims its pip value." Walk through scoring together after the round. See if it feels richer or just heavier.
 - **Game 3 (if energy allows):** A second majority round with a different starting leader. Or revert to Plunder if majorities didn't land.
 
-A full match (3 rounds) is probably too much for a first session following TURNOVER. Play what the table wants.
+A full match (3 rounds) is probably too much for a first session following WILDFIRE. Play what the table wants.
 
 ---
 

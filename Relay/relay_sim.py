@@ -1,4 +1,4 @@
-"""MERIDIAN — structural simulation (concept-stage, NEW_GAME_CONCEPTS.md §14).
+"""RELAY — structural simulation (concept-stage, NEW_GAME_CONCEPTS.md §14).
 
 Two forks share one skeleton (draft -> build a directed edge -> optional re-aim):
 
@@ -385,7 +385,7 @@ def passbot_test(mode, n, games, rng):
 def main(games=250, seed=42):
     rng = random.Random(seed)
     print("=" * 80)
-    print(f"MERIDIAN structural sim · seed {seed} · {games} games/cell · 1-ply bots")
+    print(f"RELAY structural sim · seed {seed} · {games} games/cell · 1-ply bots")
     print("=" * 80)
 
     for mode in ("goal", "node"):

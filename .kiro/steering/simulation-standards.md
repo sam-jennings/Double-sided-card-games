@@ -5,7 +5,7 @@ fileMatchPattern: '*sim*.py'
 
 # Simulation & Analysis Standards
 
-How to build and use simulators and solvers. The benchmarks are `Turnover/turnover_sim.py` + `TURNOVER_design_analysis.md` and the TRIGON/TURNCOAT analyses.
+How to build and use simulators and solvers. The benchmarks are `Wildfire/wildfire_sim.py` + `WILDFIRE_design_analysis.md` and the TRIGON/TURNCOAT analyses.
 
 ## Philosophy: what simulation is for
 

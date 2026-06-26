@@ -1,4 +1,4 @@
-"""TURNOVER simulation — answers the v1.0 open design questions.
+"""WILDFIRE simulation — answers the v1.0 open design questions.
 
 Questions from the rulebook:
   1. Chain limit: 2 (current) vs 3?
@@ -160,7 +160,7 @@ def pct(x):
 def experiment(n_games=4000, seed=42):
     rng = random.Random(seed)
     print("=" * 78)
-    print("TURNOVER SIMULATION")
+    print("WILDFIRE SIMULATION")
     print(f"{n_games} games per configuration · seed {seed}")
     print("=" * 78)
 

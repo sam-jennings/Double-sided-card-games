@@ -1,6 +1,6 @@
 # Collection Overview
 
-*9 symbols · 36 cards · one deck · three in the collection, ten more in the pipeline*
+*9 symbols · 36 cards · one deck · three in the collection, thirteen more in the pipeline*
 
 The master deck is 36 double-faced cards: every pair of symbols from a set of nine appears exactly once. Any game that runs on fewer than 9 symbols uses a stated subset — no separate deck needed.
 
@@ -21,40 +21,44 @@ A printable prototype deck (Set D Glyphs skin, duplex A4, cut guides) lives in [
 | JANUS | | ✓ | ✓ | ✓ | | |
 | TRIGON | | ✓ | ✓ | ✓ | | |
 | TURNCOAT | | ✓ | ✓ | ✓ | | |
+| RELAY | | ✓ | ✓ | ✓ | | |
 | CROSSROADS | | ✓ | | | | |
 | FACE VALUE | | ✓ | | | | |
 | GLEAN | | | ✓ | ✓ | | ✓ |
 | BLIGHT | | | ✓ | ✓ | | ✓ |
-| FALSE FACE | | | ✓ | ✓ | ✓ | ✓ |
+| FORKED TONGUE | | | ✓ | ✓ | ✓ | ✓ |
 | THE COUNCIL | | | ✓ | ✓ | ✓ | ✓ |
-| TURNOVER | | | ✓ | ✓ | ✓ | ✓ |
+| WILDFIRE | | | ✓ | ✓ | ✓ | ✓ |
+| SLEEPER | | | | ✓ | ✓ | ✓ |
 
 ### By play time
 
 | Time       | Game          | Players      | Genre                       |
 | ---------- | ------------- | ------------ | --------------------------- |
-| ~10 min    | TURNOVER      | 3–6          | Party shedding              |
+| ~10 min    | WILDFIRE      | 3–6          | Party shedding              |
 | ~10 min    | CAIRN         | 1            | Solo chain patience         |
 | ~15 min    | TWELVE TRIALS | 1–2 (+co-op) | Solo/co-op puzzle           |
 | ~15–25 min | THE ORRERY    | 1–3          | Solo/co-op sorting puzzle   |
 | ~15–25 min | TRIGON        | 2–4          | Tactical grid               |
 | ~15–25 min | TURNCOAT      | 2–4          | Allegiance grid             |
+| ~20–25 min | RELAY         | 2–4          | Network route-race          |
 | ~20 min    | JANUS         | 2–4          | Co-op communication         |
 | ~15–20 min | FACE VALUE    | 2            | Bluffing duel               |
-| ~20 min    | FALSE FACE    | 3–6          | Bluffing                    |
+| ~20 min    | FORKED TONGUE    | 3–6          | Bluffing                    |
 | ~20 min    | CROSSROADS    | 2            | Abstract route duel         |
 | ~20 min    | GLEAN         | 3–4–6        | Trick-taking (accumulation) |
 | ~25 min    | BLIGHT        | 3–4–6        | Trick-taking (avoidance)    |
 | ~25 min    | THE COUNCIL   | 3–6          | Negotiation                 |
+| ~25 min    | SLEEPER       | 4–6          | Social deduction / loyalty  |
 
 ### By complexity
 
 | Weight | Game | Notes |
 |---|---|---|
-| **Light** | TURNOVER | Match and flip; ages 8+ |
+| **Light** | WILDFIRE | Match and flip; ages 8+ |
 | **Light–Medium** | CAIRN | Solo patience; chain by a shared sign, don't box yourself in |
 | **Light** | THE COUNCIL | No arithmetic, lots of talking |
-| **Light–Medium** | FALSE FACE | Bluffing with a shrinking lie-space |
+| **Light–Medium** | FORKED TONGUE | Bluffing with a shrinking lie-space |
 | **Light–Medium** | FACE VALUE | Heads-up betting bluff; the shown face is the claim |
 | **Medium** | TRIGON | Grid tactics, 9 symbol abilities |
 | **Medium** | TURNCOAT | Same engine as TRIGON, adds allegiance |
@@ -64,6 +68,8 @@ A printable prototype deck (Set D Glyphs skin, duplex A4, cut guides) lives in [
 | **Medium** | GLEAN | Trick-taking; each capture feeds two sign-majorities |
 | **Medium** | BLIGHT | Avoidance trick-taking; the hidden face is the poison |
 | **Medium** | CROSSROADS | Perfect-information abstract; route + denial |
+| **Medium** | RELAY | Network route-race; build directed roads, flip to re-aim |
+| **Light–Medium** | SLEEPER | Hidden-loyalty social deduction; one secret card, lots of reading |
 
 ### By genre / mood
 
@@ -72,12 +78,14 @@ A printable prototype deck (Set D Glyphs skin, duplex A4, cut guides) lives in [
 | **Solo / quiet** | TWELVE TRIALS, THE ORRERY, CAIRN |
 | **Co-op, no talking** | JANUS |
 | **Head-to-head abstract** | CROSSROADS |
+| **Network / route-race** | RELAY |
 | **Tactical engine** | TRIGON, TURNCOAT |
 | **Trick-taking** | GLEAN (accumulation), BLIGHT (avoidance) |
 | **Negotiation / betrayal** | THE COUNCIL |
-| **Bluffing** | FALSE FACE, FACE VALUE |
+| **Social deduction / hidden loyalty** | SLEEPER |
+| **Bluffing** | FORKED TONGUE, FACE VALUE |
 | **Head-to-head bluffing** | FACE VALUE |
-| **Party / fast** | TURNOVER |
+| **Party / fast** | WILDFIRE |
 
 ---
 
@@ -106,7 +114,7 @@ Route duel. Sim proved ko alone never ends the game (100% of unlimited-flip duel
 **THE ORRERY** [The Orrery/](The%20Orrery/) · 1–3 · ~15–25 min · Solo/co-op sorting puzzle · Stage 3  
 Open-information orbit puzzle. Sort the full 36-card deck into four orbits of 9 cards, each showing all 9 symbols once on its visible faces and all 9 once on its hidden faces. Move cards freely; every flip costs 1 point. The sky debt (over-shown symbols vs. target count of 4) gives an exact lower bound per deal. Sibling to TWELVE TRIALS via a different decomposition (4 permutation orbits vs. 12 triangles).
 
-*First table test (June 2026):* Tested the 7-symbol Apprentice version solo with a pre-balanced deal (sky debt 0, isolating the grouping puzzle). The standard puzzle was genuinely challenging and satisfying. Key finding: the word "orbit" misled the player into expecting a single continuous cycle (Clockmaker), when a valid standard solution can contain split cycles. The player solved standard Orrery but could not solve Clockmaker at the table. Open information handled perfectly. Verdict: **iterate** — fix terminology, keep Clockmaker as prestige variant only, then test with random deals. See [THE_ORRERY_playtest_01.md](The%20Orrery/THE_ORRERY_playtest_01.md).
+*First table test (June 2026):* Tested the 7-symbol Apprentice version solo with a pre-balanced deal (sky debt 0, isolating the grouping puzzle). The standard puzzle was genuinely challenging and satisfying. Key finding: the word "orbit" misled the player into expecting a single continuous cycle (Clockmaker), when a valid standard solution can contain split cycles. The player solved standard Orrery but could not solve Clockmaker at the table. Open information handled perfectly. Verdict: **iterate** — fix terminology, keep Clockmaker as prestige variant only, then test with random deals. See [ORRERY_playtest_01.md](The%20Orrery/ORRERY_playtest_01.md).
 
 *Outstanding questions: does the standard game remain satisfying across multiple deals? Does the 9-symbol version feel manageable? Does the full game (with sky debt) feel distinct from TWELVE TRIALS? Do split cycles feel valid once the rules explicitly allow them?*
 
@@ -132,7 +140,7 @@ Compact solitaire built for a tray, not a tabletop — the contained solo game t
 **TRIGON** [Trigon/](Trigon/) · 2–4 players · ~15–25 min · **~23k simulated games · Stage 3 (first table test June 2026)**  
 Grid capture. Place cards, trigger symbol abilities, chain reactions. Three matching symbols in a row/column/diagonal = capture. Star is wild. The collection's flagship candidate. Extensively simulation-tuned; now has its first table test.
 
-> *The `Syzygy/` folder is retained as an archive of the pre-rename design record.*
+> *TRIGON was renamed from SYZYGY; the pre-rename rulebook is kept as [SYZYGY_rulebook_archived.md](Trigon/SYZYGY_rulebook_archived.md) inside the Trigon/ folder as a design record.*
 
 *First table test (June 2026, 3P):* the engine never got a fair run — the session was bottlenecked by **handling/onboarding**, not mechanics. Two HIGH bugs: (1) the **grid is not physically defined**, so play slipped into unfixed-grid (Instinkt) habits, which breaks the position-based ability requirements; (2) **reference overhead** — every player checked both faces' requirements and abilities every turn off a shared laptop, making turns very slow. Comprehension hurdles around requirement-vs-ability and chaining order/limits (the rulebook answers both, but they're hard to find mid-turn). Verdict: **iterate** — fix the grid (proposed: first card = centre cell, no new components) and the reference problem before re-testing feel/balance. Not yet promotable. See [TRIGON_playtest_01.md](Trigon/TRIGON_playtest_01.md).
 
@@ -143,8 +151,8 @@ Allegiance grid. Every card serves two signs; the visible face declares loyalty 
 
 *First table questions: is one activation per turn exciting or exhausting over 18 turns? Does the bury-your-own loop teach itself? Does Mask feel like a fun strong pick or a must-pick? Allied Houses versus free-for-all at four?*
 
-**TURNOVER** [Turnover/](Turnover/) · 3–6 · ~10 min · Party · **v1.1, sim-tuned** (~60k games)  
-Match-and-turn shedding race. Sim closed all three v1.0 questions: chain 2 and refusal 2 confirmed (zero stalls, flat seats, 1.5–1.8× skill edge, ~5-min races); Hot Well cut (it made games *longer*, not shorter) and replaced by the Wildfire variant (chain 3 — genuinely faster and sharper); Slow Match errata'd to refusal-cost 1, without which the chainless game frequently never ends.
+**WILDFIRE** [Wildfire/](Wildfire/) · 3–6 · ~10 min · Party · **v1.1, sim-tuned** (~60k games)  
+Match-and-turn shedding race. Sim closed all three v1.0 questions: chain 2 and refusal 2 confirmed (zero stalls, flat seats, 1.5–1.8× skill edge, ~5-min races); Hot Well cut (it made games *longer*, not shorter) and replaced by the Inferno variant (chain 3 — genuinely faster and sharper); Slow Match errata'd to refusal-cost 1, without which the chainless game frequently never ends.
 
 *First table questions: announce-rule policing fun? Does chaining feel as bridge-burning as the maths says?*
 
@@ -160,6 +168,11 @@ Avoidance trick-taker. Same engine, inverted: a captured card's penalty is its *
 
 *Outstanding questions: at 4P (9) / 6P (6) does the hand-handling load drop to comfortable? Over a full match (one round per player), does the hand-luck complaint wash out? Does the shoot-the-rot threat ever light up the table?*
 
+**RELAY** [Relay/](Relay/) · 2–4 · ~20–25 min · Network route-race / drafting · **structural sim done — Stage 2 (no rulebook yet)**  
+A clean-sheet networking game built to design out the four CROSSROADS table bugs. Every card is both a **directed road** (to build) and a **unique connection goal** (to claim); because every pair exists once, each goal is the only connection between its two signs, and a **flip re-aims** a road to make or break a route. Hand of three fed by an open draft (no 14-card wall); pass-to-win scores 0 by construction. Structural sim: terminates at 2–4P (0% caps), skill gap 1.9×/2.8×/3.6× (2/3/4P), flips drive ~22–28% of claims. See [RELAY_design_analysis.md](Relay/RELAY_design_analysis.md) and [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) §14.
+
+*Next step: a short deck-only rulebook, then a first table test. First questions: does the open draft cure first-turn paralysis? Do flips feel central or incidental at the table?*
+
 #### Stage 1 — Draft (rulebook exists, untested)
 
 > *June 2026: JANUS has since had a first table test (now Stage 3, verdict iterate) — but its core concealment was abandoned in play, so the game as designed remains unproven. See its annotated entry below.*
@@ -170,7 +183,7 @@ Each player sees one face of their own cards; the table sees the other. Co-opera
 *First table test (June 2026, 3P Apprentice):* the table **abandoned the fan-asymmetry concealment** and played open-information, so JANUS-as-designed was **not actually tested**. The session's value was a **blocking handling discovery**: v1.1's "face-down draw stack" is **physically impossible** on a backless deck — the top card's face always shows, exactly the leak v1.1 claimed to fix. Players hacked it with a spare Crown as a deck cover. Terminology drift worth noting: the group reached for "locks / keys / clues" over gates/keystones/omens. Verdict: **iterate** — JANUS regresses to "needs a sound concealment model" (opaque deck cover, draw-bag, or a no-draw deal) before its real hypotheses can be tested. Not promotable. See [JANUS_playtest_01.md](Janus/JANUS_playtest_01.md) and DECK_PLAYTEST_FINDINGS F7–F8.  
 *Outstanding questions: with a real opaque-draw method, does the concealed game run without face leaks? Can the table sustain the no-self-inspection rule for a whole game? Under genuine concealment, does locking a gate produce the deduction payoff?*
 
-**FALSE FACE** [False Face/](False%20Face/) · 3–6 · ~20 min · Bluffing  
+**FORKED TONGUE** [Forked Tongue/](Forked%20Tongue/) · 3–6 · ~20 min · Bluffing  
 Play a card and claim its hidden face aloud — truthfully or not. Challenge to force a reveal: liar takes the pot, honest player challenged means the challenger takes it. Because every pair exists once, the lie-space provably shrinks each turn.  
 *Test focus: ledger pacing; whether first-game players can price a lie.*
 
@@ -181,6 +194,17 @@ Heads-up betting bluff. Both players commit a duel card — the face you *show* 
 **THE COUNCIL** [The Council/](The%20Council/) · 3–6 · ~25 min · Negotiation  
 Three issues tabled each round; everyone secretly commits one card showing their chosen issue. Then, in seat order, anyone may flip their card to defect — to its one specific alternative. Lone backers take an issue's entire pot. Stacks grow for unresolved issues.  
 *Test focus: kingmaking at 5–6P; pot arithmetic staying frictionless.*
+
+**SLEEPER** [Sleeper/](Sleeper/) · 4–6 · ~25 min · Social deduction / hidden loyalty · **v0.1, drafted** · Stage 1  
+The collection's first hidden-loyalty / social-deduction game. Each player guards **one** double-faced loyalty card — your cover sign shows, your secret **Master** sign is pressed to the table (the only persistent secret a backless deck holds cleanly). Steer the Court's decrees toward your master's sign, or turn a coat to swing one to its single printed alternative; when the deck runs out, everyone sworn to the most-shown **ruling sign** wins together. Termination is structural (one Court-deck card is spent per turn); unsimmed by design — its open questions are social, not arithmetic. See [SLEEPER_design_analysis.md](Sleeper/SLEEPER_design_analysis.md).  
+*First table questions: can a single flat loyalty card be guarded all game without leaks (the JANUS lesson)? Is the deduction real — do decree/flip patterns actually betray masters, or does the busy public row drown the signal? Kingmaking at the final reckoning? Does everyone serving the safest sign collapse into a shared blowout?*
+
+#### Stage 0 — Spark (concept, no rulebook yet)
+
+> Sparks live in [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) and are listed here for completeness. With no folder or rulebook yet, they aren't in the playable catalogue (`index.html`) and don't appear in the quick-selector tables above.
+
+**SNARE** · 2 · ~10–15 min · Perfect-information abstract / avoidance · Stage 0  
+A silent two-player geometric trap: each placement colours an edge of the graph, and you lose if you are the one forced to complete a forbidden monochromatic triangle. It rides on the Ramsey fact that any balanced two-colouring of K₆ forces a mono-triangle — so on the six-symbol subset someone *must* eventually be snared, and the skill is steering the inevitable onto your opponent. Concept only. See [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) §10.
 
 #### ⏸ Parked
 
@@ -203,7 +227,7 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 
 ## Recommended play order for learning the collection
 
-1. **TURNOVER** — learn the deck's flipping feel in 10 minutes, no abilities to track
+1. **WILDFIRE** — learn the deck's flipping feel in 10 minutes, no abilities to track
 2. **TRIGON** — the flagship; introduces the ability engine and grid tactics
 3. **TURNCOAT** — same engine, now personal and confrontational
 4. **TWELVE TRIALS** — solo break; see the deck's mathematical structure from the inside
@@ -212,9 +236,10 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 7. **JANUS** — co-op deduction with the fan-asymmetry trick
 8. **GLEAN** — trick-taking on the deck: capture signs, win majorities
 9. **BLIGHT** — the same trick engine inverted: dodge the hidden rot
-10. **FALSE FACE** — bluffing against the pair registry
+10. **FORKED TONGUE** — bluffing against the pair registry
 11. **FACE VALUE** — the bluffing engine distilled to a heads-up duel
 12. **THE COUNCIL** — full negotiation, all chaos
+13. **SLEEPER** — hidden loyalty; deduce who secretly serves which sign
 
 ---
 
@@ -222,17 +247,17 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 
 | Property | Games that use it |
 |---|---|
-| Flipping as the core action | TURNOVER, CROSSROADS, TWELVE TRIALS, THE ORRERY |
-| Edge-adjacency / chaining cards by a shared sign | CAIRN |
-| Flipping as defection/denial | TURNCOAT, THE COUNCIL |
-| Pair uniqueness as deduction engine | JANUS, FALSE FACE, CROSSROADS, FACE VALUE |
+| Flipping as the core action | WILDFIRE, CROSSROADS, TWELVE TRIALS, THE ORRERY, RELAY |
+| Edge-adjacency / chaining cards by a shared sign | CAIRN, RELAY |
+| Flipping as defection/denial | TURNCOAT, THE COUNCIL, SLEEPER |
+| Pair uniqueness as deduction engine | JANUS, FORKED TONGUE, CROSSROADS, FACE VALUE |
 | Two-faces / hidden-face as score driver | GLEAN (two majorities per card), BLIGHT (hidden face is the penalty) |
 | Algebraic structure (Steiner triples, permutation orbits, Eulerian circuits) | TWELVE TRIALS, THE ORRERY |
 | Symbol abilities / grid engine | TRIGON, TURNCOAT |
 | Trick-taking (follow by either face) | GLEAN, BLIGHT |
 | Open / perfect information | CROSSROADS, TWELVE TRIALS, THE ORRERY |
-| Hidden information | JANUS, FALSE FACE, FACE VALUE |
-| Social / negotiation | THE COUNCIL, FALSE FACE |
+| Hidden information | JANUS, FORKED TONGUE, FACE VALUE, SLEEPER |
+| Social / negotiation | THE COUNCIL, FORKED TONGUE, SLEEPER |
 | Solo or co-op | TWELVE TRIALS, THE ORRERY, JANUS, CAIRN |
 
 
@@ -246,8 +271,9 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 |---|---|
 | **JANUS** | **6 omen tokens** — *"any 6 small objects"* (coins/pebbles); a shared hint-economy counter pool |
 | **THE COUNCIL** | **1 Speaker token** — *"any object"*; rotating first-player/turn-order marker |
+| **SLEEPER** | *(optional)* **1 first-player token** — any object; generic, as sanctioned by THE COUNCIL |
 | **THE ORRERY** | none required — paper *optional* for scoring ("helps, but is not necessary") |
-| TURNOVER · TWELVE TRIALS · TURNCOAT · TRIGON · THE UNPLAYED PAIR · BLIGHT · GLEAN · FACE VALUE · OUROBOROS · FALSE FACE · CROSSROADS · CAIRN | **none — deck only** |
+| WILDFIRE · TWELVE TRIALS · TURNCOAT · TRIGON · THE UNPLAYED PAIR · BLIGHT · GLEAN · FACE VALUE · OUROBOROS · FORKED TONGUE · CROSSROADS · CAIRN · RELAY | **none — deck only** |
 
 ### The component policy this reveals
 

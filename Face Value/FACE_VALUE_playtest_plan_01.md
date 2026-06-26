@@ -46,5 +46,5 @@ Recorded first-table questions (rulebook footnote), framed as falsifiable predic
 
 ## Out of scope
 
-- The Tell / High Stakes / Best of Three variants unless a clean base game finishes with time to spare (the Tell bridges to FALSE FACE and is worth a later look).
+- The Tell / High Stakes / Best of Three variants unless a clean base game finishes with time to spare (the Tell bridges to FORKED TONGUE and is worth a later look).
 - Re-tuning the cold-read fee (2 cards), escape fee (1 card), or raise sizing — `FACE_VALUE_design_analysis.md` names these as the table-test dials; collect observations this session, tune later.

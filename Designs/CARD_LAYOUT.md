@@ -35,7 +35,7 @@ The constraint unique to this deck: there is no card back, so both faces must be
 |---|---|---|
 | FACE VALUE | Duel card's underside | Flat on table surface |
 | JANUS | Outward face of fan cards | Held in fan, angled away |
-| FALSE FACE | Face pressed to table after play | Flat in ledger row |
+| FORKED TONGUE | Face pressed to table after play | Flat in ledger row |
 | THE UNPLAYED PAIR | Hidden face of trick cards (until reveal) | Flat on table |
 | TRIGON / TURNCOAT | Hidden face of grid cards | Flat on grid |
 
@@ -51,7 +51,7 @@ The constraint unique to this deck: there is no card back, so both faces must be
 
 ## The pip-position question — resolved to a single top-left corner pip
 
-> **Updated June 2026 after the TURNOVER + GLEAN session (finding F2).** Earlier this spec settled on a top-centre pip and declared corners closed. Table play reopened it: players wanted corner numbers for instant fan recognition, and the original anti-corner argument only ever defeated *mirrored* corners, not a single one. The resolution below adopts a **single, non-mirrored top-left corner pip**.
+> **Updated June 2026 after the WILDFIRE + GLEAN session (finding F2).** Earlier this spec settled on a top-centre pip and declared corners closed. Table play reopened it: players wanted corner numbers for instant fan recognition, and the original anti-corner argument only ever defeated *mirrored* corners, not a single one. The resolution below adopts a **single, non-mirrored top-left corner pip**.
 
 ### Arguments for a corner pip (standard playing-card position)
 
@@ -67,7 +67,7 @@ The constraint unique to this deck: there is no card back, so both faces must be
 
 ### Why hidden-face leakage is not a concern either way
 
-When a card lies flat on the table (FACE VALUE duel, FALSE FACE ledger, TRIGON grid), the bottom face is pressed against the surface — **nothing on it is physically visible**, regardless of pip placement. No corner pip, centre pip, or any other element on the underside can "peek out." The concealment is absolute by physics, not layout.
+When a card lies flat on the table (FACE VALUE duel, FORKED TONGUE ledger, TRIGON grid), the bottom face is pressed against the surface — **nothing on it is physically visible**, regardless of pip placement. No corner pip, centre pip, or any other element on the underside can "peek out." The concealment is absolute by physics, not layout.
 
 When a card is held in a JANUS fan, the holder sees their entire inner face and the table sees the entire outer face. Secrecy is enforced by angle, not by element position within a face.
 
@@ -130,17 +130,17 @@ Both faces of every card use this identical structure. Only the symbol icon, pip
 ### Symbol icon — centre, dominant
 
 - **Position:** centred, filling the main body of the card.
-- **Purpose:** the primary identity. Matched, counted, read across a table (JANUS fans, TRIGON 3×3 grid, TURNOVER pile).
+- **Purpose:** the primary identity. Matched, counted, read across a table (JANUS fans, TRIGON 3×3 grid, WILDFIRE pile).
 - **Requirements:**
   - Bold, filled, high-contrast silhouette (per [deck-structure.md](../.kiro/steering/deck-structure.md)).
   - Distinct at arm's length, when rotated 90°/180°, and for colour-blind players — shape carries identity, colour is secondary.
-  - Large enough that JANUS fans read across the table and TURNOVER matches verify at party speed.
+  - Large enough that JANUS fans read across the table and WILDFIRE matches verify at party speed.
 - **Oriented art is welcome:** a symbol with a natural "up" (Crown points up, Flame rises, an animal faces right) gives a free secondary orientation cue without breaching H3, because the icon is identical wherever that symbol appears — it leaks nothing about the other face.
 
 ### Sign name — bottom-centre, small
 
 - **Position:** centred horizontally at the bottom.
-- **Purpose:** aids first-game teaching, accessibility (triple-redundancy: icon + pip + name), and verbal-claim games (FALSE FACE: "claim its hidden face aloud").
+- **Purpose:** aids first-game teaching, accessibility (triple-redundancy: icon + pip + name), and verbal-claim games (FORKED TONGUE: "claim its hidden face aloud").
 - **Behaviour in a fan:** partially or fully hidden when cards are tightly fanned. This is acceptable — experienced players read icon + pip; the name is a learning aid, not a primary identifier.
 - **Size:** small but legible (8pt minimum per the knowledge base typography rules).
 
@@ -168,8 +168,8 @@ Both faces of every card use this identical structure. Only the symbol icon, pip
 | THE UNPLAYED PAIR | Fan hand to choose follows; flip at trick-end to reveal rank | Pip at fan corner for selection; icon centred for post-flip readability on table |
 | THE COUNCIL | Assess pip values before secret commit | Pip at fan corner; clear at a glance |
 | JANUS | Table reads outward face across the table; holder reads inner face | Large centred icon dominates at distance; pip confirms identity up close |
-| FALSE FACE | Slap card to ledger showing previous claim; hidden face down | Icon verifies the match; pip irrelevant mid-play; name aids verbal claims |
-| TURNOVER | Match target at party speed | Large icon is primary; no fine-print needed for the match |
+| FORKED TONGUE | Slap card to ledger showing previous claim; hidden face down | Icon verifies the match; pip irrelevant mid-play; name aids verbal claims |
+| WILDFIRE | Match target at party speed | Large icon is primary; no fine-print needed for the match |
 | TRIGON / TURNCOAT | Read grid of 9 cards; identify symbols and check requirements | Large centred icons read across a shared grid; pip rarely consulted mid-play |
 
 ---
@@ -195,8 +195,8 @@ Both faces of every card use this identical structure. Only the symbol icon, pip
 1. **Pip position confirmation (F2).** The single top-left corner pip is now the spec. The remaining test is confirmatory: print a corner-pip run and verify it reads faster in a fan than the old top-centre pip without harming rotated-state legibility (CROSSROADS, TWELVE TRIALS). Watch that the corner pip doesn't collide with the orientation marker's left end.
 2. **Pip size vs. icon dominance.** The pip must be large enough to read in a fan but not so large it competes with the icon. Test at print-and-play scale.
 3. **Orientation marker form.** Bar vs. arrow vs. gradient — which reads fastest when rotated 90°? Test with CROSSROADS.
-4. **Sign name necessity.** If the icon set is sufficiently distinct and the pip carries rank, can the name be dropped for a cleaner card? Or does FALSE FACE's verbal-claim mechanic make it load-bearing?
-5. **Colour field extent.** Full-bleed colour per symbol, or a coloured border/band? Affects legibility when cards overlap in CROSSROADS road-building and FALSE FACE's ledger.
+4. **Sign name necessity.** If the icon set is sufficiently distinct and the pip carries rank, can the name be dropped for a cleaner card? Or does FORKED TONGUE's verbal-claim mechanic make it load-bearing?
+5. **Colour field extent.** Full-bleed colour per symbol, or a coloured border/band? Affects legibility when cards overlap in CROSSROADS road-building and FORKED TONGUE's ledger.
 
 ---
 

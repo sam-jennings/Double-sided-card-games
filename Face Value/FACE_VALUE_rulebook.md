@@ -100,7 +100,7 @@ Your opponent shows a 6. Their hidden face is one of the eight partners of 6 —
 
 ## Variants
 
-- **The Tell** (louder, bridges to FALSE FACE): when duel cards are revealed, each player must claim their hidden symbol aloud — truth or lie. If you win a showdown and your spoken claim was *true*, take one extra card of your choice from your opponent's hand. Honesty becomes a weapon; so does the appearance of it.
+- **The Tell** (louder, bridges to FORKED TONGUE): when duel cards are revealed, each player must claim their hidden symbol aloud — truth or lie. If you win a showdown and your spoken claim was *true*, take one extra card of your choice from your opponent's hand. Honesty becomes a weapon; so does the appearance of it.
 - **Quick Draw** (~10 min): use the 21-card subset (symbols 1–7). Deal 9 each, morgue of 3. Same rules; the count tightens twice as fast.
 - **High Stakes**: a raise may be one *or two* cards. Bigger pots, faster bleed, bolder bluffs.
 - **Best of Three**: play a match; tally your tallies.

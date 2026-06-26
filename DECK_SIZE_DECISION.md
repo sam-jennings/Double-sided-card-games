@@ -50,7 +50,7 @@ Best size per game, across the whole collection:
 | TRIGON (tuned, ~23k sims) | – | – | – | **best** | native |
 | TURNCOAT (tuned, ~22k sims) | – | – | – | **best** | native |
 | JANUS (co-op) | ok | **best** | ok | ok | yes — 7-symbol subset |
-| FALSE FACE (bluffing) | weak | ok | ok | **best** | native |
+| FORKED TONGUE (bluffing) | weak | ok | ok | **best** | native |
 | OUROBOROS (solo) | impossible | **best (short)** | impossible | **best (full)** | yes — both versions |
 | TWELVE TRIALS (solo/co-op) | impossible | ok | impossible | **best** | native |
 | THE UNPLAYED PAIR (tricks) | weak | weak | ok | **best** | native |
@@ -60,7 +60,7 @@ Best size per game, across the whole collection:
 
 Score it however you like — most-firsts, fewest-impossibles, or coverage of player counts — 36 wins on every column, and every game whose *ideal* size is smaller is fully served by a labelled subset. No game in the portfolio is harmed by owning the larger deck; three games (both finished designs plus TWELVE TRIALS at full strength) are impossible without it.
 
-The 6-player counts (FALSE FACE, THE COUNCIL, HOT POTATO PAIRS) only exist at 36 — and "larger player counts" was an explicit collection goal.
+The 6-player counts (FORKED TONGUE, THE COUNCIL, HOT POTATO PAIRS) only exist at 36 — and "larger player counts" was an explicit collection goal.
 
 ## What this costs, honestly
 

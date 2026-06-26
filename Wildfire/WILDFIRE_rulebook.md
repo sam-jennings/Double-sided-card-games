@@ -1,4 +1,4 @@
-# TURNOVER
+# WILDFIRE
 
 *A shedding race for 3–6 players · ~10 minutes · ages 8+*
 
@@ -33,7 +33,7 @@ You may chain **up to two cards** in one turn (match-and-turn, then match-and-tu
 
 ## Going out
 
-When you're down to **one card**, announce **"Turnover!"** as you end that turn. Forget, get caught before your next turn, and you take 2 from the well.
+When you're down to **one card**, announce **"Wildfire!"** as you end that turn. Forget, get caught before your next turn, and you take 2 from the well.
 
 Play your last card (match and turn, as ever) and you **win**. The rest may keep playing for the silver medals; the well and pile hold out for a while.
 
@@ -60,11 +60,11 @@ Play your last card (match and turn, as ever) and you **win**. The rest may keep
 
 ## Variants
 
-- **Salvage** (softer refusals, sim-checked): when you are *forced* to refuse (no card matches the target), after taking your 2 cards you may immediately play **one** card matching the target — match and turn, no chain. A drawn card that fits can leave again at once, so a bad draw stings less. Simulation (`turnover_drawplay_sim.py`, 4,000 games/config) shows it keeps games the same length, holds seats flat and stalls at zero, and *raises* the skill edge slightly (3P 1.46×→1.56×, 4P 1.60×→1.68×) — it rewards attention a little more, not less. Born from the first table test, where plain refusal felt purely punishing. Recommended at 3–4P.
+- **Salvage** (softer refusals, sim-checked): when you are *forced* to refuse (no card matches the target), after taking your 2 cards you may immediately play **one** card matching the target — match and turn, no chain. A drawn card that fits can leave again at once, so a bad draw stings less. Simulation (`wildfire_drawplay_sim.py`, 4,000 games/config) shows it keeps games the same length, holds seats flat and stalls at zero, and *raises* the skill edge slightly (3P 1.46×→1.56×, 4P 1.60×→1.68×) — it rewards attention a little more, not less. Born from the first table test, where plain refusal felt purely punishing. Recommended at 3–4P.
 - **Slow Match** (with younger players): no chains — one card per turn — **and refusals take 1**. The two changes belong together: chains are the game's exhaust valve, and without them the standard refusal cost pumps cards in faster than they can leave (simulated chainless games at cost 2 frequently never ended).
-- **Wildfire** (once the table knows the deck): chains of up to **three** cards. Measurably faster and meaner — about three minutes a race — and it rewards the sharpest counter at the table even harder. The right answer for a 6-player table that wants more bite.
+- **Inferno** (once the table knows the deck): chains of up to **three** cards. Measurably faster and meaner — about three minutes a race — and it rewards the sharpest counter at the table even harder. The right answer for a 6-player table that wants more bite.
 - **Last Light** (scored match): when someone goes out, others score minus-1 per card in hand; play rounds equal to the player count, rotating dealer. Least negative total wins.
 
 ---
 
-*Design v1.1 — simulation-tuned (~60,000 games, June 2026; see `TURNOVER_design_analysis.md`), untested at the table. The original concept tracked the pile's buried faces from memory (the rule died with OUROBOROS — see the project's post-mortem lessons). The match-and-turn action replaces it: every constraint lives on the visible top face, every play is publicly verified at a glance, the turn IS the deck's signature flip, and the pile's visible history makes card-counting a skill of attention, never recall. The v1.0 open questions are closed: chain limit 2 and refusal cost 2 confirmed (zero stalls, flat seats, 1.5–1.8× skill edge, ~5-minute races at every count); the old Hot Well variant was cut because raising the refusal cost made games 20–60% LONGER, not shorter — Wildfire delivers what Hot Well promised; Slow Match gained its refusal-cost errata because the chainless game otherwise fails to terminate.*
+*Design v1.1 — simulation-tuned (~60,000 games, June 2026; see `WILDFIRE_design_analysis.md`), untested at the table. The original concept tracked the pile's buried faces from memory (the rule died with OUROBOROS — see the project's post-mortem lessons). The match-and-turn action replaces it: every constraint lives on the visible top face, every play is publicly verified at a glance, the turn IS the deck's signature flip, and the pile's visible history makes card-counting a skill of attention, never recall. The v1.0 open questions are closed: chain limit 2 and refusal cost 2 confirmed (zero stalls, flat seats, 1.5–1.8× skill edge, ~5-minute races at every count); the old Hot Well variant was cut because raising the refusal cost made games 20–60% LONGER, not shorter — Inferno delivers what Hot Well promised; Slow Match gained its refusal-cost errata because the chainless game otherwise fails to terminate.*

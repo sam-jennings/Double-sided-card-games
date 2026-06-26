@@ -1,4 +1,4 @@
-# FALSE FACE
+# FORKED TONGUE
 
 *A game of forgery and finite lies for 3–6 players · ~20 minutes · ages 10+*
 
@@ -21,7 +21,7 @@ Every card in the deck is a unique pair — there is exactly one Moon/Crown in t
 
 The centre of the table holds the **ledger** — a single overlapping row of played cards, every visible face still showing. The ledger is the game's memory, kept entirely by the cards themselves:
 
-> Each card in the ledger was played *showing the symbol its previous player claimed was hidden*. The row of visible faces **is** the history of claims. Only the **newest claim** lives in the air — and anyone may ask the claimant to repeat it at any time (they must answer truthfully about *what they claimed*).
+> Each card in the ledger — except the card that **opened** the row — was played *showing the symbol its previous player claimed was hidden*. The row of visible faces **is** the history of claims. Only the **newest claim** lives in the air — and anyone may ask the claimant to repeat it at any time (they must answer truthfully about *what they claimed*).
 
 ## Your turn
 
@@ -37,7 +37,7 @@ Your claim may be the truth or a lie. It becomes the new requirement for the nex
 
 ### 2. Decline
 
-Take the **two newest cards** of the ledger into your hand. Your turn ends. (If the ledger has one card, take it; if it's empty, you must play.)
+Take the **newest card** of the ledger into your hand and end your turn. The requirement then **rewinds one link**: the next player must show whatever symbol the card you just took was showing (that symbol is the previous claimant's claim — they restate it on request). If taking the card empties the ledger, the next player opens fresh.
 
 Decline because you can't show Crown — or because you won't. Nobody knows which.
 
@@ -59,6 +59,61 @@ Play your final card, make your claim, and **survive the challenge window**:
 
 A final-card claim is the game's signature moment: with one card left, your claim is about a *specific known object* — and everything the table has seen all game points at it.
 
+## A short example (3 players)
+
+A six-turn slice, to show how the cards record the story by themselves. **A**, **B**, **C** play clockwise. We only need to track a handful of cards.
+
+**Setup snapshot.** In the registry, dead and public: among others, **Leaf/Mask**. A is holding **Leaf/Crown**; B is holding **Leaf/Wave**; A is also holding **Leaf/Star**.
+
+Notation: `Crown · Leaf` means a card lying with **Crown** face up and **Leaf** face down. The bracketed phrase after each turn is the live claim — the symbol the next player owes.
+
+---
+
+**Turn 1 — A opens.** A plays Leaf/Crown showing **Crown**, and tells the truth: *"Crown, hiding Leaf."*
+
+```
+Ledger ▸ [ Crown · Leaf ]                            owe: Leaf
+```
+
+Nobody challenges. B must now show Leaf.
+
+---
+
+**Turn 2 — B plays a lie that the table can't disprove.** B has Leaf/Wave but doesn't want Wave on the air. B plays it showing **Leaf** and claims *"Leaf, hiding Eye."* The card is actually hiding Wave.
+
+```
+Ledger ▸ [ Crown · Leaf ] [ Leaf · Eye? ]            owe: Eye
+```
+
+Nobody can prove the lie yet — Leaf/Eye is neither in the registry nor in the ledger. The claim passes. C must show Eye.
+
+---
+
+**Turn 3 — C declines, and rewinds the demand.** C's only Eye card is precious. C would rather eat a card than burn it. C takes the **newest** ledger card into hand (the card showing Leaf). The requirement rewinds one link: the taken card was showing **Leaf**, so the next player owes Leaf again.
+
+```
+Ledger ▸ [ Crown · Leaf ]                            owe: Leaf
+C's hand ▸ … + Leaf/Wave
+```
+
+Privately, C now flips the card in hand and sees Wave on its back — so C *knows* B's "hiding Eye" was a lie. But the challenge window has closed; the knowledge is ammunition for later, not a refund now.
+
+---
+
+**Turn 4 — A overreaches.** A still wants to steer with Leaf and plays another Leaf card (Leaf/Star) showing **Leaf**, claiming *"Leaf, hiding Crown."*
+
+```
+Ledger ▸ [ Crown · Leaf ] [ Leaf · Crown? ]          owe: Crown
+```
+
+**Turn 5 — C challenges from the ledger alone.** Before B acts, C looks at the row: the **Leaf/Crown** card is *already in it* — A played it on turn 1. Every pair exists exactly once, so a second Leaf/Crown cannot exist. C cries **"False face!"** and flips A's top card. It hides Star, not Crown.
+
+A takes the entire ledger into hand. The row is now empty; play passes to **B**, who opens fresh.
+
+---
+
+**What this shows.** The ledger records *what was claimed*, not what was true — turn 2's lie sits in the row, invisible, until a flip or a recycle. Declining never invents a claim; it only shortens the row from its newest end and restores the demand from one step earlier. And the further the game runs, the smaller the lie-space gets: by turn 4, the deck's own arithmetic convicts A without anyone needing to remember a thing.
+
 ## Why lies run out (read once, then feel it)
 
 Every pair exists once. The registry kills 6–12 pairs at setup, in public. Every challenge flips a card and kills its pair. Every truthful claim, believed, parks a pair in everyone's reckoning. Early game, a lie is a coin in a fountain; by the endgame, claiming "Moon hiding Key" when the Moon/Key is dead in the registry is a gift to the table — and the *good* lies must thread the few pairs still unaccounted for. The game tightens like a noose, by arithmetic alone.
@@ -71,7 +126,7 @@ Every pair exists once. The registry kills 6–12 pairs at setup, in public. Eve
 
 **Two players shout at once?** Closest to the claimant's left challenges.
 
-**I declined, and now it's back to me with the same claim.** The claim stands until someone plays over it or the ledger is taken.
+**What happens to the requirement when I decline?** It rewinds one link: removing the top card re-exposes the link beneath it, so the next player owes the symbol your taken card was showing. Because the ledger is only ever shortened from its newest end, the row of visible faces stays an honest history — it can never come to record a claim that was never made.
 
 **Does a decline reveal anything?** Only that you chose it. You may decline holding a fistful of Crowns. Cold-blooded.
 
@@ -82,7 +137,7 @@ Every pair exists once. The registry kills 6–12 pairs at setup, in public. Eve
 ## Strategy notes (read after your first game)
 
 - **Lie early, truth late.** Early claims are unfalsifiable; endgame claims are checkable against everything seen. The skilled curve runs from brazen to immaculate.
-- **Claims are steering.** Claiming a symbol the next player can't show forces a decline — watch what they've declined before. You can bleed a player two cards at a time without ever lying.
+- **Claims are steering.** Claiming a symbol the next player can't show forces a decline — watch what they've declined before. You can bleed a player a card at a time, and rewind the demand back onto the table, without ever lying.
 - **Truth is ammunition.** A true claim, challenged, hands the challenger the whole ledger. Walking into a challenge on purpose is the game's best feeling.
 - **Count the eights.** Each symbol sits on exactly 8 cards. Registry plus flips plus your own hand often proves a claim impossible — the table's loudest players usually haven't done the sum.
 
@@ -94,4 +149,4 @@ Every pair exists once. The registry kills 6–12 pairs at setup, in public. Eve
 
 ---
 
-*Design v1.0 — untested at the table. The claim-chain (each card showing the previous claim) keeps all history physical: the only remembered state is the newest claim, repeatable on demand — a deliberate constraint from the OUROBOROS post-mortem. First playtest questions: ledger swing size (whole-row vs Apprentice), decline rate, and whether 3P has enough challenge pressure.*
+*Design v1.1 — untested at the table. The claim-chain (each card showing the previous claim) keeps all history physical: the only remembered state is the newest claim, repeatable on demand — a deliberate constraint from the OUROBOROS post-mortem. **v1.1: declining now takes only the newest card and rewinds the requirement one link, instead of taking two cards while the claim floated free — the old rule corrupted the self-recording ledger (it could leave the table requiring a symbol no card recorded, and let a later play falsely read as a claim nobody made).** First playtest questions: decline penalty size (one card may be too cheap a dodge — watch the decline rate), ledger swing size (whole-row vs Apprentice), and whether 3P has enough challenge pressure.*

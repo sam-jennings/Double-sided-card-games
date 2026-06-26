@@ -33,6 +33,7 @@ Double-sided card games/
 ## Per-game folder conventions
 
 - One folder per game, **Title Case** folder name including article (e.g. `Twelve Trials/`, `The Council/`, `The Unplayed Pair/`).
+- The `<GAME>` file prefix is the title in UPPER_SNAKE **with any leading article dropped** — `COUNCIL_rulebook.md`, `UNPLAYED_PAIR_rulebook.md`, `ORRERY_rulebook.md` (not `THE_COUNCIL_…`). The folder keeps the article; the file prefix does not.
 - **Rulebook**: `<GAME>_rulebook.md`, UPPER_SNAKE prefix. Every game has one once it reaches tier 3+.
 - **Design analysis**: `<GAME>_design_analysis.md`. Explains reasoning, constraints, and simulation results. Present for sim-tuned/validated games.
 - **Playtest reports**: `<GAME>_playtest_NN.md`. Numbered sequentially per game.

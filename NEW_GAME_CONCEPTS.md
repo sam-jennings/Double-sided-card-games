@@ -1,13 +1,13 @@
 # New Game Concepts
 
-*Eight concept sheets expanding the collection beyond TRIGON and TURNCOAT. Each exploits a property of the all-pairs flip deck that the existing games don't touch. Deck-size fit is stated per game; see [DECK_SIZE_DECISION.md](DECK_SIZE_DECISION.md) for the overall recommendation.*
+*Fifteen concept sheets expanding the collection beyond TRIGON and TURNCOAT. Each exploits a property of the all-pairs flip deck that the existing games don't touch. Deck-size fit is stated per game; see [DECK_SIZE_DECISION.md](DECK_SIZE_DECISION.md) for the overall recommendation.*
 
 Portfolio coverage at a glance:
 
 | # | Game | Genre | Players | Key deck property used |
 |---|---|---|---|---|
 | 1 | JANUS | Co-op communication | 2–4 | The fanned hand shows opposite faces to opposite sides of the table |
-| 2 | FALSE FACE | Bluffing | 3–6 | Every lie about a hidden side is eventually falsifiable (pairs are unique) |
+| 2 | FORKED TONGUE | Bluffing | 3–6 | Every lie about a hidden side is eventually falsifiable (pairs are unique) |
 | 3 | OUROBOROS | Solo puzzle | 1 | K₇/K₉ have Eulerian circuits — the whole deck chains into one loop |
 | 4 | TWELVE TRIALS | Solo / co-op puzzle | 1–3 | The 36-card deck partitions perfectly into 12 symbol-triangles |
 | 5 | THE UNPLAYED PAIR | Trick-taking / deduction | 3–5 | One missing card is fully identifiable by elimination *(trick layer parked — superseded by §11/§12; see Parking Lot)* |
@@ -15,11 +15,12 @@ Portfolio coverage at a glance:
 | 7 | THE COUNCIL | Negotiation / game theory | 3–6 | Every commitment is reversible — but only to one specific alternative |
 | 8 | HOT POTATO PAIRS | Party shedding | 3–6 | Both faces constrain legal plays; the back of your card is a liability |
 | 9 | THE ORRERY | Solo / co-op sorting puzzle | 1–3 | 36 cards partition into four 9-card orbits, each a permutation of all 9 symbols on both faces |
-| 10 | CABAL *(concept stage)* | 2P abstract avoidance | 2 | Goodman: any balanced K₆ split forces ≥2 mono-triangles (mean ~4); 5→6 threshold turns "survivable" into "doomed" |
+| 10 | SNARE *(concept stage)* | 2P abstract avoidance | 2 | Goodman: any balanced K₆ split forces ≥2 mono-triangles (mean ~4); 5→6 threshold turns "survivable" into "doomed" |
 | 11 | GLEAN | Trick-taking / majority | 3–4–6 | Each captured card scores toward *two* symbol-majorities at once; pair-uniqueness makes the contested card specific |
 | 12 | BLIGHT | Trick-taking / avoidance | 3–4–6 | The *hidden* face is the penalty — the back of the card is the poison; shoot-the-moon by taking it all |
 | 13 | CAIRN *(concept stage)* | Compact solo chain patience | 1 | A card is an edge; cards chain by a shared sign — the edge-adjacency property, unused since OUROBOROS was cut, now in a ≤4-pile footprint |
-| 14 | MERIDIAN *(sim-validated)* | Network route-race / drafting | 2–4 | Each card is a directed road *and* a unique connection goal; "each sign on 8 cards" bounds the map; a flip re-aims a road to make or break a directed route |
+| 14 | RELAY *(sim-validated)* | Network route-race / drafting | 2–4 | Each card is a directed road *and* a unique connection goal; "each sign on 8 cards" bounds the map; a flip re-aims a road to make or break a directed route |
+| 15 | SLEEPER *(drafted — rulebook v0.1, untested)* | Social deduction / hidden loyalty | 4–6 | Your loyalty is one guarded double-faced card — the only persistent secret a backless deck holds cleanly; a flip swings a decree to its single printed alternative |
 
 Existing games already cover: tactical grid engine (TRIGON) and direct-conflict allegiance (TURNCOAT).
 
@@ -41,7 +42,7 @@ Existing games already cover: tactical grid engine (TRIGON) and direct-conflict 
 
 ---
 
-## 2. FALSE FACE — bluffing under verifiable history
+## 2. FORKED TONGUE — bluffing under verifiable history
 
 *3–6 players · ~20 min · bluffing / hand management*
 
@@ -180,22 +181,22 @@ Existing games already cover: tactical grid engine (TRIGON) and direct-conflict 
 The deck is now fixed at 9 symbols / 36 cards ([DECK_SIZE_DECISION.md](DECK_SIZE_DECISION.md)); concepts were developed to full rulebooks.
 
 1. **JANUS** — ✅ full rulebook ([Janus/](Janus/)). The collection's signature-mechanic candidate. Next: table test the omen economy.
-2. **FALSE FACE** — ✅ full rulebook ([False Face/](False%20Face/)). Next: table test ledger pacing.
+2. **FORKED TONGUE** — ✅ full rulebook ([Forked Tongue/](Forked%20Tongue/)). Next: table test ledger pacing.
 3. **TWELVE TRIALS** — ✅ promoted to main-game development after OUROBOROS was cut; redesigned as a fully open-information puzzle (no hidden-face memory, no luck-blame) with an exact solver tuning the score tiers ([Twelve Trials/](Twelve%20Trials/)). **Has been table-tested.**
 4. **OUROBOROS** — ↩️ developed, simulated, cut after live testing (June 2026), then **revived to the pipeline (Stage 2)** later in June 2026. The cut reasons were re-examined: the buried open-symbol bug is fixed in **v1.1** (lay each card showing its *onward* symbol — both open ends stay face-up, never lift the serpent), and a Monte-Carlo planner put the skill ceiling at **~1.74× (n=9) / ~1.84× (n=7)** over random, above the healthy bar — retiring the "thin skill gap / luck-dominant" verdict that rested on one-ply floor numbers. Kept in [Ouroboros/](Ouroboros/); see [OUROBOROS_design_analysis.md](Ouroboros/OUROBOROS_design_analysis.md) §6. **Next: first table test of v1.1.**
 5. **THE UNPLAYED PAIR** — ✅ full rulebook ([The Unplayed Pair/](The%20Unplayed%20Pair/)). The hidden-face trick-rank rule was reworked into a public trick-end reveal per the OUROBOROS lesson; won tricks and morgue stay open for inspection (deduction, never memory). Next: table test at 4P.
 6. **THE COUNCIL** — ✅ full rulebook ([The Council/](The%20Council/)). Lone-supporter-takes-all minority game with rollover stacks; palms-commit protocol replaces impossible face-down concealment. Next: table test at 4–5P.
 7. **CROSSROADS** — ✅ full rulebook ([Crossroads/](Crossroads/)). Layout solved: the eight symbol-9 cards become the city ring; roads point at the city their visible face names (one-way traffic); contracts are the cards you keep. Perfect-information abstract. **Has been table-tested.**
-8. **HOT POTATO PAIRS → TURNOVER** — ✅ full rulebook ([Turnover/](Turnover/)). Renamed; the back-memory chain died with OUROBOROS and is replaced by match-and-turn: all constraints live on the visible top face. Next: party test at 5–6P.
+8. **HOT POTATO PAIRS → WILDFIRE** — ✅ full rulebook ([Wildfire/](Wildfire/)). Renamed; the back-memory chain died with OUROBOROS and is replaced by match-and-turn: all constraints live on the visible top face. Next: party test at 5–6P.
 9. **THE ORRERY** — ✅ full rulebook ([The Orrery/](The%20Orrery/)). Open-information orbit-sorting puzzle — sibling to TWELVE TRIALS via a different decomposition (4 permutation orbits vs. 12 triangles). Sky debt gives a visible per-deal lower bound. **Has been table-tested.**
 
 **Note:** TRIGON ([Trigon/](Trigon/)) and TURNCOAT ([Turncoat/](Turncoat/)) are extensively simulation-validated (~22–23k games each) but have **not** been table-tested. They are awaiting their first physical play.
 
-**All nine concepts are now resolved: eight developed to rulebooks, one (OUROBOROS) cut by playtest.** Symbol identity study: [SYMBOL_SETS.md](SYMBOL_SETS.md).
+**The original nine concepts are all resolved: all nine were developed to full rulebooks (OUROBOROS was cut after live testing, then revived to the pipeline — see §4 above). Six further concepts (§10–§15) have since been added.** Symbol identity study: [SYMBOL_SETS.md](SYMBOL_SETS.md).
 
 ---
 
-## 10. CABAL — the forbidden three *(concept stage — not yet a rulebook)*
+## 10. SNARE — the forbidden three *(concept stage — not yet a rulebook)*
 
 *2 players · ~10–15 min · perfect-information abstract / avoidance*
 
@@ -234,7 +235,7 @@ The deck is now fixed at 9 symbols / 36 cards ([DECK_SIZE_DECISION.md](DECK_SIZE
 - **9 symbols / 36 cards — the deck-defining version (R(C₅,C₅) = 9).** Both avoid a **pentagon** (5-cycle). All 36 cards are edges, even 18/18 split, threshold 8→9 (K₈ escapable — witness verified: two K₄ vs K₄,₄, no mono C₅ in either colour; upper bound cited). Fully symmetric, uses the whole deck, and you hunt a **loop** rather than a clique. Cost: a 5-cycle is the hardest of these to scan late-game.
 - *(C₄ symmetric, R(C₄,C₄)=6, is also 15 cards but a 4-loop is harder to spot than a triangle with no deck-size gain — no reason to prefer it over triangles.)*
 
-> **Binding finding — this is a 2-player mechanic, permanently.** Symmetric forced-avoidance for *r* players needs the multicolour Ramsey number R_r(H) ≤ 9. But these explode: **R(C₄,C₄,C₄) = 11** (3 players → 11 symbols), **R(C₃,C₃,C₃,C₃) ≈ 51–62** (4 players → ~51 symbols). The deck caps at 9 vertices, so **no 3+ player version can guarantee the forcing — ever.** Verified for the tempting 3-player/C₄ case: unlike the 2-player Goodman case (where the even split *restored* forcing), here the balance loophole fails too — a balanced **12/12/12 C₄-free partition of K₉ exists** (constructed explicitly), so perfect play is a three-way survival with **no guaranteed loser**. A 3-player version therefore loses the inevitability hook entirely (becoming a generic avoidance abstract that fails the deck-necessity test) and invites 2-on-1 kingmaking besides. Don't chase a multiplayer CABAL; the inevitability lives only at two colours. R(C₅,C₅)=9 is the largest forbidden-shape game the deck can host.
+> **Binding finding — this is a 2-player mechanic, permanently.** Symmetric forced-avoidance for *r* players needs the multicolour Ramsey number R_r(H) ≤ 9. But these explode: **R(C₄,C₄,C₄) = 11** (3 players → 11 symbols), **R(C₃,C₃,C₃,C₃) ≈ 51–62** (4 players → ~51 symbols). The deck caps at 9 vertices, so **no 3+ player version can guarantee the forcing — ever.** Verified for the tempting 3-player/C₄ case: unlike the 2-player Goodman case (where the even split *restored* forcing), here the balance loophole fails too — a balanced **12/12/12 C₄-free partition of K₉ exists** (constructed explicitly), so perfect play is a three-way survival with **no guaranteed loser**. A 3-player version therefore loses the inevitability hook entirely (becoming a generic avoidance abstract that fails the deck-necessity test) and invites 2-on-1 kingmaking besides. Don't chase a multiplayer SNARE; the inevitability lives only at two colours. R(C₅,C₅)=9 is the largest forbidden-shape game the deck can host.
 
 **Caveats for the cycle (9-symbol) version:** late-game legibility — a loop is easy to *trace*, but a dense colour class hides many 5-cycles by the endgame; easier than cliques, not free. This is the make-or-break handling question if the 9-symbol form is pursued.
 
@@ -395,29 +396,29 @@ That engine is identical in both games. The *only* difference is what you are tr
 
 | Game | What was removed/avoided | Verdict | Re-include? |
 |---|---|---|---|
-| **TURNOVER** (ex-HOT POTATO PAIRS) | The **back-memory chain**: a played card's hidden face had to *dodge* the remembered hidden face beneath it — "the unseen half of your card is the dangerous half." Killed and replaced with match-and-turn (all constraints on the visible top). | **Over-correction.** The remembered-backs rule was the game's *deliberate, distinctive core*, not involuntary overhead — exactly the kind of memory the deck suits. It was cut by association with OUROBOROS, not on its own evidence. | **Strong candidate.** |
+| **WILDFIRE** (ex-HOT POTATO PAIRS) | The **back-memory chain**: a played card's hidden face had to *dodge* the remembered hidden face beneath it — "the unseen half of your card is the dangerous half." Killed and replaced with match-and-turn (all constraints on the visible top). | **Over-correction.** The remembered-backs rule was the game's *deliberate, distinctive core*, not involuntary overhead — exactly the kind of memory the deck suits. It was cut by association with OUROBOROS, not on its own evidence. | **Strong candidate.** |
 | **THE UNPLAYED PAIR** | Hidden-face trick-**rank** (winning a trick revealed your card's back, feeding deduction) → converted to a public trick-end reveal; "deduction, never memory." | **Mixed.** The conversion was reasonable, but the game was *parked* for a different reason (trick-layer vs. deduction-layer fight), so the memory question was never tested on its own. | Weak — revisit only if the trick/deduction conflict is solved first. |
 | **BLIGHT** | Remembering which face of a captured card was the penalty → store the rot pile **penalty-face-up** as a self-totalling, glanceable record. | **Sound.** The penalty total must be glanceable for scoring; remembering it would be *involuntary* bookkeeping, not a chosen challenge. Correct call — leave as is. | No. |
-| **FALSE FACE** | Tracking the full claim history → an **oriented public ledger**; "only remembered state is the newest claim." | **Sound.** It is a deduction/bluff game; forced history-recall would be admin, not play. Correct call. | No. |
+| **FORKED TONGUE** | Tracking the full claim history → an **oriented public ledger**; "only remembered state is the newest claim." | **Sound.** It is a deduction/bluff game; forced history-recall would be admin, not play. Correct call. | No. |
 | **FACE VALUE** | Hidden-face accrual across rounds → folded cards return to hand **unrevealed**, so "no hidden-face memory accrues." | **Sound.** Memory here would be involuntary overhead riding on a betting shell. Correct call. | No. |
 
-**Conclusion.** Four of the five removals were correct: they stripped *involuntary* memory from games whose point lay elsewhere. **TURNOVER is the exception** — its back-memory chain was a deliberate, deck-native memory mechanic discarded by guilt-by-association with OUROBOROS, before it was ever table-tested. It is the prime re-inclusion candidate.
+**Conclusion.** Four of the five removals were correct: they stripped *involuntary* memory from games whose point lay elsewhere. **WILDFIRE is the exception** — its back-memory chain was a deliberate, deck-native memory mechanic discarded by guilt-by-association with OUROBOROS, before it was ever table-tested. It is the prime re-inclusion candidate.
 
 ### Re-inclusion candidates
 
-- **TURNOVER's back-memory chain — revive as a deliberate memory game or variant.** Keep the match-and-turn base game (it stands on its own), but restore the remembered-hidden-faces rule as either (a) a **"Long Memory" expert variant** of TURNOVER, or (b) a **distinct shedding/memory game** where the whole point is tracking the pile's buried faces. Must pass the steering's memory guardrails: the memory is *the point*, the load is roughly **symmetric** across players, and it is **verifiable on demand** (the pile can be checked at a challenge, bounded by the every-pair-once registry so sharks *count* rather than merely recall). First question to falsify: is dodging a remembered back *tense and fair*, or just a punishing recall tax at speed?
+- **WILDFIRE's back-memory chain — revive as a deliberate memory game or variant.** Keep the match-and-turn base game (it stands on its own), but restore the remembered-hidden-faces rule as either (a) a **"Long Memory" expert variant** of WILDFIRE, or (b) a **distinct shedding/memory game** where the whole point is tracking the pile's buried faces. Must pass the steering's memory guardrails: the memory is *the point*, the load is roughly **symmetric** across players, and it is **verifiable on demand** (the pile can be checked at a challenge, bounded by the every-pair-once registry so sharks *count* rather than merely recall). First question to falsify: is dodging a remembered back *tense and fair*, or just a punishing recall tax at speed?
 - **A purpose-built deliberate memory game (new).** The collection has deduction games but no game whose *core challenge* is tracking pressed faces over time. The pair-registry (every pair once, each symbol on 8 cards) bounds what is knowable, turning memory into disciplined counting. Logged as an explicit design target per the updated steering; a concept sheet can be drafted on request.
 
 
 ---
 
-## 14. MERIDIAN — race the nine roads *(concept stage — not yet a rulebook)*
+## 14. RELAY — race the nine roads *(concept stage — not yet a rulebook)*
 
-*2–4 players · ~20–25 min · network route-race / drafting · **deck-only, no extra components** · working title (alts: LODESTAR, CONFLUENCE, KEYSTONE, RELAY)*
+*2–4 players · ~20–25 min · network route-race / drafting · **deck-only, no extra components** · name RELAY (formerly MERIDIAN; alts considered: LODESTAR, CONFLUENCE, KEYSTONE)*
 
 > **Why this exists.** A clean-sheet **networking game for 2–4 players**, designed to dodge the four bugs that dog CROSSROADS at the table (see [Crossroads/CROSSROADS_design_analysis.md](Crossroads/CROSSROADS_design_analysis.md) §6–§8): 14-card hand overwhelm, the invisible road-vs-contract mental split, the pass-to-win/hoarding exploit, and first-turn paralysis. It is **not** trying to be un-CROSSROADS-like — it reuses the proven "aim the card at a sign / visible face = destination" handling — it is trying to be **un-CROSSROADS-*broken***. Each bug is designed out structurally.
 >
-> **Component discipline — resolved by simulation.** Two forks were considered: a deck-only **goal-race** (positional ownership) and a **node-majority** version needing a colour-coded cube kit. A structural sim ([Meridian/MERIDIAN_design_analysis.md](Meridian/MERIDIAN_design_analysis.md), [meridian_sim.py](Meridian/meridian_sim.py)) settled it: the **goal-race wins decisively**, including on flip-relevance — the very axis the node-majority fork was supposed to win. So MERIDIAN is **deck-only**; the cube-kit fork is dropped. (Details and the reversed prediction in the design analysis; the alternatives note at the end is retained for the record.)
+> **Component discipline — resolved by simulation.** Two forks were considered: a deck-only **goal-race** (positional ownership) and a **node-majority** version needing a colour-coded cube kit. A structural sim ([Relay/RELAY_design_analysis.md](Relay/RELAY_design_analysis.md), [relay_sim.py](Relay/relay_sim.py)) settled it: the **goal-race wins decisively**, including on flip-relevance — the very axis the node-majority fork was supposed to win. So RELAY is **deck-only**; the cube-kit fork is dropped. (Details and the reversed prediction in the design analysis; the alternatives note at the end is retained for the record.)
 
 **The one-sentence deck property.** Every card is simultaneously a **directed road** (to build) and a **unique connection goal** (to claim); because every pair exists once, each goal is the *only* connection between its two signs and the direct road for it is a single scarce card, while a **flip** re-aims a road to make or break the directed route a goal demands.
 
@@ -440,7 +441,7 @@ On your turn:
 
 ### How each CROSSROADS bug is designed out
 
-| CROSSROADS bug | MERIDIAN's structural fix |
+| CROSSROADS bug | RELAY's structural fix |
 |---|---|
 | **14-card overwhelm** | Hand is **3**, fed by an open draft — never a wall of cards. |
 | **Invisible road/contract split** | Hand cards have **one role** — build them. Goals are **public cards** you claim into a pile, never hand cards you secretly nurse. No mental partition. |
@@ -482,12 +483,12 @@ Adding a player adds a sign (another node and destination) and its cards (more r
 
 ### Next step (per [focus-priority.md](.kiro/steering/focus-priority.md))
 
-**Structural sim done — goal-race passes the gate** ([MERIDIAN_design_analysis.md](Meridian/MERIDIAN_design_analysis.md)): terminates at 2–4P (0% caps), skill gap 1.9× / 2.8× / 3.6× (2/3/4P), pass-to-win scores 0 by construction, and flips are relevant (~22–28% of claims come via a re-aim; removing flips drops the skill gap). Now **Stage 2 (validated)**. The remaining work is a short **deck-only rulebook draft**, then a first **2P + 3P table test** for the fun, interaction, route-tracing legibility, and CROSSROADS-distinctness questions a sim can't answer.
+**Structural sim done — goal-race passes the gate** ([RELAY_design_analysis.md](Relay/RELAY_design_analysis.md)): terminates at 2–4P (0% caps), skill gap 1.9× / 2.8× / 3.6× (2/3/4P), pass-to-win scores 0 by construction, and flips are relevant (~22–28% of claims come via a re-aim; removing flips drops the skill gap). Now **Stage 2 (validated)**. The remaining work is a short **deck-only rulebook draft**, then a first **2P + 3P table test** for the fun, interaction, route-tracing legibility, and CROSSROADS-distinctness questions a sim can't answer.
 
 
 ### Alternative fork — node-majority (shared cube kit) — *dropped by sim*
 
-*Retained for the record. This fork was the reason the cube-kit component question arose; the [structural sim](Meridian/MERIDIAN_design_analysis.md) rejected it in favour of the deck-only goal-race.*
+*Retained for the record. This fork was the reason the cube-kit component question arose; the [structural sim](Relay/RELAY_design_analysis.md) rejected it in favour of the deck-only goal-race.*
 
 Same draft-and-build skeleton, but the web is **owned**: when you build a road you drop one of your colour cubes on it and aim it at one of its two signs (one **vote**). At game end, each sign is controlled by whoever has the most votes aimed at it; controlling a sign scores its pip. **Flipping re-aims a vote** — steal a node, deny a leader — which makes re-aiming the central, point-scoring verb rather than an occasional tool.
 
@@ -499,6 +500,35 @@ Same draft-and-build skeleton, but the web is **owned**: when you build a road y
 | Pass-to-win | dead (claim by completing) | dead (control needs built votes) |
 | Kingmaking risk | low | **higher** (a re-aim can decide a node — test at 3–4P) |
 
-**Decision rule:** if the goal-race sim shows flips rarely matter (rubric-4 fails), the node-majority fork is the fix — provided the collection is willing to adopt a reusable cube kit and the GLEAN-overlap and kingmaking questions pass at the table. If the goal-race keeps flips relevant on its own, prefer it (no kit, no overlap).
+**Decision rule:** if the goal-race sim shows flips rarely matter (rubric-4 fails), the node-majority fork is the fix — provided the collection is willing to adopt a reusable cube kit and the GLEAN-overlap and kingmaking questions 
+---
 
-*(Update to the Next step: the structural sim should run **both** forks and report claims/points attributable to flips, so the fork choice is made on data, not taste.)*
+## 15. SLEEPER — wear two faces, serve one master *(drafted — rulebook v0.1, untested at the table)*
+
+*4–6 players · ~25 min · social deduction / hidden loyalty · [Sleeper/SLEEPER_rulebook.md](Sleeper/SLEEPER_rulebook.md)*
+
+> **Status & origin.** Logged June 2026 to fill the collection's clearest genre hole: there is **no hidden-loyalty / social-deduction game.** THE COUNCIL is open negotiation (cards go public on commit, no persistent secret); FORKED TONGUE and FACE VALUE are claim-and-challenge bluffs about a *card's* hidden face. None of them sustains the table's defining social-deduction question — *who is secretly on whose side?* — across a whole game. Rulebook drafted (v0.1); design analysis in [Sleeper/SLEEPER_design_analysis.md](Sleeper/SLEEPER_design_analysis.md). Untested.
+
+**The trick that makes it exist.** On a backless deck you cannot hide a hand (JANUS proved it), but you *can* hide exactly one thing: the down face of a single flat card. SLEEPER makes that the whole secret. Your **loyalty card** lies in front of you, cover face up; the **Master** sign pressed to the wood is whom you truly serve. It is the only persistent secret the deck can hold cleanly — and the game is built entirely around it.
+
+**Core loop.** At setup you are dealt one card, look at both signs in your palms, secretly pick one as your **Master**, and lay it Master-face-down. Three cards open the **Court** row. On your turn you reveal the top Court-deck card and either **Decree** it (add it to the row, your chosen face up — strengthen a sign) or **Turn a coat** (discard it to flip one card already in the row, swinging that decree to the single sign printed on its back). Once per game you may **Unmask** — flip your own loyalty face-up forever, proving your master to broker trust. The deck is the clock: one card leaves it every turn, so the game always ends. At the **reckoning**, the most-shown sign in the Court row rules, everyone unmasks, and **all players sworn to the ruling sign win together.**
+
+**Why it needs this deck.**
+- *The secret is a single guarded double-faced card* — the one concealment a no-back deck supports without leaks or screens. A normal deck would just use face-down role cards; this game's entire premise is that it *can't*, so loyalty literally rides on which face you press down.
+- *A flip is an exact, public, one-alternative swing.* Turning a coat moves a decree to the **one** sign on the card's back — your betrayal's destination was visible the moment it hit the table. (The deck's reversible-commitment property, shared with THE COUNCIL but pointed at board control and deduction instead of personal pips.)
+- *The Court row is a self-recording registry* — the deduction ("who keeps steering toward Crown?") runs on visible history, not memory.
+- *Emergent teams via shared master.* Most signs sit on 8 cards, so several players can secretly serve the same one and win together — the table's real alliances stay invisible until the reckoning.
+
+**Deck-size fit.** Uses **all 9 signs / 36 cards** at every count (no subset). 4–6 players; the deduction is likely sharpest where 2–3 players share a master, which the first tests should locate.
+
+**Evaluation (rubric, [design-principles.md](.kiro/steering/design-principles.md)).** All-pairs: **moderate–high** — load-bearing for the one-alternative flip; the *deduction* leans more on visible behaviour than on pair-uniqueness (the softest answer, flagged to validate or strengthen via the registry). Physically works: **yes by construction** — one guarded flat card, everything else public. Visible/deducible: **yes.** Flipping matters: **yes — the core verb.** Distinct: **yes** — persistent locked secret + emergent hidden teams + a single end reckoning, unlike COUNCIL's per-round public majorities or FORKED TONGUE's claim/challenge. Gap-fill: **the headline one** — first social-deduction game, ~25 min, talky, low-arithmetic. Clean to explain: **yes** (one secret, three actions). Testable today: **yes**, on the Set D deck.
+
+**Honest risks / why it might be cut.**
+- *Concealment integrity (highest risk).* Can one flat loyalty card be guarded all game without peeks or table-angle flashes? JANUS's concealment collapsed in play; this needs a confirmed handling convention.
+- *Is the deduction real?* The load-bearing question — do decree-and-flip patterns actually betray masters, or does a busy public row drown the signal? If weak, pull in the pair-registry or promote **The Wager** variant (reward correct reads) into the base game.
+- *Kingmaking at the reckoning* — the last flips can decide the ruler; candidate fix is simultaneous final-round actions.
+- *Obvious-sign collusion* — does everyone serving the safest/highest-pip sign collapse into a shared blowout? (THE COUNCIL hit the analogous line and broke it with pip values + rollover; a sim could check the strength-plus-pip resolution.)
+
+**Fastest falsification.** One 5-player table, base game, watching two things: does any loyalty leak from handling a single flat card, and at the reckoning did players' *reads* on each other beat chance? If reads are noise, the deduction isn't real and it's just a tug-of-war — that is the kill test.
+
+**Next step.** First table test (concealment + "is the deduction real"). It is a talk-and-read game like THE COUNCIL, so it ships to the table unsimmed; the only sim worth running first is a collusion/termination check on the resolution rule.

@@ -131,7 +131,7 @@ Known eliminations can come from:
 
 | Game | Use of pair uniqueness |
 |---|---|
-| FALSE FACE | Claims name exact hidden pairs; lies become countable |
+| FORKED TONGUE | Claims name exact hidden pairs; lies become countable |
 | FACE VALUE | Shown face creates a range of possible hidden strengths |
 | JANUS | One legal hint can fully identify a card to its holder |
 | THE UNPLAYED PAIR | Players deduce the one missing card |
@@ -265,9 +265,9 @@ The 7-symbol deck is especially interesting because each card has:
 
 That makes K₇ unusually balanced for games where “share a symbol” and “avoid sharing a symbol” are opposing forces.
 
-## Current Use: TURNOVER
+## Current Use: WILDFIRE
 
-TURNOVER is a simple walk through this compatibility structure. The current target symbol asks for any card incident to that symbol. When the card is played and turned over, its other symbol becomes the next target.
+WILDFIRE is a simple walk through this compatibility structure. The current target symbol asks for any card incident to that symbol. When the card is played and turned over, its other symbol becomes the next target.
 
 Every card in hand is therefore an “exit door” from the current symbol to one specific other symbol.
 
@@ -722,16 +722,16 @@ The current collection already covers many of the strongest structures.
 
 | Structure | Current games using it |
 |---|---|
-| Flipping as the core action | TURNOVER, CROSSROADS, TWELVE TRIALS |
+| Flipping as the core action | WILDFIRE, CROSSROADS, TWELVE TRIALS |
 | Flipping as defection or denial | TURNCOAT, THE COUNCIL |
-| Pair uniqueness as deduction | JANUS, THE UNPLAYED PAIR, FALSE FACE, CROSSROADS, FACE VALUE |
+| Pair uniqueness as deduction | JANUS, THE UNPLAYED PAIR, FORKED TONGUE, CROSSROADS, FACE VALUE |
 | Triangle closure | JANUS, TWELVE TRIALS |
 | Steiner systems | TWELVE TRIALS |
 | Network graph | CROSSROADS |
 | Symbol abilities | SYZYGY, TURNCOAT |
-| Hidden information | JANUS, FALSE FACE, FACE VALUE, THE UNPLAYED PAIR |
+| Hidden information | JANUS, FORKED TONGUE, FACE VALUE, THE UNPLAYED PAIR |
 | Open information | CROSSROADS, TWELVE TRIALS |
-| Social negotiation | THE COUNCIL, FALSE FACE |
+| Social negotiation | THE COUNCIL, FORKED TONGUE |
 
 ## What Is Saturated
 
@@ -1134,7 +1134,7 @@ ask players to scan K₉'s 84 triangles.
 ## II.5 Deduction Dynamics, Quantified
 
 §3 described pair uniqueness qualitatively ("the lie-space shrinks"). Here is the
-exact arithmetic, which is a balance lever for FALSE FACE and FACE VALUE.
+exact arithmetic, which is a balance lever for FORKED TONGUE and FACE VALUE.
 
 A shown symbol **A** sits on a card whose hidden face is one of A's other
 partners. A touches exactly 8 cards. Excluding the card in question, there are
@@ -1156,13 +1156,13 @@ live hidden partners for shown A = 7 − (other A-cards already located)
 Design implications:
 
 - **Bluffing has a clock.** Early, a lie about A's hidden face is nearly safe (7
-  options); late, the same lie is suicidal (1–2 options). FALSE FACE's "can a
+  options); late, the same lie is suicidal (1–2 options). FORKED TONGUE's "can a
   first-gamer price a lie?" question (`COLLECTION_OVERVIEW.md`) is *exactly* this
   curve — the price of a lie is `1 / (live partners)`, and it is computable at
   the table by counting visible A-cards.
 - **The 8-card budget per symbol is the meter.** Because each symbol is on
   precisely 8 cards (§1), players have a hard denominator to count against.
-  That is the deck-native skill FACE VALUE and FALSE FACE reward, and it is why
+  That is the deck-native skill FACE VALUE and FORKED TONGUE reward, and it is why
   these games need *this* deck and not a generic one.
 - **Subset size sets the starting uncertainty:** in K₇ a shown symbol starts with
   5 live partners, in K₉ with 7. Choosing the symbol range is choosing how long
@@ -1182,7 +1182,7 @@ final judge. Ranking them by handling safety:
 |---|---|---|
 | II.1 Nine-round scheduler | Yes — "no symbol twice, one missing" is glanceable | **Strong** |
 | II.3 3×3 almanac | Yes — reconstructable from a square | **Strong** |
-| II.5 Deduction clock | Yes — count visible A-cards | **Strong** (already the FALSE FACE/FACE VALUE engine) |
+| II.5 Deduction clock | Yes — count visible A-cards | **Strong** (already the FORKED TONGUE/FACE VALUE engine) |
 | II.2 Four bracelets | Yes if laid out; each loop short | **Good** — far safer than the §8 single serpent |
 | II.4 Forced triangles | Yes at 6 symbols (15 cards) | **Good** if kept to the small subset; risky at K₉ |
 

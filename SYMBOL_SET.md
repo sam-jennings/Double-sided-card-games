@@ -90,7 +90,7 @@ marks — e.g. "in this 7-sign game, Key is wild").
 
 ### One inconsistency to note
 
-[THE ORRERY](The%20Orrery/THE_ORRERY_rulebook.md) builds its short game from "any
+[THE ORRERY](The%20Orrery/ORRERY_rulebook.md) builds its short game from "any
 7-symbol sub-deck" (remove any two signs), not the canonical top-two. That is
 mathematically valid — any 7 of the 9 signs form a complete all-pairs deck — and
 harmless because ORRERY is rank-agnostic. Treat **top-removal as the canonical

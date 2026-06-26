@@ -1,3 +1,13 @@
+# Raw Session Log — Lauren & Arran (June 2026)
+
+> **What this is.** A raw, verbatim record of one multi-game table session (TRIGON, JANUS, BLIGHT, CROSSROADS). It is kept as a primary source only; the curated findings live elsewhere and are authoritative:
+> - Per-game reports: [TRIGON_playtest_01.md](Trigon/TRIGON_playtest_01.md), [JANUS_playtest_01.md](Janus/JANUS_playtest_01.md), [BLIGHT_playtest_01.md](Blight/BLIGHT_playtest_01.md), [CROSSROADS_playtest_02.md](Crossroads/CROSSROADS_playtest_02.md).
+> - Cross-game/deck-wide observations: [DECK_PLAYTEST_FINDINGS.md](DECK_PLAYTEST_FINDINGS.md) (F1, F7, F8, F9).
+>
+> Because the session spans four games, it has no single game folder; it sits at the top level alongside `DECK_PLAYTEST_FINDINGS.md`. Don't cite this log for status decisions — cite the write-ups above.
+
+---
+
 We had a long playtest session with my cousin Lauren and uncle Arran. They are regular board/card gamers and Lauren especially is reading and understanding rules. 
 Started getting better cards made, printed the PnP set on card, cut them out, laminated, and rounded the corners.
 

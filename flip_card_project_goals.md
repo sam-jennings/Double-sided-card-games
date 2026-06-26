@@ -114,7 +114,7 @@ Game ideas should be judged by how well they answer the following questions:
 
 The symbol count is **fixed at 9** (36 cards) as of June 2026 — see [DECK_SIZE_DECISION.md](DECK_SIZE_DECISION.md). Games that play best smaller use a declared symbol subset (e.g. "symbols 1–7").
 
-The project is now in the collection-building phase: developing, simulating, and playtesting games against the fixed deck. Current collection: TRIGON and TURNCOAT (complete, sim-tuned), eight further concepts in [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md), of which JANUS, FALSE FACE, and OUROBOROS are being developed to full rulebooks.
+The project is now in the collection-building phase: developing, simulating, and playtesting games against the fixed deck. Current collection: TRIGON and TURNCOAT (complete, sim-tuned), eight further concepts in [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md), of which JANUS, FORKED TONGUE, and OUROBOROS are being developed to full rulebooks.
 
 ## Final Project Endpoint
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Deck — Fifteen Games</title>
+<title>The Deck — Seventeen Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -368,13 +368,13 @@
   <header class="hero">
     <div class="hero-marks" id="hero-marks"></div>
     <div class="hero-inner">
-      <p class="eyebrow">Fifteen games · One deck</p>
+      <p class="eyebrow">Seventeen games · One deck</p>
       <h1>One deck.<br><em>Endless play.</em></h1>
-      <p class="lead">Thirty-six double-sided cards. Nine signs, every pair exactly once. Fifteen games — from solo puzzles to bluffing duels — all from the same deck, with the full rulebook a tap away.</p>
+      <p class="lead">Thirty-six double-sided cards. Nine signs, every pair exactly once. Seventeen games — from solo puzzles to bluffing duels — all from the same deck, with the full rulebook a tap away.</p>
       <div class="stats">
         <div class="stat"><span class="n">36</span><span class="l">Cards</span></div>
         <div class="stat"><span class="n">9</span><span class="l">Signs</span></div>
-        <div class="stat"><span class="n">15</span><span class="l">Games</span></div>
+        <div class="stat"><span class="n">17</span><span class="l">Games</span></div>
         <div class="stat"><span class="n">1–6</span><span class="l">Players</span></div>
       </div>
     </div>
@@ -411,7 +411,7 @@
       </div>
     </div>
 
-    <p class="count" id="count">Fifteen games</p>
+    <p class="count" id="count">Seventeen games</p>
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty">No games match those filters yet.<br>Try loosening one.</p>
   </section>
@@ -518,7 +518,7 @@ const GAMES = [
     id: 'orrery', name: 'THE ORRERY', tag: 'Solo · Puzzle', pair: ['Star', 'Eye'],
     players: '1–3', pmin: 1, pmax: 3, time: 20, timeLabel: '15–25 min', weight: 'Medium',
     status: 'Collection', stage: 'Collection · table-tested',
-    deck: 'Full 36', rulebook: 'The Orrery/THE_ORRERY_rulebook.md',
+    deck: 'Full 36', rulebook: 'The Orrery/ORRERY_rulebook.md',
     tagline: 'Sort the deck into four balanced orbits.',
     idea: 'An open-information sorting puzzle. Sort the full 36-card deck into four orbits of nine, each orbit showing all nine signs once on its visible faces and all nine once on its hidden faces.',
     plays: [
@@ -554,10 +554,10 @@ const GAMES = [
     ]
   },
   {
-    id: 'turnover', name: 'TURNOVER', tag: 'Party', pair: ['Flame', 'Wave'],
+    id: 'wildfire', name: 'WILDFIRE', tag: 'Party', pair: ['Flame', 'Wave'],
     players: '3–6', pmin: 3, pmax: 6, time: 10, timeLabel: '~10 min', weight: 'Light',
     status: 'Pipeline', stage: 'Pipeline · validated (v1.1, ~60k games)',
-    deck: 'Full 36', rulebook: 'Turnover/TURNOVER_rulebook.md',
+    deck: 'Full 36', rulebook: 'Wildfire/WILDFIRE_rulebook.md',
     tagline: 'Match, flip, shed — first hand empty wins.',
     idea: 'A fast match-and-turn shedding race with no abilities to track — about five minutes end to end.',
     plays: [
@@ -606,10 +606,10 @@ const GAMES = [
     ]
   },
   {
-    id: 'false-face', name: 'FALSE FACE', tag: 'Bluffing', pair: ['Mask', 'Key'],
+    id: 'forked-tongue', name: 'FORKED TONGUE', tag: 'Bluffing', pair: ['Mask', 'Key'],
     players: '3–6', pmin: 3, pmax: 6, time: 20, timeLabel: '~20 min', weight: 'Light',
     status: 'Pipeline', stage: 'Pipeline · draft',
-    deck: 'Full 36', rulebook: 'False Face/FALSE_FACE_rulebook.md',
+    deck: 'Full 36', rulebook: 'Forked Tongue/FORKED_TONGUE_rulebook.md',
     tagline: 'Claim the face you hide — truthfully or not.',
     idea: 'A bluffing game on the pair registry. Play a card and claim its hidden face aloud — truth or lie — and let challenges sort the honest from the bold.',
     plays: [
@@ -668,6 +668,32 @@ const GAMES = [
       'Extend a cairn by playing a card carrying its top sign, exposing its partner sign.',
       'Work from a hand of four, using the stock’s visible top card to plan ahead.',
       'Lay all 21 cards of the 7-sign sub-deck without boxing yourself in.'
+    ]
+  },
+  {
+    id: 'sleeper', name: 'SLEEPER', tag: 'Social deduction', pair: ['Mask', 'Crown'],
+    players: '4–6', pmin: 4, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · draft (v0.1, untested)',
+    deck: 'Full 36 · optional first-player token', rulebook: 'Sleeper/SLEEPER_rulebook.md',
+    tagline: 'Serve one sign in secret; rule the Court.',
+    idea: 'The collection’s first hidden-loyalty game. You guard one double-faced card — your cover sign shows, your secret master sign stays pressed to the table — and steer the Court so the sign you serve ends up ruling.',
+    plays: [
+      'Take one card in secret and choose which of its two signs is your hidden master.',
+      'Each turn, push a sign in the Court row, or turn a coat to swing one to its single alternative.',
+      'When the deck runs out, the most-shown sign rules — everyone secretly sworn to it wins together.'
+    ]
+  },
+  {
+    id: 'relay', name: 'RELAY', tag: 'Route-race', pair: ['Leaf', 'Wave'],
+    players: '2–4', pmin: 2, pmax: 4, time: 22, timeLabel: '20–25 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · sim-validated (rulebook still to be written)',
+    deck: 'Full 36', rulebook: 'Relay/RELAY_design_analysis.md',
+    tagline: 'Race the nine roads; flip to re-aim them.',
+    idea: 'A network route-race where every card is both a directed road to build and a unique connection goal to claim. Because every pair exists once, each goal is the only link between its two signs — and a flip re-aims a road to make or break a route.',
+    plays: [
+      'Draft a card into a hand of three, then build it as a directed road between two signs.',
+      'Claim a goal by completing the directed route it names; flip a road to re-aim it toward you or away from a rival.',
+      'First to claim their target connections wins. (Design is sim-validated; a player-facing rulebook is still to be written.)'
     ]
   },
   {
@@ -755,7 +781,7 @@ function matchWeight(card) {
 function matchStatus(card) {
   return state.status === 'any' || card.dataset.status === state.status;
 }
-const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen'];
+const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen'];
 const TOTAL = GAMES.length;
 function applyFilters() {
   let n = 0;

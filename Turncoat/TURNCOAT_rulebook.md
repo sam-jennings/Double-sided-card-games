@@ -68,17 +68,17 @@ Activations are **always optional**. *Adjacent* always means orthogonally adjace
 
 ### The 9 signs
 
-| Sign | Requirement | Ability | Mnemonic |
-|---|---|---|---|
-| 🌙 **Moon** (1) | A rival has **2+ more** banked cards than you | Choose such a rival: their **top banked card** is removed from the game | The waning moon darkens the fullest hoard — when you're behind, it devours what the leader stored |
-| 🍃 **Leaf** (2) | Adjacent to one of **your** agents | **Swap** Leaf's card with any other agent; you may then **flip** the displaced agent at Leaf's old post | Leaves on the same branch trade places and turn |
-| 🌊 **Wave** (3) | **Exactly one** adjacent agent | **Move** that agent to any empty post; you may then **flip** it | The Wave carries one thing away and tumbles it |
-| 🔥 **Flame** (4) | Adjacent to a rival agent | **Remove** one adjacent rival agent from the game (its post empties) | Flame consumes a rival beside it |
-| 👁 **Eye** (5) | At most **one** adjacent agent | **Peek** at the hidden face of an adjacent agent; you may then **flip** it | The Eye in solitude sees truth, and may reveal it |
-| 🎭 **Mask** (6) | Adjacent to a rival agent | **Flip** any one agent in Mask's row or column | The Mask near an enemy turns a face in its line — identity is mutable |
-| 🗝 **Key** (7) | Key's row **or** column holds **2+** of your agents | **Extract** one of your agents from Key's row or column straight to your pile (its post empties) | The Key among allies unlocks one of yours from the line |
-| ⭐ **Star** (8) | **Two or more** adjacent agents | **Draw the next card** from the deck and play it immediately (full turn rules) | A Star well-connected draws the unexpected into play |
-| 👑 **Crown** (9) | Adjacent to one of **your** agents | **Extract Crown's own card** to its sign-owner's pile (its post empties) | The Crown beside its allies withdraws to safety — sovereign departure |
+| Sign             | Requirement                                         | Ability                                                                                                 | Mnemonic                                                                                          |
+| ---------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 🌙 **Moon** (1)  | A rival has **2+ more** banked cards than you       | Choose such a rival: their **top banked card** is removed from the game                                 | The waning moon darkens the fullest hoard — when you're behind, it devours what the leader stored |
+| 🍃 **Leaf** (2)  | Adjacent to one of **your** agents                  | **Swap** Leaf's card with any other agent; you may then **flip** the displaced agent at Leaf's old post | Leaves on the same branch trade places and turn                                                   |
+| 🌊 **Wave** (3)  | **Exactly one** adjacent agent                      | **Move** that agent to any empty post; you may then **flip** it                                         | The Wave carries one thing away and tumbles it                                                    |
+| 🔥 **Flame** (4) | Adjacent to a rival agent                           | **Remove** one adjacent rival agent from the game (its post empties)                                    | Flame consumes a rival beside it                                                                  |
+| 👁 **Eye** (5)   | At most **one** adjacent agent                      | **Peek** at the hidden face of an adjacent agent; you may then **flip** it                              | The Eye in solitude sees truth, and may reveal it                                                 |
+| 🎭 **Mask** (6)  | Adjacent to a rival agent                           | **Flip** any one agent in Mask's row or column                                                          | The Mask near an enemy turns a face in its line — identity is mutable                             |
+| 🗝 **Key** (7)   | Key's row **or** column holds **2+** of your agents | **Extract** one of your agents from Key's row or column straight to your pile (its post empties)        | The Key among allies unlocks one of yours from the line                                           |
+| ⭐ **Star** (8)   | **Two or more** adjacent agents                     | **Draw the next card** from the deck and play it immediately (full turn rules)                          | A Star well-connected draws the unexpected into play                                              |
+| 👑 **Crown** (9) | Adjacent to one of **your** agents                  | **Extract Crown's own card** to its sign-owner's pile (its post empties)                                | The Crown beside its allies withdraws to safety — sovereign departure                             |
 
 *Flipped, moved, and swapped cards become charged and may chain. A worked chain:*
 

@@ -84,7 +84,7 @@ resolution:
 - `repository-structure.md`: `<GAME>_rulebook.md`, `<GAME>_design_analysis.md`, `<game>_sim.py`
   (naming-convention templates); `Twelve Trials/`, `Ouroboros/`, `Print and Play/make_pnp.py`
   (layout examples); `flip_card_project_goals.md` (layout-tree entry, exists).
-- `simulation-standards.md`: `Turnover/turnover_sim.py`, `TURNOVER_design_analysis.md` (named benchmarks).
+- `simulation-standards.md`: `Wildfire/wildfire_sim.py`, `WILDFIRE_design_analysis.md` (named benchmarks).
 - `rulebook-standards.md`: `Syzygy/SYZYGY_rulebook.md` (named benchmark).
 
 ## 3. Anomalies / notes for Pass B

@@ -2,15 +2,15 @@
 
 *Why a betting duel, and not the other two ways to bluff · June 2026*
 
-The brief: a **2-player bluffing game** for the flip deck. The collection's bluffing slot (FALSE FACE) starts at 3P, and its only pure 2P game (CROSSROADS) is perfect-information. Three bluffing engines were explored before committing.
+The brief: a **2-player bluffing game** for the flip deck. The collection's bluffing slot (FORKED TONGUE) starts at 3P, and its only pure 2P game (CROSSROADS) is perfect-information. Three bluffing engines were explored before committing.
 
 ## The three candidate engines
 
-### A. Claim & call (liar's-dice / FALSE FACE lineage)
+### A. Claim & call (liar's-dice / FORKED TONGUE lineage)
 
 You state something about a hidden face; the opponent calls or lets it stand.
 
-**Why it fails as the 2P core:** FALSE FACE's tension comes from *diffuse* challenge responsibility — five people each hoping someone else pays the cost of being wrong. Heads-up, every claim has exactly one possible challenger, so each turn collapses into the same binary "do you believe me?" with no table-read, no free-rider tension, and a claim-chain that just ping-pongs. A 2P FALSE FACE variant would be a worse FALSE FACE, not a new game.
+**Why it fails as the 2P core:** FORKED TONGUE's tension comes from *diffuse* challenge responsibility — five people each hoping someone else pays the cost of being wrong. Heads-up, every claim has exactly one possible challenger, so each turn collapses into the same binary "do you believe me?" with no table-read, no free-rider tension, and a claim-chain that just ping-pongs. A 2P FORKED TONGUE variant would be a worse FORKED TONGUE, not a new game.
 
 **Where it survives:** as FACE VALUE's **Cold Read** (call the exact hidden symbol, double-or-nothing — claim-calling distilled to its sharpest form) and the **Tell** variant (mandatory spoken claims with an honesty bonus).
 
@@ -30,7 +30,7 @@ Stake material on the strength of a hidden value; raise, call, or fold.
 
 1. **The shown face is the claim.** You don't declare strength; you *choose what to conceal*. Showing a 3 is a sentence ("I'm hiding something big") that costs nothing to say and everything to back.
 2. **Ties are impossible.** Pair uniqueness means two duel cards can never match on both faces — hidden pip, then visible pip, always produces a winner. No split-pot rules.
-3. **The lie-space shrinks publicly.** Morgue + two open tallies + your own hand eliminate partners of every shown face. FALSE FACE's signature — bluffing against arithmetic — re-emerges in betting form, and powers the Cold Read's late-game transformation from gamble to deduction.
+3. **The lie-space shrinks publicly.** Morgue + two open tallies + your own hand eliminate partners of every shown face. FORKED TONGUE's signature — bluffing against arithmetic — re-emerges in betting form, and powers the Cold Read's late-game transformation from gamble to deduction.
 
 ## Key structural decisions
 
@@ -55,4 +55,4 @@ Always terminates; ~12 duels ≈ 15–20 minutes; the random-vs-skilled gap comf
 
 ## Collection fit
 
-Fills the last empty cell in the bluffing row: TURNOVER-light party, FALSE FACE 3–6P bluffing, **FACE VALUE 2P bluffing**, THE COUNCIL negotiation. Uses pips as ranks (shared with THE UNPLAYED PAIR), the palms-commit protocol (shared with THE COUNCIL), and the public-examinable dead-pair registry (shared with FALSE FACE). No one-sided marks; no face-down state; all tracked state visible — all standing rules observed.
+Fills the last empty cell in the bluffing row: WILDFIRE-light party, FORKED TONGUE 3–6P bluffing, **FACE VALUE 2P bluffing**, THE COUNCIL negotiation. Uses pips as ranks (shared with THE UNPLAYED PAIR), the palms-commit protocol (shared with THE COUNCIL), and the public-examinable dead-pair registry (shared with FORKED TONGUE). No one-sided marks; no face-down state; all tracked state visible — all standing rules observed.

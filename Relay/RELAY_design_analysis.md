@@ -1,6 +1,6 @@
-# MERIDIAN — Design Analysis (structural sim)
+# RELAY — Design Analysis (structural sim)
 
-*Concept: [NEW_GAME_CONCEPTS.md §14](../NEW_GAME_CONCEPTS.md). Sim: [meridian_sim.py](meridian_sim.py). 250 games/cell, seeds 42 + 7, 1-ply bots. Player count scales by subset: 2P = 7 signs/21 cards, 3P = 8/28, 4P = 9/36. Hand 3, market 3, 3 face-up goals, shared flip pool 6/8/9.*
+*Concept: [NEW_GAME_CONCEPTS.md §14](../NEW_GAME_CONCEPTS.md). Sim: [relay_sim.py](relay_sim.py). 250 games/cell, seeds 42 + 7, 1-ply bots. Player count scales by subset: 2P = 7 signs/21 cards, 3P = 8/28, 4P = 9/36. Hand 3, market 3, 3 face-up goals, shared flip pool 6/8/9.*
 
 This run decided the open fork (goal-race vs node-majority) and, in doing so, **reversed the armchair prediction** in the concept sheet that node-majority would have the stronger flips. It does not. The sim is the reason we know.
 

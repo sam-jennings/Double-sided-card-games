@@ -33,9 +33,9 @@ The rest of the study nails down the Spec (§2–§4), ranks how sensitive each 
 
 | # | Requirement | Why / which games | Steering |
 |---|---|---|---|
-| **H1** | **Nine identities distinct at arm's length, when rotated 90°/180°, and for colour-blind players** — shape carries identity, colour is only a secondary cue. | TURNOVER reads at party speed; TWELVE TRIALS turns cards sideways; JANUS fans are read across the table; all games are handled, not stared at. | [physical-handling.md](.kiro/steering/physical-handling.md) (legibility), [design-principles.md](.kiro/steering/design-principles.md) (handling decides) |
+| **H1** | **Nine identities distinct at arm's length, when rotated 90°/180°, and for colour-blind players** — shape carries identity, colour is only a secondary cue. | WILDFIRE reads at party speed; TWELVE TRIALS turns cards sideways; JANUS fans are read across the table; all games are handled, not stared at. | [physical-handling.md](.kiro/steering/physical-handling.md) (legibility), [design-principles.md](.kiro/steering/design-principles.md) (handling decides) |
 | **H2** | **A printed index pip 1–9 on both faces, identical placement** — the single authoritative rank. | The three rank games resolve on the pip (see §4). Subset selection ("remove all 8s and 9s") needs it. | [deck-structure.md](.kiro/steering/deck-structure.md) (settled) |
-| **H3** | **No mark that differs between the two faces or correlates with the hidden face.** Each face shows only its symbol + pip; nothing leaks which symbol is on the back. | The deck's whole hidden-information layer (JANUS, FALSE FACE, FACE VALUE, UNPLAYED PAIR) collapses if the back is deducible from the front's art. | [physical-handling.md](.kiro/steering/physical-handling.md) (hard rule), [deck-structure.md](.kiro/steering/deck-structure.md) |
+| **H3** | **No mark that differs between the two faces or correlates with the hidden face.** Each face shows only its symbol + pip; nothing leaks which symbol is on the back. | The deck's whole hidden-information layer (JANUS, FORKED TONGUE, FACE VALUE, UNPLAYED PAIR) collapses if the back is deducible from the front's art. | [physical-handling.md](.kiro/steering/physical-handling.md) (hard rule), [deck-structure.md](.kiro/steering/deck-structure.md) |
 | **H4** | **The set must support fast subset selection by pip** — "remove every card showing an 8 or a 9" must be a quick sort. (This is a property of the printed pip H2, not of any symbol's picture.) | JANUS plays at 1–7; other games declare 1–6/1–8 subsets. | [deck-structure.md](.kiro/steering/deck-structure.md) (subset property) |
 | **H5** | **The set must support two independent ability-mnemonic skins** — TRIGON's nine powers and TURNCOAT's nine powers — including one identity that reads as **"wild / greatest"** (TRIGON) and one that can read as **"neutral / unaligned"** (TURNCOAT). | This is the deepest and most-overlooked demand; see §3. | [design-principles.md](.kiro/steering/design-principles.md) (clean teaching) |
 
@@ -122,9 +122,9 @@ From most to least dependent on *which* symbols ship:
 
 **Tier δ — pure legibility/distinctness, no identity needs**
 
-9. **TURNOVER** — match-and-flip at party speed; wants maximum glanceable distinctness (the one game that argues for Glyphs).
+9. **WILDFIRE** — match-and-flip at party speed; wants maximum glanceable distinctness (the one game that argues for Glyphs).
 10. **JANUS** — across-table fan legibility (H1) + the 1–7 subset story (S4).
-11. **FALSE FACE** — pair-registry bluffing; players *name* hidden symbols aloud, so memorable, sayable names help slightly.
+11. **FORKED TONGUE** — pair-registry bluffing; players *name* hidden symbols aloud, so memorable, sayable names help slightly.
 
 The takeaway: **the games that decide the skin are the three in Tier α** — and two of them (TRIGON, TURNCOAT) are exactly the ones the owner has freed us to re-theme. The Tier β games are satisfied by the pip. Tiers γ–δ express only preferences (resonance, legibility) already in the Spec.
 
@@ -178,7 +178,7 @@ The only candidate that scores well on *every* lens at once:
 
 The honest prototyping skin and the accessibility ceiling — colour + shape, maximally abstract. **But two claims in the prior study don't survive scrutiny:**
 
-- *"Maximum legibility"* is false at the top end. A side-count gradient means 6-, 7-, 8-, and 9-sided shapes are **not** quickly distinguishable, especially rotated — Hexagon/Heptagram/Octagon/Nonagram blur exactly where TURNOVER needs speed (H1 fails 6–9). Fixing it means using *categorically different* shapes per rank, which *throws away* "rank = side count" (S1) and the pip becomes the only rank cue.
+- *"Maximum legibility"* is false at the top end. A side-count gradient means 6-, 7-, 8-, and 9-sided shapes are **not** quickly distinguishable, especially rotated — Hexagon/Heptagram/Octagon/Nonagram blur exactly where WILDFIRE needs speed (H1 fails 6–9). Fixing it means using *categorically different* shapes per rank, which *throws away* "rank = side count" (S1) and the pip becomes the only rank cue.
 - *Orientation (S2) is actively poor:* near-symmetric polygons make a 90° dim or a card's facing hard to read — the opposite of what CROSSROADS wants.
 - **H5 is its real failure:** abstract glyphs give *no* ability mnemonic, so TRIGON and TURNCOAT become 18 rote bindings. Themeless everywhere; the apex/outsider roles (S6) are arbitrary and the structure-game resonance (S5) is nil.
 
@@ -241,9 +241,9 @@ This is the heart of your question. ✓ natural · ~ works with a line of flavou
 | THE UNPLAYED PAIR | ranked trick values | ✓✓ "Bear beats Fox" | ✓ (middle rank leans on the pip) |
 | TWELVE TRIALS | almanac/zodiac signs | ✓ beast zodiac | ~ "an almanac of Signs" |
 | THE ORRERY | bodies in orbit | ~ beasts wheeling | ~ Signs wheeling |
-| TURNOVER | things to match fast | ✓ | ✓ |
+| WILDFIRE | things to match fast | ✓ | ✓ |
 | JANUS | gates/contracts | ✓ | ✓ (Key native) |
-| FALSE FACE | a hidden identity you claim | ✓ "claim the beast" | ✓✓ Mask-native bluff |
+| FORKED TONGUE | a hidden identity you claim | ✓ "claim the beast" | ✓✓ Mask-native bluff |
 
 **The answer to your question is no — the Menagerie does *not* let every game read cleanly.** It strains exactly where you suspected: CROSSROADS (cities/roads) and THE COUNCIL (issues), with the structure games a mild stretch. Its compensating win is the rank games, where a food chain genuinely helps the bluff. The Nine Signs read naturally everywhere, are *native* to the intrigue and bluffing games, and pay their only real price in the two rank games — where the pip already does the work. For a collection that is **eleven different games rather than one world**, fewer apologies is the more valuable property.
 

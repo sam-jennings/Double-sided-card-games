@@ -12,10 +12,10 @@ Because this is a tabletop game design project, "acceptance criteria" below are 
 
 - **Collection_Audit**: The deliverable document `COLLECTION_AUDIT.md`, created at the top level of the repository. The "system" most requirements below act on.
 - **Collection_Overview**: The existing canonical index document `COLLECTION_OVERVIEW.md`.
-- **Live_Game**: One of the ten non-cut games — SYZYGY, TURNCOAT, TWELVE TRIALS, TURNOVER, CROSSROADS, JANUS, FALSE FACE, THE UNPLAYED PAIR, FACE VALUE, THE COUNCIL.
+- **Live_Game**: One of the ten non-cut games — SYZYGY, TURNCOAT, TWELVE TRIALS, WILDFIRE, CROSSROADS, JANUS, FORKED TONGUE, THE UNPLAYED PAIR, FACE VALUE, THE COUNCIL.
 - **Cut_Game**: OUROBOROS, the archived solo serpent-building puzzle.
 - **Rubric**: The evaluation dimensions the audit scores each game on — deck-necessity, physical-handling viability, flipping load-bearing, pair-uniqueness load-bearing, distinctness, gap-filling, teachability — each scored on the 1–10 scale derived from the evaluation rubric in `design-principles.md`, combined with the collection-level criteria in `product-vision.md`.
-- **Maturity_Tier**: The four-level status from `product-vision.md` — Tier 1 Complete (SYZYGY, TURNCOAT); Tier 2 Sim/maths-validated, needs first table test (TWELVE TRIALS, TURNOVER, CROSSROADS); Tier 3 Rulebook complete, untested (JANUS, FALSE FACE, THE UNPLAYED PAIR, FACE VALUE, THE COUNCIL); Tier 4 Cut (OUROBOROS).
+- **Maturity_Tier**: The four-level status from `product-vision.md` — Tier 1 Complete (SYZYGY, TURNCOAT); Tier 2 Sim/maths-validated, needs first table test (TWELVE TRIALS, WILDFIRE, CROSSROADS); Tier 3 Rulebook complete, untested (JANUS, FORKED TONGUE, THE UNPLAYED PAIR, FACE VALUE, THE COUNCIL); Tier 4 Cut (OUROBOROS).
 - **First_Table_Question**: A game's already-recorded first-table / test-focus question(s) as held in `COLLECTION_OVERVIEW.md` and `NEW_GAME_CONCEPTS.md`.
 - **Collection_Gap**: A useful unfilled hole in player count, play time, complexity, or mood/genre across the collection.
 - **Collection_Overlap**: Two or more Live_Games occupying substantially the same niche (genre, player count, length, mood, or deck-property used).
