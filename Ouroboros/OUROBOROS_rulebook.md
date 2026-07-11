@@ -13,8 +13,9 @@ Lay the serpent, scale by scale, until it bites its own tail. Every card is one 
 ## Setup
 
 1. Shuffle the deck, flipping random chunks so faces are randomised.
-2. Draw cards to a **hand of 4** (3 in the short game). Your hand is private to nobody — look at both sides of your hand cards freely, whenever you like.
-3. Leave a long stretch of table. Serpents grow.
+2. Square the rest into a face-up **stock**. Its top card always shows one face — that's the deck being honest, and the glimpse is yours to use (the same "free look" CAIRN grants; there is no way to hide it, so it is legal information, not cheating). *One honesty note: the simulation pars were tuned without using the glimpse, so if it sharpens your play, treat the par tiers as a floor.*
+3. Draw cards to a **hand of 4** (3 in the short game). Your hand is private to nobody — look at both sides of your hand cards freely, whenever you like.
+4. Leave a long stretch of table. Serpents grow.
 
 ## How the serpent grows
 

@@ -2,6 +2,8 @@
 
 *A co-operative game of half-seen things for 2–4 players · ~20 minutes · ages 10+*
 
+> **⚠️ Known blocker (June–July 2026, unresolved).** The first table test and the deck-wide audit found that this rulebook's concealment protocol is physically impossible on a backless deck: there is no "face-down stack" (the deck-top always shows a face — F7), and the deal/refill as written leaks a face to the holder or the table either way (F10). Play the open-information Apprentice variant if you table it before this is fixed. The fix is an open decision — opaque container (box/bag) vs a no-draw redesign; see `JANUS_playtest_01.md`, `DECK_PLAYTEST_FINDINGS.md` F7/F10, and `DECK_CONVENTIONS.md` T1. The rules below are otherwise kept as designed, pending that decision.
+
 Janus, god of doorways, has two faces — and so does every card in your hand. Hold your fan and you see one face of each card; the rest of the table sees the other. **Nobody may know both faces of a live card in a player's fan** — except through legal deduction or an omen. (Keystones and archive cards are shown openly; the secret lives only in the fans.) Together, you must raise the god's gates: keystones locked in place by pairs of pillars with a **matching buried foundation**. You know what your pillars show *you*. Only your friends know what they show the world.
 
 ---
@@ -115,7 +117,7 @@ When in doubt: if the sentence would change meaning depending on a face only *yo
 
 ---
 
-*Design v1.1 — untested at the table; the information protocol (fan asymmetry, face-down deck, archive openness) is specified tightly enough to playtest as written. Tuning candidates, in order: starting omens (4), strike count (3), fan sizes.*
+*Design v1.1 — first table test June 2026 (see `JANUS_playtest_01.md`): the table abandoned the concealment, so JANUS-as-designed remains unproven, and the "face-down deck" at the heart of this protocol was shown to be physically impossible (blocker banner above). Tuning candidates once the concealment model is fixed: starting omens (4), strike count (3), fan sizes.*
 
 ---
 

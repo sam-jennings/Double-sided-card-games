@@ -120,7 +120,7 @@
 - A "flipped" zone on the table (cards that have been flipped live in a separate area).
 - Accept that orientation tracking only works for placed-and-stable cards, and use a different method for exploratory/sorting games.
 
-**Status:** Confirmed failure for TWELVE TRIALS. Needs an alternative tracking method. Does not invalidate orientation-as-state for games where cards stay put.
+**Status:** Confirmed failure for TWELVE TRIALS. Needs an alternative tracking method. Does not invalidate orientation-as-state for games where cards stay put. **Update (July 2026):** replacement proposed in F12 / `DECK_CONVENTIONS.md` C4–C5 (counters for regrouping games; rotation reserved for placed-and-left cards).
 
 ---
 
@@ -142,7 +142,7 @@
 - Draw from a **cloth bag** (shuffle by feel; no face ever exposed).
 - **Eliminate the draw deck** for hidden-info games — deal the whole (sub-)deck into hands + a face-up shared area, with no refills. Most deck-honest, but changes pacing and needs re-simulation.
 
-**Status:** Open, and **blocking for JANUS.** Distinct from F3 (which is about the one-time *deal* exposure); F7 is about an ongoing *draw deck* during play. Resolve before JANUS's concealed game can be tested at all. Note any other game that relies on a concealed draw.
+**Status:** Open, and **blocking for JANUS.** Distinct from F3 (which is about the one-time *deal* exposure); F7 is about an ongoing *draw deck* during play. Resolve before JANUS's concealed game can be tested at all. Note any other game that relies on a concealed draw. **Update (July 2026):** the fork is framed as open tension T1 in `DECK_CONVENTIONS.md` (box-as-container / bag / no-draw redesign); one-off secret draws are solved component-free by the Blind Cut (F10) — SLEEPER and THE UNPLAYED PAIR no longer depend on this decision.
 
 ---
 
@@ -172,4 +172,38 @@
 - A small **marker/token** on the active draw deck.
 - Discard **into an opaque box/tray** (pairs naturally with the F7 deck-cover idea — one cover for the deck, one tray for the dead pile).
 
-**Status:** Open. Cheap to fix with a placement/orientation convention; note it in the master/deck-level handling instructions rather than per-game.
+**Status:** Open. Cheap to fix with a placement/orientation convention; note it in the master/deck-level handling instructions rather than per-game. **Proposed canon (July 2026):** live stacks upright; dead piles rotated 90°; history piles are cascades, never squared stacks — see `DECK_CONVENTIONS.md` C3.
+
+---
+
+## F10: Any card taken from a public stack was already seen — secret single-card draws leak (July 2026, desk audit)
+
+**Observation:** Several rules say a card is drawn, dealt, or removed "unseen" — but the top card of any squared stack has been showing one face to the whole table all along. Whoever takes it (or watches it taken) has seen that face. This is F7's law applied to *single* secret cards, and it breaks three games as written:
+
+- **SLEEPER (game-breaking as written):** the loyalty deal takes each player's card off the deck, whose top face (call it B) the table saw. If your cover ends up ≠ B, the table *knows* your Master is B; if you always cover with B to hide, your Master choice is forced to the unseen face. Either the secret or the choice dies. The game's only secret leaks at setup.
+- **THE UNPLAYED PAIR:** "slide one card off the deck unseen by anyone" is physically false — one face of the removed card was public, collapsing the 36-candidate deduction to 8 for anyone paying attention.
+- **JANUS (v1.1 deal & refill):** the protocol assumes a face-down deck exists. In reality the deck-top face is public; whichever way the drawn card enters the fan, either the holder learns their outward face (sacred rule broken) or the table learns the inner face (core "nobody knows both faces" rule broken). The v1.1 deal wording ("outward face down against the table") additionally shows every dealt card's *inner* face to the whole table.
+
+**Fix (deck-native, component-free, adopted for one-off draws):** the **Blind Cut** — take the deck below the table edge, cut it (burying the public top face), slide the new top card off unseen. Works for SLEEPER's loyalty deal and UNPLAYED PAIR's removal (or slide from the middle of the squared deck). Does **not** rescue JANUS, whose refills repeat every turn one-handed — that stays on F7's opaque-container/no-draw fork.
+
+**Status:** Law recorded in `DECK_CONVENTIONS.md` C2 ("never say 'unseen' without naming the method"). SLEEPER and UNPLAYED PAIR rulebooks patched with Blind Cut / mid-deck slide. JANUS still blocked (F7/T1).
+
+---
+
+## F11: "Face-down" language survives in rulebooks despite the no-back rule (July 2026, desk audit)
+
+**Observation:** `rulebook-standards.md` bans "face-down" as a concealment term, yet it persists where it is physically meaningless or hides a real mechanism gap: TRIGON ("face-down removed pile"; Moon takes the top card "face-down" into the score pile; "face-down Moon cards count as 1"), TURNCOAT ("face-down removed pile"), JANUS ("face-down stack" — the F7 blocker itself), GLEAN's Closed Harvest variant ("stack face-down").
+
+**Why it matters beyond wording:** TRIGON's Moon rule needs an actual mechanism — a score-pile card always shows a sign, and the tiebreaker counts "distinct face-up signs," so an unmarked Moon-taken card would wrongly contribute a sign. Marking it (sideways = anonymous, orientation-as-state) is a real rules completion, not a copyedit.
+
+**Status:** TRIGON, TURNCOAT, GLEAN patched July 2026 (sideways dead piles per C3; Moon-taken cards sideways-anonymous; Closed Harvest reworded). JANUS's instance is the F7 design blocker, left to that decision.
+
+---
+
+## F12: No canonical flip-tally method for regrouping games (July 2026, extends F6)
+
+**Observation:** F6 confirmed sideways-marking fails in TWELVE TRIALS, but the collection still has no replacement — and THE ORRERY's rulebook never specifies *any* physical method (flips are counted mentally or on optional paper: involuntary bookkeeping), while `Designs/CARD_LAYOUT.md` still claims both games track flips by rotation.
+
+**Fix (proposed):** counters from the sanctioned generic kit — one per flip; counter-*on*-card where replay/restore modes need to know which cards flipped (TWELVE TRIALS Duel). See `DECK_CONVENTIONS.md` C5 and open tension T3. Orientation-marking remains valid for placed-and-left games only (C4).
+
+**Status:** Proposed, untested. CARD_LAYOUT.md annotated. TWELVE TRIALS' task list already carries the trial; add the same to THE ORRERY's next random-deal session.

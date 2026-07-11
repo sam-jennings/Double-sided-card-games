@@ -2,6 +2,8 @@
 
 *A perfect-information route duel for 2 players · ~20 minutes · ages 10+*
 
+> **⚠️ v1.2 pending — this rulebook is behind the settled design (July 2026).** Simulation work after playtest 02 **decided** three changes not yet written in below: **deal 9 roads each** (rest set aside, out of play — retiring the 14-card deal and the perfect-information framing), **Toll Roads scoring in the base game** (kills the pass-to-win exploit), and official **2–4P support** on one ruleset. The end-of-game trigger (candidate: game ends when the eighth city dims) is still open — the rewrite waits on it. Until then, if you table this game: deal 9, score Tolls, and don't treat "your rival's hand is the rest" as current design. See `CROSSROADS_design_analysis.md` §6–§7 and `Crossroads/CROSSROADS_tasks.md` Phases 3–6.
+
 Eight cities, twenty-eight roads — and every road exists exactly once. The roads you build are one-way; the roads you *keep in hand* are your secret… except nothing here is secret: from your own hand you can name every card in your rival's. CROSSROADS is the collection's chess: two players, the whole truth, and the slow horror of watching someone redirect traffic away from a city you needed.
 
 ---

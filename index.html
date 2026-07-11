@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Deck — Seventeen Games</title>
+<title>The Deck — Thirty Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -201,6 +201,7 @@
   }
   .badge-collection { color: var(--gold-bright); border-color: rgba(230,189,84,0.4); background: rgba(230,189,84,0.09); }
   .badge-pipeline { color: var(--text-soft); border-color: var(--border); background: var(--surface-2); }
+  .badge-concept { color: var(--sign-wave); border-color: rgba(58,155,220,0.4); background: rgba(58,155,220,0.10); }
   .badge-parked { color: var(--muted); border-color: var(--muted-dim); background: transparent; }
 
   .empty {
@@ -368,14 +369,14 @@
   <header class="hero">
     <div class="hero-marks" id="hero-marks"></div>
     <div class="hero-inner">
-      <p class="eyebrow">Seventeen games · One deck</p>
+      <p class="eyebrow">Thirty games · One deck</p>
       <h1>One deck.<br><em>Endless play.</em></h1>
-      <p class="lead">Thirty-six double-sided cards. Nine signs, every pair exactly once. Seventeen games — from solo puzzles to bluffing duels — all from the same deck, with the full rulebook a tap away.</p>
+      <p class="lead">Thirty-six double-sided cards. Nine signs, every pair exactly once. Thirty games — from solo puzzles to hidden-movement chases — all from the same deck, with the rules or concept a tap away.</p>
       <div class="stats">
         <div class="stat"><span class="n">36</span><span class="l">Cards</span></div>
         <div class="stat"><span class="n">9</span><span class="l">Signs</span></div>
-        <div class="stat"><span class="n">17</span><span class="l">Games</span></div>
-        <div class="stat"><span class="n">1–6</span><span class="l">Players</span></div>
+        <div class="stat"><span class="n">30</span><span class="l">Games</span></div>
+        <div class="stat"><span class="n">1–8</span><span class="l">Players</span></div>
       </div>
     </div>
   </header>
@@ -407,11 +408,12 @@
         <button class="chip" data-val="any" aria-pressed="true" type="button">All</button>
         <button class="chip" data-val="Collection" aria-pressed="false" type="button">Collection</button>
         <button class="chip" data-val="Pipeline" aria-pressed="false" type="button">Pipeline</button>
+        <button class="chip" data-val="Concept" aria-pressed="false" type="button">Concept</button>
         <button class="chip" data-val="Parked" aria-pressed="false" type="button">Parked</button>
       </div>
     </div>
 
-    <p class="count" id="count">Seventeen games</p>
+    <p class="count" id="count">Thirty games</p>
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty">No games match those filters yet.<br>Try loosening one.</p>
   </section>
@@ -426,7 +428,7 @@
   <footer>
     <div class="fmark" id="footer-marks"></div>
     <p>The same nine signs carry different truths in every game — that's the collection's premise, not a compromise.</p>
-    <p style="color:var(--muted-dim);">Rules load live from each game's rulebook. Player counts and play times are working estimates, finalised with each rulebook.</p>
+    <p style="color:var(--muted-dim);">Rules and concept sheets load live from each game's file. Player counts and play times are working estimates, finalised with each rulebook.</p>
   </footer>
 
 </div>
@@ -687,13 +689,182 @@ const GAMES = [
     id: 'relay', name: 'RELAY', tag: 'Route-race', pair: ['Leaf', 'Wave'],
     players: '2–4', pmin: 2, pmax: 4, time: 22, timeLabel: '20–25 min', weight: 'Medium',
     status: 'Pipeline', stage: 'Pipeline · sim-validated (rulebook still to be written)',
-    deck: 'Full 36', rulebook: 'Relay/RELAY_design_analysis.md',
+    deck: 'Full 36', rulebook: 'Relay/RELAY_design_analysis.md', docKind: 'design',
     tagline: 'Race the nine roads; flip to re-aim them.',
     idea: 'A network route-race where every card is both a directed road to build and a unique connection goal to claim. Because every pair exists once, each goal is the only link between its two signs — and a flip re-aims a road to make or break a route.',
     plays: [
       'Draft a card into a hand of three, then build it as a directed road between two signs.',
       'Claim a goal by completing the directed route it names; flip a road to re-aim it toward you or away from a rival.',
       'First to claim their target connections wins. (Design is sim-validated; a player-facing rulebook is still to be written.)'
+    ]
+  },
+  {
+    id: 'wisp', name: 'WISP', tag: 'Hidden movement', pair: ['Moon', 'Wave'],
+    players: '2–3', pmin: 2, pmax: 3, time: 20, timeLabel: '~20 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · draft (v0.1, unsimmed/untested)',
+    deck: 'Full 36', rulebook: 'Wisp/WISP_rulebook.md', docKind: 'rules',
+    tagline: 'The trail tells where you were, never where you are.',
+    idea: 'A hidden-movement chase with no board, pencil, or trust. One Wisp flees a side of one or two hunters across the complete graph; each trail card is laid showing the place just left and pressing the place just reached, so the trail confirms every position exactly one move late.',
+    plays: [
+      'The Wisp lays a trail card showing where it left and pressing where it arrived — its current place stays hidden.',
+      'Hunters know the Wisp’s whole hand by complement; they spend one of four Raids to name its current place.',
+      'Reach an eight-card trail to escape; two sprints bury an intermediate place the hunters can never Raid.'
+    ]
+  },
+  {
+    id: 'dowry', name: 'DOWRY', tag: 'Bluff & deduction', pair: ['Mask', 'Star'],
+    players: '2', pmin: 2, pmax: 2, time: 20, timeLabel: '~20 min', weight: 'Medium',
+    status: 'Pipeline', stage: 'Pipeline · sim-certified floor (v0.2, untested at the table)',
+    deck: 'Full 36 · hands of 9', rulebook: 'Dowry/DOWRY_rulebook.md', docKind: 'rules',
+    tagline: 'I cut, you choose — and I choose which face you see.',
+    idea: 'An “I cut, you choose” duel with a second layer. The cutter splits three cards into two lots and also picks which face of each card shows; the lot that looks poor may be the rich one. (A 3–4 player variant is drafted but untested.)',
+    plays: [
+      'The cutter lays three cards as a lot of two and a lot of one, choosing which face each shows.',
+      'The chooser reads only the shown faces and takes either lot; the cutter keeps the rest.',
+      'Place captures into your open spread; win a sign by showing more of it and score its pip. Highest total after twelve offers wins.'
+    ]
+  },
+  {
+    id: 'icarus', name: 'ICARUS', tag: 'Push-your-luck', pair: ['Flame', 'Star'],
+    players: '2–4', pmin: 2, pmax: 4, time: 12, timeLabel: '10–15 min', weight: 'Light',
+    status: 'Pipeline', stage: 'Pipeline · sim-certified floor (v0.1, untested at the table)',
+    deck: 'Full 36', rulebook: 'Icarus/ICARUS_rulebook.md', docKind: 'rules',
+    tagline: 'Flip for one more card, or land and bank the climb.',
+    idea: 'A push-your-luck climb. Flip cards off your own tower to build a flight; repeat a face-up sign and you fall, losing the row. The deck shows half of every gamble, and the public record makes the bust odds exactly countable.',
+    plays: [
+      'Flip the top of your tower into your row — repeat a face-up sign and the whole row falls.',
+      'After each safe card, rise again or land to bank the row (and pay a one-card toll).',
+      'A banked flight of four or more soars for double. Count the fallen cards to price your next flip.'
+    ]
+  },
+  {
+    id: 'strata', name: 'STRATA', tag: 'Bluff & memory', pair: ['Eye', 'Key'],
+    players: '3–5', pmin: 3, pmax: 5, time: 20, timeLabel: '~20 min', weight: 'Medium',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: 'Full 36', rulebook: 'Strata/STRATA_concept.md', docKind: 'concept',
+    tagline: 'No lie is ever spoken — it is buried where you left it.',
+    idea: 'A bluffing-and-memory shedding race where claims are sedimented, not spoken. Pressing a card onto a dig is the silent claim that its buried face matches the sign beneath; the audit is an excavation. Aimed at the collection’s flagged memory-game gap.',
+    plays: [
+      'Play a card onto a dig, pointed at your seat — the silent claim that the buried seam matches.',
+      'Anyone may cry “fault” to excavate the seam; a broken lie, or a false accusation, is punished.',
+      'Shed your hand first, then unwind every dig: clean seams score the buried pip, broken ones lose it.'
+    ]
+  },
+  {
+    id: 'augury', name: 'AUGURY', tag: 'Party · Divination', pair: ['Moon', 'Eye'],
+    players: '4–8', pmin: 4, pmax: 8, time: 30, timeLabel: '~30 min', weight: 'Light',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: 'Full 36', rulebook: 'Augury/AUGURY_concept.md', docKind: 'concept',
+    tagline: 'Say what the card hides without naming it.',
+    idea: 'The collection’s first judging game, and the first whose material is the Nine Signs themselves. The Seer peeks a portent’s hidden face and speaks one omen-sentence bridging the shown sign to the veiled one — naming neither.',
+    plays: [
+      'The Seer privately peeks the portent’s hidden face and speaks a single omen-sentence.',
+      'Guessers show fingers 1–9 for the veiled sign; candidates are the shown sign’s unburnt partners.',
+      'Score on a Dixit curve — the Seer wants some, but not all, of the table to divine correctly.'
+    ]
+  },
+  {
+    id: 'edict', name: 'EDICT', tag: 'Induction', pair: ['Key', 'Crown'],
+    players: '3–6', pmin: 3, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Medium',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: 'Full 36', rulebook: 'Edict/EDICT_concept.md', docKind: 'concept',
+    tagline: 'The law is on the table; the seal is in your lap.',
+    idea: 'An induction game where one player is the rules. The Keeper secretly enacts one Law from a printed menu of 18, sealed in the deck’s own alphabet (hidden pip + orientation); every card played is an experiment on the growing public record.',
+    plays: [
+      'The Keeper seals a Law — the hidden pip is its number, the orientation picks the table.',
+      'Play cards to the Line; the Keeper rules each Lawful (it stays) or Unlawful (it drops to the Gutter).',
+      'Read the lab notebook the table builds, then accuse; name the Law correctly to win.'
+    ]
+  },
+  {
+    id: 'vigil', name: 'VIGIL', tag: 'Correspondence duel', pair: ['Moon', 'Leaf'],
+    players: '2', pmin: 2, pmax: 2, time: 40, timeLabel: 'Over days', weight: 'Medium',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: 'Full 36 · 6×6 field', rulebook: 'Vigil/VIGIL_concept.md', docKind: 'concept',
+    tagline: 'A game for a shelf, not a session.',
+    idea: 'A slow, perfect-information territory duel played one move per passing over days. The 6×6 field is the save file: turn parity computes itself from the board, so nothing needs remembering between moves.',
+    plays: [
+      'On a passing, pick any neutral card, optionally flip it, and turn it to point at your seat — claimed forever.',
+      'Whose move it is is just the count of claimed cards; the board is its own turn marker.',
+      'When the last card turns, score twelve lines by majority; a won line scores its densest single sign.'
+    ]
+  },
+  {
+    id: 'golem', name: 'GOLEM', tag: 'Co-op · Boss fight', pair: ['Flame', 'Crown'],
+    players: '1–2', pmin: 1, pmax: 2, time: 20, timeLabel: '~20 min', weight: 'Medium',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: 'Full 36', rulebook: 'Golem/GOLEM_concept.md', docKind: 'concept',
+    tagline: 'The boss that telegraphs its next blow.',
+    idea: 'A co-operative boss fight against a deck-driven automa. A backless deck can’t hide its next card, so the GOLEM doesn’t try — its next blow is always public, and the follow-through lands one beat too late.',
+    plays: [
+      'The GOLEM’s top card shows the sign it strikes now; parry it by playing a hand card with that sign.',
+      'An unparried blow breaches a station; the revealed follow-through can turn a breach critical.',
+      'Every card is a unique edge, so each parry spends your only answer to another sign. Survive all 18 blows.'
+    ]
+  },
+  {
+    id: 'lacuna', name: 'LACUNA', tag: 'Deduction race', pair: ['Star', 'Moon'],
+    players: '2–5', pmin: 2, pmax: 5, time: 15, timeLabel: '~15 min', weight: 'Medium',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: 'Full 36 · one opaque sleeve', rulebook: 'Lacuna/LACUNA_concept.md', docKind: 'concept',
+    tagline: 'Race to name the deck’s one missing card.',
+    idea: 'A counting-and-deduction race for the single card sealed away unseen. Every sign lives on exactly eight cards, so as the other 35 flash past, the tallies betray the vault’s hidden partner.',
+    plays: [
+      'One card goes into an opaque vault showing sign V; its hidden partner is the mystery.',
+      'The dealer flashes all 35 other cards, both faces; track how often each sign appears.',
+      'Call the missing partner when confident — too early is a gamble, too late loses the race.'
+    ]
+  },
+  {
+    id: 'paddock', name: 'PADDOCK', tag: 'Betting race', pair: ['Leaf', 'Star'],
+    players: '3–6', pmin: 3, pmax: 6, time: 15, timeLabel: '~15 min', weight: 'Light',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: 'Full 36', rulebook: 'Paddock/PADDOCK_concept.md', docKind: 'concept',
+    tagline: 'Nine runners, honestly countable odds.',
+    idea: 'The betting race the collection lacked. Each sign is a runner whose fuel tank is printed on the maths (eight cards per sign), but every card ridden hides a face — so the count is a bound, not an answer.',
+    plays: [
+      'Reveal the race deck one card at a time; the shown sign’s lane advances.',
+      'Between reveals, stake a hand card beside a lane — your bet is its hidden pip, pressed to the table.',
+      'Early conviction pays multiples, late certainty pays pennies. First runner to five wins.'
+    ]
+  },
+  {
+    id: 'queue', name: 'QUEUE', tag: 'Pocket abstract', pair: ['Wave', 'Mask'],
+    players: '2', pmin: 2, pmax: 2, time: 8, timeLabel: '5–10 min', weight: 'Light',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: '6-sign sub-deck (15)', rulebook: 'Queue/QUEUE_concept.md', docKind: 'concept',
+    tagline: 'The whole game fits in one hand.',
+    idea: 'A pocket abstract that needs no surface — the entire state is a 15-card packet held face-out. Rotate the front card to the back or flip it in place; strike three matching faces to score. Play it standing in a queue.',
+    plays: [
+      'Hold the squared 6-sign packet face-out; on your move, rotate the front card back or flip it.',
+      'If the front three cards all show one sign, retire them to your side — a chord.',
+      'Pass the packet after moving; when it thins below three, most retired cards wins. Best of three.'
+    ]
+  },
+  {
+    id: 'mirror', name: 'MIRROR', tag: 'Co-op · Mind-meld', pair: ['Wave', 'Eye'],
+    players: '2 (or 2v2)', pmin: 2, pmax: 4, time: 15, timeLabel: '~15 min', weight: 'Light',
+    status: 'Concept', stage: 'Concept · Stage 0 (no rulebook yet)',
+    deck: 'Full 36 · sorted by almanac', rulebook: 'Mirror/MIRROR_concept.md', docKind: 'concept',
+    tagline: 'Show the same sign your partner shows.',
+    idea: 'A co-operative mind-meld with a computable spine. The almanac’s four seasons are provably identical hands, so two players hold isomorphic cards and try to converge on the same sign — never the prompt itself.',
+    plays: [
+      'Each partner takes one season; flip a prompt sign that neither may show.',
+      'Secretly choose a card and face to match your partner’s association, then reveal together.',
+      'Match to bank a point, miss to burn both cards. Early rounds are empathy; late rounds become logic.'
+    ]
+  },
+  {
+    id: 'snare', name: 'SNARE', tag: 'Abstract · Avoidance', pair: ['Flame', 'Leaf'],
+    players: '2', pmin: 2, pmax: 2, time: 13, timeLabel: '10–15 min', weight: 'Medium',
+    status: 'Concept', stage: 'Concept · Stage 0 (exploration only)',
+    deck: '6-sign sub-deck (15) · 9-sign variant', rulebook: 'Snare/SNARE_concept.md', docKind: 'concept',
+    tagline: 'Don’t be the one who completes the forbidden three.',
+    idea: 'A silent two-player avoidance abstract — the collection’s only inevitability game. Claim edges of the complete graph by orientation; on six signs a monochromatic triangle is mathematically unavoidable, so the skill is steering it onto your opponent.',
+    plays: [
+      'Alternate claiming a road by turning it to point at your seat — orientation is ownership.',
+      'Avoid completing all three roads of a symbol-triangle in your own colour.',
+      'A best-of series ratchets from five signs (a draw is possible) to six (someone must be snared).'
     ]
   },
   {
@@ -711,7 +882,7 @@ const GAMES = [
   }
 ];
 
-const BADGE = { Collection: 'badge-collection', Pipeline: 'badge-pipeline', Parked: 'badge-parked' };
+const BADGE = { Collection: 'badge-collection', Pipeline: 'badge-pipeline', Concept: 'badge-concept', Parked: 'badge-parked' };
 </script>
 <script>
 /* ---------- Render game cards ---------- */
@@ -781,7 +952,7 @@ function matchWeight(card) {
 function matchStatus(card) {
   return state.status === 'any' || card.dataset.status === state.status;
 }
-const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen'];
+const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty','Twenty-one','Twenty-two','Twenty-three','Twenty-four','Twenty-five','Twenty-six','Twenty-seven','Twenty-eight','Twenty-nine','Thirty'];
 const TOTAL = GAMES.length;
 function applyFilters() {
   let n = 0;
@@ -812,6 +983,12 @@ function openSheet(id) {
   if (!g) return;
   lastFocus = document.activeElement;
   const rb = encodeURI(g.rulebook);
+  const DOC = {
+    rules:   { h: 'Full rules',    btn: 'Read the rules here' },
+    concept: { h: 'Concept sheet', btn: 'Read the concept here' },
+    design:  { h: 'Design notes',  btn: 'Read the design notes' }
+  };
+  const dk = DOC[g.docKind] || DOC.rules;
   sheetScroll.innerHTML =
     '<div class="d-head">' +
       '<div class="d-pair">' + miniCard(g.pair[0], 'mini-a') + miniCard(g.pair[1], 'mini-b') + '</div>' +
@@ -831,9 +1008,9 @@ function openSheet(id) {
     '<div class="d-block"><h3>How it plays</h3><ol class="d-steps">' + g.plays.map(p => '<li>' + p + '</li>').join('') + '</ol></div>' +
     '<div class="d-block" style="margin-bottom:14px"><h3>Deck used</h3><p style="font-size:14px">' + g.deck + '</p></div>' +
     '<div class="d-block d-rules">' +
-      '<h3>Full rules</h3>' +
+      '<h3>' + dk.h + '</h3>' +
       '<div class="rules-actions">' +
-        '<button class="rules-btn" id="rules-load" type="button">Read the rules here</button>' +
+        '<button class="rules-btn" id="rules-load" type="button">' + dk.btn + '</button>' +
         '<a class="rules-link" href="' + rb + '" target="_blank" rel="noopener">Open the .md file ↗</a>' +
       '</div>' +
       '<div class="rules-panel" id="rules-panel" hidden></div>' +
@@ -863,7 +1040,7 @@ async function loadRules(path, panel, btn) {
     const md = await res.text();
     panel.innerHTML = marked.parse(md);
     panel.hidden = false;
-    btn.textContent = 'Rules loaded below';
+    btn.textContent = 'Loaded below';
     btn.classList.add('done');
   } catch (e) {
     panel.innerHTML = '<p class="rules-error">Couldn’t load the rules inline. This needs to be served over http — e.g. via GitHub Pages or a local server (<code>python -m http.server</code>). Opening the page as a local file blocks the fetch. Use the “Open the .md file” link to read it directly.</p>';

@@ -32,7 +32,7 @@ On your turn:
 
 1. **Draw** the top card of the deck. Look at both sides secretly.
 2. **Place** it in any **empty** cell of the grid, choosing which side faces up.
-   - *If the grid is full:* first discard any one card from the grid to a face-down **removed pile** (out of the game), then place into the empty cell.
+   - *If the grid is full:* first discard any one card from the grid to the **removed pile** (out of the game), then place into the empty cell. Keep the removed pile squared and **rotated 90° sideways**, apart from the deck — sideways means dead, so it can never be mistaken for the draw deck. Whichever face shows on it doesn't matter.
 3. **Resolve** the consequences (alignments and activations — see below), in any order you choose, until nothing new is triggered.
 
 Then the next player draws. When the deck runs out, the game ends at the end of that turn.
@@ -63,11 +63,13 @@ At any point during your resolution step, you may **activate any charged card wh
 
 Activations are **always optional**. Skipping one is often the smartest play.
 
+> **Requirements never restrict where you place a card.** You may place any card in any empty cell, either face up. A requirement only decides whether that card's ability may fire.
+
 ### The 9 signs
 
 | Sign | Requirement (cell condition) | Ability | Mnemonic |
 |---|---|---|---|
-| 🌙 **Moon** (1) | Has **no** orthogonally adjacent cards | *Only if you have fewer captured cards than someone else:* take the top card of the deck **face-down** into your score pile (worth 1 card) | The new moon is dark and waxes — it gains when it has least |
+| 🌙 **Moon** (1) | Has **no** orthogonally adjacent cards | *Only if you have fewer captured cards than someone else:* take the top card of the deck — without looking at its hidden side — and place it **sideways** (rotated 90°) in your score pile (worth 1 card; a sideways card's signs count for nothing) | The new moon is dark and waxes — it gains when it has least |
 | 🍃 **Leaf** (2) | On an edge cell (non-corner border) | Flip one card **orthogonally adjacent** to it | A leaf unfurls at the branch's edge and turns toward the light |
 | 🌊 **Wave** (3) | Shares its row **or** column with at least one empty cell | **Move** any one card on the grid to any empty cell | The Wave carries a card to an open shore |
 | 🔥 **Flame** (4) | Has exactly **1 or 2** orthogonally adjacent cards | **Discard** one of those adjacent cards to the removed pile (out of the game) | Flame consumes what's beside it |
@@ -91,7 +93,7 @@ Abilities charge other cards, which can activate, which charge others… Long ch
 
 When the deck is empty, finish the current turn, then score:
 
-- **Most captured cards wins.** (Face-down Moon cards count as 1 each.)
+- **Most captured cards wins.** (Sideways Moon-taken cards count as 1 each; their signs never count for the tiebreaker.)
 - **Tiebreaker 1:** most *distinct* face-up signs among your captures.
 - **Tiebreaker 2:** whoever made the **first alignment capture** of the game.
 - **Tiebreaker 3:** whoever is earliest in turn order.
@@ -119,6 +121,8 @@ When the deck is empty, finish the current turn, then score:
 **Star chains.** A Star drawn by a Star can activate too (it's a new card). The deck running dry ends the fun.
 
 **Full-grid discard: can I discard a card mid-chain?** No — discarding only happens at the start of placement, when the grid is full.
+
+**Two independent cards are charged — what order? Can I switch between chains?** Any order, switching freely. The only limits: each card activates at most once per turn, and alignments resolve the instant they exist. Flipping a card to its other face does **not** grant a second activation — once per card per turn, whichever face is up.
 
 **Do diagonals count for Mask/Crown requirements?** No. "Middle row or column" and "its row or column" mean ranks and files only. Diagonals matter *only* for alignments.
 

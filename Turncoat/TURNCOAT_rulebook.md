@@ -36,7 +36,7 @@ With 2/3/4 players everyone gets exactly 18/12/9 turns — the deck divides even
 1. **Draw** the top card of the deck. Look at both sides secretly.
 2. **Place** it on any post (cell), choosing which face shows:
    - **Empty post:** the agent simply takes up position.
-   - **Occupied post — a covering:** the agent already there is **extracted**: it goes face-up into the **score pile of the player who owns its showing sign**, and your new card takes the post. (If the extracted face is unaligned, the card goes to a face-down **removed pile**, out of the game.)
+   - **Occupied post — a covering:** the agent already there is **extracted**: it goes into the **score pile of the player who owns its showing sign**, still showing the sign it was extracted with. Keep score piles as squared stacks in banking order — newest on top (Moon's ability and the tiebreaker read the top). Your new card takes the post. (If the extracted face is unaligned, the card goes to the **removed pile**, out of the game — a squared pile kept rotated 90° sideways, apart from the deck, so it can't be mistaken for it.)
 3. **Resolve** activations and chains (below), in any order you choose.
 
 When the deck runs out, finish that turn — the game ends.

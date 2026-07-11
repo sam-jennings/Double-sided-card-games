@@ -73,7 +73,9 @@ With three issues and more than three players, somebody must clash, abstain, or 
 
 **Does the Speaker break deadlocks?** No. Deadlocks are the point.
 
-**Six players, round 4:** the issue deck runs out exactly. At fewer players the spare cards are never seen — which keeps the table's knowledge of unflipped pairs honest (you can't count what was never dealt).
+**Six players, round 4:** the issue deck runs out exactly. At fewer players the spare cards' pairs are never revealed — which keeps the table's knowledge of unflipped pairs honest (you can't count what was never dealt).
+
+**I can see the top of the issue deck.** You can — a backless deck always shows one face of its top card, so everyone has a half-preview of the next issue to be tabled. That's public information, shared equally; plan around it. (Only its hidden face is a surprise, and both faces are shown the moment it's flipped.)
 
 ## Strategy notes (read after your first session)
 

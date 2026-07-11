@@ -15,7 +15,7 @@ The **36-card** master deck. Your own hand may be examined (both sides) at any t
 ## Setup
 
 1. Shuffle thoroughly, flipping random chunks.
-2. Flip one card to the middle as the **pile**. Its visible symbol is the first **target**.
+2. Flip one card to the middle as the **pile**. Its visible symbol is the first **target**. The pile grows as a **loosely overlapping line** (each play covering only part of the card before), so every past face stays visible — the pile *is* the game's public history, and it only works if it isn't squared into a stack.
 3. Deal hands: **3P: 9 · 4P: 7 · 5P: 6 · 6P: 5**.
 4. Stack the leftovers face-up beside the pile as the **well** (3P: 8 · 4P: 7 · 5P/6P: 5).
 5. Left of dealer starts. Play clockwise.
@@ -29,7 +29,7 @@ The pile's visible symbol is the **target**.
 
 You may chain **up to two cards** in one turn (match-and-turn, then match-and-turn the new target — both from your own hand).
 
-**Can't match — or won't?** Take the top **2 cards of the well** into your hand instead; turn over. (Well empty? Lift the pile's top card and set it aside, flip the rest of the pile over to form a fresh well, then set the top card back down — the target doesn't change. Draw your 2 cards from the new well.)
+**Can't match — or won't?** Take the top **2 cards of the well** into your hand instead; turn over. (Well empty? Lift the pile's newest card and set it aside, gather the rest of the line into a stack, flip that stack over and square it as a fresh well, then lay the newest card back down to restart the line — the target doesn't change. Draw your 2 cards from the new well.)
 
 ## Going out
 

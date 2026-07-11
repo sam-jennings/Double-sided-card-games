@@ -12,6 +12,8 @@ Every card hides a sign — and in BLIGHT, the hidden sign is the rot. Win a tri
 
 - The **36-card** master deck (9 signs; every pair on exactly one card). The corner **index pips (1–9)** are the ranks: Moon 1, Leaf 2, Wave 3, Flame 4, Eye 5, Mask 6, Key 7, Star 8, Crown 9.
 
+> **Sign *is* rank — read this before your first game.** Unlike an ordinary deck (four suits, each holding every rank), here each sign has **one fixed strength**: Crown is *always* 9, Moon is *always* 1. There is no "low Crown" or "high Moon." Every card pairs two *different* signs, so it always carries two different strengths — one per face. Players used to suit-and-rank decks often miss this; say it out loud when teaching.
+
 ## Setup
 
 1. Shuffle thoroughly, **flipping random chunks**.
@@ -33,7 +35,7 @@ The leader plays any card, choosing **which face shows**; that sign is the **led
 
 ## Taking the rot
 
-When you win a trick, gather its cards into your **rot pile** — but **flip each captured card to its hidden (penalty) face up**. Your rot pile always shows the poison faces, so your penalty is simply the **sum of the pips showing in your pile**. Nothing to remember: the orientation records the rot.
+When you win a trick, gather its cards into your **rot pile**, keeping each card **exactly as the reveal left it — penalty (formerly hidden) face up**. Your rot pile always shows the poison faces in a face-up spread, so your penalty is simply the **sum of the pips showing in your pile**. Nothing to remember: the orientation records the rot.
 
 The winner leads the next trick.
 

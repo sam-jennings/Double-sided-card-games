@@ -199,12 +199,47 @@ Three issues tabled each round; everyone secretly commits one card showing their
 The collection's first hidden-loyalty / social-deduction game. Each player guards **one** double-faced loyalty card — your cover sign shows, your secret **Master** sign is pressed to the table (the only persistent secret a backless deck holds cleanly). Steer the Court's decrees toward your master's sign, or turn a coat to swing one to its single printed alternative; when the deck runs out, everyone sworn to the most-shown **ruling sign** wins together. Termination is structural (one Court-deck card is spent per turn); unsimmed by design — its open questions are social, not arithmetic. See [SLEEPER_design_analysis.md](Sleeper/SLEEPER_design_analysis.md).  
 *First table questions: can a single flat loyalty card be guarded all game without leaks (the JANUS lesson)? Is the deduction real — do decree/flip patterns actually betray masters, or does the busy public row drown the signal? Kingmaking at the final reckoning? Does everyone serving the safest sign collapse into a shared blowout?*
 
+**WISP** [Wisp/](Wisp/) · 2–3 · ~20 min · Hidden movement / pursuit · **v0.1, drafted** · Stage 1  
+The collection's first pursuit game — and the wildcard batch's first concept to reach a rulebook. One Wisp flees a side of one or two hunters across the complete graph, no board needed. Each trail card is laid **showing the place the Wisp left** and **pressing the place it reached**, so the chain rule confirms every position exactly one move late while the current place stays hidden. The hunters know the Wisp's whole hand by complement (24-card atlas → 12-card hand) and spend a budget of **4 Raids** naming a place; the Wisp escapes at an **8-card** trail, and two **sprints** bury an intermediate place the hunters can never Raid. The end-game excavation makes lying physically impossible. Drafted from the concept; **unsimmed and untested by design** (wildcard brief). See [WISP_rulebook.md](Wisp/WISP_rulebook.md) and §18.  
+*First table questions: does the hunters' candidate arithmetic read as a tightening noose or as homework? Is the base escape/Raid balance a chase or a coin-flip (or a move-3 slaughter)? And the one genuine handling risk — does an 8-card overlapped trail plus a squared sprint packet excavate cleanly without card slippage?*
+
 #### Stage 0 — Spark (concept, no rulebook yet)
 
-> Sparks live in [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) and are listed here for completeness. With no folder or rulebook yet, they aren't in the playable catalogue (`index.html`) and don't appear in the quick-selector tables above.
+> Each spark now has its own folder holding a concept sheet (`<GAME>_concept.md`) — the authoritative design record; [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) keeps a one-line index pointing to each. With no rulebook yet, they aren't in the playable catalogue (`index.html`) and don't appear in the quick-selector tables above.
 
-**SNARE** · 2 · ~10–15 min · Perfect-information abstract / avoidance · Stage 0  
+**SNARE** [Snare/](Snare/) · 2 · ~10–15 min · Perfect-information abstract / avoidance · Stage 0  
 A silent two-player geometric trap: each placement colours an edge of the graph, and you lose if you are the one forced to complete a forbidden monochromatic triangle. It rides on the Ramsey fact that any balanced two-colouring of K₆ forces a mono-triangle — so on the six-symbol subset someone *must* eventually be snared, and the skill is steering the inevitable onto your opponent. Concept only. See [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) §10.
+
+> *The wildcard batch (July 2026, §18–§22):* five concepts written to a deliberately different brief — maximum originality, rubric waived, unsimmed by design. Each turns a physical property of the backless deck into a genre. See [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md). **WISP (§18) has since been drafted — now Stage 1, above.**
+
+**STRATA** [Strata/](Strata/) · 3–5 · ~20 min · Bluffing / deliberate memory / shedding · Stage 0  
+Lies are never spoken — they're sedimented. Pressing a card onto a dig *is* the claim that the buried faces match; excavation is the audit; the both-faces orientation marker signs every card to its layer. Fills the flagged memory-game gap. §19.
+
+**AUGURY** [Augury/](Augury/) · 4–8 · ~30 min · Judged party / divination · Stage 0  
+The Seer peeks a portent's hidden face and must speak one omen-sentence bridging shown sign to veiled sign without naming either; the table divines by pip-fingers, Dixit-curve scoring. The first game whose material is the Nine Signs identity itself. §20.
+
+**EDICT** [Edict/](Edict/) · 3–6 · ~25 min · Induction · Stage 0  
+One player secretly enacts a Law from a printed menu of 18 and seals it in the deck's own alphabet (hidden pip + orientation); every play is an experiment, and the Line-and-Gutter layout keeps the whole lab notebook public and spatial. §21.
+
+**VIGIL** [Vigil/](Vigil/) · 2 · one move per passing, over days · Slow territory duel · Stage 0  
+A game for a shelf, not a session: the 6×6 field *is* the save file — turn parity computes itself, claims lock by orientation, and scoring lines are shaped one irreversible flip at a time. A correspondence format the collection can reuse. §22.
+
+> *Second flight (July 2026, §23–§27):* same brief, leaning into the first flight's two proven moves — physical inversions and format innovations.
+
+**GOLEM** [Golem/](Golem/) · 1–2 · ~20 min · Co-op boss fight vs. automa · Stage 0  
+A backless deck can't hide its next card, so the automa doesn't try: the GOLEM's next blow is always public and the follow-through lands one beat too late — the telegraph rhythm of a video-game boss, on cardboard. §23.
+
+**LACUNA** [Lacuna/](Lacuna/) · 2–5 · ~15 min · Counting / deduction race · Stage 0  
+The only thing this deck can perfectly hide is an absence: one card in an opaque sleeve, 35 both-face flashes, and a race to name the missing pair before a rival's confidence tells you they've finished counting first. §24.
+
+**PADDOCK** [Paddock/](Paddock/) · 3–6 · ~15 min · Betting race · Stage 0  
+Nine runners with fuel tanks printed on the maths (8 cards per sign) but odds that stay honest intervals — and stakes hidden the only way this deck can hide anything: a pip pressed to the table under a public alibi. §25.
+
+**QUEUE** [Queue/](Queue/) · 2 · ~5–10 min · Pocket abstract · Stage 0  
+No session, no surface: the whole game is a 15-card packet held face-out in one hand — rotate or flip the front card, strike three matching faces, play it standing in a queue. §26.
+
+**MIRROR** [Mirror/](Mirror/) · 2 (or 2v2) · ~15 min · Co-op convergence / mind-meld · Stage 0  
+Two provably isomorphic season hands, a prompt neither may show, and one goal: show the same sign your partner shows. Pure association early; by round seven you can compute each other's options exactly — empathy annealing into logic. §27.
 
 #### ⏸ Parked
 

@@ -44,8 +44,8 @@ The constraint unique to this deck: there is no card back, so both faces must be
 | Game | Why | What "oriented" means |
 |---|---|---|
 | CROSSROADS | Road points at the city its visible face names; cities dim by 90° rotation | Top edge = pointing direction |
-| TWELVE TRIALS | Sideways rotation = "this card was flipped" (score tracker) | Straight vs. 90° |
-| THE ORRERY | Flip-tracking via rotation | Straight vs. 90° |
+| TWELVE TRIALS | Sideways rotation = "this card was flipped" (score tracker) — *failed at the table (F6): doesn't survive card regrouping; counter-tally replacement proposed (F12, `DECK_CONVENTIONS.md` C5)* | Straight vs. 90° |
+| THE ORRERY | ~~Flip-tracking via rotation~~ *(never actually in the rulebook — flips are counted, not marked; see F12)* | — |
 
 ---
 

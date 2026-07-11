@@ -13,7 +13,7 @@ One card is missing. Dealt to no one, shown to no one — the **unplayed pair**.
 ## Setup
 
 1. Shuffle thoroughly, flipping random chunks.
-2. Slide one card off the deck **unseen by anyone** — touching only its edges — into the box or under the rulebook. That is the unplayed pair.
+2. Remove one card **unseen by anyone**: slide it out of the **middle** of the squared deck, touching only its edges, straight into the box or under the rulebook. (Never take the top card — its face has been showing to the whole table, which would hand everyone one symbol of the missing pair for free.) That is the unplayed pair.
 3. Deal the rest evenly: **3P: 11 each · 4P: 8 · 5P: 7**.
 4. Place the leftovers face-up in the middle as the **morgue** (3P: 2 cards · 4P: 3 · 5P: none). Morgue cards are public and may be picked up and examined — *both sides* — by anyone at any time.
 5. Examine your own hand (both sides) freely throughout. Player left of dealer leads the first trick.

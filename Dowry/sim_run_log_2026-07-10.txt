@@ -1,0 +1,10 @@
+rand v rand n2000                      P0  986  P1 1003  shared  11  | avg score  17.7 v  18.0  | stalls 0  offers/game 12.0
+skill v rand n500 s11                  P0  498  P1    2  shared   0  | avg score  30.1 v   8.2  | stalls 0  offers/game 12.0
+skill v rand n300 s12                  P0  294  P1    5  shared   1  | avg score  29.6 v   8.5  | stalls 0  offers/game 12.0
+rand v skill n450 s13                  P0    3  P1  446  shared   1  | avg score   7.9 v  30.0  | stalls 0  offers/game 12.0
+skill v skill n250 s14                 P0  113  P1  134  shared   3  | avg score  17.1 v  19.1  | stalls 0  offers/game 12.0
+skill v skill n250 s15                 P0  106  P1  142  shared   2  | avg score  17.2 v  18.9  | stalls 0  offers/game 12.0
+dec v hon n250 s16                     P0  197  P1   52  shared   1  | avg score  22.2 v  14.0  | stalls 0  offers/game 12.0
+hon v dec n250 s18                     P0   31  P1  218  shared   1  | avg score  12.4 v  23.3  | stalls 0  offers/game 12.0
+dec v hon n250 s17                     P0  195  P1   54  shared   1  | avg score  22.1 v  14.0  | stalls 0  offers/game 12.0
+hon v dec n250 s19                     P0   29  P1  220  shared   1  | avg score  11.6 v  24.3  | stalls 0  offers/game 12.0

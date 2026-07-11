@@ -86,7 +86,7 @@ Sum your claimed signs. Add up the match across all rounds.
   - *Earlier pip-sum Plunder (score every captured card's two pips) was dropped after its first table test: the totals ran to ~110 a round, the arithmetic was unpleasant, and high pips dominated both winning and scoring at once.*
 - **The Passing (smoother, recommended once learned):** before play each round, pass 3 cards to your left (4P/6P) — Hearts-style — to soften unlucky deals. Reduces how much the deal decides.
 - **Partners (4P or 6P):** play in fixed teams sitting alternately; combine teammates' claimed signs. Restores duel tension at larger counts.
-- **Closed Harvest (memory variant):** instead of an open, examinable spread, stack your gathered tricks **face-down**; reveal and count majorities only at round end. Trades the public registry for a deliberate memory/counting challenge — a legitimate, deck-native mode (the public pair-registry still bounds what's knowable). Offer it to players who find the open harvest removes the trick-taking skill of remembering what's been played. *(Untested; the open-harvest game is the validated default.)*
+- **Closed Harvest (memory variant):** instead of an open, examinable spread, gather your tricks into a **squared stack that nobody re-examines** (there is no face-down — one face always shows; the stack simply may not be spread or inspected until scoring); reveal and count majorities only at round end. Trades the public registry for a deliberate memory/counting challenge — a legitimate, deck-native mode (the public pair-registry still bounds what's knowable). Offer it to players who find the open harvest removes the trick-taking skill of remembering what's been played. *(Untested; the open-harvest game is the validated default.)*
 
 ---
 
