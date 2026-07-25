@@ -1,6 +1,8 @@
-# New Game Concepts
+# New Game Concepts — Design Journal
 
-*Seventeen concept sheets expanding the collection beyond TRIGON and TURNCOAT. Each exploits a property of the all-pairs flip deck that the existing games don't touch. Deck-size fit is stated per game; see [DECK_SIZE_DECISION.md](DECK_SIZE_DECISION.md) for the overall recommendation.*
+> [!important] This is a design journal, **not the collection index**. Its numbered sections preserve how batches of ideas developed, so its embedded status notes are point-in-time history. For the complete current roster—including games created directly as rules or proposals, such as CONCORD—use [Collection Overview](COLLECTION_OVERVIEW.md) or [Game Catalog](GAME_CATALOG.md).
+
+These concept sheets expand the collection beyond its original games. Each explores a property of the all-pairs flip deck; deck-size fit is stated per game. See [Deck Size Decision](Project/Decisions/DECK_SIZE_DECISION.md) for the settled master-deck choice.
 
 Portfolio coverage at a glance:
 
@@ -15,14 +17,14 @@ Portfolio coverage at a glance:
 | 7 | THE COUNCIL | Negotiation / game theory | 3–6 | Every commitment is reversible — but only to one specific alternative |
 | 8 | HOT POTATO PAIRS | Party shedding | 3–6 | Both faces constrain legal plays; the back of your card is a liability |
 | 9 | THE ORRERY | Solo / co-op sorting puzzle | 1–3 | 36 cards partition into four 9-card orbits, each a permutation of all 9 symbols on both faces |
-| 10 | SNARE *(concept stage)* | 2P abstract avoidance | 2 | Goodman: any balanced K₆ split forces ≥2 mono-triangles (mean ~4); 5→6 threshold turns "survivable" into "doomed" |
+| 10 | SNARE *(Spark)* | 2P abstract avoidance | 2 | Goodman: any balanced K₆ split forces ≥2 mono-triangles (mean ~4); 5→6 threshold turns "survivable" into "doomed" |
 | 11 | GLEAN | Trick-taking / majority | 3–4–6 | Each captured card scores toward *two* symbol-majorities at once; pair-uniqueness makes the contested card specific |
 | 12 | BLIGHT | Trick-taking / avoidance | 3–4–6 | The *hidden* face is the penalty — the back of the card is the poison; shoot-the-moon by taking it all |
-| 13 | CAIRN *(concept stage)* | Compact solo chain patience | 1 | A card is an edge; cards chain by a shared sign — the edge-adjacency property, unused since OUROBOROS was cut, now in a ≤4-pile footprint |
-| 14 | RELAY *(sim-validated)* | Network route-race / drafting | 2–4 | Each card is a directed road *and* a unique connection goal; "each sign on 8 cards" bounds the map; a flip re-aims a road to make or break a directed route |
-| 15 | SLEEPER *(drafted — rulebook v0.1, untested)* | Social deduction / hidden loyalty | 4–6 | Your loyalty is one guarded double-faced card — the only persistent secret a backless deck holds cleanly; a flip swings a decree to its single printed alternative |
-| 16 | DOWRY *(sim-certified floor — rulebook v0.2, untested at the table)* | I-cut-you-choose / bluff & deduction | 2 (3–4 variant) | The cut has two layers — partition *and* presentation: the cutter chooses which face of every offered card shows, and pair-uniqueness bounds what a dressed lot can hide |
-| 17 | ICARUS *(sim-certified floor — rulebook v0.1, untested at the table)* | Push-your-luck | 2–4 | The backless deck-top shows half of every gamble; pair-uniqueness + the public registry make the bust odds exactly countable |
+| 13 | CAIRN *(Ready)* | Compact solo chain patience | 1 | A card is an edge; cards chain by a shared sign — the edge-adjacency property, unused since OUROBOROS was cut, now in a ≤4-pile footprint |
+| 14 | RELAY *(Draft — sim-validated, needs rulebook)* | Network route-race / drafting | 2–4 | Each card is a directed road *and* a unique connection goal; "each sign on 8 cards" bounds the map; a flip re-aims a road to make or break a directed route |
+| 15 | SLEEPER *(Draft — rulebook v0.1, untested)* | Social deduction / hidden loyalty | 4–6 | Your loyalty is one guarded double-faced card — the only persistent secret a backless deck holds cleanly; a flip swings a decree to its single printed alternative |
+| 16 | DOWRY *(Ready — sim-certified floor, rulebook v0.2, untested)* | I-cut-you-choose / bluff & deduction | 2 (3–4 variant) | The cut has two layers — partition *and* presentation: the cutter chooses which face of every offered card shows, and pair-uniqueness bounds what a dressed lot can hide |
+| 17 | ICARUS *(Ready — sim-certified floor, rulebook v0.1, untested)* | Push-your-luck | 2–4 | The backless deck-top shows half of every gamble; pair-uniqueness + the public registry make the bust odds exactly countable |
 
 Existing games already cover: tactical grid engine (TRIGON) and direct-conflict allegiance (TURNCOAT).
 
@@ -178,27 +180,29 @@ Existing games already cover: tactical grid engine (TRIGON) and direct-conflict 
 
 ---
 
-## Status (updated June 2026)
+## Historical status snapshot (updated June 2026)
 
-The deck is now fixed at 9 symbols / 36 cards ([DECK_SIZE_DECISION.md](DECK_SIZE_DECISION.md)); concepts were developed to full rulebooks.
+> Retained as a development record. It is not maintained as the current roster; use [Collection Overview](COLLECTION_OVERVIEW.md) for current status and next steps.
 
-1. **JANUS** — ✅ full rulebook ([Janus/](Janus/)). The collection's signature-mechanic candidate. Next: table test the omen economy.
-2. **FORKED TONGUE** — ✅ full rulebook ([Forked Tongue/](Forked%20Tongue/)). Next: table test ledger pacing.
-3. **TWELVE TRIALS** — ✅ promoted to main-game development after OUROBOROS was cut; redesigned as a fully open-information puzzle (no hidden-face memory, no luck-blame) with an exact solver tuning the score tiers ([Twelve Trials/](Twelve%20Trials/)). **Has been table-tested.**
-4. **OUROBOROS** — ↩️ developed, simulated, cut after live testing (June 2026), then **revived to the pipeline (Stage 2)** later in June 2026. The cut reasons were re-examined: the buried open-symbol bug is fixed in **v1.1** (lay each card showing its *onward* symbol — both open ends stay face-up, never lift the serpent), and a Monte-Carlo planner put the skill ceiling at **~1.74× (n=9) / ~1.84× (n=7)** over random, above the healthy bar — retiring the "thin skill gap / luck-dominant" verdict that rested on one-ply floor numbers. Kept in [Ouroboros/](Ouroboros/); see [OUROBOROS_design_analysis.md](Ouroboros/OUROBOROS_design_analysis.md) §6. **Next: first table test of v1.1.**
-5. **THE UNPLAYED PAIR** — ✅ full rulebook ([The Unplayed Pair/](The%20Unplayed%20Pair/)). The hidden-face trick-rank rule was reworked into a public trick-end reveal per the OUROBOROS lesson; won tricks and morgue stay open for inspection (deduction, never memory). Next: table test at 4P.
-6. **THE COUNCIL** — ✅ full rulebook ([The Council/](The%20Council/)). Lone-supporter-takes-all minority game with rollover stacks; palms-commit protocol replaces impossible face-down concealment. Next: table test at 4–5P.
-7. **CROSSROADS** — ✅ full rulebook ([Crossroads/](Crossroads/)). Layout solved: the eight symbol-9 cards become the city ring; roads point at the city their visible face names (one-way traffic); contracts are the cards you keep. Perfect-information abstract. **Has been table-tested.**
-8. **HOT POTATO PAIRS → WILDFIRE** — ✅ full rulebook ([Wildfire/](Wildfire/)). Renamed; the back-memory chain died with OUROBOROS and is replaced by match-and-turn: all constraints live on the visible top face. Next: party test at 5–6P.
-9. **THE ORRERY** — ✅ full rulebook ([The Orrery/](The%20Orrery/)). Open-information orbit-sorting puzzle — sibling to TWELVE TRIALS via a different decomposition (4 permutation orbits vs. 12 triangles). Sky debt gives a visible per-deal lower bound. **Has been table-tested.**
+The deck is now fixed at 9 symbols / 36 cards ([DECK_SIZE_DECISION.md](Project/Decisions/DECK_SIZE_DECISION.md)); concepts were developed to full rulebooks.
 
-**Note:** TRIGON ([Trigon/](Trigon/)) and TURNCOAT ([Turncoat/](Turncoat/)) are extensively simulation-validated (~22–23k games each) but have **not** been table-tested. They are awaiting their first physical play.
+1. **JANUS** — ✅ full rulebook ([Janus/](Janus)). The collection's signature-mechanic candidate. Next: table test the omen economy.
+2. **FORKED TONGUE** — ✅ full rulebook ([Forked Tongue/](Forked%20Tongue)). Next: table test ledger pacing.
+3. **TWELVE TRIALS** — ✅ promoted to main-game development after OUROBOROS was cut; redesigned as a fully open-information puzzle (no hidden-face memory, no luck-blame) with an exact solver tuning the score tiers ([Twelve Trials/](Twelve%20Trials)). **Has been table-tested.**
+4. **OUROBOROS** — ↩️ developed, simulated, cut after live testing (June 2026), then **revived to the pipeline (now Ready)** later in June 2026. The cut reasons were re-examined: the buried open-symbol bug is fixed in **v1.1** (lay each card showing its *onward* symbol — both open ends stay face-up, never lift the serpent), and a Monte-Carlo planner put the skill ceiling at **~1.74× (n=9) / ~1.84× (n=7)** over random, above the healthy bar — retiring the "thin skill gap / luck-dominant" verdict that rested on one-ply floor numbers. Kept in [Ouroboros/](Ouroboros); see [OUROBOROS_design_analysis.md](Ouroboros/OUROBOROS_design_analysis.md) §6. **Next: first table test of v1.1.**
+5. **THE UNPLAYED PAIR** — ✅ full rulebook ([The Unplayed Pair/](The%20Unplayed%20Pair)). The hidden-face trick-rank rule was reworked into a public trick-end reveal per the OUROBOROS lesson; won tricks and morgue stay open for inspection (deduction, never memory). Next: table test at 4P.
+6. **THE COUNCIL** — ✅ full rulebook ([The Council/](The%20Council)). Lone-supporter-takes-all minority game with rollover stacks; palms-commit protocol replaces impossible face-down concealment. Next: table test at 4–5P.
+7. **CROSSROADS** — ✅ full rulebook ([Crossroads/](Crossroads)). Layout solved: the eight symbol-9 cards become the city ring; roads point at the city their visible face names (one-way traffic); contracts are the cards you keep. Perfect-information abstract. **Has been table-tested.**
+8. **HOT POTATO PAIRS → WILDFIRE** — ✅ full rulebook ([Wildfire/](Wildfire)). Renamed; the back-memory chain died with OUROBOROS and is replaced by match-and-turn: all constraints live on the visible top face. Next: party test at 5–6P.
+9. **THE ORRERY** — ✅ full rulebook ([The Orrery/](The%20Orrery)). Open-information orbit-sorting puzzle — sibling to TWELVE TRIALS via a different decomposition (4 permutation orbits vs. 12 triangles). Sky debt gives a visible per-deal lower bound. **Has been table-tested.**
 
-**The original nine concepts are all resolved: all nine were developed to full rulebooks (OUROBOROS was cut after live testing, then revived to the pipeline — see §4 above). Six further concepts (§10–§15) have since been added.** Symbol identity study: [SYMBOL_SETS.md](SYMBOL_SETS.md).
+**Note:** TRIGON ([Trigon/](Trigon)) and TURNCOAT ([Turncoat/](Turncoat)) are extensively simulation-validated (~22–23k games each) but have **not** been table-tested. They are awaiting their first physical play.
+
+**The original nine concepts are all resolved: all nine were developed to full rulebooks (OUROBOROS was cut after live testing, then revived to the pipeline — see §4 above). Six further concepts (§10–§15) have since been added.** Symbol identity study: [SYMBOL_SETS.md](Project/Deck/SYMBOL_SETS.md).
 
 ---
 
-## 10. SNARE — the forbidden three *(concept stage — not yet a rulebook)*
+## 10. SNARE — the forbidden three *(Spark — not yet a rulebook)*
 
 *2 players · ~10–15 min · perfect-information abstract / avoidance*
 
@@ -288,7 +292,7 @@ Reads: (1) **Terminating and clearable** — a planner clears ~98–100% of comp
 
 ## The trick-taking siblings — GLEAN & BLIGHT
 
-> **Status (June 2026): promoted to full rulebooks + sim-validated** ([Glean/](Glean/), [Blight/](Blight/)), at the owner's direction, ahead of the usual rung-4 gating below. Both now sit at **tier 2 — sim-validated, awaiting first table test** ([glean_sim.py](Glean/glean_sim.py), [blight_sim.py](Blight/blight_sim.py); skill gaps 1.74×/1.67×/1.49× and 2.02×/1.91×/1.41× at 3/4/6P). See each folder's `_design_analysis.md`.
+> **Status (June 2026): promoted to full rulebooks + sim-validated** ([Glean/](Glean), [Blight/](Blight)), at the owner's direction, ahead of the usual rung-4 gating below. Both now sit at **tier 2 — sim-validated, awaiting first table test** ([glean_sim.py](Glean/glean_sim.py), [blight_sim.py](Blight/blight_sim.py); skill gaps 1.74×/1.67×/1.49× and 2.02×/1.91×/1.41× at 3/4/6P). See each folder's `_design_analysis.md`.
 
 > **Original status & scope (retained for the record).** These began as **rung-4 new concepts** ([focus-priority.md](.kiro/steering/focus-priority.md)), logged for exploration. Per the circuit breaker they were **not** to be developed into full rulebooks until at least one rung-2/3 game had a first table test. They arose from the THE UNPLAYED PAIR design analysis ([UNPLAYED_PAIR_design_analysis.md](The%20Unplayed%20Pair/UNPLAYED_PAIR_design_analysis.md)), which found that trick-taking and "deduce the missing card" fight each other: certainty arrives only on the final trick, so the call mechanic is structurally dead. The conclusion was to **keep the trick-taking, drop the deduction**, and split the slot into two complementary trick-takers. The missing-card deduction idea is preserved in the Parking Lot below for a future, non-trick-taking game.
 
@@ -344,7 +348,7 @@ That engine is identical in both games. The *only* difference is what you are tr
 - **Complementarity.** Same engine, opposite goal — you learn the trick rules in one and invert them in the other. GLEAN is positive/greedy (build majorities); BLIGHT is negative/cautious (dodge poison, or shoot the rot). They mirror the TRIGON/TURNCOAT sibling pattern the collection already prizes.
 - **Coverage.** They restore the **trick-taking mood** (previously only THE UNPLAYED PAIR), now as two distinct experiences, and they add **6-player trick-taking** (clean 6-each deal) — a player-count the collection is thin on. Partnership modes at 4P/6P exploit even divisibility.
 - **The honest cost.** Two trick-takers risk crowding the collection (`product-vision.md` "be willing to cut" overlap). The defence: Hearts and Spades coexist as distinct staples in every card canon precisely because accumulation and avoidance are different games. They must each clear distinctness at the table; if one feels like a re-skin of the other, cut it. The shared engine is a teachability asset, not an excuse to ship both unexamined.
-- **Process note.** Both are concept-stage and rung-4-gated. The right next step is **not** to write their rulebooks — it is to first-table an existing rung-2/3 game, then build whichever of GLEAN/BLIGHT the slate still wants. A quick majority/penalty simulation (skill gap, does "highest hidden wins" degenerate in GLEAN) is the cheap structural check before either becomes a rulebook.
+- **Process note (superseded).** This pair began as concepts gated behind first-testing an existing game. Both have since been built, simulated, and table-tested (June 2026): GLEAN and BLIGHT are now **Iterating** (verdict *iterate*), with BLIGHT the session standout. See their entries in [COLLECTION_OVERVIEW.md](COLLECTION_OVERVIEW.md) and the playtest reports.
 
 ---
 
@@ -357,7 +361,7 @@ That engine is identical in both games. The *only* difference is what you are tr
 
 ## Memory mechanics shelved under the OUROBOROS reading — re-inclusion audit
 
-*Added June 2026. Context: a re-reading of the OUROBOROS post-mortem ([`Ouroboros/OUROBOROS_design_analysis.md`](Ouroboros/OUROBOROS_design_analysis.md), [`COLLECTION_AUDIT.md`](COLLECTION_AUDIT.md) §4) found that OUROBOROS was **not** a memory game — it buried **involuntary** state under the serpent's head, a narrow handling defect. The steering now distinguishes that defect from a **deliberate, verifiable** memory game, which is a legitimate and currently **under-served** deck-native genre ([`design-principles.md`](.kiro/steering/design-principles.md) lesson 1; [`physical-handling.md`](.kiro/steering/physical-handling.md) "Default bias" caveat). This audit lists every game that removed or avoided a memory mechanic citing OUROBOROS, and judges whether the removal was sound or an over-correction worth revisiting.*
+*Added June 2026. Context: a re-reading of the OUROBOROS post-mortem ([`Ouroboros/OUROBOROS_design_analysis.md`](Ouroboros/OUROBOROS_design_analysis.md), [`COLLECTION_AUDIT.md`](Archive/Audits/COLLECTION_AUDIT.md) §4) found that OUROBOROS was **not** a memory game — it buried **involuntary** state under the serpent's head, a narrow handling defect. The steering now distinguishes that defect from a **deliberate, verifiable** memory game, which is a legitimate and currently **under-served** deck-native genre ([`design-principles.md`](.kiro/steering/design-principles.md) lesson 1; [`physical-handling.md`](.kiro/steering/physical-handling.md) "Default bias" caveat). This audit lists every game that removed or avoided a memory mechanic citing OUROBOROS, and judges whether the removal was sound or an over-correction worth revisiting.*
 
 | Game | What was removed/avoided | Verdict | Re-include? |
 |---|---|---|---|
@@ -377,7 +381,7 @@ That engine is identical in both games. The *only* difference is what you are tr
 
 ---
 
-## 14. RELAY — race the nine roads *(concept stage — not yet a rulebook)*
+## 14. RELAY — race the nine roads *(Draft — sim-validated, rulebook pending)*
 
 *2–4 players · ~20–25 min · network route-race / drafting · **deck-only, no extra components** · name RELAY (formerly MERIDIAN; alts considered: LODESTAR, CONFLUENCE, KEYSTONE)*
 
@@ -448,7 +452,7 @@ Adding a player adds a sign (another node and destination) and its cards (more r
 
 ### Next step (per [focus-priority.md](.kiro/steering/focus-priority.md))
 
-**Structural sim done — goal-race passes the gate** ([RELAY_design_analysis.md](Relay/RELAY_design_analysis.md)): terminates at 2–4P (0% caps), skill gap 1.9× / 2.8× / 3.6× (2/3/4P), pass-to-win scores 0 by construction, and flips are relevant (~22–28% of claims come via a re-aim; removing flips drops the skill gap). Now **Stage 2 (validated)**. The remaining work is a short **deck-only rulebook draft**, then a first **2P + 3P table test** for the fun, interaction, route-tracing legibility, and CROSSROADS-distinctness questions a sim can't answer.
+**Structural sim done — goal-race passes the gate** ([RELAY_design_analysis.md](Relay/RELAY_design_analysis.md)): terminates at 2–4P (0% caps), skill gap 1.9× / 2.8× / 3.6× (2/3/4P), pass-to-win scores 0 by construction, and flips are relevant (~22–28% of claims come via a re-aim; removing flips drops the skill gap). Now a **Draft** (`sim-validated` — the structural work is done; the remaining gap is the rulebook). The remaining work is a short **deck-only rulebook draft**, then a first **2P + 3P table test** for the fun, interaction, route-tracing legibility, and CROSSROADS-distinctness questions a sim can't answer.
 
 
 ### Alternative fork — node-majority (shared cube kit) — *dropped by sim*
@@ -540,7 +544,7 @@ al/disclose) and the taker's scoring placement (which majority race the card fee
 
 *2–3 players (one Wisp vs. hunters) · ~20 min · hidden movement / pursuit · full 36*
 
-**Full concept sheet:** [Wisp/WISP_concept.md](Wisp/WISP_concept.md). **Now drafted → [Wisp/WISP_rulebook.md](Wisp/WISP_rulebook.md) (v0.1, Stage 1, unsimmed/untested).**
+**Full concept sheet:** [Wisp/WISP_concept.md](Wisp/WISP_concept.md). **Now drafted → [Wisp/WISP_rulebook.md](Wisp/WISP_rulebook.md) (v0.1, Draft, unsimmed/untested).**
 
 Hidden movement with no board, pencil, or trust: the deck *is* a tamper-proof movement log. Each trail card shows the sign you left and presses down where you arrived, so the trail publicly confirms your position exactly one step late while the end-game excavation makes lying physically impossible.
 
@@ -590,6 +594,8 @@ A game for a shelf, not a session: the 6×6 field *is* the save file — turn pa
 
 A backless deck can't hide its next card, so the automa doesn't try: the GOLEM's next blow is always public and the follow-through lands one beat too late — the telegraph rhythm of a video-game boss, on cardboard. Every hand card is a unique edge, so parrying one threat spends your only answer to another.
 
+*July 2026 addendum: a campaign extension — THE NINE TRIALS OF THE TENTH, nine sign-bosses in pip order — is filed inside the concept sheet, to be reviewed together with the base game (see the story flight note, §28–§30).*
+
 ## 24. LACUNA — the deck's missing tooth
 
 *2–5 players · ~15 min · counting / deduction race · full 36 + one opaque sleeve*
@@ -606,13 +612,13 @@ The only thing this deck can perfectly hide is an absence: one card in an opaque
 
 Nine runners with fuel tanks printed on the maths (8 cards per sign) but odds that stay honest intervals — and stakes hidden the only way this deck can hide anything: a pip pressed to the table under a public alibi. The collection's Camel-Up-shaped gap.
 
-## 26. QUEUE — the game you hold in one hand
+## 26. HINGE — the game you hold in one hand
 
-*2 players · ~5–10 min · pocket abstract · 15 cards (6 signs)*
+*2 players · ~5–10 min · pocket abstract · 15 cards (6 signs) · formerly QUEUE*
 
-**Full concept sheet moved to its own folder:** [Queue/QUEUE_concept.md](Queue/QUEUE_concept.md).
+**Full concept sheet moved to its own folder:** [Hinge/HINGE_concept.md](Hinge/HINGE_concept.md). Original concept retired at [Queue/QUEUE_concept.md](Queue/QUEUE_concept.md).
 
-No session, no surface: the whole game is a 15-card packet held face-out in one hand — rotate or flip the front card, strike three matching faces, play it standing in a queue. A cyclic-order abstract that fits in a pocket.
+No session, no surface: the whole game is a 15-card packet held face-out in one hand — cut it anywhere and flip that block over as one unit, strike a run of three matching signs, play it standing in a queue. Renamed 25 July 2026 after the original rotate/flip-top-card mechanic failed solo playtest; replaced with a split-and-block-flip move that reorders and reveals multiple cards per turn.
 
 ## 27. MIRROR — show the face I'm thinking of
 
@@ -621,3 +627,76 @@ No session, no surface: the whole game is a 15-card packet held face-out in one 
 **Full concept sheet moved to its own folder:** [Mirror/MIRROR_concept.md](Mirror/MIRROR_concept.md).
 
 Two provably isomorphic season hands, a prompt neither may show, and one goal: show the same sign your partner shows. Pure association early; by round seven you can compute each other's options exactly — empathy annealing into logic.
+
+---
+
+## The story flight (July 2026) — §28–§30
+
+> A different brief from the wildcard flights: **story-driven / campaign play** — progressive levels, attemptable solo with assisting players, the signs integral to the narrative. Rubric waived, unsimmed, **journal-only**: no folders or game records yet — promote via [Adding a Game](Project/ADDING_A_GAME.md) if selected. The design problem that shapes all three: a fixed 36-card deck cannot save progress by destruction or stickers, so a campaign must live in one of the deck's four honest save mechanisms — **sub-deck composition** (the subset property: which signs are in play *is* the save), **deck order + the box** (the stack as save file — the VIGIL move), **a printed booklet** (the TWELVE TRIALS almanac precedent), or **orientation locks** (C4). Each concept below commits to a different one. A fourth idea from the same session — THE NINE TRIALS OF THE TENTH, a boss-rush campaign — is deliberately *not* numbered: it stands or falls with GOLEM's chassis, so it's filed as a campaign extension inside [Golem/GOLEM_concept.md](Golem/GOLEM_concept.md), to be reviewed together with GOLEM.
+
+## 28. COVENANT — the deck that grows as the story does
+
+*1 player + up to 3 assistants · ~15 min per chapter · six-chapter campaign · sub-decks 6 → 36 · save = sub-deck composition*
+
+**The trick that makes it exist.** The subset property is usually a player-count dial; here it is the campaign arc itself. You are the Tenth — signless — earning each sign's trust in turn. Chapter one plays with a 4-sign sub-deck (6 cards); each chapter you face one new sign's trial and, if you win, its cards join the deck: 6 → 10 → 15 → 21 → 28 → 36. **The sub-deck is the entire save file** — no writing, no booklet, no sleeve; "which signs have I won" reconstructs the campaign from a shuffled box. Crown joins last (the finale), which happens to match house sub-deck practice (Crown removed first).
+
+**The chapter loop (sketch).** Each trial is a short solo puzzle/duel against the new sign's cards, and the new sign's archetype verb becomes a permanent rule on joining — Flame's chapter adds burning, Eye's adds peeking, Mask's adds face-swapping. The campaign is therefore also a graduated teach of the deck: a player who finishes COVENANT has learned the full nine-verb grammar one rule at a time. Failure never blocks progress: retry freely, or accept the sign as a **grudge** — it joins, but its verb also works against you for the rest of the campaign (the story remembers how you won).
+
+**Solo + assists.** Assisting players each embody an already-won sign and may invoke its verb once per chapter — helpers scale the game without owning it.
+
+**Handling audit.** Pure sub-deck play; every mechanism already sanctioned (C1 shuffle, C2 rung 1 deals, C3 dead piles). Zero campaign components.
+
+**Fastest falsification.** Play the 6-card opening chapter: is it a game at all, or does fun only start at 15 cards? If chapter one must be scripted tutorial rather than game, the arc still might survive — but say so honestly in the rulebook.
+
+Versions:
+### A. The Loyalty Duel — one engine, a permutation trial
+
+**Structure.** Chapter k: the new sign's cards that pair with won signs form an _attack row_, new-sign face up. Here's the gift the deck gives you: every Eye face shows Eye/5, so the row is **visually identical** — the only difference is the hidden partner, and the hidden faces are exactly one of each won sign. The trial is a blind-matching puzzle: claim each attacker by playing a card of its hidden sign from your covenant hand. Wrong claims cost cards (your covenant deck is your health) but give information.
+
+**Completion.** Match every attacker. The win is physical: each matched card flips — the stranger's face turns to show a friend's — and shuffles into your deck. _Winning the trial and writing the save are the same gesture._
+
+**Signs.** Each won sign is a permanent power, spent by discarding a card bearing it: Moon recovers a spent card (catch-up), Leaf draws, Wave rearranges the row, Flame removes an attacker unmatched (fast but it joins as a grudge), Eye peeks a hidden face, Mask swaps two attackers, Key claims out of turn, Star answers as any sign, Crown commands an assistant's verb free. Assistants = one won sign each, verb once per chapter.
+
+**Chapter one.** The four founders test you themselves: a 6-card matching rite that teaches the claim loop with zero powers. Scales 4 attackers/24 permutations → 8 attackers for Crown.
+
+### B. The Nine Rites — anthology, each sign authors its own game
+
+**Structure.** Each chapter is a distinct mini-game in the new sign's genre: Eye = deduction, Mask = shell-game memory, Key = sequencing lock, Star = push-your-luck, Crown = final exam combining all five. Chassis can be borrowed from proven solo games (CAIRN, OUROBOROS).
+
+**Completion.** Chapter-specific goal; won sign grants its verb as a once-per-trial invocation thereafter.
+
+**Signs.** Verbs define _chapter genre_, not just powers — maximum thematic identity per sign.
+
+### C. The Pilgrimage — one run engine, the world mutates
+
+**Structure.** Every chapter is the same journey: a DELVE-style corridor run through your shuffled covenant deck to reach the new sign's shrine. Each won sign's verb becomes a **world rule**, not a player power — Flame joining legalises burning rooms, Eye legalises peeking, Mask lets hidden faces be swapped. The game's own rules accrete legacy-style, saved for free by the sub-deck (deck composition ⇒ which rules are live — no memory needed).
+
+**Completion.** Survive the run and present the shrine's demanded offering (e.g. one card of each won sign in hand at arrival).
+
+## 29. DELVE — the stack is the dungeon and the box is the save
+
+*1–2 players · descend at your own pace, any session length · full 36 · save = deck order + the box*
+
+**The trick that makes it exist.** A squared backless deck already behaves like a dungeon corridor: the top face is the room ahead — you can see the door, never what's behind it (the pressed face is the encounter). So: shuffle **once, at campaign start**. That ordering is your ruin, permanently — a unique, persistent world you descend into across many sittings, learning its layout the way a roguelike player learns a seed. At any moment, square the deck, lay your camp row beside it, and box everything — **the box is the save file**, and it holds perfectly because deck order is the only state.
+
+**The delve loop (sketch).** Face the top room: **enter** (flip it — resolve the revealed encounter by its sign's verb against your hand), **scout** (spend an Eye-bearing card to privately peek the hidden face), **bypass** (spend a Key-bearing card — the room goes under the deck unresolved), or **collapse** (spend a Flame-bearing card — the room goes sideways to the dead pile, gone forever, and the ruin is now 35 rooms). Depth is narrative for free: read the visible pip as the stratum's danger. Rest at camp to recover cards; camp too often and the ruin "wakes" (a countable timer from the dead pile).
+
+**Solo + assists.** Second player is the torchbearer — own hand, shared fate; their cards answer signs yours can't (every pair is unique, so two hands genuinely cover more verbs).
+
+**Handling audit.** Deck order as save is exactly VIGIL's shelf-persistence claim, in a box instead. C3 dead pile, C4 orientation, box already sanctioned kit. One honest risk: a dropped deck destroys the campaign — the rulebook must say so with a smile.
+
+**Fastest falsification.** One evening, two delves into the same ruin: does knowing one face of every coming room make delve two a calculation instead of a dread? The bet is the opposite — half-knowledge is *more* frightening, and remembered rooms make the world feel real.
+
+## 30. WAYFARER — the pair is the page number
+
+*1–3 players co-op · ~30–45 min per journey · multi-journey campaign · full 36 + printed itinerary booklet · save = the booklet*
+
+**The trick that makes it exist.** Every card is a unique sign-pair, so the deck is a **36-entry story index with no text on the cards**: a printed booklet holds 36 short vignettes keyed Flame–Eye, Moon–Key, and so on, and flipping a card *is* looking up the page. The cards stay clean (two-layer rule intact); the booklet carries the story — the same legitimacy as the TWELVE TRIALS almanac.
+
+**The journey loop (sketch).** The nine regions form a 3×3 map (a laid-out sign card per region, or just the booklet's map page). Travel region to region; each move offers the road deck's top card: the visible sign is the **omen** — the half of the encounter you can see coming — and the hidden face completes the pair. **Face it** (flip, read the pair's vignette, resolve its demand with your hand, modified by the current region's verb — the same vignette lived in Flame's region and Moon's region resolves differently) or **detour** (pay time/cards to let it pass). The itinerary sets the journey's goal and route constraints; later itineraries revisit the same 36 vignettes under harder terms — the fixed deck means the *world* is fixed, and the campaign is your deepening knowledge of it. Save = itinerary checkboxes.
+
+**Solo + assists.** Co-op by default; assistants carry their own hands and may answer an omen for you at a cost (the story frames them as companions with their own baggage).
+
+**Handling audit.** Deck handling is all rung-1 open play; the booklet is printed matter, not a component in the deck-only sense — but it *is* the collection's first game that cannot be played from the deck plus a rules sheet alone. That deviation is the concept's price; say it up front.
+
+**Fastest falsification.** Write six vignettes (not 36) and run one journey with a reduced map: do entries survive being re-read even once, and does the omen/detour choice carry the game between story beats? If the vignettes are wallpaper, the game is CROSSROADS with homework.

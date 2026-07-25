@@ -1,14 +1,14 @@
 # Playtesting Methodology
 
-Table testing is how a pipeline game earns promotion to the collection. It's also how collection games get better. This document covers the methodology for both.
+Table testing is how a game earns a real verdict and moves along the health ladder. It's also how already-good games get better. This document covers the methodology for both.
 
 ## Why table testing matters
 
-Simulation certifies the floor (the game ends, isn't broken, defaults are sound). It cannot tell us whether a game is fun, teachable, or physically pleasant. Only humans can. Most pipeline games (Stage 1 and Stage 2) are waiting on their first table test — but there's no mandate to test them in any order. Test what you're excited to test.
+Simulation certifies the floor (the game ends, isn't broken, defaults are sound). It cannot tell us whether a game is fun, teachable, or physically pleasant. Only humans can. Many games with `physically_playtested: false` (see the classification fields in `product-vision.md`) are waiting on their first table test — but there's no mandate to test them in any order. Test what you're excited to test.
 
 ## Every game carries test-focus questions
 
-Each game already has recorded first-table / test-focus questions (in `COLLECTION_OVERVIEW.md` and `NEW_GAME_CONCEPTS.md`) — e.g. WILDFIRE's "is announce-rule policing fun?", CROSSROADS' "does eight flips ache properly?", THE COUNCIL's "kingmaking at 5–6P?". **A playtest plan must start from that game's specific questions.** Preserve and answer them; don't invent generic ones.
+Each game has a structured `next_step` on its game record and fuller first-table / test-focus questions in `COLLECTION_OVERVIEW.md` and its design analysis or latest report. `NEW_GAME_CONCEPTS.md` is historical context, not a current state source. **A playtest plan must start from that game's current questions.** Preserve and answer them; don't invent generic ones.
 
 ## Playtest plan (before a session)
 
@@ -46,6 +46,26 @@ Every first test ends with one of three calls, made explicitly:
 - **Iterate** — promising, with identified fixes. Apply rule changes, bump the version, re-test (or re-sim if the change is balance-sensitive).
 - **Park** — fundamentally sound but not a priority, or blocked on a bigger open decision. Record why and what would unblock it.
 - **Cut** — a core flaw that the deck or the concept can't escape. Cut decisively, **keep the folder as a design record**, and write down the lessons (as with OUROBOROS). A clean cut that teaches a lesson is a success, not a failure.
+
+### After every session — set `physically_playtested` and the `state`
+
+Two things change on the game record after a table test.
+
+**Always set `physically_playtested: true`.** It is now permanently true, whatever the session revealed.
+
+**Then set the `state`** (see `product-vision.md`) — the condition you're leaving the game in. An "iterate" verdict is doing too much work if it isn't qualified, so always name the shade:
+
+| Verdict | State to record | Reads as |
+|---|---|---|
+| Iterate | **Proven** | Played, very happy, only minor polish left — nothing blocking. |
+| Iterate | **Ready to test** | Works, with known bugs whose fixes are easy and already queued; put it back on the table. |
+| Iterate | **In development** | Didn't really work; needs bigger fixes or a rethink before it's worth another table. |
+| Park | **Shelved** | Sound but set aside; folder kept. |
+| Cut | **Shelved** | Core flaw the concept can't escape; folder kept as a design record. |
+
+The distinction that matters at the middle two rungs is whether you'd hand the current rules to a table *tonight*. If yes, it stays **Ready to test**; if the next session needs design work first, it drops to **In development** — as JANUS did. A game that was **Proven** and then breaks drops the same way until a re-test. `physically_playtested` stays true throughout, so a dropped game is still visibly one you have actually played.
+
+Record the detailed verdict in the playtest report and the single next action in `next_step`. Do not add a separate status or readiness field to carry the nuance.
 
 ## Standards
 

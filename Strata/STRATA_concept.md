@@ -1,6 +1,24 @@
+---
+record_type: game
+game: "STRATA"
+state: In development
+players: [3, 4, 5]
+player_count: "3, 4, 5"
+duration: "~20 min"
+genre: "Bluffing / memory"
+complexity: Medium
+min_players: 3
+max_players: 5
+min_minutes: 20
+max_minutes: 20
+physically_playtested: false
+public_document: "Strata/STRATA_concept.md"
+next_step: "Develop a complete rulebook if this concept is selected."
+catalog_order: 22
+---
 # STRATA — every lie is buried where you left it
 
-*3–5 players · ~20 min · bluffing / deliberate memory / shedding race · full 36 · Stage 0 (concept)*
+*3–5 players · ~20 min · bluffing / deliberate memory / shedding race · full 36 · In development · physically unplayed*
 
 > **Status & scope.** Wildcard batch, first flight (July 2026). Written to a deliberately different brief: *maximum originality, rubric waived, no simulation required.* Playable as written, but no rulebook, no sim, no rubric self-score, and it should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Carries the two house disciplines: a full physical-handling audit and a fastest-falsification test. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §19.
 

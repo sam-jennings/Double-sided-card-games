@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "BLIGHT"
+state: Proven
+players: [3, 4, 6]
+player_count: "3, 4, 6"
+duration: "~25 min"
+genre: "Trick-taking / avoidance"
+complexity: Medium
+min_players: 3
+max_players: 6
+min_minutes: 25
+max_minutes: 25
+physically_playtested: true
+public_document: "Blight/BLIGHT_rulebook.md"
+next_step: "Run a full match at 4 players; check hand comfort and luck over multiple rounds."
+catalog_order: 1
+---
 # BLIGHT
 
 *A trick-taking game of dodging the rot for 3, 4, or 6 players · ~25 minutes · ages 10+*

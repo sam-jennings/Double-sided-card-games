@@ -1,3 +1,22 @@
+---
+record_type: game
+game: CAIRN
+state: Ready to test
+players:
+  - 1
+player_count: "1"
+duration: ~10 min
+genre: Solo chain patience
+complexity: Light
+min_players: 1
+max_players: 1
+min_minutes: 10
+max_minutes: 10
+physically_playtested: true
+public_document: Cairn/CAIRN_rulebook.md
+next_step: Repeat the standard trail and record whether failure feels foreseeable.
+catalog_order: 10
+---
 # CAIRN
 
 *A compact solo chain-patience for 1 player · ~10 minutes · ages 10+*
@@ -145,7 +164,7 @@ Rarely, yes — a few shuffles cannot be cleared even with perfect play. Simulat
 
 ## Open playtest questions
 
-*To be answered at the first table test.*
+*The game has reached a table, but the detailed first-session notes were not recovered during the catalogue migration. Answer these explicitly on the next recorded test.*
 
 1. **Do the chaining choices feel meaningful, or like arithmetic?** The central fun question — is "which waymark do I expose?" a satisfying decision or dry bookkeeping?
 2. **Does getting blocked feel fair?** When the trail dies, does it read as a foreseeable mistake (good) or an arbitrary bad shuffle (bad)?
@@ -156,4 +175,4 @@ Rarely, yes — a few shuffles cannot be cleared even with perfect play. Simulat
 
 ---
 
-*Design v0.1 — sim-validated, awaiting first table test. Structure, hand-vs-reserve, and realistic-information planning agents checked in `cairn_sim.py`; the 7-sign hand game cleared the skill gate (careful play approaches the clairvoyant ceiling). See concept sheet §13 in `NEW_GAME_CONCEPTS.md`.*
+*Design v0.1 — sim-validated and physically played; the detailed first-session notes remain to be recovered. Structure, hand-vs-reserve, and realistic-information planning agents checked in `cairn_sim.py`; the 7-sign hand game cleared the skill gate (careful play approaches the clairvoyant ceiling). See [CAIRN_playtest_01.md](CAIRN_playtest_01.md) and concept sheet §13 in `NEW_GAME_CONCEPTS.md`.*

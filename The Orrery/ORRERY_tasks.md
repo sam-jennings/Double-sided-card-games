@@ -1,6 +1,6 @@
 # THE ORRERY — Task List
 
-*Current status: Rung 1 (table-tested, iterating). Last playtest: 01 (7-sym, pre-balanced). Verdict: iterate.*
+*Current classification: **Ready to test** · physically played. Last playtest: 01 (7-sym, pre-balanced); the next version is ready for a random-deal retest.*
 
 ---
 
@@ -44,9 +44,9 @@
 
 ---
 
-## Parked / blocked
+## Deferred / blocked
 
-*Nothing currently parked.*
+*Nothing currently deferred.*
 
 ---
 

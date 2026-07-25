@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "RELAY"
+state: In development
+players: [2, 3, 4]
+player_count: "2, 3, 4"
+duration: "20–25 min"
+genre: "Network route race"
+complexity: Medium
+min_players: 2
+max_players: 4
+min_minutes: 20
+max_minutes: 25
+physically_playtested: false
+public_document: "Relay/RELAY_design_analysis.md"
+next_step: "Write the player-facing rulebook."
+catalog_order: 20
+---
 # RELAY — Design Analysis (structural sim)
 
 *Concept: [NEW_GAME_CONCEPTS.md §14](../NEW_GAME_CONCEPTS.md). Sim: [relay_sim.py](relay_sim.py). 250 games/cell, seeds 42 + 7, 1-ply bots. Player count scales by subset: 2P = 7 signs/21 cards, 3P = 8/28, 4P = 9/36. Hand 3, market 3, 3 face-up goals, shared flip pool 6/8/9.*

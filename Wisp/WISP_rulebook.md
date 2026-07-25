@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "WISP"
+state: In development
+players: [2, 3]
+player_count: "2, 3"
+duration: "~20 min"
+genre: "Hidden movement"
+complexity: Medium
+min_players: 2
+max_players: 3
+min_minutes: 20
+max_minutes: 20
+physically_playtested: false
+public_document: "Wisp/WISP_rulebook.md"
+next_step: "Vet the chase balance and trail handling before a table test."
+catalog_order: 19
+---
 # WISP
 
 *A hidden-movement pursuit for 2–3 players · ~20 minutes · ages 10+ · one Wisp vs. a side of one or two hunters*

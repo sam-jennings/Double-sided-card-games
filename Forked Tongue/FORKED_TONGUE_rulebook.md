@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "FORKED TONGUE"
+state: In development
+players: [3, 4, 5, 6]
+player_count: "3, 4, 5, 6"
+duration: "~20 min"
+genre: "Bluffing"
+complexity: Light
+min_players: 3
+max_players: 6
+min_minutes: 20
+max_minutes: 20
+physically_playtested: false
+public_document: "Forked Tongue/FORKED_TONGUE_rulebook.md"
+next_step: "Read through and vet the rules, then promote to Ready if coherent."
+catalog_order: 16
+---
 # FORKED TONGUE
 
 *A game of forgery and finite lies for 3–6 players · ~20 minutes · ages 10+*

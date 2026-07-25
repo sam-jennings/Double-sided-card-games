@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "CROSSROADS"
+state: Ready to test
+players: [2]
+player_count: "2"
+duration: "~20 min"
+genre: "Abstract route duel"
+complexity: Medium
+min_players: 2
+max_players: 2
+min_minutes: 20
+max_minutes: 20
+physically_playtested: true
+public_document: "Crossroads/CROSSROADS_rulebook.md"
+next_step: "Run a proper 2-player Signal Fires test and probe pass-to-win."
+catalog_order: 7
+---
 # CROSSROADS
 
 *A perfect-information route duel for 2 players · ~20 minutes · ages 10+*

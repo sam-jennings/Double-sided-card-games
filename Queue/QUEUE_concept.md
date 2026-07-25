@@ -1,21 +1,23 @@
-# QUEUE — the game you hold in one hand
+# QUEUE — retired, renamed to HINGE
 
-*2 players · ~5–10 min per round · pocket abstract · 15 cards (6 signs) · Stage 0 (concept)*
+Retired 25 July 2026. The rotate/flip-top-card mechanic this concept was built on failed solo playtest — it never generated enough matches to reach an endgame. It was replaced by a split-and-block-flip mechanic, which changed the game enough that the QUEUE name (built entirely on the cyclic-rotation idea) no longer fit.
 
-> **Status & scope.** Wildcard batch, second flight (July 2026) — *originality first, rubric waived, unsimmed*. No rulebook, no sim, no rubric self-score; should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §26.
+**Current concept and game record:** [Hinge/HINGE_concept.md](../Hinge/HINGE_concept.md).
 
-**The trick that makes it exist.** VIGIL asked "what if a game needed no session?"; QUEUE asks "what if a game needed no *surface*?" The entire state is a squared packet held in one hand, face-out; the moves are one-thumb operations; you can play it standing in a queue, walking, or in the dark of a tent. The deck property underneath: a packet has a **cyclic order that cutting preserves** — so "rotate" is a legal, undoable-by-nobody, zero-surface move, and the packet is its own board, turn marker, and score pad (retired cards leave it; the thinning packet is the clock).
+This file is kept as design history only. It is not a game record (`record_type: game` removed) and should not be treated as a current source of truth for state, catalogue position, or rules.
 
-**Setup.** The 6-sign sub-deck, 15 cards, shuffled, squared, held face-out by either player. Players alternate moves; whoever holds it passes it after moving (the pass *is* the turn marker).
+---
 
-**A move.** Exactly one: **rotate** (move the front card to the back), or **flip** the front card in place. Both moves are visible to both players — perfect information in the palm of a hand.
+## Original concept (superseded)
 
-**Scoring — the chord.** If after your move the front three cards all show the **same sign**, you've struck a chord: retire those three (pocket them on your side) and the packet plays on. When fewer than 3 cards remain — or after 15 consecutive chordless moves — the round ends; most retired cards wins the round; best of three.
+*2 players · ~5–10 min per round · pocket abstract · 15 cards (6 signs)*
 
-**The texture.** With 6 signs on 15 cards, each sign rides 5 cards — chords are buildable but every flip that builds yours hands your opponent a rotating window onto it. The fight is tempo: engineering a chord that completes on *your* move, three rotations from now, in a cycle you both see whole.
+**The trick that made it exist.** VIGIL asked "what if a game needed no session?"; QUEUE asked "what if a game needed no *surface*?" The entire state was a squared packet held in one hand, face-out; the moves were one-thumb operations. The deck property underneath: a packet has a **cyclic order that cutting preserves** — so "rotate" was a legal, undoable-by-nobody, zero-surface move.
 
-**Handling audit.** Zero table, zero memory, zero hidden state; legality is verifiable by the two people staring at the same packet. The genuine physical question: can the front three faces be read at a glance in a squared packet, or does play want a loose three-card fan at the front? First walk answers it.
+**Setup.** The 6-sign sub-deck, 15 cards, shuffled, squared, held face-out by either player. Players alternate moves; whoever holds it passes it after moving.
 
-**Honest risk (named).** A small perfect-information cyclic game may be parity-solvable — the player at the right distance from a chord may always win. The escape dials: add "double-rotate" as a third move, or score chords by pip. If it's still a parity theorem after that, it's a proof, not a game — retire it to the SNARE shelf with honour.
+**A move.** Exactly one: **rotate** (move the front card to the back), or **flip** the front card in place.
 
-**Fastest falsification.** Three rounds on an actual walk: does it survive being played while moving — physically and socially? That's the whole premise; test the premise, not the maths, first.
+**Scoring — the chord.** If after your move the front three cards all showed the same sign, retire those three; most retired cards wins the round; best of three.
+
+**Why it was retired.** A single-card-per-turn move touches too little state. Rotating only cycles the same 15-card order past a 3-card window; flipping only changes one card's face. Neither move does enough work per turn to build a triple before the packet cycles back on itself — solo testing confirmed it was basically impossible to line up three matching faces. See [HINGE_concept.md](../Hinge/HINGE_concept.md) for the replacement mechanic and full playtest note.

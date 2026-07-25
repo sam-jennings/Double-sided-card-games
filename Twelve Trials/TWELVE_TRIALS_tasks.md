@@ -1,6 +1,6 @@
 # TWELVE TRIALS — Task List
 
-*Current status: Rung 1 (table-tested, iterating). Last playtest: 01 (9-sym solo + open co-op). Verdict: iterate.*
+*Current classification: **Ready to test** · physically played. Last playtest: 01 (9-sym solo + open co-op); the revised tracking approach is ready for retest.*
 
 ---
 
@@ -45,9 +45,9 @@
 
 ---
 
-## Parked / blocked
+## Deferred / blocked
 
-*Nothing currently parked.*
+*Nothing currently deferred.*
 
 ---
 

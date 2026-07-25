@@ -1,6 +1,24 @@
+---
+record_type: game
+game: "MIRROR"
+state: In development
+players: [2, 4]
+player_count: "2, 4"
+duration: "~15 min"
+genre: "Co-op mind-meld"
+complexity: Light
+min_players: 2
+max_players: 4
+min_minutes: 15
+max_minutes: 15
+physically_playtested: false
+public_document: "Mirror/MIRROR_concept.md"
+next_step: "Develop a complete rulebook if this concept is selected."
+catalog_order: 30
+---
 # MIRROR — show the face I'm thinking of
 
-*2 players (or 4 as two rival pairs) · ~15 min · co-operative convergence / mind-meld · Stage 0 (concept)*
+*2 players (or 4 as two rival pairs) · ~15 min · co-operative convergence / mind-meld · In development · physically unplayed*
 
 > **Status & scope.** Wildcard batch, second flight (July 2026) — *originality first, rubric waived, unsimmed*. No rulebook, no sim, no rubric self-score; should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §27.
 

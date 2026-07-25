@@ -1,6 +1,6 @@
 # TRIGON — Playtest Report 01
 
-*Pairs with [TRIGON_playtest_plan_01.md](TRIGON_playtest_plan_01.md). Written per [playtesting.md](../.kiro/steering/playtesting.md). Part of the Lauren & Arran session, June 2026 — see the raw notes in [Lauren and Arran Playtest.md](../Lauren%20and%20Arran%20Playtest.md).*
+*Pairs with [TRIGON_playtest_plan_01.md](TRIGON_playtest_plan_01.md). Written per [playtesting.md](../.kiro/steering/playtesting.md). Part of the Lauren & Arran session, June 2026 — see the raw notes in [Lauren and Arran Playtest.md](../Project/Playtesting/Lauren%20and%20Arran%20Playtest.md).*
 
 ## Setup
 

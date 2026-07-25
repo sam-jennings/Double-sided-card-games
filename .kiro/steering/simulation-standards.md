@@ -25,7 +25,7 @@ Use simulation to *certify the floor* (the game ends, isn't broken, defaults are
 - **Two bots minimum**: a `RandomBot` (uniform legal play) as the mechanics floor, and a `SkilledBot` that plays the public-information strategy the rulebook's strategy notes describe (counting, scarcity, denial, etc.).
 - **The skill gap is a headline metric.** Report skilled-vs-random win rate / score ratio. A thin gap (~1.0–1.2×) is a red flag for a dull game; the collection treats ~1.5×+ as healthy (the OUROBOROS lesson).
 - **Volume**: enough games for stable numbers — the collection runs ~1,000+ games per configuration, tens of thousands total across a parameter sweep.
-- **Termination guard**: cap turns (e.g. 600) and **report stall rate** for any game that could fail to end. A non-zero stall rate at the shipped config is a bug.
+- **Termination guard**: cap turns (e.g. 600) and **report stall rate** for any game that could fail to end. A non-zero stall rate at the intended configuration is a bug.
 - **Sweep parameters**: test the grid of tunable values (chain limits, costs, budgets) across all supported player counts, with seat-randomised arms to measure seat advantage.
 - **Solvers**: for open-information puzzles, compute the optimal/exact baseline (e.g. TWELVE TRIALS' 5.3-flip solver average) to set score tiers honestly.
 
@@ -42,7 +42,7 @@ Follow the established analysis shape:
 
 ## Verifying combinatorial claims
 
-Any structural/maths claim made in a design doc should be **computed, not asserted** (use `itertools`/`math.comb`, construct explicit witnesses like an Eulerian circuit or triangle partition). Record the verification method in an appendix, as `DECK_SIZE_DECISION.md` does.
+Any structural/maths claim made in a design doc should be **computed, not asserted** (use `itertools`/`math.comb`, construct explicit witnesses like an Eulerian circuit or triangle partition). Record the verification method in an appendix, as [DECK_SIZE_DECISION.md](../../Project/Decisions/DECK_SIZE_DECISION.md) does.
 
 ## Code conventions
 

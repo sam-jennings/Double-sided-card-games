@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "JANUS"
+state: In development
+players: [2, 3, 4]
+player_count: "2, 3, 4"
+duration: "~20 min"
+genre: "Co-op deduction"
+complexity: Medium
+min_players: 2
+max_players: 4
+min_minutes: 20
+max_minutes: 20
+physically_playtested: true
+public_document: "Janus/JANUS_rulebook.md"
+next_step: "Choose and document a leak-free concealment model before retesting."
+catalog_order: 8
+---
 # JANUS
 
 *A co-operative game of half-seen things for 2–4 players · ~20 minutes · ages 10+*

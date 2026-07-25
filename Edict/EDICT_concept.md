@@ -1,6 +1,24 @@
+---
+record_type: game
+game: "EDICT"
+state: In development
+players: [3, 4, 5, 6]
+player_count: "3, 4, 5, 6"
+duration: "~25 min"
+genre: "Induction"
+complexity: Medium
+min_players: 3
+max_players: 6
+min_minutes: 25
+max_minutes: 25
+physically_playtested: false
+public_document: "Edict/EDICT_concept.md"
+next_step: "Develop a complete rulebook if this concept is selected."
+catalog_order: 24
+---
 # EDICT — the law is on the table, the seal is in the lap
 
-*3–6 players · ~25 min · induction (Eleusis-descended) · 9 signs, 36 cards · Stage 0 (concept)*
+*3–6 players · ~25 min · induction (Eleusis-descended) · 9 signs, 36 cards · In development · physically unplayed*
 
 > **Status & scope.** Wildcard batch, first flight (July 2026). Written to a deliberately different brief: *maximum originality, rubric waived, no simulation required.* Playable as written, but no rulebook, no sim, no rubric self-score, and it should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Carries the two house disciplines: a full physical-handling audit and a fastest-falsification test. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §21.
 

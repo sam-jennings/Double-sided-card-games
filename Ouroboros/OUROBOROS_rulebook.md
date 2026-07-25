@@ -1,3 +1,22 @@
+---
+record_type: game
+game: OUROBOROS
+state: Ready to test
+players:
+  - 1
+player_count: "1"
+duration: 10–15 min
+genre: Solo serpent puzzle
+complexity: Medium
+min_players: 1
+max_players: 1
+min_minutes: 10
+max_minutes: 15
+physically_playtested: true
+public_document: Ouroboros/OUROBOROS_rulebook.md
+next_step: Retest the revived v1.1 rules and record the result.
+catalog_order: 9
+---
 # OUROBOROS
 
 *A solitaire of the world-serpent for 1 player · ~10–15 minutes · ages 8+*
@@ -80,4 +99,4 @@ When the deck and your hand are empty, every card is in the serpent. Curl the he
 
 ---
 
-*Design v1.1 — handling fix (open symbols shown face-up at both ends; orientation-as-state) applied June 2026 on revival from the cut pile. Hand size, par, and scoring ladder tuned over ~36,000 simulated games; skill-ceiling re-probed with a Monte-Carlo planner (~1.74× n=9 / ~1.84× n=7 over random, above the collection's healthy bar). See `OUROBOROS_design_analysis.md`.*
+*Design v1.1 — handling fix (open symbols shown face-up at both ends; orientation-as-state) applied June 2026 on revival from the cut pile. OUROBOROS has physical table history, recorded retrospectively in [OUROBOROS_playtest_01.md](OUROBOROS_playtest_01.md); the revived v1.1 rules still need a recorded retest. Hand size, par, and scoring ladder tuned over ~36,000 simulated games; skill-ceiling re-probed with a Monte-Carlo planner (~1.74× n=9 / ~1.84× n=7 over random, above the collection's healthy bar). See `OUROBOROS_design_analysis.md`.*

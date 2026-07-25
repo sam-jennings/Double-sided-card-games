@@ -1,9 +1,30 @@
+---
+record_type: game
+game: DOWRY
+state: Proven
+players:
+  - 2
+  - 3
+  - 4
+player_count: 2, 3, 4
+duration: ~20 min
+genre: Cut-and-choose bluff
+complexity: Medium
+min_players: 2
+max_players: 4
+min_minutes: 20
+max_minutes: 20
+physically_playtested: true
+public_document: Dowry/DOWRY_rulebook.md
+next_step: Confirm the strong 2-player result with another match; 3–4-player modes remain untested.
+catalog_order: 13
+---
 # DOWRY
 
 *for 2 players · ~20 minutes · ages 10+*
 *(3–4 player variant in Designer's Variants — untested)*
 
-> **Status: sim-certified floor, zero table plays.** First-table questions are listed at the end; sim results in [`DOWRY_design_analysis.md`](DOWRY_design_analysis.md). Not part of the declared Core Set.
+> **State: Proven.** The 2-player base game worked extremely well in its first physical playtest—possibly the collection's strongest game so far. See [`DOWRY_playtest_01.md`](DOWRY_playtest_01.md); simulation results are in [`DOWRY_design_analysis.md`](DOWRY_design_analysis.md).
 
 *The match is agreed and the chests are being packed. Whoever packs them decides what the visitors see — silk laid on top, stones beneath. You will pack chests, and you will pick from chests packed against you. Every card in this deck has two faces; in DOWRY, the face you are shown is a claim, not a promise.*
 
@@ -99,7 +120,7 @@ Tied; no one scores it. Note only 8 cards carry each sign — showing a 5th inst
 - **Trousseau** *(harder / meaner)*: at setup, before dealing, each player receives one secret card by **Blind Cut** (take the deck below the table edge, cut, slide the new top card off unseen). Its two signs score **double their pip** for you. Play with hands of 8 (deal 8 each; stock 19; the 12th offer is short — cut 2 as lots of 1 and 1). Reveal secret cards at scoring; they join no spread. *Untested; deal arithmetic to be confirmed at the table.*
 - **Three or four packers** *(3–4P, untested)*: the cutter lays **one lot per player** (3P: 4 cards as 2/1/1 · 4P: 5 cards as 2/1/1/1). Choosers pick in clockwise order from the cutter's left; the cutter takes the last lot. Adjust deal so all 36 cards flow out evenly; majority scoring unchanged. Expect more kingmaking pressure — test before trusting.
 
-## First-table questions (playtest focus)
+## Follow-up playtest questions
 
 1. ~~Does even-splitting dominate?~~ **Answered by sim (floor):** a deceptive cutter beats an honest even-splitter ~83% of games, ~1.6× on score. The table question is now: *can humans execute and read the dressing game* — or does it only exist for perfect-memory players?
 2. Is the mid-game deduction load fun or fatiguing at the 9-card hand size?
@@ -108,4 +129,4 @@ Tied; no one scores it. Note only 8 cards carry each sign — showing a 5th inst
 
 ---
 
-*Design v0.2 — July 2026. Floor certified over ~4,750 simulated games ([`DOWRY_design_analysis.md`](DOWRY_design_analysis.md)): always terminates in exactly 12 offers, 0 stalls; skilled play beats random ~3.6× on score; deceptive cutting beats honest even-splitting ~1.6× (the dressing layer is load-bearing); mild second-cutter seat edge ~56/44 (see Match play). No table test yet.*
+*Design v0.2 — July 2026. Proven in its first physical 2-player playtest; see [`DOWRY_playtest_01.md`](DOWRY_playtest_01.md). Floor certified over ~4,750 simulated games ([`DOWRY_design_analysis.md`](DOWRY_design_analysis.md)): always terminates in exactly 12 offers, 0 stalls; skilled play beats random ~3.6× on score; deceptive cutting beats honest even-splitting ~1.6× (the dressing layer is load-bearing); mild second-cutter seat edge ~56/44 (see Match play).*

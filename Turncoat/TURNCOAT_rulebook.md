@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "TURNCOAT"
+state: Ready to test
+players: [2, 3, 4]
+player_count: "2, 3, 4"
+duration: "15–25 min"
+genre: "Tactical allegiance grid"
+complexity: Medium
+min_players: 2
+max_players: 4
+min_minutes: 15
+max_minutes: 25
+physically_playtested: false
+public_document: "Turncoat/TURNCOAT_rulebook.md"
+next_step: "Run the first physical playtest."
+catalog_order: 11
+---
 # TURNCOAT
 
 *A game of shifting allegiance for 2–4 players · ~15–25 minutes · ages 10+*

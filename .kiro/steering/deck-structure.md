@@ -22,7 +22,7 @@ Remove every card showing symbol 8 or 9 (on either face) and the remaining 21 ca
 
 - A game declares its **symbol range** (e.g. "use symbols 1–7") instead of needing a separate deck.
 - Subset selection must be fast at the table. There is a **canonical symbol order 1–9** with an **index pip 1–9 printed on both faces** of every card, so a subset is a quick sort ("remove all cards showing 8 or 9").
-- Choosing 9 was not choosing against smaller sizes — it is the only size that *contains* them. This is settled (`DECK_SIZE_DECISION.md`); don't relitigate it without new evidence.
+- Choosing 9 was not choosing against smaller sizes — it is the only size that *contains* them. This is settled in [DECK_SIZE_DECISION.md](../../Project/Decisions/DECK_SIZE_DECISION.md); don't relitigate it without new evidence.
 
 ## Structural properties games exploit
 
@@ -51,7 +51,7 @@ Symbol 9 is removed first for subsets, and its 8 cards physically become the boa
 
 ## Symbol identity — The Nine Signs (working title, primary)
 
-The shipping symbol set uses **nine archetypal signs** — broad, family-neutral symbols that each game reinterprets locally. This is a settled decision. The canonical quick reference is [`SYMBOL_SET.md`](../../SYMBOL_SET.md) (pip · name · glyph · colour · role · per-game meaning · sub-deck behaviour); see `SYMBOL_SETS.md` §7 for the full study and rationale.
+The canonical symbol set uses **nine archetypal signs** — broad, family-neutral symbols that each game reinterprets locally. This is a settled decision. The canonical quick reference is [`SYMBOL_SET.md`](../../Project/Deck/SYMBOL_SET.md) (pip · name · glyph · colour · role · per-game meaning · sub-deck behaviour); see [SYMBOL_SETS.md](../../Project/Deck/SYMBOL_SETS.md) §7 for the full study and rationale.
 
 | Pip | Sign |
 |---:|---|
@@ -80,15 +80,15 @@ The shipping symbol set uses **nine archetypal signs** — broad, family-neutral
 
 - **No one-sided asymmetric marks of any kind** — including the orientation marker, which must be identical on both faces. They would leak hidden-face information (`physical-handling.md`).
 - **Render as bold, filled, high-contrast icons** — legibility at arm's length, rotated, by colour-blind players. Shape carries identity; colour is secondary.
-- **Prototype with Set D Glyphs** (geometric shapes) for legibility testing — the accessibility benchmark the shipping art must not regress against.
+- **Prototype with Set D Glyphs** (geometric shapes) for legibility testing — the accessibility benchmark any future final art must not regress against.
 
 ### Alternatives (documented, not recommended)
 
 - **The Ninefold Menagerie** (Set E: Mouse·Hare·Fox·Owl·Serpent·Stag·Wolf·Bear·Dragon) — the "one-world" alternative if the product pivots to a single coherent setting rather than a multi-game toolkit. Stronger rank intuition (food chain) at the cost of forcing animal framing onto CROSSROADS and THE COUNCIL.
 - **Celestial Sky** (Set A) — most conservative; keeps TRIGON native, re-skins only TURNCOAT. Radiant-disc confusability cluster (Sun/Star/Nova/Meteor) needs deliberate art resolution.
-- **Set D Glyphs** — permanent prototyping/accessibility companion, never the shipping identity (no ability mnemonics).
+- **Set D Glyphs** — permanent prototyping/accessibility companion, not the final thematic identity (no ability mnemonics).
 
-Full study, fit matrix, and re-skin mappings: `SYMBOL_SETS.md`.
+Full study, fit matrix, and re-skin mappings: [SYMBOL_SETS.md](../../Project/Deck/SYMBOL_SETS.md).
 
 ## When proposing any rule or game
 

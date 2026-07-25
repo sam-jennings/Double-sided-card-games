@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "THE COUNCIL"
+state: In development
+players: [3, 4, 5, 6]
+player_count: "3, 4, 5, 6"
+duration: "~25 min"
+genre: "Negotiation"
+complexity: Light
+min_players: 3
+max_players: 6
+min_minutes: 25
+max_minutes: 25
+physically_playtested: false
+public_document: "The Council/COUNCIL_rulebook.md"
+next_step: "Read through and vet the rules, especially pot handling."
+catalog_order: 17
+---
 # THE COUNCIL
 
 *A game of reversible promises for 3–6 players · ~25 minutes · ages 12+*

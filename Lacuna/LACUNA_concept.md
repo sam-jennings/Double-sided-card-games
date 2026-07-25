@@ -1,6 +1,24 @@
+---
+record_type: game
+game: "LACUNA"
+state: In development
+players: [2, 3, 4, 5]
+player_count: "2, 3, 4, 5"
+duration: "~15 min"
+genre: "Deduction race"
+complexity: Medium
+min_players: 2
+max_players: 5
+min_minutes: 15
+max_minutes: 15
+physically_playtested: false
+public_document: "Lacuna/LACUNA_concept.md"
+next_step: "Develop a complete rulebook if this concept is selected."
+catalog_order: 27
+---
 # LACUNA — the deck's missing tooth
 
-*2–5 players · ~15 min · counting / deduction race · full 36 + one opaque sleeve · Stage 0 (concept)*
+*2–5 players · ~15 min · counting / deduction race · full 36 + one opaque sleeve · In development · physically unplayed*
 
 > **Status & scope.** Wildcard batch, second flight (July 2026) — *originality first, rubric waived, unsimmed*. No rulebook, no sim, no rubric self-score; should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §24.
 

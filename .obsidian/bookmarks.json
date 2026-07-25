@@ -2,8 +2,18 @@
   "items": [
     {
       "type": "group",
-      "title": "Index & Status",
+      "title": "Start Here",
       "items": [
+        {
+          "type": "file",
+          "title": "Project Home",
+          "path": "README.md"
+        },
+        {
+          "type": "file",
+          "title": "Game Catalog",
+          "path": "GAME_CATALOG.md"
+        },
         {
           "type": "file",
           "title": "Collection Overview",
@@ -11,45 +21,50 @@
         },
         {
           "type": "file",
-          "title": "New Game Concepts",
+          "title": "Concept Design Journal",
           "path": "NEW_GAME_CONCEPTS.md"
-        },
-        {
-          "type": "file",
-          "title": "Collection Audit",
-          "path": "COLLECTION_AUDIT.md"
         }
       ]
     },
     {
       "type": "group",
-      "title": "Foundations",
+      "title": "Active Project",
       "items": [
         {
           "type": "file",
-          "title": "Project Goals",
-          "path": "flip_card_project_goals.md"
+          "title": "Project Files",
+          "path": "Project/README.md"
         },
         {
           "type": "file",
-          "title": "Deck Size Decision",
-          "path": "DECK_SIZE_DECISION.md"
+          "title": "Deck Conventions",
+          "path": "Project/Deck/DECK_CONVENTIONS.md"
         },
         {
           "type": "file",
-          "title": "Symbol Sets",
-          "path": "SYMBOL_SETS.md"
+          "title": "Playtest Findings",
+          "path": "Project/Playtesting/DECK_PLAYTEST_FINDINGS.md"
+        },
+        {
+          "type": "file",
+          "title": "Canonical Nine Signs",
+          "path": "Project/Deck/SYMBOL_SET.md"
         }
       ]
     },
     {
       "type": "group",
-      "title": "Design Reference",
+      "title": "Reference and Later",
       "items": [
         {
           "type": "file",
-          "title": "Card Layout",
-          "path": "Designs/CARD_LAYOUT.md"
+          "title": "Archive Guide",
+          "path": "Archive/README.md"
+        },
+        {
+          "type": "file",
+          "title": "Deferred Work",
+          "path": "Later/README.md"
         }
       ]
     }

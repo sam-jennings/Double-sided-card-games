@@ -55,7 +55,7 @@ defect is.
 
 ## Resolved conflicts (applied June 2026)
 
-The collection-wide review in [`NAMING_REVIEW.md`](../../NAMING_REVIEW.md) was
+The collection-wide review in [`NAMING_REVIEW.md`](../../Archive/Audits/NAMING_REVIEW.md) was
 applied across the repository (folders, files, prose, and the canonical index).
 Renames made:
 
@@ -76,6 +76,12 @@ Still on watch (no rename, lower priority):
 - **THE ORRERY** — a playtester misread "orbit"; revisit only if it recurs.
 - The **"THE ___"** cluster (THE ORRERY, THE COUNCIL, THE UNPLAYED PAIR) — stop
   adding more; dropping the articles is a purely cosmetic future option.
+
+## Later renames (after the June review)
+
+| Was | Now | Reason |
+|---|---|---|
+| QUEUE | **HINGE** | the original rotate/flip-top-card mechanic failed solo playtest (25 July 2026) and was replaced with a split-and-block-flip move; the old name was built entirely on the retired cyclic-rotation idea and no longer described the game. No key-word collision with existing titles; H was an unused first letter. |
 
 When any future name changes, update this section and `COLLECTION_OVERVIEW.md`
 together.

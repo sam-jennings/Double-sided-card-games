@@ -1,10 +1,28 @@
+---
+record_type: game
+game: "AUGURY"
+state: In development
+players: [4, 5, 6, 7, 8]
+player_count: "4, 5, 6, 7, 8"
+duration: "~30 min"
+genre: "Judged party game"
+complexity: Light
+min_players: 4
+max_players: 8
+min_minutes: 30
+max_minutes: 30
+physically_playtested: false
+public_document: "Augury/AUGURY_concept.md"
+next_step: "Develop a complete rulebook if this concept is selected."
+catalog_order: 23
+---
 # AUGURY — say what the card hides without saying it
 
-*4–8 players · ~30 min · judged party / creative divination · full 36 · Stage 0 (concept)*
+*4–8 players · ~30 min · judged party / creative divination · full 36 · In development · physically unplayed*
 
 > **Status & scope.** Wildcard batch, first flight (July 2026). Written to a deliberately different brief: *maximum originality, rubric waived, no simulation required.* Playable as written, but no rulebook, no sim, no rubric self-score, and it should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Carries the two house disciplines: a full physical-handling audit and a fastest-falsification test. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §20.
 
-**The trick that makes it exist.** The collection's first *judging* game — and the first whose material is the **symbol identity itself**. A double-faced card is natively an omen: one sign the world shows, one pressed to the earth. The Nine Signs were chosen to be locally reinterpretable ([SYMBOL_SET.md](../SYMBOL_SET.md)); AUGURY is the game where that property *is* the play. And it exploits the ICARUS observation from the other side: a backless deck keeps exactly one secret for free — the never-yet-seen underside of its top card — and aims it at poetry instead of probability.
+**The trick that makes it exist.** The collection's first *judging* game — and the first whose material is the **symbol identity itself**. A double-faced card is natively an omen: one sign the world shows, one pressed to the earth. The Nine Signs were chosen to be locally reinterpretable ([SYMBOL_SET.md](../Project/Deck/SYMBOL_SET.md)); AUGURY is the game where that property *is* the play. And it exploits the ICARUS observation from the other side: a backless deck keeps exactly one secret for free — the never-yet-seen underside of its top card — and aims it at poetry instead of probability.
 
 **Round.** Shuffle-cut. The top card is the **portent**, exactly as it lies (its public face was already public; the pressed face nobody has seen — including the Seer). The Seer privately tips the card (FACE VALUE-standard peek), lays it back, and speaks **one omen-sentence** bridging the shown sign to the veiled one — naming no sign, no cognate, no pip. *Shown Flame, veiled Mask: "What the fire sheds at midnight, someone else will wear."*
 

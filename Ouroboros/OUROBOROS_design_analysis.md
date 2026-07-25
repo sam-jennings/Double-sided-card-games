@@ -4,7 +4,7 @@
 
 > ## ↩️ Revival (June 2026): back in the pipeline as v1.1
 >
-> OUROBOROS has been **revived from the cut pile into the pipeline** (Stage 2, validated — awaiting a re-test of the fix). The June 2026 cut verdict below stands as a historical record, but two of its three pillars were re-examined and found weaker than they first looked. See **§6** for the full revival case. In short:
+> **Current classification: Ready to test · physically played.** OUROBOROS was revived after its earlier physical test and redesign; v1.1 awaits a recorded retest. The June 2026 verdict below stands as a historical record, but two of its three pillars were re-examined and found weaker than they first looked. See **§6** for the full revival case. In short:
 >
 > - **The handling bug is fixed (v1.1).** The head's open symbol no longer lives on a buried face. Cards are now laid showing their *onward* symbol, so both open ends stay face-up (orientation-as-state, per CROSSROADS) — you never lift the serpent. One-line convention change; the maths is untouched.
 > - **The "luck-dominant / thin skill gap" verdict leaned on one-ply floor numbers.** A Monte-Carlo planning bot (the deeper bot the analysis itself said was missing) reaches **~1.74× over random at n=9 and ~1.84× at n=7** — above the collection's ~1.5× healthy bar. The real defect was always that the *obvious* (greedy) line is near-random (~1.13×); that is a **teaching** problem (surface hand-stewardship), which the strategy notes already address.

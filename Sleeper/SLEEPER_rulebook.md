@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "SLEEPER"
+state: In development
+players: [4, 5, 6]
+player_count: "4, 5, 6"
+duration: "~25 min"
+genre: "Social deduction"
+complexity: Medium
+min_players: 4
+max_players: 6
+min_minutes: 25
+max_minutes: 25
+physically_playtested: false
+public_document: "Sleeper/SLEEPER_rulebook.md"
+next_step: "Vet the rules and the single-card concealment before scheduling a test."
+catalog_order: 18
+---
 # SLEEPER
 
 *A game of hidden loyalty for 4–6 players · ~25 minutes · ages 12+*

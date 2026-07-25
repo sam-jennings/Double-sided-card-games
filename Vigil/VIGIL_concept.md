@@ -1,6 +1,22 @@
+---
+record_type: game
+game: "VIGIL"
+state: In development
+players: [2]
+player_count: "2"
+duration: "Over days"
+genre: "Slow territory duel"
+complexity: Medium
+min_players: 2
+max_players: 2
+physically_playtested: false
+public_document: "Vigil/VIGIL_concept.md"
+next_step: "Develop a complete rulebook if this concept is selected."
+catalog_order: 25
+---
 # VIGIL — the game that waits on the windowsill
 
-*2 players · one move at a time, over days · slow perfect-information territory duel · full 36 · Stage 0 (concept)*
+*2 players · one move at a time, over days · slow perfect-information territory duel · full 36 · In development · physically unplayed*
 
 > **Status & scope.** Wildcard batch, first flight (July 2026). Written to a deliberately different brief: *maximum originality, rubric waived, no simulation required.* Playable as written, but no rulebook, no sim, no rubric self-score, and it should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Carries the two house disciplines: a full physical-handling audit and a fastest-falsification test. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §22.
 

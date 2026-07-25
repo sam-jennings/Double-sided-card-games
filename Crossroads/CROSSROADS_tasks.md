@@ -1,6 +1,6 @@
 # CROSSROADS — Task List
 
-*Current status: Stage 3 (table-tested, iterating), in the collection **on notice**. Last playtest: 02 (v1.1, 2P→off-spec 3P, flips barely used). Verdict: iterate, with a flagged structural concern (pass-to-win).*
+*Current classification: **Ready to test** · physically played · on notice. Last playtest: 02 (v1.1, 2P→off-spec 3P, flips barely used); the pass-to-win concern needs an on-spec retest.*
 
 *See [CROSSROADS_playtest_02.md](CROSSROADS_playtest_02.md) for the findings this plan responds to.*
 
@@ -122,7 +122,7 @@ Bug references below are from [playtest 02](CROSSROADS_playtest_02.md): **Bug 1*
 
 ---
 
-## Parked / blocked
+## Deferred / blocked
 
 - **Draw-model variant (deal ~6 + draw replacements)** — *evaluated and rejected*, [design analysis §8](CROSSROADS_design_analysis.md). Fixes small-hand sparsity but dilutes the 2P skill gap to 1.47–1.60× (random refill = luck), introduces the no-card-back draw-pile handling hazard, and weakens pair-exhaustion. **Open-draft** version (choose from a face-up row) kept warm as a future "dynamic CROSSROADS" exploration — turns the handling problem into a feature, but a larger redesign.
 - **Caravans variant balance** — direction-blind; design analysis says it probably doesn't need the flip pool. Park until the base game settles.

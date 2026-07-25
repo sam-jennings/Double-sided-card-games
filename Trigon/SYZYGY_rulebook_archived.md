@@ -1,5 +1,5 @@
 > **⚠️ ARCHIVED** — This game has been renamed to **TRIGON** as part of the Nine Signs retheme.
-> The live rulebook is at [`Trigon/TRIGON_rulebook.md`](../Trigon/TRIGON_rulebook.md).
+> The live rulebook is at [`Trigon/TRIGON_rulebook.md`](TRIGON_rulebook.md).
 > This file is retained as a read-only design record of the pre-rename version.
 
 # SYZYGY

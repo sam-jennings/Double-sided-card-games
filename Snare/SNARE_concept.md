@@ -1,6 +1,24 @@
+---
+record_type: game
+game: "SNARE"
+state: In development
+players: [2]
+player_count: "2"
+duration: "10–15 min"
+genre: "Abstract avoidance"
+complexity: Medium
+min_players: 2
+max_players: 2
+min_minutes: 10
+max_minutes: 15
+physically_playtested: false
+public_document: "Snare/SNARE_concept.md"
+next_step: "Develop a complete rulebook if this concept is selected."
+catalog_order: 21
+---
 # SNARE — the forbidden three
 
-*2 players · ~10–15 min · perfect-information abstract / avoidance · Stage 0 (concept)*
+*2 players · ~10–15 min · perfect-information abstract / avoidance · In development · physically unplayed*
 
 > **Status & scope.** This is a **rung-4 new concept** ([focus-priority.md](../.kiro/steering/focus-priority.md)). It is logged for exploration only. Per the circuit breaker, it is **not** to be developed into a full rulebook until at least one rung-2/3 game (TRIGON, TURNCOAT, FACE VALUE, JANUS…) has had its first table test. Working title; alternatives: SCHISM, QUORUM, THE THIRD ROAD. Avoid TRIAD — too close to TRIGON. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §10.
 

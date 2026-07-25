@@ -32,10 +32,10 @@ about what the result *should* be and present that as the result.
 - A claim about a file's contents → read the file first; don't assert from
   memory.
 - A **collection-wide or "absence" claim** ("no game uses X", "every rulebook
-  says Y", "this is the only game that…") → verify against the canonical source
-  (the **Component inventory** and coverage tables in
-  [`COLLECTION_OVERVIEW.md`](../../COLLECTION_OVERVIEW.md)) or by reading *every*
-  relevant file. **Truncated tool output is never evidence of absence** — a
+  says Y", "this is the only game that…") → verify against the complete
+  catalogue in [`COLLECTION_OVERVIEW.md`](../../COLLECTION_OVERVIEW.md), the
+  structured game records, or by reading *every* relevant file. **Truncated
+  tool output is never evidence of absence** — a
   `grep`/`file_search` capped at N results, or a result line cut off mid-text,
   can hide the very counterexample you are claiming doesn't exist. If a search
   reports truncation or a cap, narrow it or open the sources before asserting,

@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "THE UNPLAYED PAIR"
+state: Shelved
+players: [3, 4, 5]
+player_count: "3, 4, 5"
+duration: "~25 min"
+genre: "Trick-taking / deduction"
+complexity: Medium
+min_players: 3
+max_players: 5
+min_minutes: 25
+max_minutes: 25
+physically_playtested: false
+public_document: "The Unplayed Pair/UNPLAYED_PAIR_rulebook.md"
+next_step: "Keep as a design record unless a faster deduction engine is found."
+catalog_order: 31
+---
 # THE UNPLAYED PAIR
 
 *A trick-taking whodunit for 3–5 players · ~25 minutes · ages 10+*

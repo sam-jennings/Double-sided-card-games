@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "TWELVE TRIALS"
+state: Ready to test
+players: [1, 2, 3]
+player_count: "1, 2, 3"
+duration: "~15 min"
+genre: "Solo / co-op puzzle"
+complexity: Medium
+min_players: 1
+max_players: 3
+min_minutes: 15
+max_minutes: 15
+physically_playtested: true
+public_document: "Twelve Trials/TWELVE_TRIALS_rulebook.md"
+next_step: "Retest the tracking method and workspace convention."
+catalog_order: 2
+---
 # TWELVE TRIALS
 
 *An open-information puzzle for 1–2 players (plus a table co-op mode) · ~15 minutes · ages 10+*

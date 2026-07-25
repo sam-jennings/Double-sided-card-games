@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Playtest report state sync",
+      "description": "When a playtest report is created, sync the game's main-file properties, overview entry, and public index object.",
+      "trigger": "PostFileCreate",
+      "matcher": ".*[^/]*_playtest_[^/]*\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "A file matching the playtest pattern was created. If its filename contains _playtest_plan_, it is a plan: stop without output or edits. Otherwise read AGENTS.md, playtesting.md, the report, and the game's game record. Determine the explicit verdict and the resulting state (Ready to test if the rules can go straight back on a table, In development if design work is needed first, Proven if it works with no blocker, Shelved if set aside). Set physically_playtested to true \u2014 it never reverts \u2014 then check and offer the exact synchronized changes to state, next_step, COLLECTION_OVERVIEW.md, and games.html. Update NEW_GAME_CONCEPTS.md only if the historical design narrative itself genuinely needs an addition; it is not a state ledger. Do not edit the report or make unrelated changes."
+      },
+      "enabled": true
+    }
+  ]
+}

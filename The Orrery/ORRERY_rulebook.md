@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "THE ORRERY"
+state: Ready to test
+players: [1, 2, 3]
+player_count: "1, 2, 3"
+duration: "15–25 min"
+genre: "Solo / co-op sorting puzzle"
+complexity: Medium
+min_players: 1
+max_players: 3
+min_minutes: 15
+max_minutes: 25
+physically_playtested: true
+public_document: "The Orrery/ORRERY_rulebook.md"
+next_step: "Test a random full deal with the revised terminology."
+catalog_order: 3
+---
 # THE ORRERY
 
 *A solo / co-operative sorting puzzle for 1–3 players · ~15–25 minutes · ages 10+*

@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Collection catalogue sync check",
+      "description": "When a main game document changes, check its catalogue properties against the overview and public index.",
+      "trigger": "PostFileSave",
+      "matcher": ".*[^/]*_(?:rulebook|concept|design_(?:analysis|proposal))\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "A possible game record was edited. Read AGENTS.md, repository-structure.md, and Project/ADDING_A_GAME.md. If the file has record_type: game, validate its state (In development, Ready to test, Proven, or Shelved), physically_playtested, exact players and bounds, readable and numeric duration, complexity, genre, public_document, and next_step. Compare the synchronized fields with its complete-table entry in COLLECTION_OVERVIEW.md and object in games.html. If this is a new game, offer to add those two derived entries, update displayed collection totals, create the links, and assign the next catalog_order. GAME_CATALOG.base reads the record automatically. State exact mismatches and make no unrelated edits."
+      },
+      "enabled": true
+    }
+  ]
+}

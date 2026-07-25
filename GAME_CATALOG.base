@@ -1,0 +1,136 @@
+filters:
+  and:
+    - record_type == "game"
+formulas:
+  game_note: file.asLink(game)
+  current_document: link(public_document, "Open")
+properties:
+  formula.game_note:
+    displayName: Game
+  formula.current_document:
+    displayName: Current document
+  state:
+    displayName: State
+  physically_playtested:
+    displayName: Physically played
+  players:
+    displayName: Exact players
+  min_players:
+    displayName: Min players
+  max_players:
+    displayName: Max players
+  duration:
+    displayName: Time
+  min_minutes:
+    displayName: Min minutes
+  max_minutes:
+    displayName: Max minutes
+  complexity:
+    displayName: Depth
+  genre:
+    displayName: Genre
+  next_step:
+    displayName: Next step
+views:
+  - type: table
+    name: All games
+    order:
+      - formula.game_note
+      - state
+      - physically_playtested
+      - players
+      - duration
+      - complexity
+      - genre
+      - next_step
+      - formula.current_document
+    sort:
+      - property: complexity
+        direction: ASC
+      - property: catalog_order
+        direction: ASC
+  - type: table
+    name: Ready to test
+    filters:
+      and:
+        - state == "Ready to test"
+    order:
+      - formula.game_note
+      - physically_playtested
+      - players
+      - duration
+      - complexity
+      - next_step
+      - formula.current_document
+    sort:
+      - property: physically_playtested
+        direction: ASC
+      - property: catalog_order
+        direction: ASC
+  - type: table
+    name: Never physically played
+    filters:
+      and:
+        - physically_playtested == false
+    order:
+      - formula.game_note
+      - state
+      - players
+      - duration
+      - complexity
+      - next_step
+      - formula.current_document
+    sort:
+      - property: state
+        direction: ASC
+      - property: catalog_order
+        direction: ASC
+  - type: table
+    name: Physically played
+    filters:
+      and:
+        - physically_playtested == true
+    order:
+      - formula.game_note
+      - state
+      - players
+      - duration
+      - next_step
+      - formula.current_document
+  - type: table
+    name: Under 20 minutes
+    filters:
+      and:
+        - max_minutes < 20
+    order:
+      - formula.game_note
+      - state
+      - physically_playtested
+      - players
+      - duration
+      - complexity
+      - formula.current_document
+  - type: table
+    name: In development
+    filters:
+      and:
+        - state == "In development"
+    order:
+      - formula.game_note
+      - physically_playtested
+      - players
+      - duration
+      - genre
+      - next_step
+      - formula.current_document
+  - type: table
+    name: Shelved
+    filters:
+      and:
+        - state == "Shelved"
+    order:
+      - formula.game_note
+      - players
+      - genre
+      - next_step
+      - formula.current_document

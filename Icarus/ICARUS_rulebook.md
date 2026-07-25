@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "ICARUS"
+state: Ready to test
+players: [2, 3, 4]
+player_count: "2, 3, 4"
+duration: "10–15 min"
+genre: "Push-your-luck"
+complexity: Light
+min_players: 2
+max_players: 4
+min_minutes: 10
+max_minutes: 15
+physically_playtested: false
+public_document: "Icarus/ICARUS_rulebook.md"
+next_step: "Run the first table test; watch counting load and downtime."
+catalog_order: 14
+---
 # ICARUS
 
 *for 2–4 players · ~10–15 minutes · ages 8+*

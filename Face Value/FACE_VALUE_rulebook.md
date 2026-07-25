@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "FACE VALUE"
+state: Ready to test
+players: [2]
+player_count: "2"
+duration: "15–20 min"
+genre: "Bluffing duel"
+complexity: Light
+min_players: 2
+max_players: 2
+min_minutes: 15
+max_minutes: 20
+physically_playtested: false
+public_document: "Face Value/FACE_VALUE_rulebook.md"
+next_step: "Run the prepared first playtest plan."
+catalog_order: 12
+---
 # FACE VALUE
 
 *A heads-up bluffing duel for exactly 2 players · ~15–20 minutes · ages 10+*

@@ -1,6 +1,6 @@
 # SLEEPER — design analysis
 
-*Status: v0.1, rulebook drafted, untested at the table. Stage 1 (Draft).*
+*State: **In development** · physically unplayed. The v0.1 rulebook needs vetting before it is worth tabling.*
 
 ## Design intent
 

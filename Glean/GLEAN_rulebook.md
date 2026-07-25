@@ -1,3 +1,21 @@
+---
+record_type: game
+game: "GLEAN"
+state: Ready to test
+players: [3, 4, 6]
+player_count: "3, 4, 6"
+duration: "~20 min"
+genre: "Trick-taking / accumulation"
+complexity: Medium
+min_players: 3
+max_players: 6
+min_minutes: 20
+max_minutes: 20
+physically_playtested: true
+public_document: "Glean/GLEAN_rulebook.md"
+next_step: "Test the intended majority scoring over a full match."
+catalog_order: 6
+---
 # GLEAN
 
 *A trick-taking game of gathering signs for 3, 4, or 6 players · ~20 minutes · ages 10+*

@@ -1,63 +1,87 @@
-# Repository & File Organisation
+---
+inclusion: always
+---
 
-This is a design repository, not a code repository. Most files are Markdown documents; Python exists only for simulation, solving, and print-and-play.
+# Repository and File Organisation
 
-## Layout
+Kiro follows the shared instructions in [AGENTS.md](../../AGENTS.md). This file adds Kiro-specific detail; it does not define a separate project structure.
 
-```
+## Current layout
+
+```text
 Double-sided card games/
-├── COLLECTION_OVERVIEW.md      # the index: selectors, status tiers, coverage tables
-├── COLLECTION_AUDIT.md         # design-facing health check / rubric scores
-├── flip_card_project_goals.md  # founding vision and goals
-├── DECK_SIZE_DECISION.md       # why 9 symbols / 36 cards (settled)
-├── NEW_GAME_CONCEPTS.md        # concept sheets + status of each
-├── SYMBOL_SETS.md              # candidate symbol identities (open)
-├── Print and Play/             # FLIP_DECK print-and-play PDF + generator
-│   └── make_pnp.py
-├── Designs/                    # card art generation scripts, layout spec, symbol assets
-│   ├── CARD_LAYOUT.md           # physical card layout specification
-│   ├── compose_cards.py
-│   └── ...
-├── Reference/                  # external learning, market research, one-off analyses
-│   ├── Game Development Notes/  # course notes (not deck-specific)
-│   ├── deck_mathematical_analysis.md
-│   └── similar-product-market-survey.md
-├── <GameName>/                 # one folder per game (Title Case, incl. article)
-│   ├── <GAME>_rulebook.md       # player-facing rules (always)
-│   ├── <GAME>_design_analysis.md# design reasoning / sim results (when it exists)
-│   ├── <GAME>_playtest_NN.md    # playtest reports (numbered)
-│   └── <game>_sim.py            # simulator / solver (when it exists)
-└── .kiro/steering/             # these steering files
+├── README.md                 # project home for Obsidian and GitHub
+├── COLLECTION_OVERVIEW.md    # complete human-readable game catalogue
+├── GAME_CATALOG.md           # Obsidian catalogue landing page and filter help
+├── GAME_CATALOG.base         # Obsidian saved/filterable views
+├── NEW_GAME_CONCEPTS.md      # design journal; not a current state index
+├── index.html                # public/mobile landing page
+├── games.html                # public/mobile game picker
+├── <Game Name>/              # rules, concepts, analysis, sims, tests for one game
+├── Project/                  # active cross-game standards, decisions, playtesting
+├── Archive/                  # historical audits, prompts, and unadopted proposals
+├── Later/Publishing/         # intentionally deferred publication work
+├── Designs/                  # card layout, art scripts, and assets
+├── Print and Play/           # printable prototype and generator
+├── Reference/                # external learning and research
+├── Templates/                # reusable playtest/design templates
+└── .kiro/                    # Kiro-only steering, hooks, scripts, and old specs
 ```
 
-## Per-game folder conventions
+CONCORD is a live game in `Concord/`; it is not an archived root-level proposal.
 
-- One folder per game, **Title Case** folder name including article (e.g. `Twelve Trials/`, `The Council/`, `The Unplayed Pair/`).
-- The `<GAME>` file prefix is the title in UPPER_SNAKE **with any leading article dropped** — `COUNCIL_rulebook.md`, `UNPLAYED_PAIR_rulebook.md`, `ORRERY_rulebook.md` (not `THE_COUNCIL_…`). The folder keeps the article; the file prefix does not.
-- **Rulebook**: `<GAME>_rulebook.md`, UPPER_SNAKE prefix. Every game has one once it reaches tier 3+.
-- **Design analysis**: `<GAME>_design_analysis.md`. Explains reasoning, constraints, and simulation results. Present for sim-tuned/validated games.
-- **Playtest reports**: `<GAME>_playtest_NN.md`. Numbered sequentially per game.
-- **Simulator**: `<game>_sim.py`, lower_snake. Present where simulation was used.
-- Not every game has all three. A tier-3 (untested) game may have only a rulebook.
+## The game record
 
-## Document types and what belongs where
+Each game has one **game record**, identified by `record_type: game`. It may be a rulebook, concept, analysis, or proposal. Its YAML properties are the structured source of truth, while `public_document` points to the best current entry point:
 
-| Need | Goes in |
-|---|---|
-| How to play a game | that game's rulebook |
-| Why a rule is the way it is, sim results | that game's design analysis |
-| Playtest plans & reports | the game's folder (see `playtesting.md`) |
-| Cross-game decisions, deck-wide maths | a top-level doc (e.g. `DECK_SIZE_DECISION.md`) |
-| Collection status / what's next | `COLLECTION_OVERVIEW.md` |
-| New game pitches | `NEW_GAME_CONCEPTS.md` |
-| Card layout, art generation, symbol assets | `Designs/` |
-| External learning, market research, historical analyses | `Reference/` |
+- `record_type: game`
+- `game`
+- `state` — `In development`, `Ready to test`, `Proven`, or `Shelved`
+- `physically_playtested` — true once humans have played it; never reverts
+- `players` — exact supported counts
+- `min_players` and `max_players` — derived bounds for broad filters
+- `duration`
+- `min_minutes` and `max_minutes` — numeric filter values when meaningful
+- `complexity` — `Light` or `Medium`, aligned with the public picker
+- `genre`
+- `public_document`
+- `next_step`
+- `catalog_order`
 
-## Naming & consistency rules
+Do not turn a discontinuous list into a range. `players: [3, 4, 6]` does not support five; MIRROR's `[2, 4]` does not support three.
 
-- Game names are written in **CAPS** in prose (TRIGON, THE COUNCIL) to match existing docs.
-- Keep `COLLECTION_OVERVIEW.md` in sync when a game changes tier, gets renamed, or is cut. It is the canonical index.
-- When a game is cut, **keep its folder** as an archive/design record (as with `Ouroboros/`); note the cut and its lessons in the overview and concepts docs.
-- Folder names include the article when the game title has one: `The Council/`, `The Orrery/`, `The Unplayed Pair/`.
-- Cross-reference rather than duplicate: link to the authoritative doc instead of restating maths or status in multiple places.
-- Create new Markdown files only when a deliverable genuinely needs its own document; otherwise extend an existing one.
+## Catalogue sync rule
+
+When any structured game property changes, update all three views in the same task:
+
+1. the YAML properties on the game's game record;
+2. the complete table and detailed entry in `COLLECTION_OVERVIEW.md`;
+3. the matching object in `games.html`.
+
+`GAME_CATALOG.base` reads the YAML properties automatically and normally needs no edit unless the property schema or saved views change. `NEW_GAME_CONCEPTS.md` is updated only when the design journal itself gains meaningful narrative; never use it as a second state ledger. `index.html` carries only the total game count (in its hero eyebrow and final-CTA stat) — update that count when the total changes, but its per-game data is not authoritative.
+
+Before declaring a catalogue change complete, run `.kiro/scripts/check_catalog_sync.py`. It verifies every game record against `COLLECTION_OVERVIEW.md` and `games.html`, including exact player sets, bounds, duration, state, complexity, playtest history, and public document paths. It also checks the displayed game total on `index.html`. The checker deliberately has no fixed game count.
+
+For a new title, follow `Project/ADDING_A_GAME.md` and copy `Templates/Game Record.md`. The record appears in Obsidian automatically; sync the overview and public picker from it in the same task.
+
+## Per-game files
+
+- `<GAME>_rulebook.md` — player-facing rules.
+- `<GAME>_concept.md` — concept record before a rulebook exists.
+- `<GAME>_design_analysis.md` or `<GAME>_design_proposal.md` — reasoning and evidence.
+- `<GAME>_playtest_plan_NN.md` — pre-session plan.
+- `<GAME>_playtest_NN.md` — report after a session.
+- `<game>_sim.py` — simulation or solver when needed.
+
+Keep all game-specific files in the game's root-level folder. Folder names use Title Case, including leading articles. File prefixes use UPPER_SNAKE and omit a leading article where existing convention does (`COUNCIL`, `ORRERY`, `UNPLAYED_PAIR`).
+
+## File lifecycle
+
+- `Project/` is live cross-game guidance.
+- `Archive/` is history and provenance. It may explain why a decision was made but cannot override a current game record or `COLLECTION_OVERVIEW.md`.
+- `Later/Publishing/` is valid deferred work. Do not use its schedules, Core Set choices, or publisher assumptions to set current priorities.
+- `.kiro/specs/` records completed or historical Kiro work unless a current task explicitly reactivates a spec.
+
+## Links and compatibility
+
+Use relative Markdown links, not local absolute paths or Obsidian-only wikilinks, in shared documents. This keeps links working in Obsidian, GitHub, Claude Cowork, and Kiro. The single Base embed in `GAME_CATALOG.md` is the deliberate exception and is paired with ordinary links for other tools. After moving or renaming Markdown files, run `.kiro/scripts/check_md_links.py` with an available Python runtime and fix every broken reference before declaring the task complete.

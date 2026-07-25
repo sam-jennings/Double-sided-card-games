@@ -1,6 +1,6 @@
 # CROSSROADS — Playtest Report 02
 
-*Pairs with [CROSSROADS_playtest_plan_02.md](CROSSROADS_playtest_plan_02.md). Written per [playtesting.md](../.kiro/steering/playtesting.md). Part of the Lauren & Arran session, June 2026 — raw notes in [Lauren and Arran Playtest.md](../Lauren%20and%20Arran%20Playtest.md).*
+*Pairs with [CROSSROADS_playtest_plan_02.md](CROSSROADS_playtest_plan_02.md). Written per [playtesting.md](../.kiro/steering/playtesting.md). Part of the Lauren & Arran session, June 2026 — raw notes in [Lauren and Arran Playtest.md](../Project/Playtesting/Lauren%20and%20Arran%20Playtest.md).*
 
 ## Setup
 

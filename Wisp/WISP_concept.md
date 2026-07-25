@@ -1,6 +1,6 @@
 # WISP — the trail tells where you were
 
-*2–3 players (one Wisp vs. one or two hunters playing as a side) · ~20 min · hidden movement / pursuit · 9 signs, 36 cards · Stage 0 (concept)*
+*2–3 players (one Wisp vs. one or two hunters playing as a side) · ~20 min · hidden movement / pursuit · 9 signs, 36 cards · In development · physically unplayed*
 
 > **Status & scope.** Wildcard batch, first flight (July 2026). Written to a deliberately different brief: *maximum originality, rubric waived, no simulation required.* Thought-through and playable as written, but no rulebook, no sim, no rubric self-score, and it should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. It still carries the two house disciplines that survive any brief: a full physical-handling audit and a fastest-falsification test. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §18.
 

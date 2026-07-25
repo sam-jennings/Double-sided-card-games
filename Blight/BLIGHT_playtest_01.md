@@ -1,6 +1,6 @@
 # BLIGHT — Playtest Report 01
 
-*Written per [playtesting.md](../.kiro/steering/playtesting.md). Part of the Lauren & Arran session, June 2026 — raw notes in [Lauren and Arran Playtest.md](../Lauren%20and%20Arran%20Playtest.md). (No prior plan doc; BLIGHT was played opportunistically in the session.)*
+*Written per [playtesting.md](../.kiro/steering/playtesting.md). Part of the Lauren & Arran session, June 2026 — raw notes in [Lauren and Arran Playtest.md](../Project/Playtesting/Lauren%20and%20Arran%20Playtest.md). (No prior plan doc; BLIGHT was played opportunistically in the session.)*
 
 ## Setup
 
