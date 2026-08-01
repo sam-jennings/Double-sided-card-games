@@ -700,3 +700,50 @@ Versions:
 **Handling audit.** Deck handling is all rung-1 open play; the booklet is printed matter, not a component in the deck-only sense — but it *is* the collection's first game that cannot be played from the deck plus a rules sheet alone. That deviation is the concept's price; say it up front.
 
 **Fastest falsification.** Write six vignettes (not 36) and run one journey with a reduced map: do entries survive being re-read even once, and does the omen/detour choice carry the game between story beats? If the vignettes are wallpaper, the game is CROSSROADS with homework.
+
+## The party flight (August 2026) — §31–§32
+
+*Brief: easy teach, high player count, playable while holding an unrelated conversation — explicitly prioritised over rubric score. Seven candidates were sketched (LAST WORD, RENDEZVOUS, HIDDEN IN PLAIN SIGHT, FAVOURS, FLINCH, NINE VOICES, THE ALIBI); see `Party Chat.md` for the originals and the audit below for why the other five were cut. Both survivors were repaired before entry — the bugs and their fixes are recorded inline rather than in a separate report, because in both cases the bug **is** the design note.*
+
+## 31. FAVOURS — every card is a choice between two people
+
+*5–9 players · 2–4 cards each · ~5–10 min · sub-deck = the players' own signs · **the strongest of the flight***
+
+**The trick that makes it exist.** Deal each player a sign, then play with only the sub-deck those signs generate — `C(p,2)` cards, so every card in the game names **exactly two people at the table, and every pair of people exists on exactly one card**. Nothing else in the collection turns the deck's completeness into a social object: the all-pairs property stops being a maths fact and becomes the seating plan. Each round you secretly play one card and hand it to one of the two people printed on it. A player who receives **exactly one** favour keeps it; two or more arrive together, overwhelm them, and all are rejected.
+
+**Deal table (verified).** 5P → 10 cards, 2 each · 6P → 15, 2 each + 3 spare · 7P → 21, 3 each · 8P → 28, 3 each + 4 spare · 9P → 36 (the whole deck), 4 each.
+
+**Bug 1 — fatal, now fixed: only the recipient scored.** In the sketch, a giver gains nothing when their favour lands. Two consequences, both confirmed: a player's own card choices contribute **0%** to their own score — you are a spectator on your own scoreboard — and crowding is a **free** action. An omniscient spoiler denies exactly 1.00 opponent point at a cost of 0.00 to themselves; spite is strictly dominant and a table of rational players scores nothing.
+**Fix: when a favour is accepted, the giver scores too.** Crowding now costs the spoiler exactly the point they deny (1.00 for 1.00) — a real trade-off instead of a free one — and your hand finally controls your score. Points awarded per game roughly double (9P: 15.0 → 29.9), and the game becomes what the sketch was reaching for: *get your gift to land somewhere uncrowded*.
+
+**Bug 2 — fairness, now fixed: the spare cards at 6P and 8P.** Removing 3 (or 4) arbitrary cards leaves an uneven graph — the most-named player's sign appears on ~2 more cards than the least-named player's, a silent handicap decided by the shuffle.
+**Fix: remove a perfect matching** — 3 disjoint cards covering all six signs at 6P (e.g. 1–6, 2–5, 3–4), 4 at 8P (1–8, 2–7, 3–6, 4–5). Every sign loses exactly one appearance, spread drops from 2.06/2.30 to **0**, and it is one line of setup.
+
+**Known and accepted.** ~22% of your cards carry your own sign and so offer only one legal recipient — a forced play, not a bug, and it is the game's natural fallback. The naive "give to whoever has least" heuristic **loses to random play** (0.76–0.84×), which is the correct signature for an anti-coordination game and is fine under this brief; but outright ties run 43–53%, so the game needs a stated tiebreak (suggest: most favours *given* that landed, then highest pip held).
+
+**Why it fits the brief.** One sentence to teach. The lobbying *is* the conversation, and the table state is fully public, so a player returning from an unrelated thread needs no history. Best at 7P and 9P, where the sub-deck divides exactly.
+
+**Fastest falsification.** One 7P evening, three rounds: does the table talk to each other about the gifts, or does everyone silently compute the least-crowded target? If it plays silently, the social premise is wrong and it is just an anti-coordination puzzle.
+
+## 32. RENDEZVOUS — meet me on Flame, but only the two of us
+
+*6–12 players · 1 card each · repeated ~30-second rounds · **the purest ambient design of the flight***
+
+**The trick that makes it exist.** One card each, binary choice, and your "flip" is not free movement — it goes to the *one* other sign your card happens to carry. Everyone reveals a face; a sign shown by **exactly two** players is a rendezvous and both score; singletons and crowds of three-plus score nothing. Then one simultaneous stay-or-flip window, and rescore. The negotiation ("stay on Flame" / "there are already three of us") is entirely public, so it costs no attention to rejoin.
+
+**Bug — fatal at exactly its target counts, now fixed: everybody scores.** The sketch's 5–12 range is inverted. Because 9 signs support up to 9 disjoint pairs, the cooperative optimum at high counts is that *nearly everyone* pairs: 6P → 5.1 of 6 players score, 8P → 7.6 of 8, 10P → 9.9 of 10, **12P → 12.0 of 12**. At the counts it was designed for, the honest outcome of good play is a twelve-way tie, which is not a game.
+**Fix: a rendezvous scores the shared sign's pip, not 1 point.** Meeting on Crown is worth 9 and meeting on Moon is worth 1, so the high signs are contested and the low signs are the safe consolation — everyone can still pair, but pairing *well* is the whole game. It costs zero teach (the pip is already printed on both faces of every card) and it converts a flat tie into a spread. This is the same rank-reading gap `GATEWAY_GAME_CONCEPTS.md` §13.5 flagged: WILDFIRE never reads a pip, and this game now does, for free.
+
+**Second-order note.** With pip scoring, the stay-or-flip window acquires real content: sitting in a crowd of three on Crown is now worth gambling on, because if two of the other players flip away you take 9. Under flat scoring nobody had a reason to hold.
+
+**Why it fits the brief.** The single cleanest teach in the flight — two options, one decision, thirty seconds — and the only concept here that genuinely survives a player looking away for a whole round.
+
+**Fastest falsification.** One 10P table, five rounds under pip scoring: does the Crown crowd form and break, or does everyone quietly settle on low signs for a guaranteed 1? If it collapses to safe pairing, the pip spread needs compressing (try pip ÷ 3, rounded up) rather than abandoning.
+
+## The five cut, and why *(audit, August 2026)*
+
+- **LAST WORD** — cleanest-looking, but the scoring collapses: one point per round over three rounds means only **~2.7 players score at all** regardless of table size, and the game ends in an outright tie **55% (6P) / 68% (9P) / 75% (12P)** of the time. It is also the least deck-native idea in the flight — a hand of ranked cards would play it identically, failing Evaluation Criterion 1. Salvageable only by rebuilding the scoring, at which point RENDEZVOUS does the same job better.
+- **THE ALIBI** — the base rate kills the bluff. With 2 cards and 9 signs, P(you can truthfully show the named sign) = **40%**, so 60% of players are forced liars and a claim carries almost no information. Would need 4 cards (65%) or a 6–7 sign sub-deck (57%/50%) to function, which costs it the player count it was built for.
+- **FLINCH** — a reaction test, which is the direct opposite of the ambient brief, and it excludes players by speed. Its own sketch admits this.
+- **NINE VOICES** — fully cooperative with open information once players announce their hidden faces, so it is solvable by the loudest person at the table (classic alpha-player). The "flip only once" rule is also redundant: flipping is the only move, so the first reveal is pure information.
+- **HIDDEN IN PLAIN SIGHT** — *not rejected, deferred.* The deduction is genuinely deck-exclusive (a displayed sign can conceal the wanted sign on only one specific card, because that pair exists exactly once) and it is the most interesting idea of the seven. But 30–45 seconds of focused discussion per round fights the brief head-on. Worth its own entry when the goal is a micro-deduction game rather than an ambient one.

@@ -490,7 +490,7 @@
       </div>
     </div>
 
-    <p class="count" id="count" aria-live="polite">Thirty-two games</p>
+    <p class="count" id="count" aria-live="polite">Thirty-three games</p>
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty">No games match those filters yet.<br>Try loosening one.</p>
   </section>
@@ -758,6 +758,20 @@ const GAMES = [
     ]
   },
   {
+    id: 'favours', name: 'FAVOURS', tag: 'Party', pair: ['Leaf', 'Key'],
+    players: '5–9', pmin: 5, pmax: 9, time: 10, timeLabel: '~10 min', weight: 'Light',
+    supported: [5, 6, 7, 8, 9], played: false,
+    state: 'Ready to test', stage: 'Ready to test · sim-checked; awaiting a first table test at 7P',
+    deck: 'Sub-deck built from the players’ own signs (10–36) · counters', rulebook: 'Favours/FAVOURS_rulebook.md',
+    tagline: 'Every card names two people at the table.',
+    idea: 'The collection’s ambient party game. Everyone is one of the signs, so every card in play names exactly two people sitting at the table — and every pair of people appears on exactly one card. Give a favour where it will arrive alone; two arriving at once overwhelm the recipient and both are refused.',
+    plays: [
+      'Secretly choose a card and give it to one of the two people printed on it.',
+      'A favour arriving alone is kept and scores; crowded favours are all refused.',
+      'The face pressed to the table names the person you passed over — and they can look.'
+    ]
+  },
+  {
     id: 'sleeper', name: 'SLEEPER', tag: 'Social deduction', pair: ['Mask', 'Crown'],
     players: '4–6', pmin: 4, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Medium',
     supported: [4, 5, 6], played: false,
@@ -839,6 +853,20 @@ const GAMES = [
       'Reveal six bonds; the Divider splits them into two offers of three.',
       'The Divider must turn one card, changing both the offer’s visible value and its hidden future.',
       'The rival chooses first; both players build and ratify three-card sign triangles.'
+    ]
+  },
+  {
+    id: 'bravado', name: 'BRAVADO', tag: 'Party · Push-your-luck', pair: ['Mask', 'Flame'],
+    players: '3–6', pmin: 3, pmax: 6, time: 20, timeLabel: '15–25 min', weight: 'Light',
+    supported: [3, 4, 5, 6], played: false,
+    state: 'Ready to test', stage: 'Ready to test · exact odds, sim-certified floor',
+    deck: 'Full 36 · box base as draw well', rulebook: 'Bravado/BRAVADO_rulebook.md', docKind: 'rules',
+    tagline: 'You see one face. They see the other — and they may lie.',
+    idea: 'A social push-your-luck built on the one trick only a backless deck can do: a rival holds a single card upright, so you see one face and the whole table sees the other. You name the sign you can see, they give you one word — “higher” or “lower” — and they already know the answer. Call right and your streak grows; bank it, or push and risk the lot.',
+    plays: [
+      'The Caller draws blind from the box and holds the card up: you see one face, everyone else sees the other.',
+      'Say what you see, hear one word of advice from a rival who knows the truth, then call higher or lower.',
+      'Correct calls build a streak up to six. Bank it or push — and the longest banked streak takes the round.'
     ]
   },
   {
@@ -1112,7 +1140,7 @@ function matchReady(card) {
 function matchSearch(card) {
   return !state.q || card.dataset.search.includes(state.q);
 }
-const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty','Twenty-one','Twenty-two','Twenty-three','Twenty-four','Twenty-five','Twenty-six','Twenty-seven','Twenty-eight','Twenty-nine','Thirty','Thirty-one','Thirty-two'];
+const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty','Twenty-one','Twenty-two','Twenty-three','Twenty-four','Twenty-five','Twenty-six','Twenty-seven','Twenty-eight','Twenty-nine','Thirty','Thirty-one','Thirty-two','Thirty-three'];
 const TOTAL = GAMES.length;
 function applyFilters() {
   let n = 0;

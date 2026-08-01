@@ -12,7 +12,7 @@ For detailed, combinable filters in Obsidian, open [Game Catalog](GAME_CATALOG.m
 
 ## At a glance
 
-**32 games:** 12 Ready to test · 17 In development · 2 Proven · 1 Shelved.
+**34 games:** 14 Ready to test · 17 In development · 2 Proven · 1 Shelved.
 
 **12 have been physically played:** BLIGHT, DOWRY, TWELVE TRIALS, THE ORRERY, TRIGON, WILDFIRE, GLEAN, CROSSROADS, JANUS, OUROBOROS, CAIRN, HINGE.
 
@@ -54,6 +54,8 @@ This is the complete roster. Player counts are exact: `3, 4, 6` does not imply f
 | [DOWRY](Dowry/DOWRY_rulebook.md) | **Proven** | 2; 3–4 variants | ~20 min | Yes | Confirm the strong 2P result; then test the 3–4P variants. |
 | [ICARUS](Icarus/ICARUS_rulebook.md) | **Ready to test** | 2–4 | 10–15 min | No | First table test. |
 | [CONCORD](Concord/CONCORD_design_proposal.md) | **Ready to test** | 2 | 25–35 min | No | First physical prototype; test cognitive legibility. |
+| [BRAVADO](Bravado/BRAVADO_rulebook.md) | **Ready to test** | 3–6 | 15–25 min | No | First table test at 4–5P; watch whether the Caller's word carries a read. |
+| [FAVOURS](Favours/FAVOURS_rulebook.md) | **Ready to test** | 5–9 | ~10 min | No | Table it at 7P and check whether the giving is lobbied aloud or computed in silence. |
 | [FORKED TONGUE](Forked%20Tongue/FORKED_TONGUE_rulebook.md) | **In development** | 3–6 | ~20 min | No | Vet the rules. |
 | [THE COUNCIL](The%20Council/COUNCIL_rulebook.md) | **In development** | 3–6 | ~25 min | No | Vet the rules and pot handling. |
 | [SLEEPER](Sleeper/SLEEPER_rulebook.md) | **In development** | 4–6 | ~25 min | No | Vet concealment and rules. |
@@ -191,6 +193,22 @@ Flip cards from your personal tower to build a row of distinct signs; a repeat s
 Repeated “I divide, you choose.” The Divider splits six bonds into two offers, turns one card, and the rival chooses first; both players try to ratify three-card sign triangles. The complete prototype rules and its falsification gates live together in [CONCORD_design_proposal.md](Concord/CONCORD_design_proposal.md).
 
 *First table questions: can players scan a six-card division without graph-search paralysis? Does the compulsory flip improve the cut? Does ratification timing create tension or only friction?*
+
+**BRAVADO** [Bravado/](Bravado) · 3–6 · 15–25 min · Social push-your-luck / bluffing · **Ready to test** · `v0.1, exact odds + sim-certified floor`
+
+JANUS's fan-asymmetry trick reduced to a **single presented card**, and the only other game in the collection to split one card between two audiences: a rival draws blind from the box and holds one card upright, so the active player sees one face and the whole table sees the other. You announce the sign you can see — which is what tells the Caller exactly which card they hold — and they answer with one word, *higher* or *lower*, knowing the truth and free to lie. Correct calls build a streak up to six; bank it or push and risk the lot. The Caller rotates after every card, so a long run reads several opponents rather than solving one. Also the first game to **teach rank as its central mechanic** (the pip *is* the odds table: P(higher) = (9−S)/8), which is the gap [GATEWAY_GAME_CONCEPTS.md](Project/GATEWAY_GAME_CONCEPTS.md) §13.5 flagged as the most actionable in the collection — WILDFIRE never reads a pip, and a player carried a sign-equals-rank misunderstanding through a whole GLEAN game because of it.
+
+Exact enumeration confirms the odds table, the impossibility of ties, and the six-player supply bound (6 × 6 = exactly 36 cards). Floor sim (40k rounds per configuration): terminates at every count, skill gap **1.88×**, and a genuinely non-obvious optimum — **banking at three is the worst choice available** and pushing to five is the strongest single policy, because matching the leader loses the tie. Two honest caveats, both quantified rather than guessed: the Caller's word is adversarial cheap talk worth only **1.01–1.03×** at plausible read rates (so the game's headline mechanic lives or dies on human tells, with an *Accomplice* variant pre-designed as the repair), and the optional counting layer is worth just **+1.4 points of accuracy** — far thinner than ICARUS's. Seat spread is **10–13pp** at 4–6P and **19.7pp** at 3P, mitigated by the rotating start over a three-win match. See [BRAVADO_design_analysis.md](Bravado/BRAVADO_design_analysis.md).
+
+*First table questions: does the room actually lean in when someone risks a strong streak — the one test that decides this design? Can anyone read a Caller well enough for the advice to beat simply reading the pip? Does the held card leak to the active player, or fail to reach the seats beside them? Does rotating the Caller create variety or cut the psychological duel short?*
+
+**FAVOURS** [Favours/](Favours) · 5–9 · ~10 min · Party / simultaneous gift-giving · **Ready to test** · `v0.1, sim-checked`
+
+The collection's **ambient party game**, and the only design that turns the deck's completeness into a *social* object rather than a mathematical one. Deal each player a sign and play with only the sub-deck those signs generate, and every card in the game names **exactly two people at the table**, with every pair of people appearing on exactly one card. Each round you secretly choose a card and give it to one of the two people printed on it; a favour arriving alone is kept, two arriving together overwhelm their recipient and all are refused. The sub-deck scales the game to the table rather than merely tolerating it — 5P/10 cards through 9P/the entire 36 — and the face pressed to the table names **the person you passed over**, who may turn it over and see. It is also the first game in the collection whose brief explicitly ranked the party criteria (one-minute teach, high count, survives an unrelated conversation) *above* the depth rubric.
+
+Two bugs were found and repaired before the rulebook was written, both by simulation. In the original sketch **only the recipient scored**, which meant a player's own card choices contributed **0%** to their own score and crowding somebody else's gift was free — an omniscient spoiler denied exactly 1.00 opponent point at a cost of 0.00, making spite strictly dominant and a table of rational players score nothing. The fix is that **the giver takes a counter when their favour lands**, which prices crowding at exactly 1.00 for 1.00. Second, the spare cards at the even counts must be a **perfect matching** (Moon–Mask / Leaf–Eye / Wave–Flame at 6P; Moon–Star / Leaf–Key / Wave–Mask / Flame–Eye at 8P) — arbitrary removal leaves a sign-frequency spread of 2.06–2.31, the matching leaves **0**. Two honest caveats, both quantified: **43–55% of games tie** before the tiebreak (answered for now by the tiebreak and a two-deal variant at 5–6P), and the obvious heuristic — give to whoever has received least — **loses to random play at 0.76–0.84×**, which is the correct signature for an anti-coordination game but does make skill shallow. Design history and the five rejected sibling concepts are in [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) §31; simulation in [favours_sim.py](Favours/favours_sim.py).
+
+*First table questions: does the table actually lobby — argue, warn people off, claim targets aloud — or does everyone silently compute the least-crowded recipient? If it plays in silence the social premise is wrong and this is an anti-coordination puzzle in party clothes. Do nine people track who is which sign from seating alone, or does the count-round-the-table lookup stall every turn? Do ties spoil the ending in practice, or does nobody mind?*
 
 ### In development — not worth tabling until design work is done
 
@@ -342,8 +360,11 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 | Symbol abilities / grid engine | TRIGON, TURNCOAT |
 | Trick-taking (follow by either face) | GLEAN, BLIGHT |
 | Open / perfect information | CROSSROADS, TWELVE TRIALS, THE ORRERY |
-| Hidden information | JANUS, FORKED TONGUE, FACE VALUE, SLEEPER, DOWRY, ICARUS |
-| Social / negotiation | THE COUNCIL, FORKED TONGUE, SLEEPER |
+| Hidden information | JANUS, FORKED TONGUE, FACE VALUE, SLEEPER, DOWRY, ICARUS, BRAVADO |
+| Sign rank (the pip) as the engine | BLIGHT, GLEAN, FACE VALUE, DOWRY, ICARUS, BRAVADO |
+| One card, two audiences (asymmetric split) | JANUS (held fan), BRAVADO (single presented card) |
+| Push-your-luck (bank or risk it) | ICARUS (solitary, countable), BRAVADO (social, advised) |
+| Social / negotiation | THE COUNCIL, FORKED TONGUE, SLEEPER, BRAVADO |
 | Solo or co-op | TWELVE TRIALS, THE ORRERY, JANUS, CAIRN |
 
 
@@ -359,6 +380,7 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 | **THE COUNCIL** | **1 Speaker token** — *"any object"*; rotating first-player/turn-order marker |
 | **SLEEPER** | *(optional)* **1 first-player token** — any object; generic, as sanctioned by THE COUNCIL |
 | **CONCORD** | **4 generic counters** — 2 per player, from the shared kit |
+| **BRAVADO** | **The box base as an opaque draw well** (house-kit container, [DECK_CONVENTIONS](Project/Deck/DECK_CONVENTIONS.md) rung 4) + **round-win counters** from the shared kit. The second game to need rung 4, which was previously load-bearing for JANUS alone |
 | **THE ORRERY** | none required — paper *optional* for scoring ("helps, but is not necessary") |
 | WILDFIRE · TWELVE TRIALS · TURNCOAT · TRIGON · THE UNPLAYED PAIR · BLIGHT · GLEAN · FACE VALUE · OUROBOROS · FORKED TONGUE · CROSSROADS · CAIRN · RELAY · DOWRY · ICARUS | **none — deck only** |
 
