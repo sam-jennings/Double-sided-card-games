@@ -22,6 +22,7 @@ pages 2-9 = four duplex sheet pairs (long-edge flip), 3x3 poker cards each.
 import itertools
 import os
 import tempfile
+from pathlib import Path
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
 from reportlab.lib.colors import HexColor, Color
@@ -281,4 +282,7 @@ def main(path):
 
 
 if __name__ == "__main__":
-    main("FLIP_DECK_print_and_play.pdf")
+    # This script draws the Nine Signs deck, so it must write the Nine Signs
+    # file. FLIP_DECK_print_and_play.pdf is the older Set D Glyphs prototype
+    # kept as the accessibility benchmark - do not overwrite it from here.
+    main(str(Path(__file__).with_name("FLIP_DECK_print_and_play_Nine_Signs.pdf")))
