@@ -247,6 +247,25 @@
   .scell .nm { font: 700 13.5px/1.2 'Fraunces', serif; margin-top: 5px; }
   .scell .mn { font: 400 10px/1.35 'Inter', sans-serif; color: var(--night-soft); margin-top: 4px; }
 
+  /* ---------- Print and play ---------- */
+  .pnp-list { list-style: none; margin: 20px 0 24px; }
+  .pnp-list li { position: relative; padding-left: 26px; margin-bottom: 9px; font: 400 14.5px/1.55 'Inter', sans-serif; color: var(--ink-soft); max-width: 48ch; }
+  .pnp-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 2px; border: 1.5px solid var(--accent); }
+  .pnp-list li b { color: var(--ink); font-weight: 600; }
+  .pnp-meta { font: 500 11.5px/1.6 'IBM Plex Mono', monospace; color: var(--muted); margin-top: 16px; }
+  .cta-row.left { justify-content: flex-start; }
+
+  .sheet {
+    width: min(300px, 78vw); aspect-ratio: 210 / 297;
+    background: var(--card-face); border: 1px solid var(--line); border-radius: 5px;
+    box-shadow: var(--shadow-deep); padding: 7.5% 6.5%;
+    display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 5px;
+    transform: rotate(-2.4deg); transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .sheet:hover { transform: rotate(0deg) translateY(-6px); }
+  .scard { border: 1px dashed var(--line); border-radius: 4px; background: var(--card); display: flex; align-items: center; justify-content: center; }
+  .scard svg { width: 54%; height: 54%; }
+
   /* ---------- Final CTA ---------- */
   .final { text-align: center; padding: 100px 0 110px; }
   .final h2 { font: 900 clamp(34px, 7vw, 58px)/1.02 'Fraunces', serif; letter-spacing: -0.015em; margin: 14px 0 16px; }
@@ -285,6 +304,7 @@
   <nav class="nav" aria-label="Site">
     <a href="#pairs">The Idea</a>
     <a href="#signs">The Signs</a>
+    <a href="#print">Print &amp; Play</a>
     <a class="primary" href="games.html">Browse the games</a>
   </nav>
 </div>
@@ -362,6 +382,34 @@
       <h2 class="reveal">The flip side: <em>nine signs.</em></h2>
       <p class="reveal">Every game reads the same nine signs differently — a Crown rules one game and builds the board in another. The pip is the rank; the picture is the story.</p>
       <div class="sgrid" id="sgrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= PRINT AND PLAY ================= -->
+  <section class="block" id="print">
+    <div class="inner split">
+      <div class="txt reveal">
+        <p class="eyebrow">The paper deck</p>
+        <h2>Print your <em>own deck.</em></h2>
+        <p>You don't have to wait for a printed copy to play any of this. The whole 36-card deck is a free PDF — nine A4 pages, nine cards to a sheet, ready for a home printer and a pair of scissors.</p>
+        <p>Because these cards have no back, the sheets print double-sided: a card's two signs land back to back on the same piece of stock.</p>
+        <ul class="pnp-list">
+          <li><b>A4 card stock</b>, printed at <b>100% scale</b> — turn “fit to page” off.</li>
+          <li>Page 1 is the legend. Print it single-sided, or skip it.</li>
+          <li>Pages 2–9 print <b>double-sided, flipped on the long edge</b>.</li>
+          <li>Hold a sheet up to the light to check alignment — the 4 mm frame forgives a little drift.</li>
+          <li>Cut on the dashed guides: nine cards a sheet, 36 in all. Standard 63.5 × 88 mm sleeves fit.</li>
+        </ul>
+        <div class="cta-row left">
+          <a class="btn btn-primary" href="Print%20and%20Play/FLIP_DECK_print_and_play_Nine_Signs_v2.pdf" download="Flip-Deck-print-and-play.pdf">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+            Download the print &amp; play
+          </a>
+          <a class="btn btn-ghost" href="games.html">Then pick a game</a>
+        </div>
+        <p class="pnp-meta">PDF · 9 pages · A4 · 28 KB · free to print and share</p>
+      </div>
+      <div class="stage reveal" id="sheet-stage"></div>
     </div>
   </section>
 
@@ -556,6 +604,18 @@ ORDER.forEach(name => {
     '<div class="mn">' + s.mean + '</div>';
   sgrid.appendChild(cell);
 });
+
+/* ---------- Print sheet preview ---------- */
+const sheet = document.createElement('div');
+sheet.className = 'sheet';
+sheet.setAttribute('aria-hidden', 'true');
+ORDER.forEach(name => {
+  const c = document.createElement('div');
+  c.className = 'scard';
+  c.innerHTML = svgFor(name, SIGN[name].hue);
+  sheet.appendChild(c);
+});
+document.getElementById('sheet-stage').appendChild(sheet);
 
 /* ---------- Decorative marks ---------- */
 document.getElementById('brand-glyphs').innerHTML = svgFor('Star', 'var(--accent)') + svgFor('Crown', 'var(--ink-soft)');
