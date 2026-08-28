@@ -93,6 +93,14 @@
   .nav a.primary:hover { background: var(--accent-deep); }
   .nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+  @media (max-width: 640px) {
+    .topbar { padding: 10px 14px; }
+    .brand-name { display: none; }
+    .nav { gap: 2px; }
+    .nav a { padding: 9px 10px; font-size: 11px; letter-spacing: 0.04em; }
+    .nav a[href="#pairs"], .nav a[href="#signs"] { display: none; }
+  }
+
   /* ---------- Hero ---------- */
   .hero { min-height: calc(100svh - 58px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px 20px 40px; position: relative; overflow: hidden; }
   .hero-glow { position: absolute; inset: 0; pointer-events: none;

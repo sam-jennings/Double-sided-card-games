@@ -111,6 +111,22 @@
   .navlink:hover { color: var(--ink); background: rgba(66,50,24,0.06); }
   .navlink:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+  @media (max-width: 640px) {
+    .topbar { padding: 10px 14px; }
+    .brand-name { display: none; }
+    .navwrap { gap: 4px; }
+    .navlink { padding: 9px 8px; font-size: 11px; letter-spacing: 0.03em; white-space: nowrap; }
+    .dice { padding: 9px 12px; font-size: 11px; white-space: nowrap; }
+  }
+  @media (max-width: 430px) {
+    .navlink[href="index.html"] { display: none; }
+  }
+  @media (max-width: 365px) {
+    .topbar { padding: 10px 10px; }
+    .navlink { padding: 9px 6px; }
+    .dice { padding: 8px 10px; gap: 5px; }
+  }
+
   /* ---------- Hero ---------- */
   .hero { padding: 44px 0 10px; text-align: center; position: relative; }
   .hero-marks { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
