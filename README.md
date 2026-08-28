@@ -7,7 +7,7 @@ This is the project home for a 36-card, double-faced deck and the **34 games** c
 - **Choosing or filtering games in Obsidian:** open [Game Catalog](GAME_CATALOG.md). Start with all games and combine player count, time, state, whether it has been physically played, depth, or genre filters.
 - **Reading the collection as a document:** [Collection Overview](COLLECTION_OVERVIEW.md) contains the complete catalogue, the state narrative, and next steps.
 - **Using the public site:** open [the site](index.html), or go straight to [the game picker](games.html). It has exact player-count, state, played/never-played, time, and depth filters.
-- **Printing a copy:** the site's [Print & Play section](index.html#print) serves `Print and Play/FLIP_DECK_print_and_play_Nine_Signs_v2.pdf` — nine A4 pages, duplex on the long edge, 36 cards.
+- **Printing a copy:** the site's [Print & Play section](index.html#print) serves `Print and Play/FLIP_DECK_print_and_play_Nine_Signs.pdf` — nine A4 pages, duplex on the long edge, 36 cards.
 - **Working on the project:** [Project files](Project/README.md) explains which cross-game documents are current.
 - **Adding a title:** [Adding a Game](Project/ADDING_A_GAME.md) is the short workflow and links to the reusable record template.
 - **Looking for old decisions or ideas:** [Archive](Archive/README.md) contains historical material that should not be treated as current guidance.
