@@ -20,3 +20,6 @@ Desktop.ini
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/graph.json
+
+# Generated intermediates (the PDF deliverable is tracked, the HTML is not)
+Wildfire/WILDFIRE_FR_teaching_sheet.html
