@@ -16,7 +16,7 @@ min_minutes: 20
 max_minutes: 20
 physically_playtested: true
 public_document: Dowry/DOWRY_rulebook.md
-next_step: Confirm the strong 2-player result with another match; 3–4-player modes remain untested.
+next_step: Capture Norma's exact 3-player procedure and feedback before planning a multiplayer test.
 catalog_order: 13
 ---
 # DOWRY
@@ -24,7 +24,7 @@ catalog_order: 13
 *for 2 players · ~20 minutes · ages 10+*
 *(3–4 player variant in Designer's Variants — untested)*
 
-> **State: Proven.** The 2-player base game worked extremely well in its first physical playtest—possibly the collection's strongest game so far. See [`DOWRY_playtest_01.md`](DOWRY_playtest_01.md); simulation results are in [`DOWRY_design_analysis.md`](DOWRY_design_analysis.md).
+> **State: Proven.** Repeated physical play has brought consistently strong feedback, replay requests and stated interest in buying the deck for this game. Norma borrowed the deck and attempted her own 3-player adaptation; its procedure and outcome are not yet recorded, and the written 3–4-player variant remains untested. See [first test](DOWRY_playtest_01.md), [repeated-play report](DOWRY_playtest_02.md) and [names and sibling directions](DOWRY_future_directions.md). Simulation results are in [`DOWRY_design_analysis.md`](DOWRY_design_analysis.md).
 
 *The match is agreed and the chests are being packed. Whoever packs them decides what the visitors see — silk laid on top, stones beneath. You will pack chests, and you will pick from chests packed against you. Every card in this deck has two faces; in DOWRY, the face you are shown is a claim, not a promise.*
 

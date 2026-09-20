@@ -12,7 +12,7 @@ For detailed, combinable filters in Obsidian, open [Game Catalog](GAME_CATALOG.m
 
 ## At a glance
 
-**34 games:** 14 Ready to test · 17 In development · 2 Proven · 1 Shelved.
+**35 games:** 15 Ready to test · 17 In development · 2 Proven · 1 Shelved.
 
 **12 have been physically played:** BLIGHT, DOWRY, TWELVE TRIALS, THE ORRERY, TRIGON, WILDFIRE, GLEAN, CROSSROADS, JANUS, OUROBOROS, CAIRN, HINGE.
 
@@ -51,7 +51,7 @@ This is the complete roster. Player counts are exact: `3, 4, 6` does not imply f
 | [CAIRN](Cairn/CAIRN_rulebook.md) | **Ready to test** | 1 | ~10 min | Yes | Repeat the standard trail and record whether failure feels foreseeable. |
 | [TURNCOAT](Turncoat/TURNCOAT_rulebook.md) | **Ready to test** | 2–4 | 15–25 min | No | First physical playtest. |
 | [FACE VALUE](Face%20Value/FACE_VALUE_rulebook.md) | **Ready to test** | 2 | 15–20 min | No | Run playtest plan 01. |
-| [DOWRY](Dowry/DOWRY_rulebook.md) | **Proven** | 2; 3–4 variants | ~20 min | Yes | Confirm the strong 2P result; then test the 3–4P variants. |
+| [DOWRY](Dowry/DOWRY_rulebook.md) | **Proven** | 2; 3–4 variants | ~20 min | Yes | Capture Norma's exact 3P procedure and feedback before planning a multiplayer test. |
 | [ICARUS](Icarus/ICARUS_rulebook.md) | **Ready to test** | 2–4 | 10–15 min | No | First table test. |
 | [CONCORD](Concord/CONCORD_design_proposal.md) | **Ready to test** | 2 | 25–35 min | No | First physical prototype; test cognitive legibility. |
 | [BRAVADO](Bravado/BRAVADO_rulebook.md) | **Ready to test** | 3–6 | 15–25 min | No | First table test at 4–5P; watch whether the Caller's word carries a read. |
@@ -72,6 +72,7 @@ This is the complete roster. Player counts are exact: `3, 4, 6` does not imply f
 | [HINGE](Hinge/HINGE_concept.md) | **In development** | 2 | 5–10 min | Yes | Formalise 2P turn structure, then table test. |
 | [MIRROR](Mirror/MIRROR_concept.md) | **In development** | 2 or 4 | ~15 min | No | Develop rules if selected. |
 | [COVENANT](Covenant/COVENANT_concept.md) | **In development** | 1–4 | ~15 min/chapter | No | Draft version A (The Loyalty Duel) rules. |
+| [CARAVAN](Caravan/CARAVAN_rulebook.md) | **Ready to test** | 2, 3, 4 | ~15 min | No | Table it at 3P and settle whether packing for a named neighbour changes what you pack. |
 | [THE UNPLAYED PAIR](The%20Unplayed%20Pair/UNPLAYED_PAIR_rulebook.md) | **Shelved** | 3–5 | ~25 min | No | Keep as a design record. |
 
 ---
@@ -96,7 +97,9 @@ Avoidance trick-taker. Same engine, inverted: a captured card's penalty is its *
 
 *First physical test:* the 2-player base game worked extremely well—possibly the collection's strongest game so far—with no blocking rules or handling problem reported. Verdict: **Proven**. See [DOWRY_playtest_01.md](Dowry/DOWRY_playtest_01.md).
 
-*Outstanding questions: does that result hold over another match? How much of the dressing game survives between players with different memory skill? The 3–4-player modes remain separate, untested variants.*
+*Repeated-play update (recorded 7 September 2026):* Sam reports consistently great feedback across several playtests: everyone wanted to play again, and some said they would buy the deck for this game. Norma, described as hard to please with games, borrowed the deck to play with others and attempted a 3-player adaptation without reading the written variant. Its procedure and outcome are unknown. **Proven reaffirmed**; no core rules change indicated. See [DOWRY_playtest_02.md](Dowry/DOWRY_playtest_02.md) and [naming and sibling design brief](Dowry/DOWRY_future_directions.md).
+
+*Next action: capture Norma's exact 3-player procedure and feedback before planning a multiplayer test. Open questions: what specific offer decisions drive the enjoyment, and how much of the dressing game survives between players with different memory skill? The written 3–4-player modes remain separate, untested variants.*
 
 ### Ready to test — playable now, no design work outstanding
 
@@ -209,6 +212,14 @@ The collection's **ambient party game**, and the only design that turns the deck
 Two bugs were found and repaired before the rulebook was written, both by simulation. In the original sketch **only the recipient scored**, which meant a player's own card choices contributed **0%** to their own score and crowding somebody else's gift was free — an omniscient spoiler denied exactly 1.00 opponent point at a cost of 0.00, making spite strictly dominant and a table of rational players score nothing. The fix is that **the giver takes a counter when their favour lands**, which prices crowding at exactly 1.00 for 1.00. Second, the spare cards at the even counts must be a **perfect matching** (Moon–Mask / Leaf–Eye / Wave–Flame at 6P; Moon–Star / Leaf–Key / Wave–Mask / Flame–Eye at 8P) — arbitrary removal leaves a sign-frequency spread of 2.06–2.31, the matching leaves **0**. Two honest caveats, both quantified: **43–55% of games tie** before the tiebreak (answered for now by the tiebreak and a two-deal variant at 5–6P), and the obvious heuristic — give to whoever has received least — **loses to random play at 0.76–0.84×**, which is the correct signature for an anti-coordination game but does make skill shallow. Design history and the five rejected sibling concepts are in [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) §31; simulation in [favours_sim.py](Favours/favours_sim.py).
 
 *First table questions: does the table actually lobby — argue, warn people off, claim targets aloud — or does everyone silently compute the least-crowded recipient? If it plays in silence the social premise is wrong and this is an anti-coordination puzzle in party clothes. Do nine people track who is which sign from seating alone, or does the count-round-the-table lookup stall every turn? Do ties spoil the ending in practice, or does nobody mind?*
+
+**CARAVAN** [Caravan/](Caravan) · 2–4 · ~15 min · Simultaneous cut-and-choose · **Ready to test** · `v0.1, sim-certified floor`
+
+The first **sibling of DOWRY**, and the collection's answer to a specific problem: DOWRY is Proven and loved but two-player, its written 3–4P variant is untested, and any cutter-and-choosers version makes everyone but two people wait. CARAVAN runs every bargain at once. Each round the road points one way; you pack a dressed 2/1 offer for exactly one other player, exactly one other player packs for you, everybody takes at the same moment, and you keep what your taker leaves. The direction reverses between rounds, so **you cannot hit back at whoever is squeezing you — retaliation is a schedule, not an option.** The card flow is the design's neatest result: deal 6, refill to 6, and at 2, 3 *and* 4 players hands and stock empty together after exactly 12 offers and all 36 cards. Because every player reads a *different* offer, simultaneous choosing cannot collide, so it needs no written commitments and no components beyond the deck — the objection that shaped it away from the market design its brief recommended.
+
+Floor-certified over ~4,200 games at 2/3/4P: **zero flow failures**, seats fair at every count (notably **no DOWRY-style second-cutter edge** — 92/107 at 2P against DOWRY's 56/93), take-decisions live 36–40% of the time against DOWRY's 32% on the same instrumentation, and a thoughtful line beats a naive-but-sensible one by 1.22–1.29× on matched information with no bot reading a hidden hand. Two honest flags. **The road ablation is flat (0.90–1.01×):** a bot that ignores who receives the lot does as well as one that reasons about it, which is the design's whole premise; the rulebook carries *The trailing road* as the specific repair and question 1 of the playtest asks for it directly. Second, the simulation work turned up a correction to a Proven game — DOWRY's published "dressing edge ≈1.6–1.7×" comes from an arm that changes the split objective *and* the dressing, and the matched dressing-only ablation is **1.11×** — plus a methodology finding that a smooth positional value proxy over-reports obviousness badly (74% vs 40% risk-free takes on the identical ruleset). Both are written up in [CARAVAN_design_analysis.md](Caravan/CARAVAN_design_analysis.md) §5.
+
+*First table questions: does packing for one named neighbour actually change what you pack, or is the road decoration? Does simultaneous play feel social, or like three or four solitaires with no downtime? Is being unable to retaliate interesting or annoying? Is three rounds at 4P a game or a fragment?*
 
 ### In development — not worth tabling until design work is done
 
@@ -353,15 +364,17 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 | Flipping as the core action | WILDFIRE, CROSSROADS, TWELVE TRIALS, THE ORRERY, RELAY, ICARUS |
 | Edge-adjacency / chaining cards by a shared sign | CAIRN, RELAY |
 | Flipping as defection/denial | TURNCOAT, THE COUNCIL, SLEEPER |
-| Pair uniqueness as deduction engine | JANUS, FORKED TONGUE, CROSSROADS, FACE VALUE, DOWRY, ICARUS |
+| Pair uniqueness as deduction engine | JANUS, FORKED TONGUE, CROSSROADS, FACE VALUE, DOWRY, CARAVAN, ICARUS |
 | Fair division / triangle set-building | CONCORD |
+| Cut-and-choose (one player dresses the offer, another takes) | DOWRY, CARAVAN |
+| Simultaneous action, no turn order | FAVOURS, CARAVAN |
 | Two-faces / hidden-face as score driver | GLEAN (two majorities per card), BLIGHT (hidden face is the penalty) |
 | Algebraic structure (Steiner triples, permutation orbits, Eulerian circuits) | TWELVE TRIALS, THE ORRERY |
 | Symbol abilities / grid engine | TRIGON, TURNCOAT |
 | Trick-taking (follow by either face) | GLEAN, BLIGHT |
 | Open / perfect information | CROSSROADS, TWELVE TRIALS, THE ORRERY |
-| Hidden information | JANUS, FORKED TONGUE, FACE VALUE, SLEEPER, DOWRY, ICARUS, BRAVADO |
-| Sign rank (the pip) as the engine | BLIGHT, GLEAN, FACE VALUE, DOWRY, ICARUS, BRAVADO |
+| Hidden information | JANUS, FORKED TONGUE, FACE VALUE, SLEEPER, DOWRY, CARAVAN, ICARUS, BRAVADO |
+| Sign rank (the pip) as the engine | BLIGHT, GLEAN, FACE VALUE, DOWRY, CARAVAN, ICARUS, BRAVADO |
 | One card, two audiences (asymmetric split) | JANUS (held fan), BRAVADO (single presented card) |
 | Push-your-luck (bank or risk it) | ICARUS (solitary, countable), BRAVADO (social, advised) |
 | Social / negotiation | THE COUNCIL, FORKED TONGUE, SLEEPER, BRAVADO |
@@ -382,7 +395,7 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 | **CONCORD** | **4 generic counters** — 2 per player, from the shared kit |
 | **BRAVADO** | **The box base as an opaque draw well** (house-kit container, [DECK_CONVENTIONS](Project/Deck/DECK_CONVENTIONS.md) rung 4) + **round-win counters** from the shared kit. The second game to need rung 4, which was previously load-bearing for JANUS alone |
 | **THE ORRERY** | none required — paper *optional* for scoring ("helps, but is not necessary") |
-| WILDFIRE · TWELVE TRIALS · TURNCOAT · TRIGON · THE UNPLAYED PAIR · BLIGHT · GLEAN · FACE VALUE · OUROBOROS · FORKED TONGUE · CROSSROADS · CAIRN · RELAY · DOWRY · ICARUS | **none — deck only** |
+| WILDFIRE · TWELVE TRIALS · TURNCOAT · TRIGON · THE UNPLAYED PAIR · BLIGHT · GLEAN · FACE VALUE · OUROBOROS · FORKED TONGUE · CROSSROADS · CAIRN · RELAY · DOWRY · CARAVAN · ICARUS | **none — deck only** |
 
 ### The component policy this reveals
 

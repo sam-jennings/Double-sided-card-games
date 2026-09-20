@@ -789,6 +789,20 @@ const GAMES = [
     ]
   },
   {
+    id: 'caravan', name: 'CARAVAN', tag: 'Cut-and-choose', pair: ['Wave', 'Key'],
+    players: '2, 3, 4', pmin: 2, pmax: 4, time: 15, timeLabel: '~15 min', weight: 'Medium',
+    supported: [2, 3, 4], played: false,
+    state: 'Ready to test', stage: 'Ready to test - sim-certified floor; awaiting a first table test at 3P',
+    deck: 'Full 36 - deck only', rulebook: 'Caravan/CARAVAN_rulebook.md',
+    tagline: 'You do not choose your customer. Only what they see.',
+    idea: 'A sibling of DOWRY that runs every bargain at once. Each round the road points one way: you pack three cards as a dressed lot of two and a lot of one for exactly one other player, exactly one other player packs for you, everyone takes at the same moment, and you keep whatever your taker leaves behind. The direction reverses between rounds, so the player squeezing you is never the player you can answer.',
+    plays: [
+      'Pack a two-card lot and a one-card lot, choosing which face of each card shows.',
+      'Everyone takes at once; the packer keeps the lot left behind.',
+      'Lock a scoring face on every card you capture, then win each sign outright.'
+    ]
+  },
+  {
     id: 'sleeper', name: 'SLEEPER', tag: 'Social deduction', pair: ['Mask', 'Crown'],
     players: '4–6', pmin: 4, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Medium',
     supported: [4, 5, 6], played: false,
@@ -834,7 +848,7 @@ const GAMES = [
     id: 'dowry', name: 'DOWRY', tag: 'Bluff & deduction', pair: ['Mask', 'Star'],
     players: '2 (3–4 variants)', pmin: 2, pmax: 4, time: 20, timeLabel: '~20 min', weight: 'Medium',
     supported: [2, 3, 4], played: true,
-    state: 'Proven', stage: 'Proven · physically played; 3–4P modes remain untested variants',
+    state: 'Proven', stage: 'Proven · repeated positive playtests; written 3–4P variants untested',
     deck: 'Full 36 · hands of 9', rulebook: 'Dowry/DOWRY_rulebook.md', docKind: 'rules',
     tagline: 'I cut, you choose — and I choose which face you see.',
     idea: 'An “I cut, you choose” duel with a second layer. The cutter splits three cards into two lots and also picks which face of each card shows; the lot that looks poor may be the rich one. (A 3–4 player variant is drafted but untested.)',

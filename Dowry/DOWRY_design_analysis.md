@@ -34,6 +34,16 @@ Volume: ~4,750 games total, chunked runs with distinct seeds (results identical 
 
 - **Stall rate 0** in every arm; every game is exactly 12 offers. Card-flow arithmetic (12 offers · 6 per player · stock empty at offer 6 · all 36 captured) verified by construction and assertion.
 - **Q1 answered (bot scope): even-splitting loses decisively.** The deceptive cutter beats the honest even-splitter from both seats — the dressing layer is load-bearing, not decorative. The rubric's fastest-falsification test survives the floor.
+> **Annotation, September 2026 — the dressing figure is confounded; the text above is left as written.**
+> `HonestCutBot` differs from `SkilledBot` on **two** axes at once: it cuts for the most even *true* split **and** it
+> dresses informatively. The 83% / ≈1.6–1.7× therefore measures the split objective and the dressing together, and the
+> conclusion *"the dressing layer is load-bearing, not decorative"* does not follow from this arm.
+> A matched ablation — identical to `SkilledBot` in every respect except the dressing — puts the **dressing-only edge at
+> ≈1.11×**. Reproduce with [`../Caravan/dowry_dressing_probe.py`](../Caravan/dowry_dressing_probe.py); the same probe
+> also supplies DOWRY's decision-density reference figures (51.4% pair-taking, 37.8% risk-free takes, 32.2% live takes).
+> Per [SKILL_GAP_METHOD §7](../Project/SKILL_GAP_METHOD.md) this is an annotation, not a re-run: nothing about DOWRY's
+> table result changes, and the game is Proven on player evidence rather than on this number.
+
 - **Skill gap 3.6×** — far above the 1.5× health bar. Per the OUROBOROS lesson this is a floor claim from one-ply heuristics, but the *direction* is unambiguous.
 
 ## 4. Health checks & the one flag
