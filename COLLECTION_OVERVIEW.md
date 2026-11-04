@@ -12,7 +12,7 @@ For detailed, combinable filters in Obsidian, open [Game Catalog](GAME_CATALOG.m
 
 ## At a glance
 
-**35 games:** 15 Ready to test · 17 In development · 2 Proven · 1 Shelved.
+**36 games:** 15 Ready to test · 18 In development · 2 Proven · 1 Shelved.
 
 **12 have been physically played:** BLIGHT, DOWRY, TWELVE TRIALS, THE ORRERY, TRIGON, WILDFIRE, GLEAN, CROSSROADS, JANUS, OUROBOROS, CAIRN, HINGE.
 
@@ -73,6 +73,7 @@ This is the complete roster. Player counts are exact: `3, 4, 6` does not imply f
 | [MIRROR](Mirror/MIRROR_concept.md) | **In development** | 2 or 4 | ~15 min | No | Develop rules if selected. |
 | [COVENANT](Covenant/COVENANT_concept.md) | **In development** | 1–4 | ~15 min/chapter | No | Draft version A (The Loyalty Duel) rules. |
 | [CARAVAN](Caravan/CARAVAN_rulebook.md) | **Ready to test** | 2, 3, 4 | ~15 min | No | Table it at 3P and settle whether packing for a named neighbour changes what you pack. |
+| [LODGE](Lodge/LODGE_rulebook.md) | **In development** | 2, 3, 4 | 15–25 min | No | Vet the draft, then a 2P table test of the Star's Turn. |
 | [THE UNPLAYED PAIR](The%20Unplayed%20Pair/UNPLAYED_PAIR_rulebook.md) | **Shelved** | 3–5 | ~25 min | No | Keep as a design record. |
 
 ---
@@ -261,6 +262,14 @@ The collection's first pursuit game — and the wildcard batch's first concept t
 
 *First table questions: does the hunters' candidate arithmetic read as a tightening noose or as homework? Is the base escape/Raid balance a chase or a coin-flip (or a move-3 slaughter)? And the one genuine handling risk — does an 8-card overlapped trail plus a squared sprint packet excavate cleanly without card slippage?*
 
+**LODGE** [Lodge/](Lodge) · 2–4 · ~15–25 min · Memory / swap-and-knock · **In development** · `v0.1 draft, 4P floor sim`
+
+Beverbende (Beaver Gang) for the backless deck. Four cards in front of you; only the **pressed** faces score, and you start knowing just your two end cards. Draw from the stock (whose top face is always public) or the pond, keep a card by choosing which face to press, or discard it for a power: **Eye** peeks, **Mask** blind-swaps with a rival, **Star** turns any lodge card over so its *shown* face becomes the score. Knock to end the round; lowest total wins. The collection's most familiar entry into the flagged **deliberate-memory** gap, with no large hand to hold. See [LODGE_rulebook.md](Lodge/LODGE_rulebook.md).
+
+*4P floor sim (45,000 games):* no stalls; skilled rounds end by knock after ~2 turns each, so the 19-card stock never runs out; one skilled bot beats three random ones 88% of the time (~1.9× on score); knocking early is not dominant; ~1.6 powers per round, so the power-card share doesn't swamp memory; first seat wins 31% vs 21% last, evened out by the rotating match.
+
+*First table questions: is a ~2-turns-each round a sprint or too short? Is the Turn a memorable threat or a cruel swing? Does anyone use the shown faces and the pair registry to read a rival's lodge, or is it Beverbende with extra steps?*
+
 **RELAY** [Relay/](Relay) · 2–4 · ~20–25 min · Network route-race / drafting · **In development** · `structural sim done — needs rulebook`
 
 A clean-sheet networking game built to design out the four CROSSROADS table bugs. Every card is both a **directed road** (to build) and a **unique connection goal** (to claim); because every pair exists once, each goal is the only connection between its two signs, and a **flip re-aims** a road to make or break a route. Hand of three fed by an open draft (no 14-card wall); pass-to-win scores 0 by construction. Structural sim: terminates at 2–4P (0% caps), skill gap 1.9×/2.8×/3.6× (2/3/4P), flips drive ~22–28% of claims. See [RELAY_design_analysis.md](Relay/RELAY_design_analysis.md) and [NEW_GAME_CONCEPTS.md](NEW_GAME_CONCEPTS.md) §14. *(The edge case: simulation is evidence, but without a player-facing rulebook the game remains In development.)*
@@ -373,7 +382,8 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 | Symbol abilities / grid engine | TRIGON, TURNCOAT |
 | Trick-taking (follow by either face) | GLEAN, BLIGHT |
 | Open / perfect information | CROSSROADS, TWELVE TRIALS, THE ORRERY |
-| Hidden information | JANUS, FORKED TONGUE, FACE VALUE, SLEEPER, DOWRY, CARAVAN, ICARUS, BRAVADO |
+| Hidden information | JANUS, FORKED TONGUE, FACE VALUE, SLEEPER, DOWRY, CARAVAN, ICARUS, BRAVADO, LODGE |
+| Deliberate hidden-face memory | STRATA (concept), LODGE |
 | Sign rank (the pip) as the engine | BLIGHT, GLEAN, FACE VALUE, DOWRY, CARAVAN, ICARUS, BRAVADO |
 | One card, two audiences (asymmetric split) | JANUS (held fan), BRAVADO (single presented card) |
 | Push-your-luck (bank or risk it) | ICARUS (solitary, countable), BRAVADO (social, advised) |
@@ -395,7 +405,7 @@ The OUROBOROS episode is retained here as the worked example of confronting-then
 | **CONCORD** | **4 generic counters** — 2 per player, from the shared kit |
 | **BRAVADO** | **The box base as an opaque draw well** (house-kit container, [DECK_CONVENTIONS](Project/Deck/DECK_CONVENTIONS.md) rung 4) + **round-win counters** from the shared kit. The second game to need rung 4, which was previously load-bearing for JANUS alone |
 | **THE ORRERY** | none required — paper *optional* for scoring ("helps, but is not necessary") |
-| WILDFIRE · TWELVE TRIALS · TURNCOAT · TRIGON · THE UNPLAYED PAIR · BLIGHT · GLEAN · FACE VALUE · OUROBOROS · FORKED TONGUE · CROSSROADS · CAIRN · RELAY · DOWRY · CARAVAN · ICARUS | **none — deck only** |
+| WILDFIRE · TWELVE TRIALS · TURNCOAT · TRIGON · THE UNPLAYED PAIR · BLIGHT · GLEAN · FACE VALUE · OUROBOROS · FORKED TONGUE · CROSSROADS · CAIRN · RELAY · DOWRY · CARAVAN · ICARUS · LODGE | **none — deck only** |
 
 ### The component policy this reveals
 
