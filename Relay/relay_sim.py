@@ -288,11 +288,11 @@ def _restore(st, snap):
     st.flip_pool = pool
 
 
-def run_game(n, mode, bots, rng, flips_enabled=True, greedy_draft=None):
+def run_game(n, mode, bots, rng, flips_enabled=True, greedy_draft=None, first=0):
     st = State(rng, n, mode, flips_enabled)
     if greedy_draft is None:
         greedy_draft = [b is greedy_action for b in bots]
-    p = 0
+    p = first
     while st.turns < TURN_CAP:
         st.draft(p, rng, pick_best=greedy_draft[p])
         act = bots[p](st, p, rng)
@@ -364,6 +364,28 @@ def mirror(mode, n, flips_enabled, games, rng):
     return out
 
 
+def seat_advantage(mode, n, games, rng):
+    """All-greedy table; the starting seat rotates game to game. Results are
+    keyed by TURN POSITION (0 = first player). Returns (win share per position
+    among decided games, mean score per position, draw rate)."""
+    wins = [0] * n
+    score = [0.0] * n
+    draws = 0
+    for g in range(games):
+        first = g % n
+        st = run_game(n, mode, [greedy_action] * n, rng, True, first=first)
+        sc = st.scores()
+        for s in range(n):
+            score[(s - first) % n] += sc[s]
+        w = winner(sc)
+        if w is None:
+            draws += 1
+        else:
+            wins[(w - first) % n] += 1
+    dec = max(games - draws, 1)
+    return [w / dec for w in wins], [s / games for s in score], draws / games
+
+
 def passbot_test(mode, n, games, rng):
     pw = 0
     pscore = oscore = 0.0
@@ -382,13 +404,14 @@ def passbot_test(mode, n, games, rng):
     return pw / g, pscore / g, oscore / g
 
 
-def main(games=250, seed=42):
+def main(games=250, seed=42, modes=("goal", "node")):
     rng = random.Random(seed)
     print("=" * 80)
-    print(f"RELAY structural sim · seed {seed} · {games} games/cell · 1-ply bots")
+    print(f"RELAY structural sim · seed {seed} · {games} games/cell · 1-ply bots"
+          f" · 4P uses {SIGNS_FOR[4]} signs")
     print("=" * 80)
 
-    for mode in ("goal", "node"):
+    for mode in modes:
         title = "GOAL-RACE (deck-only)" if mode == "goal" else "NODE-MAJORITY (cubes)"
         print(f"\n############  {title}  ############")
 
@@ -428,4 +451,26 @@ def main(games=250, seed=42):
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--games", type=int, default=250)
+    ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--signs4", type=int, default=9,
+                    help="signs used at 4P (8 = the 4P-on-8-signs marker option)")
+    ap.add_argument("--goal-only", action="store_true", help="skip the dropped NODE fork")
+    ap.add_argument("--seats", action="store_true",
+                    help="only run the seat-advantage test (all-greedy, GOAL fork)")
+    a = ap.parse_args()
+    SIGNS_FOR[4] = a.signs4
+    if a.seats:
+        rng = random.Random(a.seed)
+        print(f"RELAY seat advantage · GOAL fork · all-greedy · start seat rotated"
+              f" · seed {a.seed} · {a.games} games/count · 4P uses {SIGNS_FOR[4]} signs")
+        for n in (2, 3, 4):
+            share, mean, dr = seat_advantage("goal", n, a.games, rng)
+            ws = " / ".join(pct(x) for x in share)
+            ms = " / ".join(f"{x:.1f}" for x in mean)
+            print(f"  {n}P ({SIGNS_FOR[n]} signs): win share by position {ws} "
+                  f"(fair {pct(1/n)}) | mean score {ms} | draws {pct(dr)}")
+    else:
+        main(a.games, a.seed, ("goal",) if a.goal_only else ("goal", "node"))

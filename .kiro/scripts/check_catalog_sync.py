@@ -10,7 +10,10 @@ from pathlib import Path
 
 
 ROOT = Path.cwd()
-ALLOWED_STATE = {"In development", "Ready to test", "Proven", "Shelved"}
+ALLOWED_STATE = {"Proven", "Rough edges", "Untested", "In the workshop", "Shelved"}
+# States that say something about table history must agree with physically_playtested.
+PLAYED_STATES = {"Proven", "Rough edges"}
+UNPLAYED_STATES = {"Untested"}
 
 
 def parse_frontmatter(path: Path) -> dict[str, object] | None:
@@ -85,8 +88,10 @@ for name, record in records.items():
         errors.append(f"{name}: complexity must be Light or Medium")
     if not isinstance(record.get("physically_playtested"), bool):
         errors.append(f"{name}: physically_playtested must be true or false")
-    elif record.get("state") == "Proven" and not record["physically_playtested"]:
-        errors.append(f"{name}: Proven requires physically_playtested: true")
+    elif record.get("state") in PLAYED_STATES and not record["physically_playtested"]:
+        errors.append(f"{name}: {record.get('state')} requires physically_playtested: true")
+    elif record.get("state") in UNPLAYED_STATES and record["physically_playtested"]:
+        errors.append(f"{name}: Untested requires physically_playtested: false")
     if "status" in record or "table_tested" in record or "playtest_ready" in record:
         errors.append(f"{name}: retired field present (status / table_tested / playtest_ready)")
     minimum = record.get("min_minutes")
@@ -127,6 +132,8 @@ for block in re.findall(r"  \{\n    id: .*?\n  \},?", html, re.S):
     weight_match = re.search(r"weight: '([^']+)'", block)
     if not all((name_match, supported_match, ready_match, status_match, document_match, pmin_match, pmax_match, duration_match, weight_match)):
         continue
+    if status_match.group(1) == "Rough edges" and not re.search(r"issue: '[^']", block):
+        errors.append(f"{name_match.group(1)}: games.html Rough edges entry has no known-issue note")
     supported = [int(n.strip()) for n in supported_match.group(1).split(",")]
     index_records[name_match.group(1)] = (
         status_match.group(1),
@@ -198,7 +205,7 @@ else:
     displayed_state_counts = {
         state: int(count)
         for count, state in re.findall(
-            r"(\d+) (In development|Ready to test|Proven|Shelved)",
+            r"(\d+) (Proven|Rough edges|Untested|In the workshop|Shelved)",
             headline.group(1),
         )
     }

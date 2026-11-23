@@ -479,7 +479,7 @@ The weak point is **"the skipped player turns over a pile."** It is an exception
 
 WILDFIRE uses the nine signs purely as **symbols**. It never reads a pip. Moon is not 1 and Crown is not 9 in this game — they are just two of nine shapes.
 
-But [F4](Playtesting/DECK_PLAYTEST_FINDINGS.md) records that after the June session a player carried a misunderstanding of *sign = rank* through an entire GLEAN game, "which materially affected their play." And rank is load-bearing in **BLIGHT, GLEAN, FACE VALUE, DOWRY, ICARUS and THE UNPLAYED PAIR** — most of the collection's strongest titles.
+But [F4](Playtesting/DECK_PLAYTEST_FINDINGS.md) records that after the June session a player carried a misunderstanding of *sign = rank* through an entire GLEAN game, "which materially affected their play." And rank is load-bearing in **BLIGHT, GLEAN, FACE VALUE, SILK CUT, ICARUS and THE UNPLAYED PAIR** — most of the collection's strongest titles.
 
 **So the gateway game omits precisely the concept whose absence damaged the follow-on session.** It hands players three of the deck's four ideas — two faces per card, flipping as the action, every pair exactly once (which the Mirror teaches beautifully: *only one card in the deck can do that to you*) — and silently skips the fourth.
 

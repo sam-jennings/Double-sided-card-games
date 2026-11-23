@@ -1,16 +1,18 @@
-# Beyond DOWRY: names, appeal and sibling directions
+# Beyond SILK CUT: names, appeal and sibling directions
 
-*7 September 2026 · design brief based on [repeated-play feedback](DOWRY_playtest_02.md) and the [current rules](DOWRY_rulebook.md)*
+*7 September 2026 · design brief based on [repeated-play feedback](SILK_CUT_playtest_02.md) and the [current rules](SILK_CUT_rulebook.md)*
 
-These are naming proposals and alternative design directions, not newly adopted catalogue games. The current title remains DOWRY pending selection. No sibling has been physically tested or simulated.
+These are naming proposals and alternative design directions, not newly adopted catalogue games. No sibling has been physically tested or simulated.
 
-> **Update, 7 September 2026.** A fourth direction was designed and floor-simulated instead of Open Secret: **[CARAVAN](../Caravan/CARAVAN_rulebook.md)** — a fixed ring of simultaneous offers, now `Ready to test`. It reaches the same new question Open Secret was built for while removing that design's three stated risks (failed purchases, seller veto, written commitments); [CARAVAN_design_analysis.md](../Caravan/CARAVAN_design_analysis.md) §1 sets out the argument, and §5b records a correction to this game's own simulation claims found along the way. Open Secret, Sweetener and Terms of Exchange below remain unbuilt.
+> **Update, 19 November 2026 — renamed.** The game was originally titled **DOWRY**. On 19 November 2026 it was renamed **SILK CUT**, a name not on the lists below but drawn from them: "cut" from *Velvet Cut* (the actual action) and "silk" from *Silk & Stones* (the rulebook's "silk laid on top, stones beneath"). CARAVAN's name is unchanged.
+
+> **Update, 7 September 2026.** A fourth direction was designed and floor-simulated instead of Open Secret: **[CARAVAN](../Caravan/CARAVAN_rulebook.md)** — a fixed ring of simultaneous offers, now `Untested` (complete rules, awaiting a first table). It reaches the same new question Open Secret was built for while removing that design's three stated risks (failed purchases, seller veto, written commitments); [CARAVAN_design_analysis.md](../Caravan/CARAVAN_design_analysis.md) §1 sets out the argument, and §5b records a correction to this game's own simulation claims found along the way. Open Secret, Sweetener and Terms of Exchange below remain unbuilt.
 
 ## A better name
 
-### Paired names for DOWRY and CARAVAN
+### Paired names for SILK CUT and CARAVAN
 
-*Added 8 September 2026. Both pairs are options for consideration; neither has been selected or adopted. Current game titles remain DOWRY and CARAVAN. Name availability has not been checked.*
+*Added 8 September 2026. Both pairs were options for consideration; neither was adopted (see the 19 November update above). Name availability has not been checked.*
 
 | Option | DOWRY becomes | CARAVAN becomes | Rationale |
 |---|---|---|---|
@@ -52,13 +54,13 @@ These are creative candidates; title availability has not been checked. A chosen
 
 ### Relative to the collection
 
-| Comparison | What Dowry appears to avoid or add |
+| Comparison | What SILK CUT appears to avoid or add |
 |---|---|
-| TRIGON | The first test was slowed by ability references and an undefined grid. Dowry's recurring offer needs neither an ability lookup nor a spatial rules engine. |
-| CROSSROADS | Its first test exposed a large-hand / opening-choice problem. Dowry gives choices a clear immediate purpose, though its nine-card hand still warrants monitoring. |
-| WILDFIRE | Earlier testing found reactive turns and little perceived choice. Dowry lets a player construct the available choices. Wildfire's rebuilt version still needs its own fair test. |
-| JANUS | Its intended concealment failed in testing. Dowry explicitly accepts public draw glimpses and uses table-flat offered cards to hide their reverses. Private hand handling can still leak. |
-| BLIGHT | Also a strong physical result. Dowry may offer a more immediate feeling of shaping the bargain; that is a hypothesis, not evidence that it is better for every group. |
+| TRIGON | The first test was slowed by ability references and an undefined grid. SILK CUT's recurring offer needs neither an ability lookup nor a spatial rules engine. |
+| CROSSROADS | Its first test exposed a large-hand / opening-choice problem. SILK CUT gives choices a clear immediate purpose, though its nine-card hand still warrants monitoring. |
+| WILDFIRE | Earlier testing found reactive turns and little perceived choice. SILK CUT lets a player construct the available choices. Wildfire's rebuilt version still needs its own fair test. |
+| JANUS | Its intended concealment failed in testing. SILK CUT explicitly accepts public draw glimpses and uses table-flat offered cards to hide their reverses. Private hand handling can still leak. |
+| BLIGHT | Also a strong physical result. SILK CUT may offer a more immediate feeling of shaping the bargain; that is a hypothesis, not evidence that it is better for every group. |
 | CONCORD / FACE VALUE | Nearby designs share division or bluffing, but lack comparable physical evidence. Their untested status cannot be treated as inferior player reception. |
 
 The collection has uneven exposure, different audiences and different purposes. “Best-supported repeat-play enthusiasm so far” is more defensible than a universal quality ranking. The old bot results support the usefulness of deceptive cutting against the tested honest bot; they do not measure enjoyment or explain Norma's response.
@@ -84,9 +86,9 @@ The new question is **“How do I attract the buyer I can afford to help?”** B
 3. Each player simultaneously commits to one lot at one other player's stall. For the first test, write seller seat number and lot size on a scrap of paper, cover it, then reveal together. This small extra component makes commitment reliable without pretending the cards have opaque backs. No self-purchases and no passing.
 4. A stall with one buyer serves them. A stall with multiple buyers chooses exactly one of those buyers, who receives the lot they requested; the seller receives the other lot. Rejected buyers receive nothing from that attempted purchase. They still earn any remainder from a sale at their own stall. A player may buy once and sell once in the same round. Sellers with competing buyers commit their selection on paper and reveal together before any reverse faces are exposed.
 5. If nobody chose a stall, all three of its cards go to an open discard history and score for nobody. **Do not let the seller keep unsold cards:** that would remove their reason to offer opponents anything attractive.
-6. Reveal both faces of all offered cards, including unsold ones. Then, clockwise from a rotating first player, each person locks scoring faces for all cards they received and files them in their spread. Returning revealed cards to their locked orientation after inspection follows Dowry. Earlier placements inform later ones, so rotate who places first and record whether that advantage is noticeable.
+6. Reveal both faces of all offered cards, including unsold ones. Then, clockwise from a rotating first player, each person locks scoring faces for all cards they received and files them in their spread. Returning revealed cards to their locked orientation after inspection follows SILK CUT. Earlier placements inform later ones, so rotate who places first and record whether that advantage is noticeable.
 7. Refill to six while stock remains, three cards per player in the same rotating order. Continue until all hands are empty. Rotate the first player each round.
-8. Score Dowry-style: the unique leader in each shown sign scores its pip; a tied lead scores nobody. Most points wins, then most signs won, then a unique Moon-majority holder among tied players, otherwise shared victory. Discards remain inspectable but have no owner and never count for majorities.
+8. Score SILK CUT-style: the unique leader in each shown sign scores its pip; a tied lead scores nobody. Most points wins, then most signs won, then a unique Moon-majority holder among tied players, otherwise shared victory. Discards remain inspectable but have no owner and never count for majorities.
 
 | Players | Initial hands | Stock | Rounds | Refill rounds | Cards offered |
 |---|---|---:|---:|---|---:|
@@ -98,9 +100,9 @@ No partial refills or short offers are required. Every offered card leaves play 
 
 **Example:** Bea wants a Leaf to take its lead. Alex's pair advertises Leaf and Moon; its hidden faces include a Crown that Alex would prefer Bea not to receive. Alex must weigh a likely sale against that gift. Meanwhile Cora might choose Alex too. If both arrive, Alex chooses whom to serve and must honour that person's chosen lot. Bea can instead target a less contested seller. The split, disguise, destination and customer selection all matter.
 
-**Why it is separate:** Dowry guarantees a bilateral division. Here several people simultaneously compete for counterparties, sales can fail, and a popular seller chooses whom to strengthen. Selling and shopping are distinct decisions made by every player each round.
+**Why it is separate:** SILK CUT guarantees a bilateral division. Here several people simultaneously compete for counterparties, sales can fail, and a popular seller chooses whom to strengthen. Selling and shopping are distinct decisions made by every player each round.
 
-**At two:** each player must shop at the other's stall, so both sales are guaranteed. This becomes simultaneous reciprocal cut-and-choose, with six-card hands and six rounds. It is a functional adaptation but loses the market's principal multiplayer tension; the original Dowry may remain the better duel. No dummy player is necessary.
+**At two:** each player must shop at the other's stall, so both sales are guaranteed. This becomes simultaneous reciprocal cut-and-choose, with six-card hands and six rounds. It is a functional adaptation but loses the market's principal multiplayer tension; the original SILK CUT may remain the better duel. No dummy player is necessary.
 
 **Risks to test:** failed purchases feeling like lost turns; seller veto becoming personal or kingmaking; everyone pursuing one leader-denial pattern; three rounds being too short; reading six or eight lots slowing play; and the paper commitment burden. Do not add money, powers or secret goals until the basic bargain earns them.
 
@@ -120,7 +122,7 @@ Each player displays one dressed card for exchange. On a turn you propose a one-
 
 **Inheritance:** purposeful face selection, double-use cards, evolving majority values and public evidence. **New identity:** consensual trading and choosing trading partners, rather than unilateral selection from a cut. At three or four players alternative partners make threats to walk away meaningful; at two that pressure is weaker.
 
-**Unresolved before a prototype:** supply and round budget, whether refusal dominates, runaway cooperation between two players, and a clear boundary between allowed table talk and binding deals. This route has the richest negotiation potential and the largest departure from Dowry's effortless flow.
+**Unresolved before a prototype:** supply and round budget, whether refusal dominates, runaway cooperation between two players, and a clear boundary between allowed table talk and binding deals. This route has the richest negotiation potential and the largest departure from SILK CUT's effortless flow.
 
 ## First decision
 

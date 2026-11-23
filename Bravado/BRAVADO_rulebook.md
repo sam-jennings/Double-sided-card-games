@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "BRAVADO"
-state: Ready to test
+state: Untested
 players: [3, 4, 5, 6]
 player_count: "3–6"
 duration: "15–25 min"

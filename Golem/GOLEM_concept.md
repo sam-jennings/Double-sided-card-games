@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "GOLEM"
-state: In development
+state: In the workshop
 players: [1, 2]
 player_count: "1, 2"
 duration: "~20 min"
@@ -18,9 +18,9 @@ catalog_order: 26
 ---
 # GOLEM — the boss that telegraphs
 
-*1–2 players · ~20 min · co-operative boss fight vs. a deck-driven automa · In development · physically unplayed*
+*1–2 players · ~20 min · co-operative boss fight vs. a deck-driven automa · In the workshop · physically unplayed*
 
-> **Status & scope.** Wildcard batch, second flight (July 2026) — same brief as the first flight (§18–§22): *originality first, rubric waived, unsimmed*, leaning further into the two moves the first flight proved out: **physical inversions** (a supposed weakness of the backless deck becomes the genre — the WISP move) and **format innovations** (the VIGIL move). No rulebook, no sim, no rubric self-score; should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §23.
+> **Status & scope.** Wildcard batch, second flight (July 2026) — same brief as the first flight (§18–§22): *originality first, rubric waived, unsimmed*, leaning further into the two moves the first flight proved out: **physical inversions** (a supposed weakness of the backless deck becomes the genre — the WISP move) and **format innovations** (the DEADLOCK move). No rulebook, no sim, no rubric self-score; should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §23.
 
 **The trick that makes it exist.** Automa design fakes intelligence with hidden decks; a backless deck can't hide its next card — so stop pretending. The GOLEM is **readable by construction**: the top of its deck shows the sign it will strike *now*, and the pressed face — revealed on resolution — is the follow-through you learn one beat too late. That is exactly the rhythm of a video-game boss fight (telegraph → commit → punish), which cardboard automas famously can't produce, delivered here for free by the physics of the deck. The players aren't outwitting a mind; they are standing in the right place ahead of a machine they can half-read — and the ICARUS registry turns *fully* reading it into an earnable skill.
 

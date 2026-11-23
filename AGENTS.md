@@ -20,16 +20,17 @@ These instructions are shared project guidance for Codex, Claude Cowork, and oth
 
 ## Classification: two fields
 
-**`state`** — exactly one of `In development`, `Ready to test`, `Proven`, or `Shelved`. It answers *what do I do with this next*:
+**`state`** — exactly one of `Proven`, `Rough edges`, `Untested`, `In the workshop`, or `Shelved`. It tells a player (and the designer) *what to expect* from the game:
 
-- `In development` — no usable rules yet, or rules that still need design work before the game is worth tabling.
-- `Ready to test` — it could be physically played now without further design work.
-- `Proven` — played, works, and has no known blocking problem.
-- `Shelved` — deliberately inactive, retained as a design record.
+- `Proven` — played and works. Just play it.
+- `Rough edges` — has been played; works in general but has known bugs or open questions. Feedback helps; a table may even find the fix. Each one carries a one-line known issue on its `games.html` entry and at the top of its rules.
+- `Untested` — complete rules, never played. The first table should expect surprises. A rulebook the designer has not yet reviewed says "Rules not yet reviewed by the designer" on its `games.html` entry.
+- `In the workshop` — not playable yet: an idea only, or rules with a known problem to solve first.
+- `Shelved` — set aside, kept as a design record.
 
-**`physically_playtested`** — `true` once humans have played the game on a table. This is independent of `state` and **never reverts to false**. A game can be `physically_playtested: true` and still `In development` (JANUS is), which is the honest description of a game that was tested and found to need rework.
+**`physically_playtested`** — `true` once humans have played the game on a table. This is independent of `state` and **never reverts to false**. `Proven` and `Rough edges` imply it is true, and `Untested` implies it is false; a played game can still go back to `In the workshop` if it needs design work before another table.
 
-Do not reintroduce derived flags. "Can I play it tonight?" is `state == "Ready to test"`; "have I tested it?" is `physically_playtested`. Detailed verdicts belong in playtest reports, and the single next action belongs in `next_step`.
+Do not reintroduce derived flags. "Can I play it tonight?" is `state` in `Proven`, `Rough edges` or `Untested`; "have I tested it?" is `physically_playtested`. Detailed verdicts belong in playtest reports, and the single next action belongs in `next_step`.
 
 Simulation and version numbers are evidence, not states.
 

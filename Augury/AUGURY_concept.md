@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "AUGURY"
-state: In development
+state: In the workshop
 players: [4, 5, 6, 7, 8]
 player_count: "4, 5, 6, 7, 8"
 duration: "~30 min"
@@ -18,7 +18,7 @@ catalog_order: 23
 ---
 # AUGURY — say what the card hides without saying it
 
-*4–8 players · ~30 min · judged party / creative divination · full 36 · In development · physically unplayed*
+*4–8 players · ~30 min · judged party / creative divination · full 36 · In the workshop · physically unplayed*
 
 > **Status & scope.** Wildcard batch, first flight (July 2026). Written to a deliberately different brief: *maximum originality, rubric waived, no simulation required.* Playable as written, but no rulebook, no sim, no rubric self-score, and it should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Carries the two house disciplines: a full physical-handling audit and a fastest-falsification test. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §20.
 

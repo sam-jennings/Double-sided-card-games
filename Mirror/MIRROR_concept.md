@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "MIRROR"
-state: In development
+state: In the workshop
 players: [2, 4]
 player_count: "2, 4"
 duration: "~15 min"
@@ -18,7 +18,7 @@ catalog_order: 30
 ---
 # MIRROR — show the face I'm thinking of
 
-*2 players (or 4 as two rival pairs) · ~15 min · co-operative convergence / mind-meld · In development · physically unplayed*
+*2 players (or 4 as two rival pairs) · ~15 min · co-operative convergence / mind-meld · In the workshop · physically unplayed*
 
 > **Status & scope.** Wildcard batch, second flight (July 2026) — *originality first, rubric waived, unsimmed*. No rulebook, no sim, no rubric self-score; should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §27.
 

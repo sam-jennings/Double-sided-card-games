@@ -1,7 +1,7 @@
 ---
 record_type: game-template
 game: "GAME TITLE"
-state: In development
+state: In the workshop
 players: [2]
 player_count: "2"
 duration: "~15 min"

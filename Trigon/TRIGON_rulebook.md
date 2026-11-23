@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "TRIGON"
-state: Ready to test
+state: Rough edges
 players: [2, 3, 4]
 player_count: "2, 3, 4"
 duration: "15–25 min"
@@ -20,6 +20,8 @@ catalog_order: 4
 
 *A game of converging signs for 2–4 players · ~15–25 minutes · ages 10+*
 
+> **Known issue:** The first table bogged down: the grid had no fixed shape and everyone kept looking up abilities. The rules now fix the grid (first card is the centre) and add a player aid, but neither has been played yet.
+
 **Trigon**: a three-point convergence of signs. Place cards, trigger their powers, and chain reactions across the grid — but the moment three matching signs converge, whoever caused it claims them. Capture the most signs to win.
 
 ---
@@ -27,7 +29,8 @@ catalog_order: 4
 ## Components
 
 - **36 double-faced cards.** There are 9 signs. Every possible *pair* of two different signs appears on exactly one card (one sign per face). Each sign therefore appears on exactly 8 cards.
-- This rulebook (the sign reference table below is the only thing you'll need mid-game).
+- This rulebook.
+- **One player aid per player** — the one-page sign reference at the end of this rulebook. It is also the TRIGON side of the collection's shared Nine Signs reference sheet. Print one for each player; once the aids are on the table, close the rulebook.
 
 A full card manifest is at the end of this document.
 
@@ -37,7 +40,7 @@ A full card manifest is at the end of this document.
 
 1. Shuffle the deck thoroughly, **flipping random chunks as you shuffle** so each card's face-up side is randomised (riffle one half flipped, or smush-shuffle — anything that randomises faces).
 2. Stack the deck face... well, *a* face up — with double-faced cards the top card is always visible. **The top card of the deck is public information.** Its hidden side is not.
-3. Leave space for a **3×3 grid** in the middle of the table. It starts empty.
+3. Leave space for a **3×3 grid** in the middle of the table. It starts empty. **The first card placed is the centre cell.** The grid is that cell plus the eight cells around it, one step in each direction, and it stays fixed for the whole game. Once the first card is down, point out the four **corners**, the four **edges** and the **central cross** (middle row and middle column) before anyone reads an ability.
 4. Choose a start player (whoever most recently noticed a sign they couldn't explain). Play proceeds clockwise.
 
 With 2/3/4 players everyone gets exactly 18/12/9 turns — the deck divides evenly.
@@ -49,7 +52,7 @@ With 2/3/4 players everyone gets exactly 18/12/9 turns — the deck divides even
 On your turn:
 
 1. **Draw** the top card of the deck. Look at both sides secretly.
-2. **Place** it in any **empty** cell of the grid, choosing which side faces up.
+2. **Place** it in any **empty** cell of the grid, choosing which side faces up. *(The very first card of the game goes in the centre cell — see Setup.)*
    - *If the grid is full:* first discard any one card from the grid to the **removed pile** (out of the game), then place into the empty cell. Keep the removed pile squared and **rotated 90° sideways**, apart from the deck — sideways means dead, so it can never be mistaken for the draw deck. Whichever face shows on it doesn't matter.
 3. **Resolve** the consequences (alignments and activations — see below), in any order you choose, until nothing new is triggered.
 
@@ -88,12 +91,12 @@ Activations are **always optional**. Skipping one is often the smartest play.
 | Sign | Requirement (cell condition) | Ability | Mnemonic |
 |---|---|---|---|
 | 🌙 **Moon** (1) | Has **no** orthogonally adjacent cards | *Only if you have fewer captured cards than someone else:* take the top card of the deck — without looking at its hidden side — and place it **sideways** (rotated 90°) in your score pile (worth 1 card; a sideways card's signs count for nothing) | The new moon is dark and waxes — it gains when it has least |
-| 🍃 **Leaf** (2) | On an edge cell (non-corner border) | Flip one card **orthogonally adjacent** to it | A leaf unfurls at the branch's edge and turns toward the light |
+| 🍃 **Leaf** (2) | Has **2 or more** orthogonally adjacent cards | **Swap** any two cards on the grid | Crowded leaves on a branch trade places — with two or more neighbours, the Leaf swaps any two |
 | 🌊 **Wave** (3) | Shares its row **or** column with at least one empty cell | **Move** any one card on the grid to any empty cell | The Wave carries a card to an open shore |
 | 🔥 **Flame** (4) | Has exactly **1 or 2** orthogonally adjacent cards | **Discard** one of those adjacent cards to the removed pile (out of the game) | Flame consumes what's beside it |
 | 👁 **Eye** (5) | Has at least one empty orthogonally adjacent cell | **Peek** at the hidden side of any one adjacent card; you may then flip it | The Eye sees what's hidden nearby and may expose it |
 | 🎭 **Mask** (6) | In the middle row **or** middle column (the central cross) | Flip **any** one card on the grid | The Mask at the crossroads can change any face in sight |
-| 🗝 **Key** (7) | Has **2 or more** orthogonally adjacent cards | **Swap** any two cards on the grid | The Key unlocks positions — well-connected, it rearranges at will |
+| 🗝 **Key** (7) | On an edge cell (non-corner border) | Flip one card **orthogonally adjacent** to it | A key sits in the door at the edge and **turns** — flipping one neighbour |
 | ⭐ **Star** (8) | On a corner cell | **Draw the next card** from the deck and play it (full turn rules apply: place, resolve). *Star is also wild in alignments.* | A Star on the corner draws the next card from the sky. Star is wild. |
 | 👑 **Crown** (9) | Its row **or** its column is fully occupied | Choose that full line: **flip the other two cards** in it | When the court is full, the Crown decrees — the other two must change face |
 
@@ -103,7 +106,7 @@ Activations are **always optional**. Skipping one is often the smartest play.
 
 Abilities charge other cards, which can activate, which charge others… Long chains are legal, fun, and self-limiting (once-per-turn cap guarantees they end). A worked example:
 
-> The grid has a Crown in the middle-left whose row lacks one card. You place a **Leaf** on the bottom edge — its requirement (edge) is met. You activate Leaf: flip the card above it, which turns a Wave face into a **Mask**. The flipped card is now charged — it's in the central cross — so you activate **Mask**: flip the top-centre card from Eye to **Key**. That filled... nothing yet — but the Key now shows in the top row alongside another Key and a **Star**. *Three aligned (Star is wild): you capture all three.* The Crown's row will never fill now — its moment passed.
+> The grid has a Crown in the middle-left whose row lacks one card. You place a **Key** on the bottom edge — its requirement (edge) is met. You activate Key: flip the card above it, which turns a Wave face into a **Mask**. The flipped card is now charged — it's in the central cross — so you activate **Mask**: flip the top-centre card from Eye to **Key**. That filled... nothing yet — but the Key now shows in the top row alongside another Key and a **Star**. *Three aligned (Star is wild): you capture all three.* The Crown's row will never fill now — its moment passed.
 
 ---
 
@@ -124,7 +127,7 @@ When the deck is empty, finish the current turn, then score:
 
 **Flame discards itself?** No — Flame discards an *adjacent* card, never itself.
 
-**Can Key swap two cards that aren't adjacent to it?** Yes, any two cards anywhere on the grid.
+**Can Leaf swap two cards that aren't adjacent to it?** Yes, any two cards anywhere on the grid.
 
 **A card is captured before I activated it.** Its activation is lost. Capture removes cards instantly.
 
@@ -182,4 +185,32 @@ Each card lists its two faces. 🌙 Moon · 🍃 Leaf · 🌊 Wave · 🔥 Flame
 
 *A sibling to TURNCOAT: same deck architecture, opposite soul.*
 
-*Design v1.2 — rules balanced over ~23,000 simulated games. See the accompanying design analysis for the data.*
+---
+
+## Player aid (print one per player)
+
+*A copy of rules already in this book — no new rules. This page is also the TRIGON side of the shared Nine Signs reference sheet.*
+
+**Grid.** The first card placed is the centre cell; the grid is the eight cells around it. Corners · edges (non-corner border) · central cross (middle row + middle column). Diagonals count only for alignments.
+
+**Your turn.** Draw (look at both sides) → place in any empty cell, either face up (grid full? first discard one grid card to the sideways removed pile) → resolve alignments and activations in any order.
+
+**Alignment.** Three matching signs face up in a row, column or diagonal: the active player captures all three. Star is wild.
+
+**Charged** when placed, flipped, moved, or its requirement turns from unmet to met. Activate a charged card whose requirement is met — or decline. Once per card per turn, whichever face is up. **Requirements never restrict where you place a card.**
+
+| Sign | Requirement | Ability |
+|---|---|---|
+| 🌙 Moon (1) | No orthogonally adjacent cards | If you have fewer captures than someone: top deck card, sideways, into your score pile (worth 1) |
+| 🍃 Leaf (2) | 2+ orthogonally adjacent cards | Swap any two cards on the grid |
+| 🌊 Wave (3) | Row or column has an empty cell | Move any one card to any empty cell |
+| 🔥 Flame (4) | Exactly 1 or 2 orthogonally adjacent cards | Discard one of those adjacent cards |
+| 👁 Eye (5) | An empty orthogonally adjacent cell | Peek at an adjacent card's hidden side; may flip it |
+| 🎭 Mask (6) | In the central cross | Flip any one card |
+| 🗝 Key (7) | On an edge cell | Flip one orthogonally adjacent card |
+| ⭐ Star (8) | On a corner cell | Draw the next card and play it. Wild in alignments |
+| 👑 Crown (9) | Its row or column is full | Flip the other two cards in that full line |
+
+---
+
+*Design v1.3 — rules balanced over ~23,000 simulated games. See the accompanying design analysis for the data. v1.3 (from playtest 01, Bugs 1–2, and the July 2026 house-kit decision D4): first card sets the centre cell, Leaf and Key swap their requirement-and-ability bundles (balance-neutral), and a one-page player aid. No balance numbers changed.*

@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: OUROBOROS
-state: Ready to test
+state: Rough edges
 players:
   - 1
 player_count: "1"
@@ -20,6 +20,8 @@ catalog_order: 9
 # OUROBOROS
 
 *A solitaire of the world-serpent for 1 player · ~10–15 minutes · ages 8+*
+
+> **Known issue:** These revived rules (both ends of the serpent kept face-up) have never been played. The earlier version had handling trouble and often failed early.
 
 Lay the serpent, scale by scale, until it bites its own tail. Every card is one scale; every scale must flow into the next. Run out of road and you must tie a **scar** into the serpent's body. A flawless, scarless serpent — the true ouroboros — is rare enough to chase for weeks.
 

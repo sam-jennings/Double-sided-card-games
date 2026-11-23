@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "SLEEPER"
-state: In development
+state: In the workshop
 players: [4, 5, 6]
 player_count: "4, 5, 6"
 duration: "~25 min"
@@ -13,7 +13,7 @@ min_minutes: 25
 max_minutes: 25
 physically_playtested: false
 public_document: "Sleeper/SLEEPER_rulebook.md"
-next_step: "Vet the rules and the single-card concealment before scheduling a test."
+next_step: "Designer decisions from the November 2026 sim: fix the last-mover decides-the-game edge (55–60% win rate), and decide what the public registry should reveal about Masters (37–64% pinned by counting). See SLEEPER_design_analysis.md."
 catalog_order: 18
 ---
 # SLEEPER

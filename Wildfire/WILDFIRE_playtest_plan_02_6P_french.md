@@ -28,7 +28,7 @@ all three with words.
 
 | Also plays 6 | Why not today |
 |---|---|
-| BRAVADO, THE COUNCIL, FORKED TONGUE, SLEEPER | All run on talking — claiming, lobbying, bluffing aloud. Across a language barrier they aren't hard, they're impossible. All four are In development anyway. |
+| BRAVADO, THE COUNCIL, FORKED TONGUE, SLEEPER | All run on talking — claiming, lobbying, bluffing aloud. Across a language barrier they aren't hard, they're impossible. None of the four has been played yet anyway (SLEEPER is still in the workshop). |
 | GLEAN | Same engine as BLIGHT, and good — but nine simultaneous sign-majorities is a scoring teach you cannot do without language. BLIGHT's scoring is "add up the numbers in front of you". |
 | FAVOURS | Kept as the encore (sheet page 3). Teaches by pointing, but only 2 rounds at 6P and ~55% of games tie. |
 

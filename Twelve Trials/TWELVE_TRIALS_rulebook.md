@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "TWELVE TRIALS"
-state: Ready to test
+state: Rough edges
 players: [1, 2, 3]
 player_count: "1, 2, 3"
 duration: "~15 min"
@@ -19,6 +19,8 @@ catalog_order: 2
 # TWELVE TRIALS
 
 *An open-information puzzle for 1–2 players (plus a table co-op mode) · ~15 minutes · ages 10+*
+
+> **Known issue:** Counting flips by turning cards sideways broke down at the first table, because cards get regrouped so often; the layout also sprawls. Use a big table, and if you find a better way to count flips, tell the designer.
 
 Hidden inside every shuffle of the 36-card deck is an **almanac**: a way of sorting all the cards into twelve perfect trios. Each trio is a closed ring of three symbols — three cards, three faces, each card vouching for the next. The almanac is always there. The trial is finding it without turning the world upside-down.
 

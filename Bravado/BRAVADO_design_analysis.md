@@ -47,7 +47,7 @@ What does not survive the translation:
 - **Ties are structurally impossible**, because no card pairs a sign with itself. That is a property of K₉, not a patched rule. A normal deck needs an explicit tie clause.
 - **The public record is a pair-registry**, not a rank count. Its information content is exact rather than statistical (see §5 for how little that turns out to be worth here).
 
-Verdict: a genuine pass, but BRAVADO uses the deck as **staging and structure** rather than as a puzzle. It is nearer TURNCOAT's "invisible infrastructure" end of [design-principles](../.kiro/steering/design-principles.md) Layer 2 than DOWRY's or CROSSROADS's, and it should not be sold as a deep exploitation of K₉.
+Verdict: a genuine pass, but BRAVADO uses the deck as **staging and structure** rather than as a puzzle. It is nearer TURNCOAT's "invisible infrastructure" end of [design-principles](../.kiro/steering/design-principles.md) Layer 2 than SILK CUT's or CROSSROADS's, and it should not be sold as a deep exploitation of K₉.
 
 ---
 
@@ -166,7 +166,7 @@ This is a much weaker counting layer than ICARUS's, where the Fallen field genui
 
 **Gap-filling.** A 3–6 player, 15–25 minute, Light social game. That slot currently holds WILDFIRE (~10 min, and per [GATEWAY_GAME_CONCEPTS.md](../Project/GATEWAY_GAME_CONCEPTS.md) §13 a 3–5 game in practice), FORKED TONGUE and THE COUNCIL (both unvetted). BRAVADO is the only *vetted, table-ready* game in that space, and unlike WILDFIRE it genuinely runs at six.
 
-**It closes the flagged rank-teaching gap.** §13.5 of the gateway evaluation records the collection's "most actionable open gap": WILDFIRE, the gateway, never reads a pip, and a player carried a sign-equals-rank misunderstanding through an entire GLEAN game as a result — while rank is load-bearing in BLIGHT, GLEAN, FACE VALUE, DOWRY and ICARUS. BRAVADO cannot be played at all without the rank canon; the pip *is* the odds table. It is a strong candidate to sit before the rank-sensitive games in the learning order, pending its first test.
+**It closes the flagged rank-teaching gap.** §13.5 of the gateway evaluation records the collection's "most actionable open gap": WILDFIRE, the gateway, never reads a pip, and a player carried a sign-equals-rank misunderstanding through an entire GLEAN game as a result — while rank is load-bearing in BLIGHT, GLEAN, FACE VALUE, SILK CUT and ICARUS. BRAVADO cannot be played at all without the rank canon; the pip *is* the odds table. It is a strong candidate to sit before the rank-sensitive games in the learning order, pending its first test.
 
 **Component consequence worth noting.** BRAVADO is the **second** game to need [DECK_CONVENTIONS](../Project/Deck/DECK_CONVENTIONS.md) rung 4, the box base as an opaque draw well. The [house-kit decision](../Project/Decisions/HOUSE_KIT_DECISION_2026-07.md) explicitly noted that the container was "only load-bearing for JANUS," accepted because the box ships regardless. A second user strengthens that decision at zero cost and reinforces the two-piece-box production note.
 
@@ -185,7 +185,7 @@ Ranked. The first question outranks all the others combined, and no further simu
 5. **Does rotating the Caller add variety or cut the duel short?** The draft raises this as a genuine tension and it can only be answered by comparison — try a round of *Personal Challenge* against the rotating default.
 6. **Does the seat spread show up over a three-win match**, or does the rotating start absorb it as §3b predicts?
 
-**Verdict framing for the report.** Per [playtesting.md](../.kiro/steering/playtesting.md): *iterate → Proven* if the room lights up and only polish remains; *iterate → Ready to test* if the advice needs the *Accomplice* switch but the game plainly works; *iterate → In development* if the higher/lower call turns out to be too thin to carry 15–25 minutes; *cut → Shelved* if question 1 fails, since that is the one thing no rule change repairs.
+**Verdict framing for the report.** Per [playtesting.md](../.kiro/steering/playtesting.md): *iterate → Proven* if the room lights up and only polish remains; *iterate → Rough edges* if the advice needs the *Accomplice* switch but the game plainly works; *iterate → In the workshop* if the higher/lower call turns out to be too thin to carry 15–25 minutes; *cut → Shelved* if question 1 fails, since that is the one thing no rule change repairs.
 
 ---
 

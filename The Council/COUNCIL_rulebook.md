@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "THE COUNCIL"
-state: In development
+state: Untested
 players: [3, 4, 5, 6]
 player_count: "3, 4, 5, 6"
 duration: "~25 min"
@@ -13,7 +13,7 @@ min_minutes: 25
 max_minutes: 25
 physically_playtested: false
 public_document: "The Council/COUNCIL_rulebook.md"
-next_step: "Read through and vet the rules, especially pot handling."
+next_step: "First table test at 4 players: does open talk create a real minority game, do rolled-over stacks build to a round-4 climax, and does kingmaking appear?"
 catalog_order: 17
 ---
 # THE COUNCIL
@@ -26,14 +26,17 @@ Issues come before the council; the council talks, promises, commits — and the
 
 ## Components
 
-- The **36-card** master deck. The corner **index pips (1–9)** give each symbol its value — a Crown issue (9) is worth more than a Moon issue (1).
+- The **36-card** master deck: 9 symbols, every pair of two symbols on exactly one card, each symbol on 8 cards. The corner **index pips (1–9)** give each symbol its value — a Crown issue (9) is worth more than a Moon issue (1).
+- Any small object as the **Speaker token**.
+
+> **Say this aloud before you deal:** *"There are 9 signs. Each sign has one fixed strength — Crown is always 9, Moon is always 1. Every card pairs two different signs, so it always has two different strengths, one per face."*
 
 ## Setup
 
-1. Shuffle thoroughly, flipping random chunks.
-2. Deal each player a hand of **4** (examine both sides freely, always).
-3. The rest is the **issue deck** (3P: 24 · 4P: 20 · 5P: 16 · 6P: 12 — at six players it empties exactly).
-4. Choose a first **Speaker** (whoever last changed their mind in public). The Speaker token (any object) rotates left each round.
+1. Shuffle thoroughly, flipping random chunks so which face lands up is random (there is no card back).
+2. **Self-deal a hand of 4:** pass the squared deck round; each player takes their own 4 cards one at a time off the top, straight into hand. The face showing on the deck as each card is taken is seen by everyone — that glimpse is legitimate information. Hold your hand privately, tilted back toward your chest (a fan shows its outer faces to anyone at the right angle). Examine both sides of your own cards freely, always.
+3. The rest is the **issue deck**, an upright squared stack (3P: 24 · 4P: 20 · 5P: 16 · 6P: 12 — at six players it empties exactly).
+4. Choose a first **Speaker** (whoever last changed their mind in public). The Speaker token rotates left each round.
 
 The game lasts **4 rounds** — one per hand card. Every card will be spent.
 
@@ -41,9 +44,11 @@ The game lasts **4 rounds** — one per hand card. Every card will be spent.
 
 ### 1. Issues are tabled
 
-Flip **3 cards** from the issue deck to the middle, one at a time. Each card's **visible symbol** is an open issue, worth its pip. Stack any new issue on other tabled cards of the same symbol — stacks of unresolved issues grow, and stacks are won whole.
+Table **3 cards** from the issue deck, one at a time: take the top card and **turn it over** as you lay it in the middle, so the face that was underneath is now up. That face is an open **issue**, worth its pip. The face that was showing on the deck is now pressed to the table and plays no part.
 
-*(Both faces of an issue card are shown to everyone as it's flipped, then it lies issue-side up. Like all public cards in this collection, tabled issues may be re-examined by anyone at any time.)*
+A new issue whose symbol is already on the table joins that symbol's **stack**: overlap it on the existing cards as a short cascade, so every card's pip stays visible. A stack is worth the **sum of its pips** (two Crown issues = 18). Unresolved stacks grow, and stacks are won whole.
+
+*(Everyone sees both faces of an issue card as it is turned over. Like all public cards in this collection, anyone may pick up and examine any tabled issue, both sides, at any time — return it as found.)*
 
 ### 2. The council talks
 
@@ -54,6 +59,8 @@ Open negotiation, any promises, any lies. Nothing said is binding. Nothing ever 
 Everyone secretly chooses one hand card and holds it **flat between their palms**. When all are ready, the Speaker counts down and everyone **slaps their card down together**, chosen face up.
 
 Your card **supports** the tabled issue matching its visible symbol. A card showing a symbol with no tabled issue is an **abstention**.
+
+**Show your alternative.** Once every card is down, each player in turn tips their committed card up to show its other face to the table, then lays it back exactly as committed. Now everyone knows every card's one possible defection. *(The face pressed to the table can't be seen, so this step is what makes the threat public. Anyone may ask to see a committed card's other face again at any time.)*
 
 ### 4. The turncoat phase
 
@@ -71,7 +78,7 @@ All committed cards then go face-up (as they finished) to a public discard row.
 
 ## Game end & scoring
 
-After round 4, unclaimed issue stacks rot unresolved. Each player sums the **pips of the issue cards they carried**. Highest total wins. Tiebreak: most issue cards; then the player who carried an issue **most recently**.
+After round 4, unclaimed issue stacks rot unresolved. Each player sums the **pips of the issue cards they carried** (keep your carried cards in a face-up spread in front of you). Highest total wins. Tiebreak: most issue cards; then the player who carried an issue **most recently**; still tied, the victory is shared.
 
 ## Why it bites
 
@@ -93,7 +100,7 @@ With three issues and more than three players, somebody must clash, abstain, or 
 
 **Six players, round 4:** the issue deck runs out exactly. At fewer players the spare cards' pairs are never revealed — which keeps the table's knowledge of unflipped pairs honest (you can't count what was never dealt).
 
-**I can see the top of the issue deck.** You can — a backless deck always shows one face of its top card, so everyone has a half-preview of the next issue to be tabled. That's public information, shared equally; plan around it. (Only its hidden face is a surprise, and both faces are shown the moment it's flipped.)
+**I can see the top of the issue deck.** You can — a backless deck always shows one face of its top card. That face is the one that *won't* become the issue (the card is turned over as it's tabled), but it tells you the issue will be one of that symbol's eight partners. That's public information, shared equally; plan around it.
 
 ## Strategy notes (read after your first session)
 
@@ -111,3 +118,5 @@ With three issues and more than three players, somebody must clash, abstain, or 
 ---
 
 *Design v1.0 — untested at the table. Core design choices: lone-supporter-takes-all turns the game into an asymmetric minority game (the degenerate "everyone takes one issue each" collusion at 3P is broken by unequal pip values and rollover stacks); the palms-commit protocol replaces the face-down concealment this deck cannot have; all spent material stays public (no memory). First playtest questions: does 4 rounds feel one short; do deadlock stacks roll often enough to matter; is the Speaker rotation enough to balance flip order at 5–6P.*
+
+*v1.0a (November 2026 vetting, no new mechanics): v1.0 said everyone can read a committed card's alternative, but the pressed face can't be seen, so a **show-your-alternative** step now makes that true. Also new: how an issue card is turned (the underside becomes the issue), stacks laid as visible cascades worth their pip sum, a self-deal with hands held tilted to the chest (house convention C2), the rank canon callout (C7), and a final shared-tie line. Floor-simulated over 60,000 games ([council_sim.py](council_sim.py)): 4 rounds, so it can never stall; one skilled bot wins 69 / 59 / 51 / 44% at 3 / 4 / 5 / 6P (2.1–2.7× fair) with no negotiation modelled; seat and flip-order spread within ±2 points at every count; about 2–3 stacks roll over each round, and 20–30 pips rot per game. See [COUNCIL_design_analysis.md](COUNCIL_design_analysis.md).*

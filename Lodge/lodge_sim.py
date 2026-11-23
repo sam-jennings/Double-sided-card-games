@@ -291,9 +291,9 @@ def run(n, games, table, recycle, star, seed):
             kinds = ["S"] * n
         elif table == "random":
             kinds = ["R"] * n
-        else:  # one skilled seat, rotating
+        else:  # one skilled seat, rotating independently of the first seat
             kinds = ["R"] * n
-            kinds[g_i % n] = "S"
+            kinds[(g_i // n) % n] = "S"  # first = g_i % n, so every (seat, first) pair occurs
         bots = [SkilledBot(rng) if k == "S" else RandomBot(rng) for k in kinds]
         game = Game(n, bots, rng, recycle=recycle, star=star)
         first = g_i % n

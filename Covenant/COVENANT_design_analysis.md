@@ -1,6 +1,6 @@
 # COVENANT (version A) — how a chapter actually works
 
-*Design exploration, July 2026. Early stage: no rulebook yet. This document proposes four concrete ways a chapter could play, grounds them in a scoping computation, evaluates them against the house standards, and recommends one. Companion to [COVENANT_concept.md](COVENANT_concept.md) and the model in [covenant_sim.py](covenant_sim.py).*
+*Design exploration, July 2026; rulebook simulation added November 2026. The July sections below are kept as written: they explore four chapter models and recommend one (Model 3). The [trial-engine draft](COVENANT_trial_engine.md) later rejected that and proposed an open-information engine. **The November section at the end records what the v0.1 rulebook actually adopted, and the simulation of it.** Companions: [COVENANT_concept.md](COVENANT_concept.md), [COVENANT_rulebook.md](COVENANT_rulebook.md), [covenant_sim.py](covenant_sim.py) (the July scoping model is `--scoping`).*
 
 The concept fixes the fiction (you are the Tenth; the sub-deck is the save; a new sign joins each chapter) but leaves the chapter loop as a sketch — "a blind-matching permutation puzzle." The job here is to turn that sketch into a loop with real decisions, and to find out whether the obvious version is even a game.
 
@@ -122,3 +122,144 @@ Two solo sittings on the printed Set D deck: play the Approach at **k=4** (found
 ## Next step
 
 Draft a one-page **Model 3 chapter rulebook** — Approach, seal, claim, miss/shuffle, win, grudge — and run the k=4 / k=8 falsification before writing the campaign frame around it.
+
+---
+
+## November 2026 — the v0.1 rulebook and its simulation
+
+### What the rulebook adopted, and why it differs from the July recommendation
+
+The July scoping model was right about its own premise. A claim that answers only yes or no rules out one (stranger, sign) pair, and against that the full deducer is no better than guessing: C(k,2)/2 misses either way. Re-run with `--scoping`, it still gives 2.99 / 5.00 / 7.47 / 10.49 / 13.99 misses for k = 4..8. **But that premise is not the physical game.** At the table you verify a claim by flipping the stranger. A miss therefore *shows* its true sign. It does not just say "no".
+
+The [v0.1 rulebook](COVENANT_rulebook.md) keeps version A as the concept describes it and makes that flip honest:
+
+- The row is uniform, and each stranger is secretly bound to one covenant sign.
+- You claim with a hand card bearing the sign you name.
+- A **miss unmasks** the stranger, ashes the claim card, and the stranger strikes back, ashing the top card of the reserve.
+- A **hit** turns the stranger and returns the claim card.
+
+Your hand (one card per stranger, no automatic draw) is your strength, and nothing in it is hidden. The decisions are:
+
+- **Card stewardship:** which card to risk, given that every card names two signs.
+- **When to spend cards on powers:** Leaf, Wave, Moon, Eye and Key, with Mask and Star always on.
+- **Whether to burn with Flame** and take a grudge.
+
+Memory is not the spine (Model 3 becomes a variant). The open-information Turning engine stays on file as the alternative if this engine fails at the table. The rulebook's closing note lists all 15 designer decisions.
+
+### The questions
+
+1. Does chapter one (no powers) contain any real decision, or is it only a tutorial?
+2. Per chapter (k = 3..8 strangers): average cards lost, failure rate, stall rate.
+3. Skill gap: skilled vs random, and skilled vs the *obvious* line (the OUROBOROS lesson).
+4. Does a failure ever block the campaign, and are grudges a live choice?
+5. Which hand size and miss penalty give a sensible difficulty ramp?
+
+### Method
+
+- **Ruleset:** [covenant_sim.py](covenant_sim.py) models the v0.1 rules exactly as written: the uniform row, hand claims, unmask on a miss, strike-back, all nine power rules, Flame grudges, the grudge toll and free retries. Retries are capped at 2 in the campaign model; after that the newcomer joins as a grudge.
+- **Not modelled:**
+  - assistants;
+  - concession timing, beyond "concede when no useful action is left";
+  - the honour of the wash (the sim assumes a perfect shuffle).
+- **Bots** (public information only):
+  - **Random:** uniform over every legal action, including silly claims. This is the mechanics floor.
+  - **Greedy:** the obvious line. Claim unmasked strangers it can match, otherwise guess a still-possible sign with a random card, and use powers only when stuck.
+  - **Skilled:** a one-ply heuristic. It risks the card whose loss hurts coverage least, Leafs for card advantage, uses Eye before a blind guess into three or more masked strangers, uses Key/Moon/Wave to fix coverage, and burns with Flame only as a last resort on the final hearing.
+- **Exact solve:** chapter one by expectimax over information states (masked strangers are interchangeable, so the state is hand × unmasked signs × unaccounted signs).
+- **Volume:** 2,000 hearings per chapter per bot (36,000); 1,000 campaigns per bot; a hand-size × strike sweep at 1,000 hearings per cell (80,000). About 145,000 hearings in total. The turn cap is 600 actions. Main seed 2026, repeated with seed 7: every headline figure moved by ≤ 2 points.
+
+### Results (hand = one card per stranger, strike-back on — the adopted rules)
+
+| Ch | Newcomer | k | Bot | Clear | Grudge-clear | Fail | Cards lost | Misses | Actions |
+|---:|---|---:|---|---:|---:|---:|---:|---:|---:|
+| 1 | Flame | 3 | Random | 19.6% | 0% | 80.5% | 2.65 | 2.65 | 3.9 |
+| | | | Greedy | 72.7% | 0% | 27.4% | 1.17 | 1.17 | 3.9 |
+| | | | Skilled | 84.5% | 0% | 15.4% | 1.16 | 1.16 | 4.0 |
+| 2 | Eye | 4 | Random | 1.4% | 9.8% | 88.8% | 4.03 | 3.06 | 5.8 |
+| | | | Greedy | 75.4% | 14.3% | 10.2% | 3.07 | 1.91 | 6.3 |
+| | | | Skilled | 90.3% | 2.1% | 7.6% | 3.25 | 1.90 | 6.1 |
+| 3 | Mask | 5 | Random | 0.4% | 2.6% | 97.0% | 6.60 | 3.79 | 7.2 |
+| | | | Greedy | 81.9% | 7.6% | 10.5% | 5.11 | 2.72 | 8.9 |
+| | | | Skilled | 96.0% | 1.3% | 2.8% | 4.23 | 2.28 | 9.1 |
+| 4 | Key | 6 | Random | 0.1% | 1.2% | 98.7% | 9.15 | 4.90 | 8.3 |
+| | | | Greedy | 87.8% | 4.7% | 7.5% | 6.75 | 3.51 | 11.3 |
+| | | | Skilled | 96.5% | 1.1% | 2.5% | 5.27 | 2.77 | 11.7 |
+| 5 | Star | 7 | Random | 0.0% | 0.6% | 99.4% | 10.54 | 5.55 | 9.0 |
+| | | | Greedy | 85.9% | 2.5% | 11.7% | 8.43 | 4.39 | 13.5 |
+| | | | Skilled | 90.8% | 1.5% | 7.8% | 6.92 | 3.54 | 13.6 |
+| 6 | Crown | 8 | Random | 0.0% | 0.1% | 99.9% | 12.99 | 6.79 | 9.9 |
+| | | | Greedy | 88.3% | 1.5% | 10.2% | 10.34 | 5.29 | 14.8 |
+| | | | Skilled | 96.5% | 0.4% | 3.1% | 9.19 | 4.62 | 14.5 |
+
+Stall rate is 0.0% in every configuration.
+
+**Skill gap.** Cards-lost ratios understate it against Random, because Random dies early and so loses fewer cards. Clear rate is the clearer measure.
+
+| Ch | Random ÷ Skilled (cards lost) | Greedy ÷ Skilled (cards lost) | Clear: Random / Greedy / Skilled |
+|---:|---:|---:|---|
+| 1 | 2.29× | 1.01× | 20% / 73% / 85% |
+| 2 | 1.24× | 0.95× | 1% / 75% / 90% |
+| 3 | 1.56× | 1.21× | 0% / 82% / 96% |
+| 4 | 1.74× | 1.28× | 0% / 88% / 97% |
+| 5 | 1.52× | 1.22× | 0% / 86% / 91% |
+| 6 | 1.41× | 1.12× | 0% / 88% / 97% |
+
+**Chapter one, solved exactly.**
+
+- Optimal play wins **83.3%** (5/6) with 1.33 expected misses.
+- The worst *sensible* play (never naming an impossible sign) wins **66.7%**; uniform random wins 19.1%.
+- The optimal path has 17 decision states. In **2** of them a sensible choice changes the odds, by a **50-point swing**: after a miss, which card you risk next (the rulebook's worked example).
+
+**Campaign** (1,000 per bot; retries ≤ 2, then grudge):
+
+| Bot | Grudges | Hearings (min 6) | Cards lost (all hearings) | Campaigns with 0 grudges |
+|---|---:|---:|---:|---:|
+| Random | 5.51 | 17.1 | 82.4 | 0% |
+| Greedy | 0.07 | 7.4 | 41.3 | 94% |
+| Skilled | 0.00 | 6.5 | 32.0 | 100% |
+
+**Sweep** (Skilled / Greedy: % of hearings not cleanly cleared, and cards lost; 1,000 per cell):
+
+| Hand | Strike | Ch 2 | Ch 3 | Ch 4 | Ch 5 | Ch 6 |
+|---|---|---|---|---|---|---|
+| k | off | 0.7/0.8 · 1.86/1.87 | 0.7/3.8 · 2.21/2.56 | 2.8/8.9 · 2.73/3.29 | 9.6/13.6 · 3.54/4.07 | 4.0/9.6 · 4.59/5.05 |
+| **k** | **on** | **7.3/24.4 · 3.21/3.10** | **4.0/15.0 · 4.12/5.01** | **3.1/13.9 · 5.23/6.81** | **9.6/12.3 · 7.08/8.38** | **4.0/11.0 · 9.11/10.35** |
+| 4 | on | 7.3/24.4 · 3.21/3.10 | 23.0/32.8 · 4.58/5.23 | 49.1/59.1 · 5.64/6.37 | 87.5/85.2 · 6.20/7.20 | 92.0/93.3 · 7.17/7.67 |
+| 5 | on | 0.0/6.1 · 2.88/2.63 | 4.0/15.0 · 4.12/5.01 | 20.5/34.2 · 5.76/6.71 | 66.8/62.7 · 7.07/7.95 | 76.8/79.5 · 8.59/8.96 |
+| 6 | on | 0.0/1.0 · 1.92/1.90 | 0.7/14.6 · 3.49/4.97 | 3.1/13.9 · 5.23/6.81 | 35.9/38.8 · 7.31/8.29 | 49.3/56.5 · 9.36/9.82 |
+
+(The strike-off rows for hands 4–6 are in the script output and follow the same pattern.)
+
+### Health checks
+
+- **Termination:** no stalls anywhere. Every action either turns a stranger or moves a card out of play for good; Moon only reaches into Ash, and Moon's own card is spent.
+- **Skill vs the floor:** healthy. Random clears almost nothing from chapter two on, while Skilled clears 90–97%. On cards lost, Skilled beats Random 1.4–2.3× in five of six chapters (1.24× in chapter two, where Random's early deaths flatter it).
+- **Skill vs the obvious line: thin, and the honest weak spot.** Skilled loses 1.1–1.3× fewer cards than Greedy from chapter three on, and clears 5–15 points more often. In chapters one and two the cards-lost gap is nil (0.95–1.01×). The edge there is entirely in clear rate (+12 and +15 points): the stewardship decision and not wasting cards on silly powers. This is a one-ply bot, so it is a floor, not a ceiling (design-principles lesson 6b). Still, the table must find out whether "risk the redundant card" and "Leaf early" feel like decisions or like chores.
+- **Ramp:** with a fixed hand, the game is backwards. Hand 5 is easy in chapter two and 67–77% failure in chapters five and six, and Skilled is no better than Greedy there. One card per stranger gives a flat, forgiving ramp: Skilled fails 3–10% per chapter. Difficulty shows up as rising Ash (1.2 → 9.2 per chapter), not as failure.
+- **Progress is never blocked:** with free retries, a Skilled campaign takes 6.5 hearings on average and gets no grudges. Even Greedy averages 7.4 hearings.
+- **Strike-back earns its place:** it is what makes Eye worth spending, and it opens the Greedy–Skilled gap. With strike-back off, the two bots are within 3 points in chapters two and three. With it on, the gap is 24% vs 7% and 15% vs 4%.
+- **Estimated time:** 4–15 actions per chapter. That is roughly 2 minutes for chapter one and 10–15 for the finale, including setup and the wash.
+
+### Changes adopted (v0.1)
+
+- **Opening hand = one card per stranger,** not a fixed 5. With 5, chapters five and six were near-unwinnable for both bots.
+- **Strike-back on** as standard. Off becomes the *Gentle rite* variant.
+- **Standing bands** set from the simulated per-chapter Ash. The sum of the six won-chapter averages is about 30 for Skilled and 35 for Greedy, which gives bands of ≤ 24 / 25–32 / 33–40 / 41+.
+- **Chapter one is labelled a teaching rite** in the rulebook, with its single decision named and worked through.
+
+### Verdict on the blocking questions
+
+- **Chapter one is a tutorial, honestly framed.** It is not inert (one 50-point decision, 83% vs 67%), but it is not a game you would replay. The rulebook says so.
+- **No blocking defect** in the floor: it terminates, nothing blocks progress, the skill gap against the random floor is healthy, and the difficulty ramp is sane.
+- **Two soft risks need the table, not more simulation:**
+  - **Flatness.** The edge over the obvious line is thin, and failure is rare once you play carefully.
+  - **Grudges are near-irrelevant.** With free retries, a careful player never takes one. The *Strict hearings* variant is the ready fix if grudges should matter.
+
+### Caveats for the first table test
+
+- **The wash.** Can a human really lose track of 4–8 identical strangers by sliding them? And does lining them up without lifting work?
+- **Do the decisions feel like decisions?** Watch for "risk the redundant card" being spotted, or missed, without the strategy notes.
+- **Flatness.** Is the rising Ash count enough tension when failure is rare, or does the campaign need *Strict hearings* by default?
+- **Power use.** Measured separately (1,000 Skilled hearings per chapter, seed 99+ch), per hearing: Leaf 0.15–1.9, Eye 0.6–1.0, Wave 0.06–0.21, Moon 0.04–0.20, Key 0.08–0.24, Flame ≤ 0.04. Leaf and Eye carry the play; Wave, Moon, Key and Flame barely fire for the bot. Does a human ever reach for them? If not, they are dead text to cut or rework.
+- **Chapter six.** Is the 8-stranger finale a climax, or just a longer chapter five?
+- **Assistants** are completely unsimulated.

@@ -10,16 +10,17 @@ Outside Obsidian, the underlying [Base file](GAME_CATALOG.base) remains availabl
 
 Two fields carry the whole system.
 
-**State** — what to do with the game next:
+**State** — what a player can expect:
 
 | State | Meaning |
 |---|---|
-| **In development** | No usable rules yet, or rules that still need design work before they are worth tabling. |
-| **Ready to test** | You could physically play it now without further design work. |
-| **Proven** | Played, works, and has no known blocking problem. |
-| **Shelved** | Deliberately inactive. |
+| **Proven** | Played and works. Just play it. |
+| **Rough edges** | Has been played; works in general but has known bugs or open questions. Feedback helps — a table may even find the fix. |
+| **Untested** | Complete rules, never played. The first table should expect surprises. |
+| **In the workshop** | Not playable yet: an idea only, or rules with a known problem to solve first. |
+| **Shelved** | Set aside, kept as a design record. |
 
-**Physically played** — true once humans have played it on a table. This never reverts. A game can be physically played and still **In development**, as JANUS is; that is the honest description of a game that was tested and found to need rework.
+**Physically played** — true once humans have played it on a table. This never reverts, even if a game later goes back to **In the workshop**.
 
 `next_step` says what specifically needs doing. Playtest reports hold the detailed verdicts.
 
@@ -29,12 +30,12 @@ Filters can be combined with **and** / **or**. For example:
 
 | Question | Filter |
 |---|---|
-| What can I put on the table tonight? | `State is Ready to test` |
+| What can I put on the table tonight? | `State is Proven` **or** `State is Rough edges` **or** `State is Untested` |
 | What have I never actually played? | `Physically played is false` |
-| Tested games that still need work | `Physically played is true` **and** `State is In development` |
-| Untested games that are ready to go | `State is Ready to test` **and** `Physically played is false` |
-| Ready games that support four players | `State is Ready to test` **and** `Exact players contains 4` |
-| Ready games with a four-or-more-player option | `State is Ready to test` **and** `Max players is at least 4` |
+| Played games with known issues to chase | `State is Rough edges` |
+| Complete rules waiting for a first table | `State is Untested` |
+| Playable games that support four players | (`State is Proven` **or** `Rough edges` **or** `Untested`) **and** `Exact players contains 4` |
+| Untested games with a four-or-more-player option | `State is Untested` **and** `Max players is at least 4` |
 | Games shorter than 20 minutes | `Max minutes is less than 20` |
 
 The player list is exact. GLEAN's `3, 4, 6` does not include five, and MIRROR's `2, 4` does not include three. The numeric minimum and maximum fields are only for broader questions; use **Exact players contains** when choosing for a specific group size.

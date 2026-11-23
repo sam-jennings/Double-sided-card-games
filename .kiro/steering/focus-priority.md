@@ -34,20 +34,20 @@ time) and want to spend it efficiently. Work top-down; only skip a rung when
 everything on it is blocked or has no actionable next step.
 
 1. **Iterate on your strongest played games with open questions.** Anything
-   **Proven**, or **Ready to test** and already physically played, with concrete
-   findings and specific next questions. Momentum is cheap to keep.
+   **Proven** or **Rough edges**, with concrete findings and specific next
+   questions. Momentum is cheap to keep.
 2. **Take a game to the table.** A single session answers more than another
-   thousand sim runs or another rulebook revision. This covers everything
-   **Ready to test**: both the *first* test of a game with
-   `physically_playtested: false`, and the *re*-test of one that already has
-   data pointing at the next session. Within this rung, prefer games testable at
-   the player count you can currently field.
-3. **Resolve a played game that dropped back to In development.** Don't let a
+   thousand sim runs or another rulebook revision. This covers both the *first*
+   test of an **Untested** game and the *re*-test of a **Rough edges** game whose
+   known issue points at the next session. Within this rung, prefer games
+   testable at the player count you can currently field.
+3. **Resolve a played game that went back to In the workshop.** Don't let a
    game that failed at the table linger unresolved: either schedule the
    redesign/re-test, or shelve it with evidence. A clear decision beats a
    stalled one.
 4. **Validate an unvetted rulebook** — sim it, solve it, walk through it deeply —
-   to earn a `sim-validated` badge and move it to **Ready to test**.
+   to earn a `sim-validated` badge and move it from **In the workshop** to
+   **Untested**.
 5. **Develop a concept into a rulebook** — write the rules.
 
 ## When you want to explore: the circuit breaker

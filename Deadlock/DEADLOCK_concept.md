@@ -1,22 +1,28 @@
 ---
 record_type: game
-game: "VIGIL"
-state: In development
+game: "DEADLOCK"
+state: Proven
 players: [2]
 player_count: "2"
-duration: "Over days"
-genre: "Slow territory duel"
+duration: "~20 min"
+genre: "Territory duel"
 complexity: Medium
 min_players: 2
 max_players: 2
-physically_playtested: false
-public_document: "Vigil/VIGIL_concept.md"
-next_step: "Develop a complete rulebook if this concept is selected."
+physically_playtested: true
+public_document: "Deadlock/DEADLOCK_rulebook.md"
+next_step: "Table v1.0: play the default two-game match (seats swapped) and check whether the match length and the Crown tiebreak feel right."
 catalog_order: 25
 ---
-# VIGIL — the game that waits on the windowsill
+# DEADLOCK (formerly VIGIL) — the game that waits on the windowsill
 
-*2 players · one move at a time, over days · slow perfect-information territory duel · full 36 · In development · physically unplayed*
+*2 players · a match of two games, ~20 minutes (one game ~10) · perfect-information territory duel · full 36 · Proven · physically played*
+
+> **Renamed and v1.0 (23 November 2026).** Renamed from VIGIL, because a "vigil" (a long watch) described the over-days format the table didn't take to; a **deadlock** is the 3–3 line that scores for nobody, the game's sharpest move. [DEADLOCK_rulebook.md](DEADLOCK_rulebook.md) v1.0 makes one sitting the main format, a two-game match with seats swapped the default, and South's point or South's ties the single-game options. The shelf format is now an untested variant.
+
+> **First playtest (23 November 2026).** Played in one sitting with Noah: very positive from both players, with the right balance of strategy and simplicity. It took about 10 minutes and felt like a game to play straight through, so it does **not** meet the original over-days brief below, but it stays in the collection as a proven short duel. See [DEADLOCK_playtest_01.md](DEADLOCK_playtest_01.md).
+
+> **Status (November 2026).** A draft rulebook now exists: [DEADLOCK_rulebook.md](DEADLOCK_rulebook.md) v0.1, simulated in [DEADLOCK_design_analysis.md](DEADLOCK_design_analysis.md) ([deadlock_sim.py](deadlock_sim.py)). No stalls, a strong skill gap (careful play beats random 100%, 2.5× the points) and flipping is load-bearing, but the first mover wins about 70% of careful games and no single-field bonus is even at every skill level. It can also be played in one sitting. This page remains the game record and the concept's reasoning; the draft's *Decisions to review* list holds every open choice.
 
 > **Status & scope.** Wildcard batch, first flight (July 2026). Written to a deliberately different brief: *maximum originality, rubric waived, no simulation required.* Playable as written, but no rulebook, no sim, no rubric self-score, and it should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Carries the two house disciplines: a full physical-handling audit and a fastest-falsification test. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §22.
 

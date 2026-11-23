@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: FAVOURS
-state: Ready to test
+state: Untested
 players:
   - 5
   - 6

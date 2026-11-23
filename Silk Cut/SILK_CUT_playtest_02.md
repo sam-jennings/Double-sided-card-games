@@ -1,10 +1,10 @@
-# DOWRY — Playtest 02: repeated-play feedback
+# SILK CUT — Playtest 02: repeated-play feedback
 
 *Recorded 7 September 2026 · retrospective summary of several physical sessions, not one dated session*
 
 ## Source and setup
 
-Sam reports having playtested Dowry a few times, with consistently great feedback. Exact session dates, number of games, scores, duration, opponents and rules version were not supplied. The report is understood in the context of the established 2-player base game; individual session player counts were not explicitly enumerated. No specific symbol subset or rules changes were reported.
+Sam reports having playtested SILK CUT a few times, with consistently great feedback. Exact session dates, number of games, scores, duration, opponents and rules version were not supplied. The report is understood in the context of the established 2-player base game; individual session player counts were not explicitly enumerated. No specific symbol subset or rules changes were reported.
 
 ## Evidence
 
@@ -38,4 +38,4 @@ No specific bug or blocking problem was reported. No core rules change is warran
 
 At the next base-game session, capture one memorable offer and why each player chose as they did. That is the smallest useful observation for distinguishing bluff-reading, majority tactics and deduction as the source of the appeal.
 
-See [names, strengths and sibling directions](DOWRY_future_directions.md) for design interpretation, kept separate from the reported evidence.
+See [names, strengths and sibling directions](SILK_CUT_future_directions.md) for design interpretation, kept separate from the reported evidence.

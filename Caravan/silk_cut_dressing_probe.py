@@ -1,24 +1,24 @@
-"""Probe DOWRY's own simulator for the two numbers CARAVAN's floor run raised.
+"""Probe SILK CUT's own simulator for the two numbers CARAVAN's floor run raised.
 
-Imports ../Dowry/dowry_sim.py unchanged and re-measures it; it does not
-modify DOWRY.  See CARAVAN_design_analysis.md sections 4 and 5b.
+Imports ../Silk Cut/silk_cut_sim.py unchanged and re-measures it; it does not
+modify SILK CUT.  See CARAVAN_design_analysis.md sections 4 and 5b.
 
  1. DECISION DENSITY.  How often does the chooser take the pair, how often is
     one lot risk-free dominant, how often are the lots a wash?  These are the
-    DOWRY reference figures CARAVAN's density table is compared against.
+    SILK CUT reference figures CARAVAN's density table is compared against.
 
- 2. A DRESSING-ONLY ABLATION.  DOWRY's published "dressing edge ~1.6-1.7x"
+ 2. A DRESSING-ONLY ABLATION.  SILK CUT's published "dressing edge ~1.6-1.7x"
     comes from an arm whose HonestCutBot differs on TWO axes: it cuts for the
     most even TRUE split *and* it dresses informatively.  HonestDressBot below
     is identical to SkilledBot in every way except the dressing, which is the
     ablation that actually isolates the dressing layer.
 
-Run:  python dowry_dressing_probe.py --games 150
+Run:  python silk_cut_dressing_probe.py --games 150
 """
 import sys, random, argparse, pathlib
 from collections import Counter
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "Dowry"))
-import dowry_sim as D
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "Silk Cut"))
+import silk_cut_sim as D
 
 
 class HonestDressBot(D.SkilledBot):
@@ -97,10 +97,10 @@ def arm(name, b0, b1, games, seed):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--games", type=int, default=300)
     a = ap.parse_args()
-    print(f"DOWRY probe — {a.games} games/arm")
+    print(f"SILK CUT probe — {a.games} games/arm")
     arm("skilled mirror (for take-decision stats)", D.SkilledBot(), D.SkilledBot(), a.games, 11)
     c = STAT["choices"]
-    print(f"    DOWRY take-decisions: {c}")
+    print(f"    SILK CUT take-decisions: {c}")
     print(f"    took the pair                 {100*STAT['pair']/c:5.1f}%")
     print(f"    risk-free / dominant takes    {100*STAT['dominant']/c:5.1f}%")
     print(f"    near-indifferent (<0.25 pip)  {100*STAT['near_tie']/c:5.1f}%")

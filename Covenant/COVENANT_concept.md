@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "COVENANT"
-state: In development
+state: Untested
 players: [1, 2, 3, 4]
 player_count: "1–4"
 duration: "~15 min/chapter"
@@ -12,13 +12,15 @@ max_players: 4
 min_minutes: 15
 max_minutes: 90
 physically_playtested: false
-public_document: "Covenant/COVENANT_concept.md"
-next_step: "Draft version A (The Loyalty Duel) rules and playtest whether the 6-card chapter one is a game."
+public_document: "Covenant/COVENANT_rulebook.md"
+next_step: "Run solo playtest plan 01 (chapters 1–3): does the wash hide the strangers, and does card stewardship feel like a decision?"
 catalog_order: 32
 ---
 # COVENANT — the deck that grows as the story does
 
-*1 solo player (+ up to 3 assistants) · ~15 min per chapter · six-chapter campaign · sub-decks 6 → 36 · save = sub-deck composition · In development · physically unplayed*
+*1 solo player (+ up to 3 assistants) · ~15 min per chapter · six-chapter campaign · sub-decks 6 → 36 · save = sub-deck composition · Untested (v0.1 rulebook, sim-validated) · physically unplayed*
+
+> **Current rules:** [COVENANT_rulebook.md](COVENANT_rulebook.md) (v0.1, November 2026). Simulation results are in [COVENANT_design_analysis.md](COVENANT_design_analysis.md), and the first-session plan is [COVENANT_playtest_plan_01.md](COVENANT_playtest_plan_01.md). This page is the concept record and keeps the game's metadata; the rulebook takes priority wherever the two differ (notably: a miss unmasks the stranger, and several powers are adapted to the uniform row).
 
 > **Status & scope.** Story flight (July 2026), concept #28 — a campaign brief: progressive chapters, playable solo with optional assisting players, the signs integral to the narrative. Rubric waived, unsimmed, journal-derived. This record commits to **version A — The Loyalty Duel**, the permutation-trial engine; versions B (The Nine Rites anthology) and C (The Pilgrimage run engine) remain recorded alternatives in [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §28. Carries the two house disciplines: a physical-handling audit and a fastest-falsification test. It should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone.
 
@@ -80,4 +82,4 @@ Play the 6-card opening chapter cold: is it a game at all, or does the fun only 
 
 ## Next step
 
-Draft the version A rulebook — starting with chapter one (the founders' 6-card rite) — and run the fastest-falsification solo sitting.
+Done (November 2026): the v0.1 rulebook is drafted and simulated. Chapter one is an honestly framed teaching rite with one real decision. Next: run [solo playtest plan 01](COVENANT_playtest_plan_01.md) on chapters 1–3.

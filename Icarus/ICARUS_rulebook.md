@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "ICARUS"
-state: Ready to test
+state: Untested
 players: [2, 3, 4]
 player_count: "2, 3, 4"
 duration: "10–15 min"

@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "WILDFIRE"
-state: Ready to test
+state: Rough edges
 players: [3, 4, 5, 6]
 player_count: "3, 4, 5, 6"
 duration: "~10 min"
@@ -19,6 +19,8 @@ catalog_order: 5
 # WILDFIRE
 
 *A shedding race for 3–6 players · ~10 minutes · ages 8+*
+
+> **Known issue:** This version (two piles, no chaining, Mirror) has never been played. The older one-pile version left most turns without a real choice.
 
 *(Developed from the concept formerly called HOT POTATO PAIRS.)*
 

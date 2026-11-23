@@ -266,9 +266,49 @@
     padding: 4px 8px; border-radius: var(--r-chip); border: 1px solid transparent; white-space: nowrap;
   }
   .badge-proven { color: #22623e; border-color: rgba(46,125,79,0.35); background: rgba(46,125,79,0.1); }
-  .badge-ready { color: #1a5d8f; border-color: rgba(34,112,168,0.4); background: rgba(34,112,168,0.1); }
-  .badge-dev { color: #6a3fa8; border-color: rgba(111,75,184,0.4); background: rgba(111,75,184,0.09); }
+  .badge-rough { color: #8a5a0c; border-color: rgba(168,130,26,0.45); background: rgba(168,130,26,0.1); }
+  .badge-untested { color: #1a5d8f; border-color: rgba(34,112,168,0.4); background: rgba(34,112,168,0.1); }
+  .badge-workshop { color: #6a3fa8; border-color: rgba(111,75,184,0.4); background: rgba(111,75,184,0.09); }
   .badge-shelved { color: var(--muted); border-color: var(--line); background: transparent; }
+
+  /* ---------- Known issue / review notes ---------- */
+  .game-issue {
+    margin-top: 9px; padding: 7px 9px; border-radius: 8px;
+    background: rgba(168,130,26,0.08); border: 1px solid rgba(168,130,26,0.25);
+    font: 400 12px/1.45 'Inter', sans-serif; color: var(--ink-soft);
+  }
+  .game-issue b, .d-issue b { color: #8a5a0c; font-weight: 700; }
+  .game-note { margin-top: 8px; font: 500 11.5px/1.4 'Inter', sans-serif; color: var(--muted); font-style: italic; }
+  .d-issue {
+    margin-bottom: 22px; padding: 12px 14px; border-radius: var(--r-card);
+    background: rgba(168,130,26,0.08); border: 1px solid rgba(168,130,26,0.25);
+    font: 400 14px/1.6 'Inter', sans-serif; color: var(--ink);
+  }
+  .d-note { margin-bottom: 22px; font: 500 13px/1.5 'Inter', sans-serif; color: var(--muted); font-style: italic; }
+
+  /* ---------- State sections ---------- */
+  .state-sec { margin-top: 8px; }
+  .state-sec + .state-sec { margin-top: 34px; }
+  .state-head { padding: 4px 2px 14px; }
+  .state-head h2 { display: flex; align-items: center; gap: 10px; font: 700 22px/1.15 'Fraunces', serif; color: var(--ink); }
+  .state-head h2 .n { font: 500 12px/1 'IBM Plex Mono', monospace; color: var(--muted); }
+  .state-head p { margin-top: 5px; font: 400 13.5px/1.55 'Inter', sans-serif; color: var(--ink-soft); max-width: 62ch; }
+  .later {
+    margin-top: 40px; background: var(--card-2); border: 1px solid var(--line);
+    border-radius: var(--r-card); padding: 0 16px;
+  }
+  .later > summary {
+    cursor: pointer; list-style: none; padding: 16px 2px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    font: 700 18px/1.2 'Fraunces', serif; color: var(--ink);
+  }
+  .later > summary::-webkit-details-marker { display: none; }
+  .later > summary::after { content: "+"; font: 500 20px/1 'Inter', sans-serif; color: var(--muted); }
+  .later[open] > summary::after { content: "–"; }
+  .later > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+  .later > summary .sub { display: block; margin-top: 4px; font: 400 13px/1.5 'Inter', sans-serif; color: var(--ink-soft); }
+  .later-body { padding-bottom: 18px; }
+  .later-body .state-sec + .state-sec { margin-top: 26px; }
 
   .empty {
     text-align: center; color: var(--muted); padding: 48px 16px;
@@ -379,6 +419,7 @@
   .rules-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .rules-btn:disabled { cursor: default; opacity: 0.7; }
   .rules-btn.done { background: var(--card-2); color: var(--ink-soft); border: 1px solid var(--line); }
+  a.rules-btn { display: inline-block; text-decoration: none; }
   .rules-link {
     font: 600 12.5px/1 'Inter', sans-serif; color: var(--ink-soft); text-decoration: none;
     border: 1px solid var(--line); border-radius: var(--r-chip); padding: 11px 15px;
@@ -494,9 +535,10 @@
       <div class="filter-row" id="f-state" data-group="gstate">
         <span class="flabel">State</span>
         <button class="chip" data-val="any" aria-pressed="true" type="button">All</button>
-        <button class="chip" data-val="Ready to test" aria-pressed="false" type="button">Ready to test</button>
         <button class="chip" data-val="Proven" aria-pressed="false" type="button">Proven</button>
-        <button class="chip" data-val="In development" aria-pressed="false" type="button">In development</button>
+        <button class="chip" data-val="Rough edges" aria-pressed="false" type="button">Rough edges</button>
+        <button class="chip" data-val="Untested" aria-pressed="false" type="button">Untested</button>
+        <button class="chip" data-val="In the workshop" aria-pressed="false" type="button">In the workshop</button>
         <button class="chip" data-val="Shelved" aria-pressed="false" type="button">Shelved</button>
       </div>
       <div class="filter-row" id="f-played" data-group="played">
@@ -507,8 +549,32 @@
       </div>
     </div>
 
-    <p class="count" id="count" aria-live="polite">Thirty-three games</p>
-    <div class="grid" id="grid"></div>
+    <p class="count" id="count" aria-live="polite">Thirty-seven games</p>
+    <div class="state-sec" data-sec="Proven">
+      <div class="state-head"><h2>Proven <span class="n"></span></h2><p>Played and works. Just play it.</p></div>
+      <div class="grid"></div>
+    </div>
+    <div class="state-sec" data-sec="Rough edges">
+      <div class="state-head"><h2>Rough edges <span class="n"></span></h2><p>Has been played and works in general, but has known bugs or open questions. Your feedback helps — you may even find the fix.</p></div>
+      <div class="grid"></div>
+    </div>
+    <div class="state-sec" data-sec="Untested">
+      <div class="state-head"><h2>Untested <span class="n"></span></h2><p>Complete rules, never played. You’re the first table; expect surprises.</p></div>
+      <div class="grid"></div>
+    </div>
+    <details class="later" id="later">
+      <summary><span>In the workshop &amp; shelved <span class="sub">Not playable yet, or set aside. Here for the curious.</span></span></summary>
+      <div class="later-body">
+        <div class="state-sec" data-sec="In the workshop">
+          <div class="state-head"><h2>In the workshop <span class="n"></span></h2><p>Not playable yet: an idea only, or rules with a known problem to solve first.</p></div>
+          <div class="grid"></div>
+        </div>
+        <div class="state-sec" data-sec="Shelved">
+          <div class="state-head"><h2>Shelved <span class="n"></span></h2><p>Set aside, kept as a design record.</p></div>
+          <div class="grid"></div>
+        </div>
+      </div>
+    </details>
     <p class="empty" id="empty">No games match those filters yet.<br>Try loosening one.</p>
   </section>
 
@@ -582,7 +648,8 @@ const GAMES = [
     id: 'twelve-trials', name: 'TWELVE TRIALS', tag: 'Solo · Puzzle', pair: ['Eye', 'Star'],
     players: '1–3', pmin: 1, pmax: 3, time: 15, timeLabel: '~15 min', weight: 'Medium',
     supported: [1, 2, 3], played: true,
-    state: 'Ready to test', stage: 'Ready to test · physically played, fixes queued',
+    state: 'Rough edges', stage: 'Rough edges · physically played, fixes queued',
+    issue: 'Counting flips by turning cards sideways broke down at the first table, because cards get regrouped so often; the layout also sprawls. Use a big table, and if you find a better way to count flips, tell the designer.',
     deck: 'Full 36', rulebook: 'Twelve Trials/TWELVE_TRIALS_rulebook.md',
     tagline: 'Sort the whole deck into twelve perfect trios.',
     idea: 'An open-information puzzle. The 36-card deck hides 840 “almanacs” — ways to sort every card into twelve perfect symbol-trios. Find a good one; your score is how few flips it takes to make the deal match it.',
@@ -596,7 +663,8 @@ const GAMES = [
     id: 'crossroads', name: 'CROSSROADS', tag: 'Abstract duel', pair: ['Crown', 'Wave'],
     players: '2', pmin: 2, pmax: 2, time: 20, timeLabel: '~20 min', weight: 'Medium',
     supported: [2], played: true,
-    state: 'Ready to test', stage: 'Ready to test · physically played, on notice',
+    state: 'Rough edges', stage: 'Rough edges · physically played, on notice',
+    issue: 'The game ends on two passes in a row, which has felt unfair twice, and passing every turn once won outright. The Toll scoring meant to stop that has not been played yet.',
     deck: 'Full 36', rulebook: 'Crossroads/CROSSROADS_rulebook.md',
     tagline: 'Build the map from the deck, then race across it.',
     idea: 'A two-player route duel where the deck builds its own board. The eight Crown cards lie Crown-face-down as a ring of cities; everything else is the network you route through.',
@@ -610,7 +678,8 @@ const GAMES = [
     id: 'orrery', name: 'THE ORRERY', tag: 'Solo · Puzzle', pair: ['Star', 'Eye'],
     players: '1–3', pmin: 1, pmax: 3, time: 20, timeLabel: '15–25 min', weight: 'Medium',
     supported: [1, 2, 3], played: true,
-    state: 'Ready to test', stage: 'Ready to test · physically played, fixes queued',
+    state: 'Rough edges', stage: 'Rough edges · physically played, fixes queued',
+    issue: 'Only played once, solo, on a pre-sorted 7-sign deal. A random deal of the full deck has never been tried at a table.',
     deck: 'Full 36', rulebook: 'The Orrery/ORRERY_rulebook.md',
     tagline: 'Sort the deck into four balanced orbits.',
     idea: 'An open-information sorting puzzle. Sort the full 36-card deck into four orbits of nine, each orbit showing all nine signs once on its visible faces and all nine once on its hidden faces.',
@@ -624,7 +693,8 @@ const GAMES = [
     id: 'trigon', name: 'TRIGON', tag: 'Tactics', pair: ['Star', 'Crown'],
     players: '2–4', pmin: 2, pmax: 4, time: 20, timeLabel: '15–25 min', weight: 'Medium',
     supported: [2, 3, 4], played: true,
-    state: 'Ready to test', stage: 'Ready to test · physically played, fixes queued',
+    state: 'Rough edges', stage: 'Rough edges · physically played, fixes queued',
+    issue: 'The first table bogged down: the grid had no fixed shape and everyone kept looking up abilities. The rules now fix the grid (first card is the centre) and add a player aid, but neither has been played yet.',
     deck: 'Full 36', rulebook: 'Trigon/TRIGON_rulebook.md',
     tagline: 'Grid capture, sign abilities, chain reactions.',
     idea: 'Grid capture, and the collection’s flagship candidate. Place cards, trigger their sign abilities, and set off chain reactions; three matching signs in a line is a capture.',
@@ -638,7 +708,8 @@ const GAMES = [
     id: 'turncoat', name: 'TURNCOAT', tag: 'Tactics', pair: ['Mask', 'Moon'],
     players: '2–4', pmin: 2, pmax: 4, time: 20, timeLabel: '15–25 min', weight: 'Medium',
     supported: [2, 3, 4], played: false,
-    state: 'Ready to test', stage: 'Ready to test · sim-validated',
+    state: 'Untested', stage: 'Untested · sim-validated',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36', rulebook: 'Turncoat/TURNCOAT_rulebook.md',
     tagline: 'Every card serves two sides. So might you.',
     idea: 'An allegiance grid built on the TRIGON engine, played for betrayal. Every card serves two signs; the visible face declares today’s loyalty.',
@@ -652,7 +723,8 @@ const GAMES = [
     id: 'wildfire', name: 'WILDFIRE', tag: 'Party', pair: ['Flame', 'Wave'],
     players: '3–6', pmin: 3, pmax: 6, time: 10, timeLabel: '~10 min', weight: 'Light',
     supported: [3, 4, 5, 6], played: true,
-    state: 'Ready to test', stage: 'Ready to test · physically played, fixes queued',
+    state: 'Rough edges', stage: 'Rough edges · physically played, fixes queued',
+    issue: 'This version (two piles, no chaining, Mirror) has never been played. The older one-pile version left most turns without a real choice.',
     deck: 'Full 36', rulebook: 'Wildfire/WILDFIRE_rulebook.md',
     tagline: 'Match, flip, shed — first hand empty wins.',
     idea: 'A fast match-and-turn shedding race with no abilities to track — about five minutes end to end.',
@@ -666,7 +738,8 @@ const GAMES = [
     id: 'glean', name: 'GLEAN', tag: 'Trick-taking', pair: ['Leaf', 'Eye'],
     players: '3, 4, 6', pmin: 3, pmax: 6, time: 20, timeLabel: '~20 min', weight: 'Medium',
     supported: [3, 4, 6], played: true,
-    state: 'Ready to test', stage: 'Ready to test · physically played, fixes queued',
+    state: 'Rough edges', stage: 'Rough edges · physically played, fixes queued',
+    issue: 'The first table only played the old pip-adding score, which was slow. The real majority scoring has never been played.',
     deck: 'Full 36', rulebook: 'Glean/GLEAN_rulebook.md',
     tagline: 'Gather signs; the hidden face wins the trick.',
     idea: 'A gathering trick-taker. Follow by either face, and the hidden face wins the trick. Every captured card counts toward two sign-majorities at once.',
@@ -694,7 +767,8 @@ const GAMES = [
     id: 'janus', name: 'JANUS', tag: 'Co-op', pair: ['Mask', 'Eye'],
     players: '2–4', pmin: 2, pmax: 4, time: 20, timeLabel: '~20 min', weight: 'Medium',
     supported: [2, 3, 4], played: true,
-    state: 'In development', stage: 'In development · physically played; concealment model blocked',
+    state: 'Rough edges', stage: 'Rough edges · physically played; concealment model unresolved',
+    issue: 'The rules ask for a concealed draw pile, which a deck with no backs cannot have, and the first table gave up on keeping hands hidden. Play the open-information Apprentice variant, or try your own way of keeping the fans hidden and tell the designer.',
     deck: 'Full 36 · 6 omen tokens', rulebook: 'Janus/JANUS_rulebook.md',
     tagline: 'You see one face. The table sees the other.',
     idea: 'A co-operative deduction game. You see one face of your own cards; the table sees the other. Work together to raise symbol-triangle gates from half-seen hands.',
@@ -708,7 +782,8 @@ const GAMES = [
     id: 'forked-tongue', name: 'FORKED TONGUE', tag: 'Bluffing', pair: ['Mask', 'Key'],
     players: '3–6', pmin: 3, pmax: 6, time: 20, timeLabel: '~20 min', weight: 'Light',
     supported: [3, 4, 5, 6], played: false,
-    state: 'In development', stage: 'In development · rules need vetting',
+    state: 'Untested', stage: 'Untested · v1.2 adds Swear on it and the fuse; sim shows no stalls',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36', rulebook: 'Forked Tongue/FORKED_TONGUE_rulebook.md',
     tagline: 'Claim the face you hide — truthfully or not.',
     idea: 'A bluffing game on the pair registry. Play a card and claim its hidden face aloud — truth or lie — and let challenges sort the honest from the bold.',
@@ -722,7 +797,8 @@ const GAMES = [
     id: 'face-value', name: 'FACE VALUE', tag: 'Bluffing duel', pair: ['Star', 'Moon'],
     players: '2', pmin: 2, pmax: 2, time: 18, timeLabel: '15–20 min', weight: 'Light',
     supported: [2], played: false,
-    state: 'Ready to test', stage: 'Ready to test · pacing sim-checked',
+    state: 'Untested', stage: 'Untested · pacing sim-checked',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36', rulebook: 'Face Value/FACE_VALUE_rulebook.md',
     tagline: 'The face you show is your only claim.',
     idea: 'A heads-up betting bluff. The face you show is your only claim about the strength you hide; raise, call, or fold on that single bluff.',
@@ -736,7 +812,8 @@ const GAMES = [
     id: 'council', name: 'THE COUNCIL', tag: 'Negotiation', pair: ['Crown', 'Eye'],
     players: '3–6', pmin: 3, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Light',
     supported: [3, 4, 5, 6], played: false,
-    state: 'In development', stage: 'In development · rules need vetting',
+    state: 'Untested', stage: 'Untested · rules v1.0a, vetted, floor sim at 3–6 players',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36 · 1 Speaker token', rulebook: 'The Council/COUNCIL_rulebook.md',
     tagline: 'Commit in secret, then watch who defects.',
     idea: 'A negotiation game of votes and defections. Three issues are tabled each round; you commit in secret, then defections in seat order decide who takes each pot.',
@@ -750,7 +827,8 @@ const GAMES = [
     id: 'ouroboros', name: 'OUROBOROS', tag: 'Solo', pair: ['Wave', 'Leaf'],
     players: '1', pmin: 1, pmax: 1, time: 12, timeLabel: '10–15 min', weight: 'Medium',
     supported: [1], played: true,
-    state: 'Ready to test', stage: 'Ready to test · physically played; revived v1.1 needs retest',
+    state: 'Rough edges', stage: 'Rough edges · physically played; revived v1.1 needs retest',
+    issue: 'These revived rules (both ends of the serpent kept face-up) have never been played. The earlier version had handling trouble and often failed early.',
     deck: 'Full 36 · 7-sign variant', rulebook: 'Ouroboros/OUROBOROS_rulebook.md',
     tagline: 'Chain the deck into a serpent that bites its tail.',
     idea: 'A solo serpent-building puzzle. Lay the all-pairs deck into one continuous serpent until it bites its own tail. Forced mismatches are “scars” — your score — and exactly one scar is provably unavoidable.',
@@ -764,7 +842,8 @@ const GAMES = [
     id: 'cairn', name: 'CAIRN', tag: 'Solo', pair: ['Leaf', 'Crown'],
     players: '1', pmin: 1, pmax: 1, time: 10, timeLabel: '~10 min', weight: 'Light',
     supported: [1], played: true,
-    state: 'Ready to test', stage: 'Ready to test · physically played; next test needs a detailed record',
+    state: 'Rough edges', stage: 'Rough edges · physically played; next test needs a detailed record',
+    issue: 'It has been played once, but the notes were lost. Still open: do the choices feel meaningful, and does getting stuck feel foreseeable or just unlucky?',
     deck: '7-sign sub-deck (21) · 9 on the Long Trail', rulebook: 'Cairn/CAIRN_rulebook.md',
     tagline: 'A compact solitaire built for a tray.',
     idea: 'A compact solitaire built for a tray, not a tabletop. All state lives in three short cairns plus a small hand; each card links two signs, and you build by matching the sign on top.',
@@ -778,7 +857,8 @@ const GAMES = [
     id: 'favours', name: 'FAVOURS', tag: 'Party', pair: ['Leaf', 'Key'],
     players: '5–9', pmin: 5, pmax: 9, time: 10, timeLabel: '~10 min', weight: 'Light',
     supported: [5, 6, 7, 8, 9], played: false,
-    state: 'Ready to test', stage: 'Ready to test · sim-checked; awaiting a first table test at 7P',
+    state: 'Untested', stage: 'Untested · sim-checked; awaiting a first table test at 7P',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Sub-deck built from the players’ own signs (10–36) · counters', rulebook: 'Favours/FAVOURS_rulebook.md',
     tagline: 'Every card names two people at the table.',
     idea: 'The collection’s ambient party game. Everyone is one of the signs, so every card in play names exactly two people sitting at the table — and every pair of people appears on exactly one card. Give a favour where it will arrive alone; two arriving at once overwhelm the recipient and both are refused.',
@@ -792,10 +872,11 @@ const GAMES = [
     id: 'caravan', name: 'CARAVAN', tag: 'Cut-and-choose', pair: ['Wave', 'Key'],
     players: '2, 3, 4', pmin: 2, pmax: 4, time: 15, timeLabel: '~15 min', weight: 'Medium',
     supported: [2, 3, 4], played: false,
-    state: 'Ready to test', stage: 'Ready to test - sim-certified floor; awaiting a first table test at 3P',
+    state: 'Untested', stage: 'Untested · sim-certified floor; awaiting a first table test at 3P',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36 - deck only', rulebook: 'Caravan/CARAVAN_rulebook.md',
     tagline: 'You do not choose your customer. Only what they see.',
-    idea: 'A sibling of DOWRY that runs every bargain at once. Each round the road points one way: you pack three cards as a dressed lot of two and a lot of one for exactly one other player, exactly one other player packs for you, everyone takes at the same moment, and you keep whatever your taker leaves behind. The direction reverses between rounds, so the player squeezing you is never the player you can answer.',
+    idea: 'A sibling of SILK CUT that runs every bargain at once. Each round the road points one way: you pack three cards as a dressed lot of two and a lot of one for exactly one other player, exactly one other player packs for you, everyone takes at the same moment, and you keep whatever your taker leaves behind. The direction reverses between rounds, so the player squeezing you is never the player you can answer.',
     plays: [
       'Pack a two-card lot and a one-card lot, choosing which face of each card shows.',
       'Everyone takes at once; the packer keeps the lot left behind.',
@@ -806,7 +887,8 @@ const GAMES = [
     id: 'lodge', name: 'LODGE', tag: 'Memory', pair: ['Moon', 'Eye'],
     players: '2, 3, 4', pmin: 2, pmax: 4, time: 20, timeLabel: '15–25 min', weight: 'Light',
     supported: [2, 3, 4], played: false,
-    state: 'In development', stage: 'In development · draft rules v0.1, 4-player floor sim',
+    state: 'Untested', stage: 'Untested · rules v0.2, vetted, floor sim at 2–4 players',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36 · deck only', rulebook: 'Lodge/LODGE_rulebook.md',
     tagline: 'What is under your lodge counts against you.',
     idea: 'Beverbende (Beaver Gang) for a deck with no backs. Four cards sit in front of you; everyone sees the faces on top, but only the faces pressed to the table score, and you start knowing just two of them. Swap, peek and steal to carry the lightest load when someone knocks.',
@@ -820,7 +902,7 @@ const GAMES = [
     id: 'sleeper', name: 'SLEEPER', tag: 'Social deduction', pair: ['Mask', 'Crown'],
     players: '4–6', pmin: 4, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Medium',
     supported: [4, 5, 6], played: false,
-    state: 'In development', stage: 'In development · rules need vetting',
+    state: 'In the workshop', stage: 'In the workshop · vetted; sim found a last-mover edge and a registry leak',
     deck: 'Full 36 · optional first-player token', rulebook: 'Sleeper/SLEEPER_rulebook.md',
     tagline: 'Serve one sign in secret; rule the Court.',
     idea: 'The collection’s first hidden-loyalty game. You guard one double-faced card — your cover sign shows, your secret master sign stays pressed to the table — and steer the Court so the sign you serve ends up ruling.',
@@ -834,7 +916,7 @@ const GAMES = [
     id: 'relay', name: 'RELAY', tag: 'Route-race', pair: ['Leaf', 'Wave'],
     players: '2–4', pmin: 2, pmax: 4, time: 22, timeLabel: '20–25 min', weight: 'Medium',
     supported: [2, 3, 4], played: false,
-    state: 'In development', stage: 'In development · player-facing rulebook needed',
+    state: 'In the workshop', stage: 'In the workshop · rulebook draft v0.1; 4-player place markers undecided',
     deck: 'Full 36', rulebook: 'Relay/RELAY_design_analysis.md', docKind: 'design',
     tagline: 'Race the nine roads; flip to re-aim them.',
     idea: 'A network route-race where every card is both a directed road to build and a unique connection goal to claim. Because every pair exists once, each goal is the only link between its two signs — and a flip re-aims a road to make or break a route.',
@@ -848,7 +930,7 @@ const GAMES = [
     id: 'wisp', name: 'WISP', tag: 'Hidden movement', pair: ['Moon', 'Wave'],
     players: '2–3', pmin: 2, pmax: 3, time: 20, timeLabel: '~20 min', weight: 'Medium',
     supported: [2, 3], played: false,
-    state: 'In development', stage: 'In development · rules need vetting',
+    state: 'In the workshop', stage: 'In the workshop · vetted; sim says the v0.1 dials favour the hunters',
     deck: 'Full 36', rulebook: 'Wisp/WISP_rulebook.md', docKind: 'rules',
     tagline: 'The trail tells where you were, never where you are.',
     idea: 'A hidden-movement chase with no board, pencil, or trust. One Wisp flees a side of one or two hunters across the complete graph; each trail card is laid showing the place just left and pressing the place just reached, so the trail confirms every position exactly one move late.',
@@ -859,11 +941,11 @@ const GAMES = [
     ]
   },
   {
-    id: 'dowry', name: 'DOWRY', tag: 'Bluff & deduction', pair: ['Mask', 'Star'],
+    id: 'silk-cut', name: 'SILK CUT', tag: 'Bluff & deduction', pair: ['Mask', 'Star'],
     players: '2 (3–4 variants)', pmin: 2, pmax: 4, time: 20, timeLabel: '~20 min', weight: 'Medium',
     supported: [2, 3, 4], played: true,
     state: 'Proven', stage: 'Proven · repeated positive playtests; written 3–4P variants untested',
-    deck: 'Full 36 · hands of 9', rulebook: 'Dowry/DOWRY_rulebook.md', docKind: 'rules',
+    deck: 'Full 36 · hands of 9', rulebook: 'Silk Cut/SILK_CUT_rulebook.md', docKind: 'rules',
     tagline: 'I cut, you choose — and I choose which face you see.',
     idea: 'An “I cut, you choose” duel with a second layer. The cutter splits three cards into two lots and also picks which face of each card shows; the lot that looks poor may be the rich one. (A 3–4 player variant is drafted but untested.)',
     plays: [
@@ -876,7 +958,8 @@ const GAMES = [
     id: 'icarus', name: 'ICARUS', tag: 'Push-your-luck', pair: ['Flame', 'Star'],
     players: '2–4', pmin: 2, pmax: 4, time: 12, timeLabel: '10–15 min', weight: 'Light',
     supported: [2, 3, 4], played: false,
-    state: 'Ready to test', stage: 'Ready to test · sim-certified floor',
+    state: 'Untested', stage: 'Untested · sim-certified floor',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36', rulebook: 'Icarus/ICARUS_rulebook.md', docKind: 'rules',
     tagline: 'Flip for one more card, or land and bank the climb.',
     idea: 'A push-your-luck climb. Flip cards off your own tower to build a flight; repeat a face-up sign and you fall, losing the row. The deck shows half of every gamble, and the public record makes the bust odds exactly countable.',
@@ -890,7 +973,8 @@ const GAMES = [
     id: 'concord', name: 'CONCORD', tag: 'Fair division', pair: ['Key', 'Leaf'],
     players: '2', pmin: 2, pmax: 2, time: 30, timeLabel: '25–35 min', weight: 'Medium',
     supported: [2], played: false,
-    state: 'Ready to test', stage: 'Ready to test · working prototype v0.1',
+    state: 'Untested', stage: 'Untested · working prototype v0.1',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36 · 4 generic counters', rulebook: 'Concord/CONCORD_design_proposal.md', docKind: 'design',
     tagline: 'Split every offer fairly — your rival chooses first.',
     idea: 'A repeated “I divide, you choose” game. Divide six bonds into two offers, turn one card, and try to leave yourself a three-card Concord after your rival takes the offer they prefer.',
@@ -904,7 +988,8 @@ const GAMES = [
     id: 'bravado', name: 'BRAVADO', tag: 'Party · Push-your-luck', pair: ['Mask', 'Flame'],
     players: '3–6', pmin: 3, pmax: 6, time: 20, timeLabel: '15–25 min', weight: 'Light',
     supported: [3, 4, 5, 6], played: false,
-    state: 'Ready to test', stage: 'Ready to test · exact odds, sim-certified floor',
+    state: 'Untested', stage: 'Untested · exact odds, sim-certified floor',
+    note: 'Rules not yet reviewed by the designer',
     deck: 'Full 36 · box base as draw well', rulebook: 'Bravado/BRAVADO_rulebook.md', docKind: 'rules',
     tagline: 'You see one face. They see the other — and they may lie.',
     idea: 'A social push-your-luck built on the one trick only a backless deck can do: a rival holds a single card upright, so you see one face and the whole table sees the other. You name the sign you can see, they give you one word — “higher” or “lower” — and they already know the answer. Call right and your streak grows; bank it, or push and risk the lot.',
@@ -918,7 +1003,7 @@ const GAMES = [
     id: 'strata', name: 'STRATA', tag: 'Bluff & memory', pair: ['Eye', 'Key'],
     players: '3–5', pmin: 3, pmax: 5, time: 20, timeLabel: '~20 min', weight: 'Medium',
     supported: [3, 4, 5], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
+    state: 'In the workshop', stage: 'In the workshop · no rulebook yet',
     deck: 'Full 36', rulebook: 'Strata/STRATA_concept.md', docKind: 'concept',
     tagline: 'No lie is ever spoken — it is buried where you left it.',
     idea: 'A bluffing-and-memory shedding race where claims are sedimented, not spoken. Pressing a card onto a dig is the silent claim that its buried face matches the sign beneath; the audit is an excavation. Aimed at the collection’s flagged memory-game gap.',
@@ -932,7 +1017,7 @@ const GAMES = [
     id: 'augury', name: 'AUGURY', tag: 'Party · Divination', pair: ['Moon', 'Eye'],
     players: '4–8', pmin: 4, pmax: 8, time: 30, timeLabel: '~30 min', weight: 'Light',
     supported: [4, 5, 6, 7, 8], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
+    state: 'In the workshop', stage: 'In the workshop · no rulebook yet',
     deck: 'Full 36', rulebook: 'Augury/AUGURY_concept.md', docKind: 'concept',
     tagline: 'Say what the card hides without naming it.',
     idea: 'The collection’s first judging game, and the first whose material is the Nine Signs themselves. The Seer peeks a portent’s hidden face and speaks one omen-sentence bridging the shown sign to the veiled one — naming neither.',
@@ -946,7 +1031,7 @@ const GAMES = [
     id: 'edict', name: 'EDICT', tag: 'Induction', pair: ['Key', 'Crown'],
     players: '3–6', pmin: 3, pmax: 6, time: 25, timeLabel: '~25 min', weight: 'Medium',
     supported: [3, 4, 5, 6], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
+    state: 'In the workshop', stage: 'In the workshop · no rulebook yet',
     deck: 'Full 36', rulebook: 'Edict/EDICT_concept.md', docKind: 'concept',
     tagline: 'The law is on the table; the seal is in your lap.',
     idea: 'An induction game where one player is the rules. The Keeper secretly enacts one Law from a printed menu of 18, sealed in the deck’s own alphabet (hidden pip + orientation); every card played is an experiment on the growing public record.',
@@ -957,24 +1042,24 @@ const GAMES = [
     ]
   },
   {
-    id: 'vigil', name: 'VIGIL', tag: 'Correspondence duel', pair: ['Moon', 'Leaf'],
-    players: '2', pmin: 2, pmax: 2, time: 40, timeLabel: 'Over days', weight: 'Medium',
-    supported: [2], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
-    deck: 'Full 36 · 6×6 field', rulebook: 'Vigil/VIGIL_concept.md', docKind: 'concept',
-    tagline: 'A game for a shelf, not a session.',
-    idea: 'A slow, perfect-information territory duel played one move per passing over days. The 6×6 field is the save file: turn parity computes itself from the board, so nothing needs remembering between moves.',
+    id: 'deadlock', name: 'DEADLOCK', tag: 'Territory duel', pair: ['Moon', 'Leaf'],
+    players: '2', pmin: 2, pmax: 2, time: 20, timeLabel: '~20 min', weight: 'Medium',
+    supported: [2], played: true,
+    state: 'Proven', stage: 'Proven · v1.0 · first playtest Nov 2026 · formerly VIGIL',
+    deck: 'Full 36 · 6×6 field', rulebook: 'Deadlock/DEADLOCK_rulebook.md', docKind: 'rules',
+    tagline: 'Four cards win a line. Three each, and nobody does.',
+    idea: 'A quick perfect-information territory duel on a 6×6 field. Claim one card a turn by turning it to face you, race for majorities in the twelve rows and columns, and lock your rival’s best lines dead at 3–3. Played as a two-game match with seats swapped.',
     plays: [
-      'On a passing, pick any neutral card, optionally flip it, and turn it to point at your seat — claimed forever.',
-      'Whose move it is is just the count of claimed cards; the board is its own turn marker.',
-      'When the last card turns, score twelve lines by majority; a won line scores its densest single sign.'
+      'On your turn, pick any open card, optionally flip it, and turn it to point at your seat — claimed forever.',
+      'Four of a line’s six cards win it; a 3–3 line is deadlocked and scores for nobody.',
+      'A won line scores its densest single sign. Swap seats for game two and add both scores.'
     ]
   },
   {
     id: 'golem', name: 'GOLEM', tag: 'Co-op · Boss fight', pair: ['Flame', 'Crown'],
     players: '1–2', pmin: 1, pmax: 2, time: 20, timeLabel: '~20 min', weight: 'Medium',
     supported: [1, 2], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
+    state: 'In the workshop', stage: 'In the workshop · no rulebook yet',
     deck: 'Full 36', rulebook: 'Golem/GOLEM_concept.md', docKind: 'concept',
     tagline: 'The boss that telegraphs its next blow.',
     idea: 'A co-operative boss fight against a deck-driven automa. A backless deck can’t hide its next card, so the GOLEM doesn’t try — its next blow is always public, and the follow-through lands one beat too late.',
@@ -988,7 +1073,7 @@ const GAMES = [
     id: 'lacuna', name: 'LACUNA', tag: 'Deduction race', pair: ['Star', 'Moon'],
     players: '2–5', pmin: 2, pmax: 5, time: 15, timeLabel: '~15 min', weight: 'Medium',
     supported: [2, 3, 4, 5], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
+    state: 'In the workshop', stage: 'In the workshop · no rulebook yet',
     deck: 'Full 36 · one opaque sleeve', rulebook: 'Lacuna/LACUNA_concept.md', docKind: 'concept',
     tagline: 'Race to name the deck’s one missing card.',
     idea: 'A counting-and-deduction race for the single card sealed away unseen. Every sign lives on exactly eight cards, so as the other 35 flash past, the tallies betray the vault’s hidden partner.',
@@ -1002,7 +1087,7 @@ const GAMES = [
     id: 'paddock', name: 'PADDOCK', tag: 'Betting race', pair: ['Leaf', 'Star'],
     players: '3–6', pmin: 3, pmax: 6, time: 15, timeLabel: '~15 min', weight: 'Light',
     supported: [3, 4, 5, 6], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
+    state: 'In the workshop', stage: 'In the workshop · no rulebook yet',
     deck: 'Full 36', rulebook: 'Paddock/PADDOCK_concept.md', docKind: 'concept',
     tagline: 'Nine runners, honestly countable odds.',
     idea: 'The betting race the collection lacked. Each sign is a runner whose fuel tank is printed on the maths (eight cards per sign), but every card ridden hides a face — so the count is a bound, not an answer.',
@@ -1016,7 +1101,8 @@ const GAMES = [
     id: 'hinge', name: 'HINGE', tag: 'Pocket abstract', pair: ['Wave', 'Mask'],
     players: '2', pmin: 2, pmax: 2, time: 8, timeLabel: '5–10 min', weight: 'Light',
     supported: [2], played: true,
-    state: 'In development', stage: 'In development · solo-tested, needs 2P turn structure',
+    state: 'Rough edges', stage: 'Rough edges · 2P rulebook draft; sim finds careful play stalls',
+    issue: 'The two-player game has never been played (only a solo test of the older QUEUE version), and the simulation found that two careful players block each other. Expect stalls; try a house rule and tell the designer.',
     deck: '6-sign sub-deck (15)', rulebook: 'Hinge/HINGE_concept.md', docKind: 'concept',
     tagline: 'The whole game fits in one hand.',
     idea: 'A pocket abstract that needs no surface — the entire state is a 15-card packet held face-out. Cut the packet anywhere and flip that block over as one unit, reversing its order and every face; strike a run of three matching signs to score. Play it standing in a queue.',
@@ -1030,7 +1116,7 @@ const GAMES = [
     id: 'mirror', name: 'MIRROR', tag: 'Co-op · Mind-meld', pair: ['Wave', 'Eye'],
     players: '2 (or 2v2)', pmin: 2, pmax: 4, time: 15, timeLabel: '~15 min', weight: 'Light',
     supported: [2, 4], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
+    state: 'In the workshop', stage: 'In the workshop · no rulebook yet',
     deck: 'Full 36 · sorted by almanac', rulebook: 'Mirror/MIRROR_concept.md', docKind: 'concept',
     tagline: 'Show the same sign your partner shows.',
     idea: 'A co-operative mind-meld with a computable spine. The almanac’s four seasons are provably identical hands, so two players hold isomorphic cards and try to converge on the same sign — never the prompt itself.',
@@ -1044,28 +1130,44 @@ const GAMES = [
     id: 'snare', name: 'SNARE', tag: 'Abstract · Avoidance', pair: ['Flame', 'Leaf'],
     players: '2', pmin: 2, pmax: 2, time: 13, timeLabel: '10–15 min', weight: 'Medium',
     supported: [2], played: false,
-    state: 'In development', stage: 'In development · exploration only',
-    deck: '6-sign sub-deck (15) · 9-sign variant', rulebook: 'Snare/SNARE_concept.md', docKind: 'concept',
+    state: 'In the workshop', stage: 'In the workshop · rulebook draft v0.1, seat rule pending',
+    deck: '6-sign sub-deck (15 roads + 6 Key houses) · deck only', rulebook: 'Snare/SNARE_rulebook.md', docKind: 'rules',
     tagline: 'Don’t be the one who completes the forbidden three.',
     idea: 'A silent two-player avoidance abstract — the collection’s only inevitability game. Claim edges of the complete graph by orientation; on six signs a monochromatic triangle is mathematically unavoidable, so the skill is steering it onto your opponent.',
     plays: [
-      'Alternate claiming a road by turning it to point at your seat — orientation is ownership.',
-      'Avoid completing all three roads of a symbol-triangle in your own colour.',
-      'A best-of series ratchets from five signs (a draw is possible) to six (someone must be snared).'
+      'Claim one road a turn by squaring it upright or across on the staircase — orientation is ownership.',
+      'Own three roads at the corners of a rectangle with a house and you are snared; on six signs someone always is.',
+      'Fewest snares wins. A five-sign Pentagon rung comes first, where a clean draw is still possible.'
+    ]
+  },
+  {
+    id: 'afterimage', name: 'AFTERIMAGE', tag: 'Memory · Concentration', pair: ['Eye', 'Flame'],
+    players: '2, 3, 4', pmin: 2, pmax: 4, time: 13, timeLabel: '10–15 min', weight: 'Light',
+    supported: [2, 3, 4], played: false,
+    state: 'Untested', stage: 'Untested · v0.1 rulebook, sim-validated',
+    note: 'Rules not yet reviewed by the designer',
+    deck: 'Full 36 · deck only', rulebook: 'Afterimage/AFTERIMAGE_rulebook.md',
+    tagline: 'Remember what it showed before it was flipped.',
+    idea: 'Concentration for a deck with no backs. All 36 cards lie flat, each showing a sign; you hunt for two cards that hide the same sign. A missed card stays flipped, so the sign it showed is now underneath, and only memory holds it.',
+    plays: [
+      'Flip one card, then another. If the two revealed signs match, take both, score and go again.',
+      'On a miss both cards stay flipped: what they showed is now hidden, so remember it.',
+      'When you count that no match is left, Sweep: flip everything, and if nothing matches you end the game and score 1.'
     ]
   },
   {
     id: 'covenant', name: 'COVENANT', tag: 'Solo · Campaign', pair: ['Moon', 'Crown'],
     players: '1–4', pmin: 1, pmax: 4, time: 15, timeLabel: '~15 min/chapter', weight: 'Medium',
     supported: [1, 2, 3, 4], played: false,
-    state: 'In development', stage: 'In development · no rulebook yet',
-    deck: 'Sub-decks 6 → 36', rulebook: 'Covenant/COVENANT_concept.md', docKind: 'concept',
+    state: 'Untested', stage: 'Untested · sim-validated, chapter one solved',
+    note: 'Rules not yet reviewed by the designer',
+    deck: 'Sub-decks 6 → 36', rulebook: 'Covenant/COVENANT_rulebook.md',
     tagline: 'The deck grows as the story does.',
-    idea: 'A growing-deck solo campaign. You are the Tenth, signless, earning each sign’s trust one chapter at a time — and the sub-deck you have won is the entire save file. Version A fights each new sign as a blind-matching permutation trial.',
+    idea: 'A growing-deck solo campaign. You are the Tenth, signless, earning each sign’s trust one chapter at a time — and the sub-deck you have won is the entire save file. Each chapter is a Loyalty Duel against a row of identical-looking strangers.',
     plays: [
-      'Each chapter lays the new sign’s cards in a visually identical attack row; the hidden partner faces are one of each won sign.',
-      'Claim every attacker by playing a card of its hidden sign from your covenant hand — wrong claims cost cards but leak information.',
-      'Match all to win: each card flips from stranger to friend and joins your deck, so winning the trial writes the save.'
+      'The newcomer’s cards lie in a uniform row; each stranger is secretly bound to a different sign you have already won.',
+      'Claim one by naming its sign with a hand card and flipping it. A hit turns it and your card comes back; a miss unmasks it and burns your cards.',
+      'From chapter two your won signs are powers. Turn every stranger and the cards shuffle together into your deck: winning writes the save.'
     ]
   },
   {
@@ -1085,13 +1187,17 @@ const GAMES = [
 ];
 
 const BADGE = {
-  'Proven': 'badge-proven', 'Ready to test': 'badge-ready', 'In development': 'badge-dev', 'Shelved': 'badge-shelved'
+  'Proven': 'badge-proven', 'Rough edges': 'badge-rough', 'Untested': 'badge-untested',
+  'In the workshop': 'badge-workshop', 'Shelved': 'badge-shelved'
 };
 </script>
 <script>
 /* ---------- Render game cards ---------- */
-const grid = document.getElementById('grid');
-const STATE_ORDER = { 'Proven': 0, 'Ready to test': 1, 'In development': 2, 'Shelved': 3 };
+const SECTIONS = {};
+document.querySelectorAll('.state-sec').forEach(sec => { SECTIONS[sec.dataset.sec] = sec; });
+const laterBox = document.getElementById('later');
+const STATE_ORDER = { 'Proven': 0, 'Rough edges': 1, 'Untested': 2, 'In the workshop': 3, 'Shelved': 4 };
+function allCards() { return [...document.querySelectorAll('.game')]; }
 GAMES.forEach((g, i) => {
   const btn = document.createElement('button');
   btn.className = 'game';
@@ -1106,7 +1212,7 @@ GAMES.forEach((g, i) => {
   btn.dataset.state = g.state;
   btn.dataset.played = g.played ? 'yes' : 'no';
   btn.dataset.search = (g.name + ' ' + g.tag + ' ' + g.tagline + ' ' + g.pair.join(' ')).toLowerCase();
-  btn.setAttribute('aria-label', g.name + ' — ' + g.tagline);
+  btn.setAttribute('aria-label', g.name + ' — ' + g.state + ' — ' + g.tagline);
   btn.innerHTML =
     '<div class="pair">' + miniCard(g.pair[0], 'mini-a') + miniCard(g.pair[1], 'mini-b') + '</div>' +
     '<div class="game-body">' +
@@ -1116,6 +1222,8 @@ GAMES.forEach((g, i) => {
       '</div>' +
       '<div class="game-name">' + g.name + '</div>' +
       '<div class="game-tagline">' + g.tagline + '</div>' +
+      (g.issue ? '<div class="game-issue"><b>Known issue:</b> ' + g.issue + '</div>' : '') +
+      (g.note ? '<div class="game-note">' + g.note + '</div>' : '') +
       '<div class="game-meta">' +
         '<span class="meta">' + IC.players + g.players + '</span>' +
         '<span class="meta">' + IC.time + g.timeLabel + '</span>' +
@@ -1123,7 +1231,7 @@ GAMES.forEach((g, i) => {
       '</div>' +
     '</div>';
   btn.addEventListener('click', () => openSheet(g.id));
-  grid.appendChild(btn);
+  SECTIONS[g.state].querySelector('.grid').appendChild(btn);
 });
 
 /* ---------- Filters, search, sort ---------- */
@@ -1149,15 +1257,17 @@ const sortSel = document.getElementById('sort-sel');
 sortSel.addEventListener('change', applySort);
 function applySort() {
   const v = sortSel.value;
-  const cards = [...grid.querySelectorAll('.game')];
-  cards.sort((a, b) => {
-    if (v === 'name') return a.dataset.name.localeCompare(b.dataset.name);
-    if (v === 'time') return (+a.dataset.time - +b.dataset.time) || a.dataset.name.localeCompare(b.dataset.name);
-    if (v === 'players') return (+b.dataset.pmax - +a.dataset.pmax) || a.dataset.name.localeCompare(b.dataset.name);
-    if (v === 'state') return (STATE_ORDER[a.dataset.state] - STATE_ORDER[b.dataset.state]) || a.dataset.name.localeCompare(b.dataset.name);
-    return +a.dataset.index - +b.dataset.index;
+  document.querySelectorAll('.state-sec .grid').forEach(grid => {
+    const cards = [...grid.querySelectorAll('.game')];
+    cards.sort((a, b) => {
+      if (v === 'name') return a.dataset.name.localeCompare(b.dataset.name);
+      if (v === 'time') return (+a.dataset.time - +b.dataset.time) || a.dataset.name.localeCompare(b.dataset.name);
+      if (v === 'players') return (+b.dataset.pmax - +a.dataset.pmax) || a.dataset.name.localeCompare(b.dataset.name);
+      if (v === 'state') return (STATE_ORDER[a.dataset.state] - STATE_ORDER[b.dataset.state]) || a.dataset.name.localeCompare(b.dataset.name);
+      return +a.dataset.index - +b.dataset.index;
+    });
+    cards.forEach(c => grid.appendChild(c));
   });
-  cards.forEach(c => grid.appendChild(c));
 }
 
 function matchPlayers(card) {
@@ -1185,15 +1295,25 @@ function matchReady(card) {
 function matchSearch(card) {
   return !state.q || card.dataset.search.includes(state.q);
 }
-const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty','Twenty-one','Twenty-two','Twenty-three','Twenty-four','Twenty-five','Twenty-six','Twenty-seven','Twenty-eight','Twenty-nine','Thirty','Thirty-one','Thirty-two','Thirty-three'];
+const WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen','Twenty','Twenty-one','Twenty-two','Twenty-three','Twenty-four','Twenty-five','Twenty-six','Twenty-seven','Twenty-eight','Twenty-nine','Thirty','Thirty-one','Thirty-two','Thirty-three','Thirty-four','Thirty-five','Thirty-six','Thirty-seven','Thirty-eight','Thirty-nine','Forty','Forty-one','Forty-two','Forty-three','Forty-four','Forty-five','Forty-six','Forty-seven','Forty-eight','Forty-nine','Fifty'];
 const TOTAL = GAMES.length;
 function applyFilters() {
   let n = 0;
-  grid.querySelectorAll('.game').forEach(card => {
-    const show = matchPlayers(card) && matchTime(card) && matchWeight(card) && matchStatus(card) && matchReady(card) && matchSearch(card);
-    card.style.display = show ? '' : 'none';
-    if (show) n++;
+  Object.values(SECTIONS).forEach(sec => {
+    let k = 0;
+    sec.querySelectorAll('.game').forEach(card => {
+      const show = matchPlayers(card) && matchTime(card) && matchWeight(card) && matchStatus(card) && matchReady(card) && matchSearch(card);
+      card.style.display = show ? '' : 'none';
+      if (show) k++;
+    });
+    sec.style.display = k ? '' : 'none';
+    sec.querySelector('.state-head .n').textContent = k;
+    n += k;
   });
+  const laterCount = SECTIONS['In the workshop'].querySelectorAll('.game:not([style*="none"])').length +
+    SECTIONS['Shelved'].querySelectorAll('.game:not([style*="none"])').length;
+  laterBox.style.display = laterCount ? '' : 'none';
+  if (state.gstate === 'In the workshop' || state.gstate === 'Shelved') laterBox.open = true;
   const allAny = state.players === 'any' && state.time === 'any' && state.weight === 'any' && state.gstate === 'any' && state.played === 'any' && !state.q;
   const word = WORDS[n] || n;
   document.getElementById('count').textContent =
@@ -1202,6 +1322,14 @@ function applyFilters() {
 }
 
 /* ---------- Detail sheet ---------- */
+/* Playtest feedback: one shared Google Form; the Game field is pre-filled per game. */
+const FEEDBACK_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLScIy_up8yC6ie-li2f0HpA8MmgQfdBNSf48_NFjg8dB4SoSRA/viewform';
+const FEEDBACK_GAME_ENTRY = 'entry.857052937';
+const FEEDBACK_STATES = ['Proven', 'Rough edges', 'Untested'];
+function feedbackUrl(name) {
+  return FEEDBACK_FORM + '?usp=pp_url&' + FEEDBACK_GAME_ENTRY + '=' + encodeURIComponent(name);
+}
+
 const scrim = document.getElementById('scrim');
 const sheet = document.getElementById('sheet');
 const sheetScroll = document.getElementById('sheet-scroll');
@@ -1237,6 +1365,8 @@ function openSheet(id) {
       '<div class="d-stat"><span class="v">' + g.weight + '</span><span class="k">Depth</span></div>' +
       '<div class="d-stat"><span class="v">' + (g.played ? 'Yes' : 'Never') + '</span><span class="k">Played</span></div>' +
     '</div>' +
+    (g.issue ? '<div class="d-issue"><b>Known issue:</b> ' + g.issue + '</div>' : '') +
+    (g.note ? '<p class="d-note">' + g.note + '.</p>' : '') +
     '<div class="d-block"><h3>The idea</h3><p>' + g.idea + '</p></div>' +
     '<div class="d-block"><h3>How it plays</h3><ol class="d-steps">' + g.plays.map(p => '<li>' + p + '</li>').join('') + '</ol></div>' +
     '<div class="d-block" style="margin-bottom:14px"><h3>Deck used</h3><p style="font-size:14px">' + g.deck + '</p></div>' +
@@ -1248,6 +1378,14 @@ function openSheet(id) {
       '</div>' +
       '<div class="rules-panel" id="rules-panel" hidden></div>' +
     '</div>' +
+    (FEEDBACK_STATES.includes(g.state) ?
+      '<div class="d-block d-feedback">' +
+        '<h3>Played it?</h3>' +
+        '<p style="font-size:14px">Tell the designer how it went: a couple of minutes is plenty.</p>' +
+        '<div class="rules-actions">' +
+          '<a class="rules-btn" href="' + feedbackUrl(g.name) + '" target="_blank" rel="noopener">Send feedback ↗</a>' +
+        '</div>' +
+      '</div>' : '') +
     '<div class="d-foot">' + IC.deck + '<span>' + g.stage + ' · player counts and times are working estimates</span></div>';
   const loadBtn = document.getElementById('rules-load');
   const panel = document.getElementById('rules-panel');
@@ -1296,8 +1434,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && sheet.clas
 
 /* ---------- Surprise me ---------- */
 document.getElementById('surprise').addEventListener('click', () => {
-  const visible = [...grid.querySelectorAll('.game')].filter(c => c.style.display !== 'none');
-  const pool = visible.length ? visible : [...grid.querySelectorAll('.game')];
+  const visible = allCards().filter(c => c.style.display !== 'none' && (laterBox.open || !laterBox.contains(c)));
+  const pool = visible.length ? visible : allCards();
   const pick = pool[Math.floor(Math.random() * pool.length)];
   openSheet(pick.dataset.id);
 });

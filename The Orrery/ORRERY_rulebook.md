@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "THE ORRERY"
-state: Ready to test
+state: Rough edges
 players: [1, 2, 3]
 player_count: "1, 2, 3"
 duration: "15–25 min"
@@ -19,6 +19,8 @@ catalog_order: 3
 # THE ORRERY
 
 *A solo / co-operative sorting puzzle for 1–3 players · ~15–25 minutes · ages 10+*
+
+> **Known issue:** Only played once, solo, on a pre-sorted 7-sign deal. A random deal of the full deck has never been tried at a table.
 
 The sky is wrong. The symbols rise in clumps, vanish from whole circles, and repeat where they should not. Rebuild the machine: four perfect orbits, each carrying every symbol once above and once below. Move cards as much as you like. Every **flip** is the cost.
 

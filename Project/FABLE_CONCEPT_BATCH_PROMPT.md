@@ -53,7 +53,7 @@ You are designing card games for a custom deck. I want **20 new games I can play
 
 Two games are proven at the table. Learn from why they work, but don't copy them.
 
-**DOWRY (2 players): "I cut, you choose" with a second layer.**
+**SILK CUT (2 players): "I cut, you choose" with a second layer.**
 - The cutter lays 3 cards from hand as a lot of 2 and a lot of 1, choosing which face of each card shows.
 - The chooser takes either lot, and the cutter gets the other.
 - Captured cards go into a public spread, and their owner picks each card's permanent scoring face.
@@ -121,7 +121,7 @@ Overlap with existing games is fine. Variety *within these 20* is required.
 
 ### Format for each game (about 450 words)
 
-**TITLE:** one or two words in capitals. It must not share a key word with any existing title: BLIGHT, TWELVE TRIALS, THE ORRERY, TRIGON, WILDFIRE, GLEAN, CROSSROADS, JANUS, OUROBOROS, CAIRN, TURNCOAT, FACE VALUE, DOWRY, ICARUS, CONCORD, BRAVADO, FAVOURS, FORKED TONGUE, THE COUNCIL, SLEEPER, WISP, RELAY, SNARE, STRATA, AUGURY, EDICT, VIGIL, GOLEM, LACUNA, PADDOCK, HINGE, MIRROR, COVENANT, CARAVAN, THE UNPLAYED PAIR, QUEUE, RENDEZVOUS.
+**TITLE:** one or two words in capitals. It must not share a key word with any existing title: BLIGHT, TWELVE TRIALS, THE ORRERY, TRIGON, WILDFIRE, GLEAN, CROSSROADS, JANUS, OUROBOROS, CAIRN, TURNCOAT, FACE VALUE, SILK CUT, ICARUS, CONCORD, BRAVADO, FAVOURS, FORKED TONGUE, THE COUNCIL, SLEEPER, WISP, RELAY, SNARE, STRATA, AUGURY, EDICT, DEADLOCK, GOLEM, LACUNA, PADDOCK, HINGE, MIRROR, COVENANT, CARAVAN, THE UNPLAYED PAIR, QUEUE, RENDEZVOUS.
 
 - **One line:** what you do, and why it's tense.
 - **Players · time · deck:** exact player counts, minutes, and which signs are used.

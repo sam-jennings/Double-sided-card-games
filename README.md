@@ -1,6 +1,6 @@
 # Double-Sided Card Games
 
-This is the project home for a 36-card, double-faced deck and the **36 games** currently designed for it.
+This is the project home for a 36-card, double-faced deck and the **37 games** currently designed for it.
 
 ## Start here
 
@@ -15,6 +15,6 @@ This is the project home for a 36-card, double-faced deck and the **36 games** c
 
 ## The system in one line
 
-Every game has a **state** — **In development** (needs design work), **Ready to test** (playable now), **Proven** (played and working), or **Shelved** (inactive) — plus a **physically played** flag recording whether humans have ever played it. 12 of the 36 have.
+Every game has a **state** — **Proven** (played and works), **Rough edges** (played, works in general, known bugs or open questions), **Untested** (complete rules, never played), **In the workshop** (not playable yet), or **Shelved** (set aside) — plus a **physically played** flag recording whether humans have ever played it. 13 of the 37 have.
 
 The structured source of truth is the frontmatter on each game's game record. `GAME_CATALOG.base` reads it directly; `COLLECTION_OVERVIEW.md` and `games.html` are synchronized catalogue views.
