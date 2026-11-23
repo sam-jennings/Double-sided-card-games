@@ -1,6 +1,6 @@
 ---
 record_type: game
-game: DOWRY
+game: SILK CUT
 state: Proven
 players:
   - 2
@@ -15,20 +15,20 @@ max_players: 4
 min_minutes: 20
 max_minutes: 20
 physically_playtested: true
-public_document: Dowry/DOWRY_rulebook.md
+public_document: "Silk Cut/SILK_CUT_rulebook.md"
 next_step: Capture Norma's exact 3-player procedure and feedback before planning a multiplayer test.
 catalog_order: 13
 ---
-# DOWRY
+# SILK CUT
 
 *for 2 players · ~20 minutes · ages 10+*
-*(3–4 player variant in Designer's Variants — untested)*
+*(3–4 player variant in Designer's Variants — untested) · formerly titled DOWRY*
 
-> **State: Proven.** Repeated physical play has brought consistently strong feedback, replay requests and stated interest in buying the deck for this game. Norma borrowed the deck and attempted her own 3-player adaptation; its procedure and outcome are not yet recorded, and the written 3–4-player variant remains untested. See [first test](DOWRY_playtest_01.md), [repeated-play report](DOWRY_playtest_02.md) and [names and sibling directions](DOWRY_future_directions.md). Simulation results are in [`DOWRY_design_analysis.md`](DOWRY_design_analysis.md).
+> **State: Proven.** Repeated physical play has brought consistently strong feedback, replay requests and stated interest in buying the deck for this game. Norma borrowed the deck and attempted her own 3-player adaptation; its procedure and outcome are not yet recorded, and the written 3–4-player variant remains untested. See [first test](SILK_CUT_playtest_01.md), [repeated-play report](SILK_CUT_playtest_02.md) and [names and sibling directions](SILK_CUT_future_directions.md). Simulation results are in [`SILK_CUT_design_analysis.md`](SILK_CUT_design_analysis.md).
 
-*The match is agreed and the chests are being packed. Whoever packs them decides what the visitors see — silk laid on top, stones beneath. You will pack chests, and you will pick from chests packed against you. Every card in this deck has two faces; in DOWRY, the face you are shown is a claim, not a promise.*
+*The match is agreed and the chests are being packed. Whoever packs them decides what the visitors see — silk laid on top, stones beneath. You will pack chests, and you will pick from chests packed against you. Every card in this deck has two faces; in SILK CUT, the face you are shown is a claim, not a promise.*
 
-DOWRY is an **"I cut, you choose"** game: one player splits goods into two lots, the other picks first. On this deck the cut has a second layer — the cutter also chooses **which face of every offered card shows**. The lot that looks poor may be the rich one.
+SILK CUT is an **"I cut, you choose"** game: one player splits goods into two lots, the other picks first. On this deck the cut has a second layer — the cutter also chooses **which face of every offered card shows**. The lot that looks poor may be the rich one.
 
 ## Components
 
@@ -75,7 +75,7 @@ When both hands are empty (after offer 12), score each sign:
 
 ## What is actually hidden (read this — it is the whole game)
 
-This deck has no card backs, so DOWRY never pretends a card is unknown. Instead:
+This deck has no card backs, so SILK CUT never pretends a card is unknown. Instead:
 
 - **Your hand** is the only private zone. You know both faces of your 9 cards; your opponent knows only the stock-top faces they saw you draw — and what the registry implies.
 - **An offered lot** shows one chosen face per card. The hidden face of each offered card is exactly one sign — and because **every pair exists exactly once**, the set of possible hidden faces shrinks as the game goes on.
@@ -116,7 +116,7 @@ Tied; no one scores it. Note only 8 cards carry each sign — showing a 5th inst
 
 ## Designer's variants
 
-- **Open Dowry** *(first game / lighter)*: the chooser may examine both faces of offered cards before choosing. Removes the bluff, teaches the flow, the placement decision, and majority counting.
+- **Open Cut** *(first game / lighter)*: the chooser may examine both faces of offered cards before choosing. Removes the bluff, teaches the flow, the placement decision, and majority counting.
 - **Trousseau** *(harder / meaner)*: at setup, before dealing, each player receives one secret card by **Blind Cut** (take the deck below the table edge, cut, slide the new top card off unseen). Its two signs score **double their pip** for you. Play with hands of 8 (deal 8 each; stock 19; the 12th offer is short — cut 2 as lots of 1 and 1). Reveal secret cards at scoring; they join no spread. *Untested; deal arithmetic to be confirmed at the table.*
 - **Three or four packers** *(3–4P, untested)*: the cutter lays **one lot per player** (3P: 4 cards as 2/1/1 · 4P: 5 cards as 2/1/1/1). Choosers pick in clockwise order from the cutter's left; the cutter takes the last lot. Adjust deal so all 36 cards flow out evenly; majority scoring unchanged. Expect more kingmaking pressure — test before trusting.
 
@@ -129,4 +129,4 @@ Tied; no one scores it. Note only 8 cards carry each sign — showing a 5th inst
 
 ---
 
-*Design v0.2 — July 2026. Proven in its first physical 2-player playtest; see [`DOWRY_playtest_01.md`](DOWRY_playtest_01.md). Floor certified over ~4,750 simulated games ([`DOWRY_design_analysis.md`](DOWRY_design_analysis.md)): always terminates in exactly 12 offers, 0 stalls; skilled play beats random ~3.6× on score; deceptive cutting beats honest even-splitting ~1.6× (the dressing layer is load-bearing); mild second-cutter seat edge ~56/44 (see Match play).*
+*Design v0.2 — July 2026. Proven in its first physical 2-player playtest; see [`SILK_CUT_playtest_01.md`](SILK_CUT_playtest_01.md). Floor certified over ~4,750 simulated games ([`SILK_CUT_design_analysis.md`](SILK_CUT_design_analysis.md)): always terminates in exactly 12 offers, 0 stalls; skilled play beats random ~3.6× on score; deceptive cutting beats honest even-splitting ~1.6× (the dressing layer is load-bearing); mild second-cutter seat edge ~56/44 (see Match play).*

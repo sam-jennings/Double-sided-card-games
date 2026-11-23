@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "PADDOCK"
-state: In development
+state: In the workshop
 players: [3, 4, 5, 6]
 player_count: "3, 4, 5, 6"
 duration: "~15 min"
@@ -18,7 +18,7 @@ catalog_order: 28
 ---
 # PADDOCK — nine runners, countable odds
 
-*3–6 players · ~15 min · betting race · full 36 · In development · physically unplayed*
+*3–6 players · ~15 min · betting race · full 36 · In the workshop · physically unplayed*
 
 > **Status & scope.** Wildcard batch, second flight (July 2026) — *originality first, rubric waived, unsimmed*. No rulebook, no sim, no rubric self-score; should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §25.
 

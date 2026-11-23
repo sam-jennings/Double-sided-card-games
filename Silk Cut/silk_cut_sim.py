@@ -1,4 +1,4 @@
-"""DOWRY simulator — floor certification for rulebook v0.1.
+"""SILK CUT simulator — floor certification for rulebook v0.1.
 
 Models the real 2P ruleset:
   * 36-card K9 deck, faces randomised on shuffle.
@@ -25,7 +25,7 @@ Bots (perfect memory — an upper bound on human registry tracking):
 What the sim cannot model: human forgetting (glimpse memory), bluff reads,
 table feel. It certifies termination, seat fairness, and strategy floors only.
 
-Run:  python dowry_sim.py --games 1000 [--seed 7]
+Run:  python silk_cut_sim.py --games 1000 [--seed 7]
 """
 
 from __future__ import annotations
@@ -303,7 +303,7 @@ def main():
     deg = Counter(g for c in ALL_CARDS for g in c)
     assert all(v == 8 for v in deg.values())
 
-    print(f"DOWRY sim — {a.games} games/arm, seed {a.seed}\n")
+    print(f"SILK CUT sim — {a.games} games/arm, seed {a.seed}\n")
     arm("random vs random (seat check)", RandomBot(), RandomBot(), a.games, a.seed)
     w, s = arm("SKILLED (P0) vs random", SkilledBot(), RandomBot(), a.games, a.seed + 1)
     print(f"{'':38s} skill edge: win {w[0]/max(1,w[1]):.2f}x, score {s[0]/s[1]:.2f}x")

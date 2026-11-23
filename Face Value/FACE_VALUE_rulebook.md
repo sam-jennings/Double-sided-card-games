@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "FACE VALUE"
-state: Ready to test
+state: Untested
 players: [2]
 player_count: "2"
 duration: "15–20 min"

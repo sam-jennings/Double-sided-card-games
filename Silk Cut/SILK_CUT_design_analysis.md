@@ -1,6 +1,6 @@
-# DOWRY — Design Analysis & Floor Simulation
+# SILK CUT — Design Analysis & Floor Simulation
 
-*July 2026 · simulator: [`dowry_sim.py`](dowry_sim.py) · rulebook: [`DOWRY_rulebook.md`](DOWRY_rulebook.md) (v0.1)*
+*July 2026 · simulator: [`silk_cut_sim.py`](silk_cut_sim.py) · rulebook: [`SILK_CUT_rulebook.md`](SILK_CUT_rulebook.md) (v0.1)*
 
 ## 1. The questions
 
@@ -39,9 +39,9 @@ Volume: ~4,750 games total, chunked runs with distinct seeds (results identical 
 > dresses informatively. The 83% / ≈1.6–1.7× therefore measures the split objective and the dressing together, and the
 > conclusion *"the dressing layer is load-bearing, not decorative"* does not follow from this arm.
 > A matched ablation — identical to `SkilledBot` in every respect except the dressing — puts the **dressing-only edge at
-> ≈1.11×**. Reproduce with [`../Caravan/dowry_dressing_probe.py`](../Caravan/dowry_dressing_probe.py); the same probe
-> also supplies DOWRY's decision-density reference figures (51.4% pair-taking, 37.8% risk-free takes, 32.2% live takes).
-> Per [SKILL_GAP_METHOD §7](../Project/SKILL_GAP_METHOD.md) this is an annotation, not a re-run: nothing about DOWRY's
+> ≈1.11×**. Reproduce with [`../Caravan/silk_cut_dressing_probe.py`](../Caravan/silk_cut_dressing_probe.py); the same probe
+> also supplies SILK CUT's decision-density reference figures (51.4% pair-taking, 37.8% risk-free takes, 32.2% live takes).
+> Per [SKILL_GAP_METHOD §7](../Project/SKILL_GAP_METHOD.md) this is an annotation, not a re-run: nothing about SILK CUT's
 > table result changes, and the game is Proven on player evidence rather than on this number.
 
 - **Skill gap 3.6×** — far above the 1.5× health bar. Per the OUROBOROS lesson this is a floor claim from one-ply heuristics, but the *direction* is unambiguous.

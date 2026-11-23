@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: CARAVAN
-state: Ready to test
+state: Untested
 players:
   - 2
   - 3
@@ -22,13 +22,13 @@ next_step: Table it at 3P and settle the question the simulation cannot — does
 # CARAVAN
 
 *for 2, 3 or 4 players · ~15 minutes · ages 10+*
-*A sibling of [DOWRY](../Dowry/DOWRY_rulebook.md). Same dressed offer; nobody waits, and nobody chooses their customer.*
+*A sibling of [SILK CUT](../Silk%20Cut/SILK_CUT_rulebook.md). Same dressed offer; nobody waits, and nobody chooses their customer.*
 
-> **State: Ready to test.** Never played on a table. Floor-certified over ~4,200 simulated games at 2, 3 and 4 players — see [`CARAVAN_design_analysis.md`](CARAVAN_design_analysis.md). Designed from the sibling brief in [DOWRY_future_directions.md](../Dowry/DOWRY_future_directions.md), and deliberately **not** the market design that brief recommended; the analysis says why.
+> **State: Untested.** Never played on a table. Floor-certified over ~4,200 simulated games at 2, 3 and 4 players — see [`CARAVAN_design_analysis.md`](CARAVAN_design_analysis.md). Designed from the sibling brief in [SILK_CUT_future_directions.md](../Silk%20Cut/SILK_CUT_future_directions.md), and deliberately **not** the market design that brief recommended; the analysis says why.
 
 *The road runs one way this season. You load a chest for the trader ahead of you and take what the trader behind you loads for you — and neither of you can do a thing about the other. Next season the road turns back.*
 
-DOWRY is one bargain at a time between two people. CARAVAN is **every bargain at once**: each round, every player packs a dressed offer for exactly one other player and is packed for by exactly one other. Everyone takes at the same moment. Nobody waits for a turn, and **you cannot choose whom you help** — only how much.
+SILK CUT is one bargain at a time between two people. CARAVAN is **every bargain at once**: each round, every player packs a dressed offer for exactly one other player and is packed for by exactly one other. Everyone takes at the same moment. Nobody waits for a turn, and **you cannot choose whom you help** — only how much.
 
 **Strapline:** *You don't choose your customer. Only what they see.*
 
@@ -142,11 +142,11 @@ Tied at the top scores nobody, whoever else is behind. Only 8 cards carry each s
 ## Follow-up playtest questions
 
 1. **Does packing for a *named* neighbour change what you pack?** This is the design's whole premise and the fastest way to falsify it. The simulation says a bot that ignores who receives the lot does just as well (0.90–1.01×). If the table also cannot feel it, the road is decoration and *The trailing road* is the next thing to try. **Log one offer per round: who you packed for, and whether their spread changed your choice.**
-2. **Does simultaneous play feel social, or like four solitaires?** Nobody waits, which is the design's main practical gain over a 4-player DOWRY — but the cost may be that nobody watches anybody.
+2. **Does simultaneous play feel social, or like four solitaires?** Nobody waits, which is the design's main practical gain over a 4-player SILK CUT — but the cost may be that nobody watches anybody.
 3. **Is not being able to retaliate frustrating or interesting?** The player hurting you is never the player you pack for.
 4. **Can four people read four offers without the round slowing to a crawl?** You only *need* to read your own.
 5. **Is three rounds at 4P a game or a fragment?**
 
 ---
 
-*Design v0.1 — September 2026. Floor-certified over ~4,200 simulated games ([`CARAVAN_design_analysis.md`](CARAVAN_design_analysis.md)): always terminates in exactly 12 offers with all 36 cards placed, 0 flow failures at 2, 3 and 4 players; seats fair at every count (no DOWRY-style second-cutter edge); take-decisions live 36–40% of the time against DOWRY's 32%; a thoughtful line beats a naive-but-sensible one on matched information by 1.22–1.29×. The road ablation is flat and is question 1 above.*
+*Design v0.1 — September 2026. Floor-certified over ~4,200 simulated games ([`CARAVAN_design_analysis.md`](CARAVAN_design_analysis.md)): always terminates in exactly 12 offers with all 36 cards placed, 0 flow failures at 2, 3 and 4 players; seats fair at every count (no SILK CUT-style second-cutter edge); take-decisions live 36–40% of the time against SILK CUT's 32%; a thoughtful line beats a naive-but-sensible one on matched information by 1.22–1.29×. The road ablation is flat and is question 1 above.*

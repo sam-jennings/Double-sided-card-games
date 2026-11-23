@@ -1,8 +1,8 @@
-# DOWRY — Playtest 01
+# SILK CUT — Playtest 01
 
 *Retrospective record · physical 2-player playtest*
 
-The 2-player base game was physically playtested and worked extremely well. The designer's assessment is that DOWRY may be the best game in the collection so far.
+The 2-player base game was physically playtested and worked extremely well. The designer's assessment is that SILK CUT may be the best game in the collection so far.
 
 ## Verdict
 

@@ -23,7 +23,7 @@ Portfolio coverage at a glance:
 | 13 | CAIRN *(Ready)* | Compact solo chain patience | 1 | A card is an edge; cards chain by a shared sign — the edge-adjacency property, unused since OUROBOROS was cut, now in a ≤4-pile footprint |
 | 14 | RELAY *(Draft — sim-validated, needs rulebook)* | Network route-race / drafting | 2–4 | Each card is a directed road *and* a unique connection goal; "each sign on 8 cards" bounds the map; a flip re-aims a road to make or break a directed route |
 | 15 | SLEEPER *(Draft — rulebook v0.1, untested)* | Social deduction / hidden loyalty | 4–6 | Your loyalty is one guarded double-faced card — the only persistent secret a backless deck holds cleanly; a flip swings a decree to its single printed alternative |
-| 16 | DOWRY *(Ready — sim-certified floor, rulebook v0.2, untested)* | I-cut-you-choose / bluff & deduction | 2 (3–4 variant) | The cut has two layers — partition *and* presentation: the cutter chooses which face of every offered card shows, and pair-uniqueness bounds what a dressed lot can hide |
+| 16 | SILK CUT *(Ready — sim-certified floor, rulebook v0.2, untested)* | I-cut-you-choose / bluff & deduction | 2 (3–4 variant) | The cut has two layers — partition *and* presentation: the cutter chooses which face of every offered card shows, and pair-uniqueness bounds what a dressed lot can hide |
 | 17 | ICARUS *(Ready — sim-certified floor, rulebook v0.1, untested)* | Push-your-luck | 2–4 | The backless deck-top shows half of every gamble; pair-uniqueness + the public registry make the bust odds exactly countable |
 
 Existing games already cover: tactical grid engine (TRIGON) and direct-conflict allegiance (TURNCOAT).
@@ -498,7 +498,7 @@ Same draft-and-build skeleton, but the web is **owned**: when you build a road y
 - *Kingmaking at the reckoning* — the last flips can decide the ruler; candidate fix is simultaneous final-round actions.
 - *Obvious-sign collusion* — does everyone serving the safest/highest-pip sign collapse into a shared blowout? (THE COUNCIL hit the analogous line and broke it with pip values + rollover; a sim could check the strength-plus-pip resolution.)
 
-on layer needs strengthening before further tables. *(Editor's note: this sentence was found truncated in the file — reconstruct from the DOWRY analysis if the original said more.)*
+on layer needs strengthening before further tables. *(Editor's note: this sentence was found truncated in the file — reconstruct from the SILK CUT analysis if the original said more.)*
 
 ---
 
@@ -525,12 +525,12 @@ al/disclose) and the taker's scoring placement (which majority race the card fee
 
 **Deck-size fit.** Native at **9 signs / 36 cards** (12 clean offers of 3, even cutter turns). 7/21 splits unevenly (7 offers) — not recommended.
 
-**Evaluation (rubric, [design-principles.md](.kiro/steering/design-principles.md); D5/D6 skipped by brief).** All-pairs: **yes** — the registry bounds every bluff (D1 9). Physically works: **yes by construction** — rung-2 deal, open offers, public placement flips, C6 spreads, C3 live stock; no new handling invented (D2 9, untested). Flipping matters: **yes, twice per card** (D3 9). Pair-uniqueness: **load-bearing** (D4 9). Clean to explain: "I split three of my cards into lots of 2 and 1 and choose what you see; you pick a lot; I keep the rest" (D7 8). Testable on Set D today: yes. Fastest falsification: even-split cutting matching deceptive cutting ⇒ the dressing layer is dead — **run and survived**: the floor sim ([DOWRY_design_analysis.md](Dowry/DOWRY_design_analysis.md), ~4,750 games) has deceptive cutting beat honest even-splitting ~83% / ~1.6× score, skilled beat random ~3.6×, 0 stalls, and found a mild ~56/44 second-cutter seat edge (match-play note added).
+**Evaluation (rubric, [design-principles.md](.kiro/steering/design-principles.md); D5/D6 skipped by brief).** All-pairs: **yes** — the registry bounds every bluff (D1 9). Physically works: **yes by construction** — rung-2 deal, open offers, public placement flips, C6 spreads, C3 live stock; no new handling invented (D2 9, untested). Flipping matters: **yes, twice per card** (D3 9). Pair-uniqueness: **load-bearing** (D4 9). Clean to explain: "I split three of my cards into lots of 2 and 1 and choose what you see; you pick a lot; I keep the rest" (D7 8). Testable on Set D today: yes. Fastest falsification: even-split cutting matching deceptive cutting ⇒ the dressing layer is dead — **run and survived**: the floor sim ([SILK_CUT_design_analysis.md](Silk%20Cut/SILK_CUT_design_analysis.md), ~4,750 games) has deceptive cutting beat honest even-splitting ~83% / ~1.6× score, skilled beat random ~3.6×, 0 stalls, and found a mild ~56/44 second-cutter seat edge (match-play note added).
 
 **Honest risks / why it might be cut.**
 - *Even-split dominance* — if dressing never profitably misleads, this is a bland accounting race. The pip ladder, nonlinear majority thresholds, and the 1/2 lot asymmetry are the counter-forces; the first table test is the judge.
 - *Deduction fatigue* — mid-game registry tracking at 9-card hands may be heavier than fun; C8 says 9 is manageable, but this game *uses* the hand harder than most.
-- *Stock-glimpse memory* — deliberate and rewarding for those who invest, but if it decides games, casual tables may bounce; the Open Dowry variant is the relief valve.
+- *Stock-glimpse memory* — deliberate and rewarding for those who invest, but if it decides games, casual tables may bounce; the Open Cut variant is the relief valve.
 
 **Next step.** One 2P table session (first-table questions in the rulebook; the even-split-dominance question is already answered at the floor — the table must answer whether *humans* can execute and read the dressing game, and whether the deduction load is fun at 9-card hands).
 
@@ -572,11 +572,11 @@ The Seer peeks a portent's hidden face and speaks one omen-sentence bridging the
 
 One player secretly enacts a Law from a printed menu of 18 and seals it in the deck's own alphabet (hidden pip + orientation); every play is an experiment, and the Line-and-Gutter layout keeps the whole lab notebook public and spatial.
 
-## 22. VIGIL — the game that waits on the windowsill
+## 22. DEADLOCK (formerly VIGIL) — the game that waits on the windowsill
 
 *2 players · one move per passing, over days · slow territory duel · full 36*
 
-**Full concept sheet moved to its own folder:** [Vigil/VIGIL_concept.md](Vigil/VIGIL_concept.md).
+**Full concept sheet moved to its own folder:** [Deadlock/DEADLOCK_concept.md](Deadlock/DEADLOCK_concept.md).
 
 A game for a shelf, not a session: the 6×6 field *is* the save file — turn parity computes itself from the board, claims lock by orientation, and scoring lines are shaped one irreversible flip at a time. A correspondence format the collection can reuse.
 
@@ -584,7 +584,7 @@ A game for a shelf, not a session: the 6×6 field *is* the save file — turn pa
 
 ## The wildcard batch, second flight (July 2026) — §23–§27
 
-> Same brief as §18–§22 (originality first, rubric waived, unsimmed), leaning further into the two moves the first flight proved out: **physical inversions** (a supposed weakness of the backless deck becomes the genre — the WISP move) and **format innovations** (where and how the game is played, not just what — the VIGIL move).
+> Same brief as §18–§22 (originality first, rubric waived, unsimmed), leaning further into the two moves the first flight proved out: **physical inversions** (a supposed weakness of the backless deck becomes the genre — the WISP move) and **format innovations** (where and how the game is played, not just what — the DEADLOCK move).
 
 ## 23. GOLEM — the boss that telegraphs
 
@@ -632,7 +632,7 @@ Two provably isomorphic season hands, a prompt neither may show, and one goal: s
 
 ## The story flight (July 2026) — §28–§30
 
-> A different brief from the wildcard flights: **story-driven / campaign play** — progressive levels, attemptable solo with assisting players, the signs integral to the narrative. Rubric waived, unsimmed, **journal-only**: no folders or game records yet — promote via [Adding a Game](Project/ADDING_A_GAME.md) if selected. The design problem that shapes all three: a fixed 36-card deck cannot save progress by destruction or stickers, so a campaign must live in one of the deck's four honest save mechanisms — **sub-deck composition** (the subset property: which signs are in play *is* the save), **deck order + the box** (the stack as save file — the VIGIL move), **a printed booklet** (the TWELVE TRIALS almanac precedent), or **orientation locks** (C4). Each concept below commits to a different one. A fourth idea from the same session — THE NINE TRIALS OF THE TENTH, a boss-rush campaign — is deliberately *not* numbered: it stands or falls with GOLEM's chassis, so it's filed as a campaign extension inside [Golem/GOLEM_concept.md](Golem/GOLEM_concept.md), to be reviewed together with GOLEM.
+> A different brief from the wildcard flights: **story-driven / campaign play** — progressive levels, attemptable solo with assisting players, the signs integral to the narrative. Rubric waived, unsimmed, **journal-only**: no folders or game records yet — promote via [Adding a Game](Project/ADDING_A_GAME.md) if selected. The design problem that shapes all three: a fixed 36-card deck cannot save progress by destruction or stickers, so a campaign must live in one of the deck's four honest save mechanisms — **sub-deck composition** (the subset property: which signs are in play *is* the save), **deck order + the box** (the stack as save file — the DEADLOCK move), **a printed booklet** (the TWELVE TRIALS almanac precedent), or **orientation locks** (C4). Each concept below commits to a different one. A fourth idea from the same session — THE NINE TRIALS OF THE TENTH, a boss-rush campaign — is deliberately *not* numbered: it stands or falls with GOLEM's chassis, so it's filed as a campaign extension inside [Golem/GOLEM_concept.md](Golem/GOLEM_concept.md), to be reviewed together with GOLEM.
 
 ## 28. COVENANT — the deck that grows as the story does
 
@@ -683,7 +683,7 @@ Versions:
 
 **Solo + assists.** Second player is the torchbearer — own hand, shared fate; their cards answer signs yours can't (every pair is unique, so two hands genuinely cover more verbs).
 
-**Handling audit.** Deck order as save is exactly VIGIL's shelf-persistence claim, in a box instead. C3 dead pile, C4 orientation, box already sanctioned kit. One honest risk: a dropped deck destroys the campaign — the rulebook must say so with a smile.
+**Handling audit.** Deck order as save is exactly DEADLOCK's shelf-persistence claim, in a box instead. C3 dead pile, C4 orientation, box already sanctioned kit. One honest risk: a dropped deck destroys the campaign — the rulebook must say so with a smile.
 
 **Fastest falsification.** One evening, two delves into the same ruin: does knowing one face of every coming room make delve two a calculation instead of a dread? The bet is the opposite — half-knowledge is *more* frightening, and remembered rooms make the world feel real.
 

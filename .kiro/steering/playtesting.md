@@ -58,12 +58,15 @@ Two things change on the game record after a table test.
 | Verdict | State to record | Reads as |
 |---|---|---|
 | Iterate | **Proven** | Played, very happy, only minor polish left — nothing blocking. |
-| Iterate | **Ready to test** | Works, with known bugs whose fixes are easy and already queued; put it back on the table. |
-| Iterate | **In development** | Didn't really work; needs bigger fixes or a rethink before it's worth another table. |
+| Iterate | **Rough edges** | Works, with known bugs or open questions whose fixes are queued; put it back on the table. |
+| Iterate | **Rough edges** | Didn't really work, but a table could still play it as written (perhaps with a variant or house rule). |
+| Iterate | **In the workshop** | Didn't really work, and a table can't sensibly play it until bigger fixes or a rethink are designed. |
 | Park | **Shelved** | Sound but set aside; folder kept. |
 | Cut | **Shelved** | Core flaw the concept can't escape; folder kept as a design record. |
 
-The distinction that matters at the middle two rungs is whether you'd hand the current rules to a table *tonight*. If yes, it stays **Ready to test**; if the next session needs design work first, it drops to **In development** — as JANUS did. A game that was **Proven** and then breaks drops the same way until a re-test. `physically_playtested` stays true throughout, so a dropped game is still visibly one you have actually played.
+The distinction that matters between **Rough edges** and **In the workshop** is whether you'd hand the current rules to a table *tonight*. If yes, it is **Rough edges** — JANUS is, because its open-information Apprentice variant can still be played even though the hidden-hand version can't; if the next session needs design work first, it goes to **In the workshop**. A game that was **Proven** and then breaks drops the same way until a re-test. `physically_playtested` stays true throughout, so a dropped game is still visibly one you have actually played.
+
+Whenever a game is left as **Rough edges**, write its one-line **known issue** in plain language, taken from the report, on its `games.html` entry and at the top of its public rules.
 
 Record the detailed verdict in the playtest report and the single next action in `next_step`. Do not add a separate status or readiness field to carry the nuance.
 

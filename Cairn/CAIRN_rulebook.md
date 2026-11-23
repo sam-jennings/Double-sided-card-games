@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: CAIRN
-state: Ready to test
+state: Rough edges
 players:
   - 1
 player_count: "1"
@@ -20,6 +20,8 @@ catalog_order: 10
 # CAIRN
 
 *A compact solo chain-patience for 1 player · ~10 minutes · ages 10+*
+
+> **Known issue:** It has been played once, but the notes were lost. Still open: do the choices feel meaningful, and does getting stuck feel foreseeable or just unlucky?
 
 A trail crosses bare country. You mark it by raising **cairns** — small stacks of stones, each stone carved with two waymarks. A stone can only be added to a cairn when one of its waymarks matches the sign on top; you set it down so its *other* waymark now faces the sky, and the trail reaches on. Lay every stone and the trail is complete. Box yourself in and the trail dies where you stand.
 

@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "RELAY"
-state: In development
+state: In the workshop
 players: [2, 3, 4]
 player_count: "2, 3, 4"
 duration: "20–25 min"
@@ -13,7 +13,7 @@ min_minutes: 20
 max_minutes: 25
 physically_playtested: false
 public_document: "Relay/RELAY_design_analysis.md"
-next_step: "Write the player-facing rulebook."
+next_step: "Decide the open points in the RELAY_rulebook.md draft (place markers at 4P; one action vs build-then-re-aim; build connectivity), then vet it and table it at 2P or 3P."
 catalog_order: 20
 ---
 # RELAY — Design Analysis (structural sim)
@@ -65,3 +65,64 @@ Four questions: termination, skill gap (≥~1.5×), pass-to-win (should be dead)
 ## Next step
 
 Goal-race clears the structural gate at 2–4P. Per [focus-priority.md](../.kiro/steering/focus-priority.md), the cheap remaining work is a short rulebook draft (deck-only goal-race), then a first 2P + 3P table test for the fun, interaction, route-tracing legibility, and CROSSROADS-distinctness questions a sim can't answer.
+
+**Update (November 2026):** the rulebook draft now exists: [RELAY_rulebook.md](RELAY_rulebook.md) v0.1, written from the sim's GOAL mode. The draft surfaced a physical gap the sim can't see: a road's source is its pressed face, so the web is readable only if each road touches a visible marker for its source place. The removed Star cards (2P) and Crown cards (3P) supply those markers. At 4P no cards are spare (see §4P place markers below). The draft's design notes also list two places where the concept and the sim differ: build-then-re-aim vs one action, and the build-connectivity rule.
+
+## Re-run at 1,000 games per cell (November 2026)
+
+`python relay_sim.py --games 1000 --seed 42 --goal-only` (GOAL fork only; the NODE fork stays dropped). The table above came from 250 games per cell; these replace it as the headline numbers. They agree within ~0.2× everywhere.
+
+| | 2P (7 signs) | 3P (8 signs) | 4P (9 signs) |
+|---|---:|---:|---:|
+| Length (turns) | 24.8 | 34.8 | 44.9 |
+| Turn-cap hits | 0.0% | 0.0% | 0.0% |
+| Draws | 2.3% | 3.0% | 4.2% |
+| Greedy win vs random | 96.0% (1.92× fair) | 93.7% (2.81×) | 92.5% (3.70×) |
+| Claims via a flip | 22.7% | 24.4% | 26.7% |
+| Passer score (wins) | 0 (0%) | 0 (0%) | 0 (0%) |
+| Skill gap, flips on → off | 1.91 → 1.74× | 2.83 → 2.37× | 3.68 → 3.08× |
+
+All 1,000 games per cell, 1-ply bots, seed 42. The greedy seat rotates across positions; the first player is always seat 0. Seat order is measured separately below.
+
+## Seat fairness (November 2026)
+
+`python relay_sim.py --seats --games 2000 --seed 42` (and `--seed 7`; add `--signs4 8` for the Option B map). GOAL fork, every seat greedy, the starting seat rotated each game, results grouped by turn position. 2,000 games per player count per seed. Win share is among decided games (fair = 1/n).
+
+| Table | Win share by position, 1st / 2nd / 3rd / 4th (seed 42) | Seed 7 | Draws (42 / 7) |
+|---|---|---|---:|
+| 2P, 7 signs | 50.7 / 49.3% | 49.0 / 51.0% | 2.6 / 2.2% |
+| 3P, 8 signs | 33.5 / 33.2 / 33.3% | 32.7 / 35.5 / 31.7% | 4.6 / 4.0% |
+| 4P, 9 signs | 25.2 / 25.3 / 26.8 / 22.7% | 25.9 / 24.5 / 25.1 / 24.5% | 4.5 / 5.0% |
+| 4P, 8 signs (Option B) | 24.4 / 25.3 / 23.6 / 26.7% | 25.7 / 23.2 / 25.6 / 25.5% | 4.9 / 4.9% |
+
+Mean score by position never differs by more than 0.8 points at any count.
+
+**Reading:** no seat advantage. Every position stays within ~2.3 points of fair, which is about two standard errors at 4P (~1 point per position). No position leads or trails at both seeds: the 22.7% for the 4P fourth seat at seed 42 is 24.5% at seed 7. The 4P marker options don't differ on seat order either. *Caveat:* 1-ply bots. A first-player edge from seeing the opening market first could still show up with deeper play or at the table.
+
+## 4P place markers — options for the designer (not decided here)
+
+The problem: at 4P all 36 cards are roads or goals, so there's nothing left to mark the nine places. The 2P/3P markers come from the removed cards.
+
+**Option A — RELAY is a 2–3 player game.** Record `players: [2, 3]`.
+- *For:* no new rule or component. Markers are deck-native at both counts, and both are already simulated (1.92× / 2.81×).
+- *Against:* loses the concept's "designed for 2–4" goal, and with it the subset-scaling story (adding a player adds a sign). 4P route play is left uncovered in the collection; CROSSROADS is 2P only.
+
+**Option B — 4P plays on 8 signs (Moon–Star, 28 cards), using the Crown cards as markers exactly as at 3P.** Sim evidence (`--signs4 8`, 1,000 games, seed 42):
+
+| 4P on 8 signs | Result |
+|---|---|
+| Length | 36.5 turns (~9 actions each, vs ~11 on 9 signs) |
+| Turn-cap hits / draws | 0.0% / 5.2% |
+| Greedy win vs random | 88.8% (3.55× fair) |
+| Claims via a flip | 25.7%; skill gap 3.54× with flips vs 2.51× without |
+
+- *For:* deck-only, no new component, the same setup as 3P, and the sim stays healthy. Flips matter *more* than on 9 signs (removing them costs 1.03× of skill gap vs 0.60×).
+- *Against:* the subset no longer grows with the table (3P and 4P share a map), so the deal is tighter: 12 cards in hands and a 6-card stock. Slightly more draws. This sim kept the 9-flip pool and 7 goals, which are untuned for 8 signs.
+
+**Option C — 4P keeps all nine signs with nine external place markers** (a ring sketched on paper, nine coins labelled with sign names, or a printed ring in the rulebook).
+- *For:* plays exactly the simulated 9-sign game (3.70×), and keeps the subset-scaling story intact.
+- *Against:* a component the deck can't supply. The collection's generic counter kit (C5) is unlabelled, so this needs either a new labelled-marker class or a printed sheet, which the component policy resists. A sketched ring is a free prototype method, but not a product answer.
+
+**Recommendation (for the designer to accept or reject):** **B** is the smallest honest fix if 4P matters: it stays deck-only and has sim support. **A** is the cleanest if it doesn't. C is worth it only if a printed reference sheet becomes a collection-wide component anyway (see DECK_CONVENTIONS T2). Until you choose, RELAY stays In the workshop with `players: [2, 3, 4]` unchanged.
+
+*Caveat:* 1,000 games per cell meets the collection standard. The bots are still 1-ply, so the gaps are floors.

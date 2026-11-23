@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "CONCORD"
-state: Ready to test
+state: Untested
 players: [2]
 player_count: "2"
 duration: "25–35 min"

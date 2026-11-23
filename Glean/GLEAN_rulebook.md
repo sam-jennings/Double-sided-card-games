@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "GLEAN"
-state: Ready to test
+state: Rough edges
 players: [3, 4, 6]
 player_count: "3, 4, 6"
 duration: "~20 min"
@@ -19,6 +19,8 @@ catalog_order: 6
 # GLEAN
 
 *A trick-taking game of gathering signs for 3, 4, or 6 players · ~20 minutes · ages 10+*
+
+> **Known issue:** The first table only played the old pip-adding score, which was slow. The real majority scoring has never been played.
 
 Every card carries two signs, and every trick you take is a harvest — because the card you capture counts for **both** of its signs at once. Win the most of a sign and you claim it. The catch: the side you show to follow is never the side that wins the trick. What beats the table is the face you kept hidden. Gather the signs; claim the most; the greatest harvest wins.
 

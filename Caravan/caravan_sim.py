@@ -1,6 +1,6 @@
 """CARAVAN simulator — floor certification and offer-shape selection.
 
-CARAVAN is a simultaneous cut-and-choose sibling of DOWRY.  Each ROUND,
+CARAVAN is a simultaneous cut-and-choose sibling of SILK CUT.  Each ROUND,
 every player packs one dressed offer for exactly one other player (the
 direction of "the road" that round) and is packed for by exactly one other;
 every taker chooses at once; each packer keeps the lot left behind.
@@ -24,12 +24,12 @@ scoring experiments run to select it, kept so the choice is auditable:
     C  offer 4 as 3/1   hand 8   3P        majority   lopsided control
     D  offer 3 as 2/1   hand 6   2P/3P/4P  pairwise   beat-each-opponent
     E  offer 4 as 2/2   hand 8   3P        pairwise
-    F  offer 3 as 2/1   hand 9   2P/3P/4P  majority   DOWRY's hand size
+    F  offer 3 as 2/1   hand 9   2P/3P/4P  majority   SILK CUT's hand size
     G  offer 3 as 2/1   hand 12  3P        majority   no stock at all
 
-Two value models are available (--value).  SHARP is DOWRY's place_value
+Two value models are available (--value).  SHARP is SILK CUT's place_value
 generalised to p players and is the primary model, so the decision-density
-figures here are directly comparable with DOWRY's.  SMOOTH is a positional
+figures here are directly comparable with SILK CUT's.  SMOOTH is a positional
 prospect proxy; it manufactures false obviousness (it makes two cards beat
 one almost always) and is kept only as a sensitivity check.
 
@@ -232,11 +232,11 @@ def prospect(cnt, i, p, rem, pairwise=False):
 
 
 def marginal_sharp(cnt, i, p, rem, pw=False):
-    """DOWRY's place_value, generalised to p players: what one more shown
+    """SILK CUT's place_value, generalised to p players: what one more shown
     instance of each sign is worth RIGHT NOW.  A step function — a card that
     changes no majority is worth almost nothing — which is how a player at
     the table reads a lot.  This is the primary model, chosen so CARAVAN's
-    decision-density figures are comparable with DOWRY's."""
+    decision-density figures are comparable with SILK CUT's."""
     w = {}
     for s in SIGNS:
         c = cnt[i][s]

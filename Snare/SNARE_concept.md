@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "SNARE"
-state: In development
+state: In the workshop
 players: [2]
 player_count: "2"
 duration: "10–15 min"
@@ -12,13 +12,15 @@ max_players: 2
 min_minutes: 10
 max_minutes: 15
 physically_playtested: false
-public_document: "Snare/SNARE_concept.md"
-next_step: "Develop a complete rulebook if this concept is selected."
+public_document: "Snare/SNARE_rulebook.md"
+next_step: "Choose a seat-balance rule: the second claimer wins every careful game and the concept's pie rule is provably inert (seat-swapped match = experts always draw; set one road aside = 50/50 but snares become avoidable)."
 catalog_order: 21
 ---
 # SNARE — the forbidden three
 
-*2 players · ~10–15 min · perfect-information abstract / avoidance · In development · physically unplayed*
+*2 players · ~10–15 min · perfect-information abstract / avoidance · In the workshop · physically unplayed*
+
+> **Status (November 2026).** A draft rulebook now exists: [SNARE_rulebook.md](SNARE_rulebook.md) v0.1, simulated and exactly solved in [SNARE_design_analysis.md](SNARE_design_analysis.md) ([snare_sim.py](snare_sim.py)). No stalls and a strong skill gap (careful play beats random 97.8%, 3.4× fewer snares), but the single game is a forced second-claimer win and the pie rule below cannot fix it. This page remains the game record and the concept's reasoning; the draft's *Decisions to review* list holds every open choice.
 
 > **Status & scope.** This is a **rung-4 new concept** ([focus-priority.md](../.kiro/steering/focus-priority.md)). It is logged for exploration only. Per the circuit breaker, it is **not** to be developed into a full rulebook until at least one rung-2/3 game (TRIGON, TURNCOAT, FACE VALUE, JANUS…) has had its first table test. Working title; alternatives: SCHISM, QUORUM, THE THIRD ROAD. Avoid TRIAD — too close to TRIGON. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §10.
 

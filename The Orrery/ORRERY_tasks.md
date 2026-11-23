@@ -1,6 +1,6 @@
 # THE ORRERY — Task List
 
-*Current classification: **Ready to test** · physically played. Last playtest: 01 (7-sym, pre-balanced); the next version is ready for a random-deal retest.*
+*Current classification: **Rough edges** · physically played. Last playtest: 01 (7-sym, pre-balanced); the next version is ready for a random-deal retest.*
 
 ---
 

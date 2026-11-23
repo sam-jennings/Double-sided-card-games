@@ -6,7 +6,7 @@
 
 ## 1. What the number currently is
 
-Almost every design analysis in this collection quotes a **skill gap** or **skill edge**: BLIGHT 2.02×, GLEAN 1.74×, OUROBOROS 1.74×, WILDFIRE 1.5–1.8×, ICARUS 1.55–1.61×, DOWRY ~3.6×, CROSSROADS, TRIGON and TURNCOAT similar. A **~1.5× bar** has been treated as the threshold for a healthy game.
+Almost every design analysis in this collection quotes a **skill gap** or **skill edge**: BLIGHT 2.02×, GLEAN 1.74×, OUROBOROS 1.74×, WILDFIRE 1.5–1.8×, ICARUS 1.55–1.61×, SILK CUT ~3.6×, CROSSROADS, TRIGON and TURNCOAT similar. A **~1.5× bar** has been treated as the threshold for a healthy game.
 
 In every case the figure is:
 
@@ -16,7 +16,7 @@ Three things are wrong with it, in ascending order of seriousness.
 
 ## 2. Fault A — the skilled bot cheats
 
-The bots read hidden information no player has. WILDFIRE's "cruel" bot inspects the next player's entire hand before choosing which target to leave. The GLEAN and BLIGHT bots count every face in the pile history perfectly. DOWRY's cutter evaluates the exact contents of a lot.
+The bots read hidden information no player has. WILDFIRE's "cruel" bot inspects the next player's entire hand before choosing which target to leave. The GLEAN and BLIGHT bots count every face in the pile history perfectly. SILK CUT's cutter evaluates the exact contents of a lot.
 
 This does not merely inflate the number, it **measures the wrong skill**. A bot that sees hidden hands is rewarded for exploiting information; a human is rewarded for inference, memory and reading people. The two can move in opposite directions — WILDFIRE's published 1.5–1.8× was real *and* the table correctly reported no skill, because the bot's entire advantage was perceptual access a person doesn't have.
 
@@ -73,7 +73,7 @@ Nothing, as a single number. The health check becomes a short ordered list:
 
 Every quoted skill gap in the collection was produced under §2 and §3, so **none of them should be read as evidence that a game has decisions**. They are not necessarily wrong — most probably do measure something real — but they are unaudited.
 
-The affected files: `BLIGHT_design_analysis.md`, `GLEAN_design_analysis.md`, `OUROBOROS_design_analysis.md`, `WILDFIRE_design_analysis.md`, `ICARUS_design_analysis.md`, `DOWRY_design_analysis.md`, `TRIGON`/`TURNCOAT`/`CROSSROADS` analyses, `CAIRN_design_analysis.md`, `RELAY_design_analysis.md`.
+The affected files: `BLIGHT_design_analysis.md`, `GLEAN_design_analysis.md`, `OUROBOROS_design_analysis.md`, `WILDFIRE_design_analysis.md`, `ICARUS_design_analysis.md`, `SILK_CUT_design_analysis.md`, `TRIGON`/`TURNCOAT`/`CROSSROADS` analyses, `CAIRN_design_analysis.md`, `RELAY_design_analysis.md`.
 
 Suggested triage, cheapest first:
 

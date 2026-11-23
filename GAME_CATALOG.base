@@ -50,21 +50,33 @@ views:
       - property: catalog_order
         direction: ASC
   - type: table
-    name: Ready to test
+    name: Rough edges
     filters:
       and:
-        - state == "Ready to test"
+        - state == "Rough edges"
     order:
       - formula.game_note
-      - physically_playtested
       - players
       - duration
       - complexity
       - next_step
       - formula.current_document
     sort:
-      - property: physically_playtested
+      - property: catalog_order
         direction: ASC
+  - type: table
+    name: Untested
+    filters:
+      and:
+        - state == "Untested"
+    order:
+      - formula.game_note
+      - players
+      - duration
+      - complexity
+      - next_step
+      - formula.current_document
+    sort:
       - property: catalog_order
         direction: ASC
   - type: table
@@ -111,10 +123,10 @@ views:
       - complexity
       - formula.current_document
   - type: table
-    name: In development
+    name: In the workshop
     filters:
       and:
-        - state == "In development"
+        - state == "In the workshop"
     order:
       - formula.game_note
       - physically_playtested

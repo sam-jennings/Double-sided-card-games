@@ -34,34 +34,34 @@ Every game is part of the collection and is classified by **two fields, and only
 two**. The YAML properties on each game's single game record are the structured source;
 `COLLECTION_OVERVIEW.md` is the complete human-readable catalogue.
 
-### Field 1 — `state`: what to do with this game next
+### Field 1 — `state`: what a player can expect
 
-Exactly one of four values. There is no obligation to advance games in any order — work on whatever is useful or exciting right now.
+Exactly one of five values. The deck and website go to friends as playtesters, so the states are worded for them: each says what happens if you sit down and play. There is no obligation to advance games in any order — work on whatever is useful or exciting right now.
 
-| State | What it means | What exists / what it needs next |
+| State | What it means (player-facing) | What exists / what it needs next |
 |---|---|---|
-| **In development** | No usable rules yet, or rules that still need design work before the game is worth putting on a table. | Anything from a one-line concept sheet to a rough or unvetted rulebook. Needs rules written, completed, vetted, or redesigned. |
-| **Ready to test** | You'd sit down and play it as-is; no design work outstanding. | A vetted rulebook (and a playtest report, if it has already been played). Needs a table. |
-| **Proven** | Played, works, and has no known blocking problem. | Rulebook + playtest report. Needs final polish or a confirming test, if anything. |
-| **Shelved** | Deliberately inactive, retained as a design record. | Whatever exists. Needs nothing unless revived. |
+| **Proven** | Played and works. Just play it. | Rulebook + playtest report, no known blocking problem. Needs final polish or a confirming test, if anything. |
+| **Rough edges** | Has been played; works in general but has known bugs or open questions. Your feedback helps — you may even find the fix. | Rulebook + playtest report + a one-line **known issue** shown on `games.html` and at the top of the rules. Needs the queued fix tested, or the open question answered, at a table. |
+| **Untested** | Complete rules, never played. You're the first table; expect surprises. | A complete rulebook (sim-validated where possible). Needs its first table. While the designer has not reviewed an AI-written rulebook, `games.html` says "Rules not yet reviewed by the designer". |
+| **In the workshop** | Not playable yet: an idea only, or rules with a known problem to solve first. | Anything from a one-line concept sheet to a draft rulebook waiting on a design decision. Needs rules written, completed, or redesigned. |
+| **Shelved** | Set aside, kept as a design record. | Whatever exists. Needs nothing unless revived. |
 
-State is descriptive, not prescriptive, and **moves in both directions**. A game can sit In development forever if you're not ready to push it, and a Proven or Ready-to-test game that a later session breaks drops back to In development until the fix is designed.
+State is descriptive, not prescriptive, and **moves in both directions**. A game can sit In the workshop forever if you're not ready to push it; a Proven game that a later session breaks drops to Rough edges (if a table can still play it) or In the workshop (if it can't) until the fix is designed.
 
 ### Field 2 — `physically_playtested`: have humans ever played it?
 
 A boolean, independent of `state`, that becomes `true` after the first table test and **never reverts**. Playtest history is permanent; design readiness oscillates, so the two must not share a field.
 
-The combination carries everything the old ladder did:
+The two fields line up as follows:
 
-- `Ready to test` + played — the old *Iterating*: works, fixes queued, put it back on the table.
-- `In development` + played — the old *Troubled*: it was tested and it needs a rethink. JANUS is the current example.
-- `Ready to test` + never played — the old *Ready*: awaiting its first table.
-- `In development` + never played — the old *Spark* and *Draft*.
-- `Proven` + played — the old *Solid*.
+- `Proven` and `Rough edges` — always played.
+- `Untested` — never played.
+- `In the workshop` — usually never played, but a played game goes back here if it needs design work before another table.
+- `Shelved` — either.
 
-Detailed verdicts live in the playtest reports; the single next action lives in `next_step`. Do not reintroduce a `status`, `table_tested`, or `playtest_ready` field — "can I play it tonight?" is `state == "Ready to test"`, and "have I tested it?" is `physically_playtested`.
+Detailed verdicts live in the playtest reports; the single next action lives in `next_step`. Do not reintroduce a `status`, `table_tested`, or `playtest_ready` field — "can I play it tonight?" is `state` in Proven / Rough edges / Untested, and "have I tested it?" is `physically_playtested`.
 
-**Badges, not states.** Simulation, solving, and versioning are *evidence*, not state — record them as badges alongside it (`sim-validated`, `solver-checked`, `v1.1`, `testable at 2P now`). A sim badge is often what earns a game its way to Ready to test. The one wrinkle is a concept simmed *before* its rules are written (e.g. a structural sim with no rulebook yet): it stays **In development** — you can't read rules that don't exist — and the badge carries the work done.
+**Badges, not states.** Simulation, solving, and versioning are *evidence*, not state — record them as badges alongside it (`sim-validated`, `solver-checked`, `v1.1`, `testable at 2P now`). A sim badge is often what earns a game its way to Untested. The one wrinkle is a concept simmed *before* its rules are written (e.g. a structural sim with no rulebook yet): it stays **In the workshop** — you can't read rules that don't exist — and the badge carries the work done.
 
 ### No promotion or shipping axis
 
@@ -82,7 +82,7 @@ Be willing to park or cut. A clever game that overlaps an existing one, or that 
 
 ### Shelved / archived
 
-Shelved games are retained as **design records**. OUROBOROS, the only game ever dropped outright, was **revived to Ready to test in June 2026** after its reasons were re-examined (a fixable handling bug plus a skill gap that proved to be a one-ply artefact) — a worked example of confronting *and revisiting* that decision. Shelving is a strong signal, not necessarily permanent: revive only by confronting, with evidence, why it was shelved. The lessons remain binding on live designs — see `design-principles.md`.
+Shelved games are retained as **design records**. OUROBOROS, the only game ever dropped outright, was **revived in June 2026** (now Rough edges) after its reasons were re-examined (a fixable handling bug plus a skill gap that proved to be a one-ply artefact) — a worked example of confronting *and revisiting* that decision. Shelving is a strong signal, not necessarily permanent: revive only by confronting, with evidence, why it was shelved. The lessons remain binding on live designs — see `design-principles.md`.
 
 ## Collaboration stance
 

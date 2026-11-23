@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "HINGE"
-state: In development
+state: Rough edges
 players: [2]
 player_count: "2"
 duration: "5–10 min"
@@ -13,18 +13,20 @@ min_minutes: 5
 max_minutes: 10
 physically_playtested: true
 public_document: "Hinge/HINGE_concept.md"
-next_step: "Formalise the 2-player turn structure for the split-and-flip mechanic, then run a 2-player table test."
+next_step: "Decide the 2-player turn economy: the November 2026 sim shows careful players deadlock under strict alternation (see HINGE_rulebook.md design notes); July solo tests are in HINGE_playtest_01.md."
 catalog_order: 29
 ---
 # HINGE — split it, flip it, chase the run
 
-*2 players · ~5–10 min per round · pocket abstract · 15 cards (6 signs) · In development · physically played; mechanic replaced after solo test*
+*2 players · ~5–10 min per round · pocket abstract · 15 cards (6 signs) · Rough edges · physically played; mechanic replaced after solo test*
 
-> **Status & scope.** Wildcard batch, second flight (July 2026) — *originality first, rubric waived, unsimmed*. Renamed from QUEUE on 25 July 2026 after the original rotate/flip-top-card mechanic failed solo playtest and was replaced by the split-and-flip mechanic below. Still needs a 2-player table test before it can move past `In development`. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §26.
+> **Known issue:** The two-player game has never been played (only a solo test of the older QUEUE version), and the simulation found that two careful players block each other. Expect stalls; try a house rule and tell the designer.
+
+> **Status & scope.** Wildcard batch, second flight (July 2026) — *originality first, rubric waived, unsimmed*. Renamed from QUEUE on 25 July 2026 after the original rotate/flip-top-card mechanic failed solo playtest and was replaced by the split-and-flip mechanic below. Its two-player game has never been played, so it is listed as `Rough edges`. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §26.
 
 ## Playtest note — original QUEUE mechanic rejected (25 July 2026)
 
-Solo test of the original rules (rotate front-to-back, or flip the front card in place; score when the front three match) found it **basically impossible** to line up three matching faces. The problem was structural, not bad luck: a single-card-per-turn move touches too little state. Rotating only ever cycles the same 15-card order past a 3-card window; flipping only ever changes one card's face. Neither move does enough work per turn to build a triple before the packet cycles back on itself. The honest risk flagged in the original concept (parity-solvable, not a real game) undersold the actual failure — it wasn't solvable *or* unsolvable, it just never generated enough matches to reach an endgame. That concept is retired at [Queue/QUEUE_concept.md](../Queue/QUEUE_concept.md).
+Solo test of the original rules (rotate front-to-back, or flip the front card in place; score when the front three match) found it **basically impossible** to line up three matching faces. The problem was structural, not bad luck: a single-card-per-turn move touches too little state. Rotating only ever cycles the same 15-card order past a 3-card window; flipping only ever changes one card's face. Neither move does enough work per turn to build a triple before the packet cycles back on itself. The honest risk flagged in the original concept (parity-solvable, not a real game) undersold the actual failure — it wasn't solvable *or* unsolvable, it just never generated enough matches to reach an endgame. That concept is retired at [Queue/QUEUE_concept.md](../Queue/QUEUE_concept.md). Both July solo tests are written up in [HINGE_playtest_01.md](HINGE_playtest_01.md).
 
 ## The mechanic — split and flip
 

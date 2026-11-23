@@ -1,6 +1,6 @@
 # CROSSROADS — Task List
 
-*Current classification: **Ready to test** · physically played · on notice. Last playtest: 02 (v1.1, 2P→off-spec 3P, flips barely used); the pass-to-win concern needs an on-spec retest.*
+*Current classification: **Rough edges** · physically played · on notice. Last playtest: 02 (v1.1, 2P→off-spec 3P, flips barely used); the pass-to-win concern needs an on-spec retest.*
 
 *See [CROSSROADS_playtest_02.md](CROSSROADS_playtest_02.md) for the findings this plan responds to.*
 

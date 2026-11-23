@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "LACUNA"
-state: In development
+state: In the workshop
 players: [2, 3, 4, 5]
 player_count: "2, 3, 4, 5"
 duration: "~15 min"
@@ -18,7 +18,7 @@ catalog_order: 27
 ---
 # LACUNA — the deck's missing tooth
 
-*2–5 players · ~15 min · counting / deduction race · full 36 + one opaque sleeve · In development · physically unplayed*
+*2–5 players · ~15 min · counting / deduction race · full 36 + one opaque sleeve · In the workshop · physically unplayed*
 
 > **Status & scope.** Wildcard batch, second flight (July 2026) — *originality first, rubric waived, unsimmed*. No rulebook, no sim, no rubric self-score; should not jump the [focus-priority.md](../.kiro/steering/focus-priority.md) queue on novelty alone. Portfolio index: [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §24.
 

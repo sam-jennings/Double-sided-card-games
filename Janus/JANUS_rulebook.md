@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "JANUS"
-state: In development
+state: Rough edges
 players: [2, 3, 4]
 player_count: "2, 3, 4"
 duration: "~20 min"
@@ -19,6 +19,8 @@ catalog_order: 8
 # JANUS
 
 *A co-operative game of half-seen things for 2–4 players · ~20 minutes · ages 10+*
+
+> **Known issue:** The rules ask for a concealed draw pile, which a deck with no backs cannot have, and the first table gave up on keeping hands hidden. Play the open-information Apprentice variant, or try your own way of keeping the fans hidden and tell the designer.
 
 > **⚠️ Known blocker (June–July 2026, unresolved).** The first table test and the deck-wide audit found that this rulebook's concealment protocol is physically impossible on a backless deck: there is no "face-down stack" (the deck-top always shows a face — F7), and the deal/refill as written leaks a face to the holder or the table either way (F10). Play the open-information Apprentice variant if you table it before this is fixed. The fix is an open decision — opaque container (box/bag) vs a no-draw redesign; see `JANUS_playtest_01.md`, `DECK_PLAYTEST_FINDINGS.md` F7/F10, and `DECK_CONVENTIONS.md` T1. The rules below are otherwise kept as designed, pending that decision.
 

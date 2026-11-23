@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "TURNCOAT"
-state: Ready to test
+state: Untested
 players: [2, 3, 4]
 player_count: "2, 3, 4"
 duration: "15–25 min"

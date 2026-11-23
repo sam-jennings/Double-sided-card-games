@@ -1,6 +1,6 @@
 # TWELVE TRIALS — Task List
 
-*Current classification: **Ready to test** · physically played. Last playtest: 01 (9-sym solo + open co-op); the revised tracking approach is ready for retest.*
+*Current classification: **Rough edges** · physically played. Last playtest: 01 (9-sym solo + open co-op); the revised tracking approach is ready for retest.*
 
 ---
 

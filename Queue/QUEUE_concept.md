@@ -12,7 +12,7 @@ This file is kept as design history only. It is not a game record (`record_type:
 
 *2 players · ~5–10 min per round · pocket abstract · 15 cards (6 signs)*
 
-**The trick that made it exist.** VIGIL asked "what if a game needed no session?"; QUEUE asked "what if a game needed no *surface*?" The entire state was a squared packet held in one hand, face-out; the moves were one-thumb operations. The deck property underneath: a packet has a **cyclic order that cutting preserves** — so "rotate" was a legal, undoable-by-nobody, zero-surface move.
+**The trick that made it exist.** DEADLOCK asked "what if a game needed no session?"; QUEUE asked "what if a game needed no *surface*?" The entire state was a squared packet held in one hand, face-out; the moves were one-thumb operations. The deck property underneath: a packet has a **cyclic order that cutting preserves** — so "rotate" was a legal, undoable-by-nobody, zero-surface move.
 
 **Setup.** The 6-sign sub-deck, 15 cards, shuffled, squared, held face-out by either player. Players alternate moves; whoever holds it passes it after moving.
 

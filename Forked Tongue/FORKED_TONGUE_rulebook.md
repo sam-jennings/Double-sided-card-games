@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "FORKED TONGUE"
-state: In development
+state: Untested
 players: [3, 4, 5, 6]
 player_count: "3, 4, 5, 6"
 duration: "~20 min"
@@ -13,7 +13,7 @@ min_minutes: 20
 max_minutes: 20
 physically_playtested: false
 public_document: "Forked Tongue/FORKED_TONGUE_rulebook.md"
-next_step: "Read through and vet the rules, then promote to Ready if coherent."
+next_step: "First table test of v1.2 at 3–4P: do people bluff profitably, and does the fuse feel fair? See FORKED_TONGUE_playtest_plan_01.md."
 catalog_order: 16
 ---
 # FORKED TONGUE
@@ -32,7 +32,7 @@ Every card in the deck is a unique pair — there is exactly one Moon/Crown in t
 
 1. Shuffle thoroughly, flipping random chunks so faces are randomised.
 2. Deal every player a hand: **3P: 8 · 4P: 7 · 5P: 6 · 6P: 5**. Your own hand may be examined (both sides) freely at any time.
-3. Spread the remaining cards face-up as the **registry** (3P: 12 cards · 4P: 8 · 5P/6P: 6). Registry cards are dead and public: **anyone may pick up and examine any registry card at any time** (return it as found). Every pair in the registry is a pair nobody can be holding — and a lie waiting to be caught.
+3. Spread the remaining cards face-up in a row as the **registry** (3P: 12 cards · 4P: 8 · 5P/6P: 6). Registry cards are dead and public: **anyone may pick up and examine any registry card at any time** (return it as found). Every pair in the registry is a pair nobody can be holding — and a lie waiting to be caught. The registry row is also the game's **fuse** (see *The fuse*); leave room beside it for a **spent row** and a **sworn pile**.
 4. Whoever most recently got away with something goes first. Play clockwise.
 
 ## The ledger
@@ -57,6 +57,8 @@ Your claim may be the truth or a lie. It becomes the new requirement for the nex
 
 Take the **newest card** of the ledger into your hand and end your turn. The requirement then **rewinds one link**: the next player must show whatever symbol the card you just took was showing (that symbol is the previous claimant's claim — they restate it on request). If taking the card empties the ledger, the next player opens fresh.
 
+Every decline also **burns the fuse** once (see *The fuse*).
+
 Decline because you can't show Crown — or because you won't. Nobody knows which.
 
 ## Challenges
@@ -68,12 +70,34 @@ After a play-and-claim, before the next player acts, **any** player may cry *"Fa
 
 Either way the ledger is now empty; play passes to the player after the claimant, who opens fresh. (The flipped card goes with the rest — its identity is now public knowledge, for those keeping count.)
 
+## Swear on it
+
+If your play survives the challenge window (nobody challenged) and the ledger now holds **4 or more cards**, you may **swear on it**: flip your own card for everyone to see.
+
+- **The claim was true** → move the **whole ledger** face-up to the **sworn pile** beside the registry. Those cards are out of the game, public and examinable like registry cards. The next player opens fresh.
+- **The claim was a lie** → you take the entire ledger into your hand, exactly as if you had been challenged.
+
+Swearing is optional, and only the claimant may swear. Nobody can make you — but on a long ledger, a claimant who *doesn't* swear has told the table something.
+
+## The fuse
+
+Each time anyone **declines**, burn the fuse once:
+
+- If any registry card is still upright, turn one **sideways**.
+- If none is upright, slide one sideways card into the **spent row**.
+
+So each registry card burns twice: 24 declines at 3P, 16 at 4P, 12 at 5–6P. Burnt and spent cards stay face-up and examinable; the fuse never hides anything. Sworn-pile cards are never burnt.
+
+When the decline that spends the **last** registry card is complete, the game ends at once (see *Winning*).
+
 ## Winning
 
 Play your final card, make your claim, and **survive the challenge window**:
 
 - Unchallenged, or challenged and truthful → **you win**.
 - Challenged and lying → take the ledger and play on, paler than before.
+
+**If the fuse runs out first**, the player with the **fewest cards in hand** wins. On a tie, the first tied player clockwise after the player whose decline spent the fuse wins.
 
 A final-card claim is the game's signature moment: with one card left, your claim is about a *specific known object* — and everything the table has seen all game points at it.
 
@@ -150,7 +174,11 @@ Every pair exists once. The registry kills 6–12 pairs at setup, in public. Eve
 
 **The same player keeps winning challenges.** They're counting pairs. The registry and ledger are open — count back.
 
-**Can the game stall?** Hands shrink by playing and grow by declining/challenges; ledgers recycle. If a table circles, play the **Long Con** scoring variant — rounds end faster than fairness disputes.
+**Can the game stall?** No. Without lies, nothing used to leave play: a lap of plays followed by a lap of declines put the table back where it started. Swearing clears long truthful ledgers, and every decline burns the fuse, so the game always ends.
+
+**Can I decline on purpose to burn the fuse?** Yes. If you hold the fewest cards, declining to run the fuse down is a legitimate endgame play — but you take a card each time.
+
+**Does a sworn card count for deduction?** Yes. Sworn cards are flipped and public, so their pairs are dead, just like registry cards.
 
 ## Strategy notes (read after your first game)
 
@@ -167,4 +195,8 @@ Every pair exists once. The registry kills 6–12 pairs at setup, in public. Eve
 
 ---
 
-*Design v1.1 — untested at the table. The claim-chain (each card showing the previous claim) keeps all history physical: the only remembered state is the newest claim, repeatable on demand — a deliberate constraint from the OUROBOROS post-mortem. **v1.1: declining now takes only the newest card and rewinds the requirement one link, instead of taking two cards while the claim floated free — the old rule corrupted the self-recording ledger (it could leave the table requiring a symbol no card recorded, and let a later play falsely read as a claim nobody made).** First playtest questions: decline penalty size (one card may be too cheap a dodge — watch the decline rate), ledger swing size (whole-row vs Apprentice), and whether 3P has enough challenge pressure.*
+*Design v1.2 — untested at the table. The claim-chain (each card showing the previous claim) keeps all history physical: the only remembered state is the newest claim, repeatable on demand — a deliberate constraint from the OUROBOROS post-mortem. **v1.1: declining now takes only the newest card and rewinds the requirement one link, instead of taking two cards while the claim floated free — the old rule corrupted the self-recording ledger (it could leave the table requiring a symbol no card recorded, and let a later play falsely read as a claim nobody made).** First playtest questions: decline penalty size (one card may be too cheap a dodge — watch the decline rate), ledger swing size (whole-row vs Apprentice), and whether 3P has enough challenge pressure.*
+
+*November 2026 vetting: a floor sim ([forked_tongue_sim.py](forked_tongue_sim.py), 24,000 games) found that games could fail to end at 3–4P, and that tables of honest players circled. See [FORKED_TONGUE_design_analysis.md](FORKED_TONGUE_design_analysis.md).*
+
+*v1.2 (November 2026): added **Swear on it** and **the fuse**, chosen from the candidates in [FORKED_TONGUE_end_condition_proposal.md](FORKED_TONGUE_end_condition_proposal.md). In [forked_tongue_end_sim.py](forked_tongue_end_sim.py) (2,000 games per table at 3–6P) no game stalled, honest tables included; skilled games averaged 36–60 turns, a skilled bot won 2.9–4.1× its fair share against random bots, and seats stayed within about 10 points. Still open for the table: lying bots win less than their fair share, so whether people can bluff profitably is the first question; whether players burn the fuse on purpose, and whether that feels clever or cheap; and whether the 12-decline fuse at 5–6P feels short (try 3 burns per registry card). Also open: the Apprentice Forgers variant doesn't say what happens to ledger cards older than the three newest after a challenge.*

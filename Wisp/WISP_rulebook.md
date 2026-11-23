@@ -1,7 +1,7 @@
 ---
 record_type: game
 game: "WISP"
-state: In development
+state: In the workshop
 players: [2, 3]
 player_count: "2, 3"
 duration: "~20 min"
@@ -13,14 +13,14 @@ min_minutes: 20
 max_minutes: 20
 physically_playtested: false
 public_document: "Wisp/WISP_rulebook.md"
-next_step: "Vet the chase balance and trail handling before a table test."
+next_step: "Choose the balance dials: the November 2026 sim shows 12/4/8/2 is a near-certain catch; balanced options trade Raids against hand size (see WISP_design_analysis.md)."
 catalog_order: 19
 ---
 # WISP
 
 *A hidden-movement pursuit for 2–3 players · ~20 minutes · ages 10+ · one Wisp vs. a side of one or two hunters*
 
-> **⚠️ v0.1 — first-draft rulebook, unsimmed and untested (July 2026).** WISP was written to the wildcard-batch brief: *originality first, rubric waived, no simulation required* (see [WISP_concept.md](WISP_concept.md) and [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §18). This document turns that concept into playable rules — it does **not** mean the balance is proven. The dials (hand 12 · raids 4 · escape 8 · sprints 2) are the concept's starting numbers, not tuned values. The one open handling question is physical: whether an eight-card overlapped trail plus a squared sprint packet excavates cleanly without slippage. Table this game to answer it. See the design footer for the fastest way to falsify it.
+> **⚠️ v0.1a — draft rulebook, untested (July 2026; vetted and floor-simulated November 2026).** WISP was written to the wildcard-batch brief (see [WISP_concept.md](WISP_concept.md) and [NEW_GAME_CONCEPTS.md](../NEW_GAME_CONCEPTS.md) §18). **The November 2026 simulation found the starting dials (hand 12 · raids 4 · escape 8 · sprints 2) are not a chase:** careful hunters catch a careful Wisp in 99.8% of games. The balanced alternatives trade Raid count against hand size, which is a designer decision; see [WISP_design_analysis.md](WISP_design_analysis.md). v0.1a also fixes a hand-leak in the handling (choose each road below the table edge). The open table question is still physical: whether an eight-card overlapped trail plus a squared sprint packet excavates cleanly without slippage.
 
 Every hidden-movement game — Scotland Yard, Fury of Dracula — needs a way to write a secret down: a notebook, a hidden track, a screen. This deck has none of those. It has something better. A card has two faces and no back, so the moment you lay it down it tells everyone one thing and hides exactly one other. WISP makes the trail itself the notebook: each card you drop announces the place you **just left** and presses the place you're **at now** to the table. The hunters always know where you *were*. They are always one move behind where you *are*. And when the chase ends, the whole trail is dug up in reverse and every card confirms every other — so the fugitive cannot have lied, ever, about anything. No board, no pencil, no trust.
 
@@ -45,7 +45,7 @@ In a match, rotate the Wisp role each game so everyone drifts and everyone hunts
 ## Setup
 
 1. Shuffle all 36 cards, flipping chunks as you go so faces are mixed.
-2. Deal the **Wisp a hand of 12** cards. The Wisp holds these as a fan and may inspect **both faces** of every card freely — a held fan is genuinely private (nobody else may look at it), so this is the deck's one clean secret.
+2. Deal the **Wisp a hand of 12** cards. The Wisp may inspect **both faces** of every card freely. Hold the hand squared or tightly fanned against your chest: a fan shows its outer faces to anyone at the right angle, and since the hunters know your whole hand, one glimpse of the card leaving your fan can name your current place. **Choose each road below the table edge** (or behind cupped hands, as for a Blind Cut), turn it so the place you're leaving is up, and only then bring it out and lay it.
 3. Spread the remaining **24 cards face-up as the atlas**, sorted by pip so any road is easy to find. The atlas is fully public: the hunters may pick up and read **both faces** of any atlas card at any time.
 
 That spread is the engine of the whole game. Thirty-six roads exist; twenty-four are lying in the atlas; therefore **the Wisp's twelve are exactly the roads that are not**. The hunters know the Wisp's entire hand by subtraction — every road it could ever travel. What they do not know is the **order** it will travel them, and above all **where it is right now.**

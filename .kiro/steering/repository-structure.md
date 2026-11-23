@@ -36,7 +36,7 @@ Each game has one **game record**, identified by `record_type: game`. It may be 
 
 - `record_type: game`
 - `game`
-- `state` — `In development`, `Ready to test`, `Proven`, or `Shelved`
+- `state` — `Proven`, `Rough edges`, `Untested`, `In the workshop`, or `Shelved`
 - `physically_playtested` — true once humans have played it; never reverts
 - `players` — exact supported counts
 - `min_players` and `max_players` — derived bounds for broad filters

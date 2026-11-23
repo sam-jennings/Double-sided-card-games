@@ -82,6 +82,8 @@ Still on watch (no rename, lower priority):
 | Was | Now | Reason |
 |---|---|---|
 | QUEUE | **HINGE** | the original rotate/flip-top-card mechanic failed solo playtest (25 July 2026) and was replaced with a split-and-block-flip move; the old name was built entirely on the retired cyclic-rotation idea and no longer described the game. No key-word collision with existing titles; H was an unused first letter. |
+| DOWRY | **SILK CUT** | owner's choice (19 November 2026). "Cut" names the cut-and-choose action and "silk" the dressed face laid over the real value ("silk laid on top, stones beneath"), so it teaches more than DOWRY did. No key-word collision. Watch: it is a fourth S title (SLEEPER, SNARE, STRATA), and it is also a UK cigarette brand, so check availability before any publication use. |
+| VIGIL | **DEADLOCK** | owner's choice (23 November 2026). The first playtest found a ~10-minute one-sitting duel rather than the over-days shelf game the name described ("vigil" = a long watch), so the title failed the association test. A deadlock is the 3–3 line that scores for nobody — the game's sharpest move — so the title teaches it. D was an unused first letter; no key-word collision. |
 
 When any future name changes, update this section and `COLLECTION_OVERVIEW.md`
 together.
